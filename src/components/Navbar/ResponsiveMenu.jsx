@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import CountryFlag from "react-country-flag";
 
@@ -55,6 +55,82 @@ const MobileNavLinks = ({ item }) => {
 
 const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelectedLang }) => {
   const [showLang, setShowLang] = useState(false);
+  // Arama için ek state'ler
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const inputRef = useRef(null);
+
+  // Typewriter animasyon verileri
+  const typewriterWords = [
+    "Diş beyazlatma",
+    "İmplant",
+    "Ortodonti",
+    "Diş teli",
+    "Zirkonyum kaplama"
+  ];
+  function useTypewriter(words, speed = 90, pause = 1200) {
+    const [index, setIndex] = useState(0);
+    const [subIndex, setSubIndex] = useState(0);
+    const [deleting, setDeleting] = useState(false);
+    const [blink, setBlink] = useState(true);
+    useEffect(() => {
+      if (subIndex === words[index].length + 1 && !deleting) {
+        setTimeout(() => setDeleting(true), pause);
+        return;
+      }
+      if (subIndex === 0 && deleting) {
+        setDeleting(false);
+        setIndex((prev) => (prev + 1) % words.length);
+        return;
+      }
+      const timeout = setTimeout(() => {
+        setSubIndex((prev) => prev + (deleting ? -1 : 1));
+      }, deleting ? speed / 2 : speed);
+      return () => clearTimeout(timeout);
+    }, [subIndex, index, deleting, words, speed, pause]);
+    useEffect(() => {
+      const blinkInterval = setInterval(() => setBlink((v) => !v), 500);
+      return () => clearInterval(blinkInterval);
+    }, []);
+    return `${words[index].substring(0, subIndex)}${blink ? "|" : " "}`;
+  }
+  const typewriterText = useTypewriter(typewriterWords);
+
+  // navLinksData'dan düz başlık listesi çıkar
+  function flattenLinks(links) {
+    let arr = [];
+    links.forEach(l => {
+      arr.push({ name: l.name, path: l.path });
+      if (l.submenu) arr = arr.concat(flattenLinks(l.submenu));
+    });
+    return arr;
+  }
+  const allLinks = flattenLinks(navLinksData);
+
+  useEffect(() => {
+    if (searchOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  useEffect(() => {
+    if (searchValue) {
+      setSearchResults(
+        allLinks.filter(l => l.name.toLowerCase().includes(searchValue.toLowerCase()))
+      );
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchValue]);
+
+  function handleSearchKey(e) {
+    if (e.key === "Enter" && searchResults.length > 0) {
+      window.location.hash = `#${searchResults[0].path}`;
+      setSearchOpen(false);
+      setSearchValue("");
+    }
+  }
 
   return (
     <div
@@ -64,6 +140,48 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       <button onClick={handleNav} className="absolute top-4 right-4 text-white text-3xl">
         &times;
       </button>
+      {/* Arama ve typewriter mobilde üstte */}
+      <div className="w-full flex flex-col items-center gap-2 mt-6 mb-2 px-6">
+        <div className="flex items-center w-full justify-center">
+          <button
+            className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2 text-xl"
+            onClick={() => setSearchOpen((v) => !v)}
+            tabIndex={0}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          </button>
+          {searchOpen ? (
+            <div className="relative w-full">
+              <input
+                ref={inputRef}
+                type="text"
+                value={searchValue}
+                onChange={e => setSearchValue(e.target.value)}
+                onKeyDown={handleSearchKey}
+                className="ml-2 px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-base min-w-[120px] w-full"
+                placeholder="Arayın..."
+              />
+              {searchResults.length > 0 && (
+                <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
+                  {searchResults.map((res, i) => (
+                    <li key={res.path}>
+                      <a
+                        href={`#${res.path}`}
+                        className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
+                        onClick={() => { setSearchOpen(false); setSearchValue(""); }}
+                      >
+                        {res.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ) : (
+            <span className="ml-2 min-w-[100px] text-blue font-medium text-base transition-all duration-300 select-none" style={{letterSpacing:'0.01em'}}>{typewriterText}</span>
+          )}
+        </div>
+      </div>
       {/* Sosyal medya ve iletişim */}
       <div className="flex flex-col items-center gap-4 mt-16 mb-4">
         <div className="flex gap-3">
