@@ -141,7 +141,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
         &times;
       </button>
       {/* Arama ve typewriter mobilde üstte */}
-      <div className="w-full flex flex-col items-center gap-2 mt-6 mb-2 px-6">
+      <div className="w-full flex flex-col items-center gap-2 pt-8 pb-3 px-6 bg-white/90 z-50 shadow-md sticky top-0">
         <div className="flex items-center w-full justify-center">
           <button
             className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2 text-xl"
