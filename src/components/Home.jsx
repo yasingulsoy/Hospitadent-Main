@@ -1,22 +1,57 @@
-import React from 'react'
-import Button from './Button';
-import AnimatedCards from './AnimatedCards';
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stage } from "@react-three/drei";
 
-const Home = () => {
+const ToothModel = () => {
+  // Placeholder: Diş yerine beyaz bir torus ve küre kombinasyonu
   return (
-    <section name='home'
-      className="w-full bg-white min-h-screen flex flex-col items-center justify-start"
-    >
-      {/* Üstte boş alan ve randevu animasyonu için yer */}
-      <div className="w-full flex flex-col items-center justify-center pt-24 pb-8">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 font-[Montserrat] tracking-tight">Randevunuzu Kolayca Alın</h2>
-        <p className="text-lg text-gray-600 mb-6 text-center max-w-xl">Modern kliniklerimizde hızlı ve güvenli randevu için aşağıdan kliniğinizi seçin veya animasyonlu kartlara göz atın.</p>
-        <Button text='Randevu Al' btnStyle="btn-primary text-lg font-semibold px-10 py-4" />
-      </div>
-      {/* Sonsuz animasyonlu kartlar */}
-      <AnimatedCards infinite />
-    </section>
-  )
-}
+    <group>
+      {/* Diş gövdesi */}
+      <mesh castShadow receiveShadow>
+        <sphereGeometry args={[1, 32, 32]} />
+        <meshStandardMaterial color="#fff" roughness={0.3} metalness={0.1} />
+      </mesh>
+      {/* Diş kökü */}
+      <mesh position={[0, -1.2, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[0.35, 0.18, 16, 100]} />
+        <meshStandardMaterial color="#e0e0e0" />
+      </mesh>
+    </group>
+  );
+};
 
-export default Home
+const Hero = () => {
+  return (
+    <section className="w-full min-h-[70vh] flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#eaf6fb] to-white px-4 md:px-12 py-12 md:py-0">
+      {/* Sol: Başlık ve Buton */}
+      <div className="flex-1 flex flex-col items-start justify-center max-w-xl z-10">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[#0f4f78] mb-6 leading-tight drop-shadow-sm">
+          Dijital Diş Hekimliğinde <span className="text-[#2bb3ea]">Yeni Dönem</span>
+        </h1>
+        <p className="text-lg md:text-xl text-gray-700 mb-8">
+          3D teknolojilerle, sağlıklı ve estetik gülüşler için <b>hemen randevu alın</b>.<br/>
+          Modern klinik, uzman kadro, dijital çözümler.
+        </p>
+        <a
+          href="#randevu"
+          className="bg-[#2bb3ea] hover:bg-[#0f4f78] transition-colors duration-300 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg"
+        >
+          Randevu Al
+        </a>
+      </div>
+      {/* Sağ: 3D Diş Modeli */}
+      <div className="flex-1 flex items-center justify-center w-full h-[300px] md:h-[400px] lg:h-[500px] z-0">
+        <Canvas shadows camera={{ position: [3, 2, 5], fov: 40 }} style={{ width: '100%', height: '100%' }}>
+          <ambientLight intensity={0.7} />
+          <directionalLight position={[5, 10, 5]} intensity={1.2} castShadow />
+          <Stage environment="city" intensity={0.6} shadows={false}>
+            <ToothModel />
+          </Stage>
+          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.2} />
+        </Canvas>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
