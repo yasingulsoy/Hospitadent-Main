@@ -69,3 +69,12 @@ h1, h2, h3, h4, h5, h6 {
   animation: tooth-move 6s linear infinite;
 }
 
+/* Scrollbar tamamen gizle (hizmetler için) */
+.custom-scroll-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.custom-scroll-hide::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+}
+

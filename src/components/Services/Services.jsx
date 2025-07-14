@@ -2,18 +2,27 @@ import React from 'react'
 import Heading from '../Heading'
 import ServiceItems from './ServiceItems'
 import { servicesData } from '../../data/data'
+import Marquee from 'react-fast-marquee'
+
 const Services = () => {
   return (
     <section name='services' className="py-20 bg-white scroll-pt-24 ">
-      <div className="max-w-[1200px] mx-auto px-4">
+      <div className="w-full max-w-none px-0">
         <Heading  title='Hizmetlerimiz'/>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {
-            servicesData.map((item, index) => (
-              <ServiceItems key={index} item={item} />
-            ))
-          }
-        </div>
+        {/* react-fast-marquee ile otomatik kayan hizmetler */}
+        <Marquee
+          gradient={false}
+          speed={30}
+          pauseOnHover={true}
+          pauseOnClick={true}
+          style={{width: '100%', gap: '24px'}}
+        >
+          {servicesData.map((item, index) => (
+            <div key={index} style={{minWidth: 320, maxWidth: 320, height: 340, marginRight: 24, display: 'flex', flexDirection: 'column'}}>
+              <ServiceItems item={item} />
+            </div>
+          ))}
+        </Marquee>
       </div>
     </section>
   )

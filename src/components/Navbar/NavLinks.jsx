@@ -12,7 +12,7 @@ const NavLinks = ({ item, handleNav, depth = 0 }) => {
     const isRoot = depth === 0;
     return (
       <li
-        className={`relative group cursor-pointer text-blue text-lg font-bold tracking-wide hover:text-primary transition-colors duration-200`}
+        className={`relative group cursor-pointer text-blue-600 text-lg font-bold tracking-wide hover:text-blue-500 transition-colors duration-200`}
         onMouseEnter={() => setDropdown(true)}
         onMouseLeave={() => setDropdown(false)}
       >

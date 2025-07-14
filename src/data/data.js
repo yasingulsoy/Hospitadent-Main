@@ -116,38 +116,48 @@ export const navLinksData = [
 export const servicesData = [
   {
     img: ImgOne,
-    title: 'Alignment Specialist',
-    desc: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Fugiat, Non?'
-
+    title: 'Gülüş Tasarımı',
+    desc: 'Dijital planlama ile kişiye özel estetik gülüşler.'
   },
   {
     img: ImgTwo,
-    title: 'Cosmetic Dentistry',
-    desc: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Fugiat, Non?'
-
+    title: 'Diş Beyazlatma',
+    desc: 'Modern yöntemlerle hızlı ve güvenli diş beyazlatma uygulamaları.'
   },
   {
     img: ImgThree,
-    title: 'Oral Hygiene Experts',
-    desc: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Fugiat, Non?'
-
+    title: 'Zirkonyum Kaplama',
+    desc: 'Doğal görünümlü, dayanıklı ve estetik diş kaplama çözümleri.'
   },
   {
     img: ImgFour,
-    title: 'Root Canal Specialist',
-    desc: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Fugiat, Non?'
-
+    title: 'İmplant Tedavisi',
+    desc: 'Eksik dişler için ömür boyu konfor ve estetik sağlayan implant uygulamaları.'
   },
   {
     img: ImgFive,
-    title: 'Live Dental Advisory',
-    desc: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Fugiat, Non?'
-
+    title: 'Ortodonti (Diş Teli)',
+    desc: 'Çocuk ve yetişkinler için şeffaf plak ve klasik diş teli tedavileri.'
   },
   {
     img: ImgSix,
-    title: 'Cavity Inspection',
-    desc: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Fugiat, Non?'
+    title: 'Çocuk Diş Hekimliği',
+    desc: 'Çocuklara özel koruyucu ve tedavi edici diş hekimliği hizmetleri.'
+  },
+  {
+    img: ImgOne,
+    title: 'Kanal Tedavisi',
+    desc: 'Ağrısız ve hızlı kanal tedavisi ile dişlerinizi kurtarın.'
+  },
+  {
+    img: ImgTwo,
+    title: 'Diş Eti Tedavisi',
+    desc: 'Diş eti hastalıklarının teşhis ve tedavisinde uzman yaklaşım.'
+  },
+  {
+    img: ImgThree,
+    title: 'Protez Diş Tedavileri',
+    desc: 'Sabit ve hareketli protezlerle eksik dişlerin fonksiyon ve estetiğini geri kazandırıyoruz.'
   }
 ]
 
