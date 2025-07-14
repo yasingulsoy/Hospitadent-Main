@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import React from "react";
 import Heading from "../Heading";
 import { processData } from "../../data/data";

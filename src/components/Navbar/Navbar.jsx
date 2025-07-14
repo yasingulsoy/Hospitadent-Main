@@ -129,10 +129,10 @@ const Navbar = () => {
           </div>
           {/* Sosyal medya ikonları büyük ekranda, küçükte gizli */}
           <div className="hidden sm:flex items-center gap-2">
-            <a href="#" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaFacebookF /></a>
-            <a href="#" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaXTwitter /></a>
-            <a href="#" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaInstagram /></a>
-            <a href="#" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaLinkedinIn /></a>
+            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaFacebookF /></button>
+            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaXTwitter /></button>
+            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaInstagram /></button>
+            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaLinkedinIn /></button>
           </div>
         </div>
       </div>
