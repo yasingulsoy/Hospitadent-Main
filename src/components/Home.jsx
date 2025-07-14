@@ -1,6 +1,32 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, createContext, useContext } from "react";
 import { useTranslation } from 'react-i18next';
-import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd } from 'react-icons/fa';
+import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaSun, FaMoon } from 'react-icons/fa';
+
+// Dark mode context
+const ThemeContext = createContext();
+export const useTheme = () => useContext(ThemeContext);
+
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'light';
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    document.body.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
 // Particle efekti için basit SVG animasyonu
 const ParticleBackground = () => {
@@ -11,13 +37,14 @@ const ParticleBackground = () => {
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
         </svg>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-blue-100/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-blue-100/20 dark:from-[#23272f]/40 dark:to-[#23272f]/10"></div>
     </div>
   );
 };
 
-// Hero başlığı için spotlight efektli component
+// Hero başlığı için spotlight efektli component (arka plan dahil)
 const SpotlightTitle = ({ children, delay = 0 }) => {
+  const { theme } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
   const [spot, setSpot] = useState({ x: 50, y: 50, active: false });
   const ref = useRef();
@@ -36,27 +63,36 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
   };
   const handleMouseLeave = () => setSpot({ ...spot, active: false });
 
+  // Efekt renkleri
+  const lightGradient = `radial-gradient(circle at ${spot.x}% ${spot.y}%, rgba(255,255,255,0.7) 0%, #2bb3ea33 40%, transparent 80%)`;
+  const darkGradient = `radial-gradient(circle at ${spot.x}% ${spot.y}%, rgba(255,255,120,0.5) 0%, #ffe06633 40%, transparent 80%)`;
+
   return (
-    <h1
+    <div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] mb-3 md:mb-5 leading-tight drop-shadow-2xl transition-all duration-1000 transform ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-      }`}
-      style={{ zIndex: 2 }}
+      className={`relative w-full flex items-center justify-center mb-3 md:mb-5`}
+      style={{ minHeight: '3.5em' }}
     >
-      <span
-        style={spot.active ? {
-          background: `radial-gradient(circle at ${spot.x}% ${spot.y}%, #fff 0%, #2bb3ea 30%, transparent 70%)`,
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          transition: 'background 0.2s',
-        } : {}}
+      {/* Spotlight arka plan */}
+      <div
+        className="absolute inset-0 pointer-events-none transition-all duration-200"
+        style={{
+          opacity: spot.active ? 1 : 0,
+          background: spot.active ? (theme === 'dark' ? darkGradient : lightGradient) : 'none',
+          zIndex: 1,
+        }}
+      />
+      <h1
+        className={`relative text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] leading-tight drop-shadow-2xl transition-all duration-1000 transform ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
+        style={{ zIndex: 2 }}
       >
         {children}
-      </span>
-    </h1>
+      </h1>
+    </div>
   );
 };
 
@@ -69,7 +105,7 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
   }, [delay]);
   return (
     <p
-      className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform ${
+      className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-200 mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
@@ -87,7 +123,7 @@ const AnimatedButton = ({ children, delay = 600, variant = "primary" }) => {
   }, [delay]);
   const buttonClasses = variant === "primary"
     ? "bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] hover:from-[#0f4f78] hover:to-[#2bb3ea] text-white"
-    : "bg-white hover:bg-gray-50 border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78]";
+    : "bg-white dark:bg-[#23272f] hover:bg-gray-50 border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78] dark:text-yellow-300 dark:border-yellow-300";
   return (
     <a
       href={variant === "primary" ? "#randevu" : "#contact"}
@@ -108,12 +144,12 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     return () => clearTimeout(timer);
   }, [delay]);
   return (
-    <div className={`flex flex-col items-center justify-center bg-white rounded-xl shadow-md p-3 md:p-4 min-w-[110px] min-h-[90px] transition-all duration-700 border border-blue-100/60 hover:shadow-lg hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    <div className={`flex flex-col items-center justify-center bg-white dark:bg-[#23272f] rounded-xl shadow-md p-3 md:p-4 min-w-[110px] min-h-[90px] transition-all duration-700 border border-blue-100/60 dark:border-gray-700 hover:shadow-lg hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       style={{ transitionDelay: `${delay}ms` }}>
-      <div className="mb-1 text-blue-400 text-2xl md:text-3xl">{icon}</div>
-      <div className="font-bold text-base md:text-lg text-[#0f4f78] mb-0.5">{number}</div>
-      <div className="text-xs md:text-sm text-blue-500 font-semibold leading-tight">{label}</div>
-      {sublabel && <div className="text-xs text-blue-400 mt-0.5">{sublabel}</div>}
+      <div className="mb-1 text-blue-400 dark:text-yellow-300 text-2xl md:text-3xl">{icon}</div>
+      <div className="font-bold text-base md:text-lg text-[#0f4f78] dark:text-yellow-200 mb-0.5">{number}</div>
+      <div className="text-xs md:text-sm text-blue-500 dark:text-yellow-300 font-semibold leading-tight">{label}</div>
+      {sublabel && <div className="text-xs text-blue-400 dark:text-yellow-400 mt-0.5">{sublabel}</div>}
     </div>
   );
 };
@@ -127,43 +163,59 @@ const bizData = [
   { number: '+250', label: 'Dentists', icon: <FaUserMd /> },
 ];
 
+const ThemeToggle = () => {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <button
+      onClick={toggleTheme}
+      className="fixed top-4 right-4 z-50 bg-white dark:bg-[#23272f] border border-blue-100 dark:border-gray-700 rounded-full p-2 shadow-md hover:scale-110 transition-all"
+      title={theme === 'dark' ? 'Açık moda geç' : 'Koyu moda geç'}
+    >
+      {theme === 'dark' ? <FaSun className="text-yellow-300 text-xl" /> : <FaMoon className="text-blue-500 text-xl" />}
+    </button>
+  );
+};
+
 const Hero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 md:px-6 lg:px-12 py-6 md:py-10 lg:py-0 overflow-hidden">
-      {/* Particle background */}
-      <ParticleBackground />
-      {/* Ana içerik - ortalanmış */}
-      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center">
-        <SpotlightTitle delay={200}>
-          {t('home.title')}
-        </SpotlightTitle>
-        <AnimatedSubtitle delay={400}>
-          {t('home.subtitle')}<br className="hidden sm:block"/>{t('home.desc')}
-        </AnimatedSubtitle>
-        {/* Butonlar */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-6 md:mb-8">
-          <AnimatedButton delay={600} variant="primary">
-            {t('home.button')}
-          </AnimatedButton>
-          <AnimatedButton delay={800} variant="secondary">
-            İletişim
-          </AnimatedButton>
-        </div>
-        {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
-        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 mt-1 md:mt-4 mb-6 md:mb-10">
-          {bizData.map((item, i) => (
-            <BizMiniCard key={i} {...item} delay={i * 120} />
-          ))}
-        </div>
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-[#2bb3ea] rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-[#2bb3ea] rounded-full mt-2 animate-pulse"></div>
+    <ThemeProvider>
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] dark:from-[#181c23] dark:via-[#23272f] dark:to-[#23272f] px-2 md:px-6 lg:px-12 py-6 md:py-10 lg:py-0 overflow-hidden">
+        <ThemeToggle />
+        {/* Particle background */}
+        <ParticleBackground />
+        {/* Ana içerik - ortalanmış */}
+        <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center">
+          <SpotlightTitle delay={200}>
+            {t('home.title')}
+          </SpotlightTitle>
+          <AnimatedSubtitle delay={400}>
+            {t('home.subtitle')}<br className="hidden sm:block"/>{t('home.desc')}
+          </AnimatedSubtitle>
+          {/* Butonlar */}
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-6 md:mb-8">
+            <AnimatedButton delay={600} variant="primary">
+              {t('home.button')}
+            </AnimatedButton>
+            <AnimatedButton delay={800} variant="secondary">
+              İletişim
+            </AnimatedButton>
+          </div>
+          {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
+          <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 mt-1 md:mt-4 mb-6 md:mb-10">
+            {bizData.map((item, i) => (
+              <BizMiniCard key={i} {...item} delay={i * 120} />
+            ))}
+          </div>
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-[#2bb3ea] dark:border-yellow-300 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-[#2bb3ea] dark:bg-yellow-300 rounded-full mt-2 animate-pulse"></div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ThemeProvider>
   );
 };
 
