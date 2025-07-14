@@ -22,7 +22,6 @@
     "react-scroll": "^1.8.7",
     "swiper": "^8.2.3",
     "three": "^0.152.2",
-    "three-mesh-bvh": "^0.5.24",
     "web-vitals": "^2.1.4",
     "zustand": "^4.4.7"
   },
