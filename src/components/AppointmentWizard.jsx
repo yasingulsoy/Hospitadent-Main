@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const branchGroups = [
   { city: 'İstanbul', branches: ['Mecidiyeköy', 'Bağcılar', 'Bakırköy', 'Fatih', 'Çamlıca', 'Pendik', 'Şerifali', 'Cevizlibağ', 'Ataşehir', 'Göktürk'] },
@@ -55,6 +55,73 @@ const doctors = [
     rating: 4.9,
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face'
   }
+];
+
+// Saat seçici için örnek veri
+const days = [
+  { date: '14 Temmuz', day: 'Pts', slots: [
+    { time: '09:00', status: 'full' },
+    { time: '09:30', status: 'full' },
+    { time: '10:00', status: 'full' },
+    { time: '10:30', status: 'full' },
+    { time: '11:00', status: 'full' },
+    { time: '11:30', status: 'full' },
+    { time: '12:00', status: 'full' },
+    { time: '12:30', status: 'full' },
+    { time: '13:00', status: 'full' },
+    { time: '13:30', status: 'full' },
+  ] },
+  { date: '15 Temmuz', day: 'Sal', slots: [
+    { time: '09:00', status: 'available' },
+    { time: '09:30', status: 'available' },
+    { time: '10:00', status: 'available' },
+    { time: '10:30', status: 'available' },
+    { time: '11:00', status: 'available' },
+    { time: '11:30', status: 'available' },
+    { time: '12:00', status: 'available' },
+    { time: '12:30', status: 'available' },
+    { time: '13:00', status: 'available' },
+    { time: '13:30', status: 'available' },
+  ] },
+  { date: '16 Temmuz', day: 'Çar', slots: [
+    { time: 'Kapalı', status: 'closed' },
+  ] },
+  { date: '17 Temmuz', day: 'Per', slots: [
+    { time: '09:00', status: 'full' },
+    { time: '09:30', status: 'full' },
+    { time: '10:00', status: 'full' },
+    { time: '10:30', status: 'available' },
+    { time: '11:00', status: 'available' },
+    { time: '11:30', status: 'available' },
+    { time: '12:00', status: 'available' },
+    { time: '12:30', status: 'available' },
+    { time: '13:00', status: 'available' },
+    { time: '13:30', status: 'available' },
+  ] },
+  { date: '18 Temmuz', day: 'Cum', slots: [
+    { time: '09:00', status: 'available' },
+    { time: '09:30', status: 'available' },
+    { time: '10:00', status: 'available' },
+    { time: '10:30', status: 'available' },
+    { time: '11:00', status: 'available' },
+    { time: '11:30', status: 'available' },
+    { time: '12:00', status: 'available' },
+    { time: '12:30', status: 'available' },
+    { time: '13:00', status: 'available' },
+    { time: '13:30', status: 'available' },
+  ] },
+  { date: '19 Temmuz', day: 'Cts', slots: [
+    { time: '09:00', status: 'available' },
+    { time: '09:30', status: 'available' },
+    { time: '10:00', status: 'available' },
+    { time: '10:30', status: 'available' },
+    { time: '11:00', status: 'full' },
+    { time: '11:30', status: 'available' },
+    { time: '12:00', status: 'available' },
+    { time: '12:30', status: 'available' },
+    { time: '13:00', status: 'available' },
+    { time: '13:30', status: 'full' },
+  ] },
 ];
 
 const NAVBAR_COLOR = '#0f4f78';
@@ -224,12 +291,97 @@ const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
   );
 };
 
+// Saat seçici component
+const TimePicker = ({ days, selectedDayIdx, setSelectedDayIdx, selectedSlot, setSelectedSlot }) => {
+  return (
+    <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl min-w-[340px]">
+      <div className="flex items-end justify-between mb-6">
+        {days.map((day, idx) => (
+          <button
+            key={idx}
+            onClick={() => setSelectedDayIdx(idx)}
+            className={`flex flex-col items-center px-2 py-1 rounded-xl transition-all duration-200 ${selectedDayIdx === idx ? 'bg-gradient-to-t from-[#2bb3ea] to-[#0f4f78] text-white scale-110 shadow-lg' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+          >
+            <span className="text-xs font-bold mb-1">{day.date}</span>
+            <span className="text-xs font-medium">{day.day}</span>
+          </button>
+        ))}
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        {days[selectedDayIdx].slots.map((slot, idx) => (
+          <button
+            key={idx}
+            disabled={slot.status !== 'available'}
+            onClick={() => setSelectedSlot(slot.time)}
+            className={`py-2 px-4 rounded-xl text-sm font-bold border transition-all duration-200
+              ${slot.status === 'available' && selectedSlot === slot.time ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] scale-105 shadow-lg' : ''}
+              ${slot.status === 'available' && selectedSlot !== slot.time ? 'bg-white text-[#0f4f78] border-[#2bb3ea] hover:bg-[#e6f7fd]' : ''}
+              ${slot.status === 'full' ? 'bg-gray-200 text-gray-400 border-gray-300 line-through cursor-not-allowed' : ''}
+              ${slot.status === 'closed' ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed' : ''}
+            `}
+          >
+            {slot.status === 'closed' ? 'Kapalı' : slot.time + (slot.status === 'full' ? ' (Dolu)' : '')}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// 5. Adım: İletişim Formu
+const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting }) => {
+  return (
+    <form className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg mx-auto flex flex-col gap-6" onSubmit={e => { e.preventDefault(); onSubmit(); }}>
+      <div>
+        <label className="block text-lg font-bold mb-2 text-gray-700">Ad Soyad</label>
+        <input
+          type="text"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          required
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none text-lg transition-all"
+          placeholder="Adınızı ve soyadınızı girin"
+        />
+      </div>
+      <div>
+        <label className="block text-lg font-bold mb-2 text-gray-700">Telefon Numarası</label>
+        <input
+          type="tel"
+          value={phone}
+          onChange={e => setPhone(e.target.value)}
+          required
+          pattern="^05\d{9}$"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none text-lg transition-all"
+          placeholder="05XXXXXXXXX"
+        />
+        <span className="text-xs text-gray-400">Başında 0 olacak şekilde, örn: 05XXXXXXXXX</span>
+      </div>
+      <div className="bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-4 rounded-xl text-base flex items-center gap-2">
+        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+        Randevu talebiniz alınacak, en kısa sürede aranacaksınız.
+      </div>
+      <button
+        type="submit"
+        disabled={submitting || !name || !/^05\d{9}$/.test(phone)}
+        className="w-full bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {submitting ? 'Gönderiliyor...' : 'Randevuyu Tamamla'}
+      </button>
+    </form>
+  );
+};
+
 const AppointmentWizard = () => {
   const [step, setStep] = useState(1);
   const [selectedCityIdx, setSelectedCityIdx] = useState(0);
   const [selectedBranchIdx, setSelectedBranchIdx] = useState(0);
   const [selectedDoctorIdx, setSelectedDoctorIdx] = useState(0);
+  const [selectedDayIdx, setSelectedDayIdx] = useState(1);
+  const [selectedSlot, setSelectedSlot] = useState(null);
   const [animate, setAnimate] = useState(false);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   // Şehirler listesi
   const cities = branchGroups.map(g => g.city);
@@ -247,9 +399,16 @@ const AppointmentWizard = () => {
     }, 250);
   };
 
+  // Saat seçildiğinde otomatik geçiş
+  useEffect(() => {
+    if (step === 4 && selectedSlot) {
+      setTimeout(() => setStep(5), 400);
+    }
+  }, [step, selectedSlot]);
+
   return (
     <section className="py-20 bg-gray-100">
-      <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 transition-all duration-500">
+      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl p-8 transition-all duration-500 flex flex-col">
         <h2 className="text-3xl font-extrabold text-center mb-8 tracking-tight" style={{color: NAVBAR_COLOR, letterSpacing: '0.01em'}}>Online Randevu</h2>
         {/* Adım göstergesi */}
         <div className="flex items-center justify-center gap-2 mb-10">
@@ -332,6 +491,45 @@ const AppointmentWizard = () => {
                 Devam Et
               </button>
             </div>
+          </div>
+        )}
+        {/* 4. Adım: Tarih ve Saat seçimi */}
+        {step === 4 && (
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 transition-all duration-500">
+            {/* Sol: Doktor info dairesi */}
+            <DoctorSelector
+              doctors={doctors}
+              selectedIdx={selectedDoctorIdx}
+              onSelect={setSelectedDoctorIdx}
+              branchName={selectedBranch}
+            />
+            {/* Sağ: Takvim ve saat seçici */}
+            <TimePicker
+              days={days}
+              selectedDayIdx={selectedDayIdx}
+              setSelectedDayIdx={setSelectedDayIdx}
+              selectedSlot={selectedSlot}
+              setSelectedSlot={setSelectedSlot}
+            />
+          </div>
+        )}
+        {/* 5. Adım: İletişim ve onay */}
+        {step === 5 && (
+          <div className="flex flex-col items-center justify-center min-h-[400px]">
+            <ContactForm
+              name={name}
+              setName={setName}
+              phone={phone}
+              setPhone={setPhone}
+              submitting={submitting}
+              onSubmit={() => {
+                setSubmitting(true);
+                setTimeout(() => {
+                  setSubmitting(false);
+                  alert('Randevu talebiniz başarıyla alındı!');
+                }, 1500);
+              }}
+            />
           </div>
         )}
         {/* Diğer adımlar buraya eklenecek */}
