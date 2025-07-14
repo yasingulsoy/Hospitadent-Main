@@ -125,13 +125,13 @@ const ContactFabButton = ({ delay = 800 }) => {
       {/* Ana buton */}
       <button
         type="button"
-        onClick={() => setOpen(o => !o)}
-        className={`group bg-white border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78] font-bold shadow-xl hover:shadow-2xl transition-all duration-500 flex items-center justify-center text-base md:text-lg outline-none focus:ring-2 focus:ring-blue-300
-          ${open ? 'rounded-full w-14 h-14 px-0' : 'rounded-full md:rounded-full px-7 py-3 md:px-7 md:py-3 w-auto h-auto'}
+        className={`group font-bold shadow-xl hover:shadow-2xl transition-all duration-500 flex items-center justify-center text-base md:text-lg outline-none focus:ring-2 focus:ring-blue-300 px-7 py-3 md:px-7 md:py-3 w-auto h-auto
+          ${open ? 'rounded-full w-14 h-14 px-0 bg-white text-[#0f4f78] border-2 border-[#2bb3ea]' : 'bg-white hover:bg-gray-50 border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78] rounded-full'}
         `}
-        style={{zIndex: 20, minWidth: open ? 56 : 120, minHeight: open ? 56 : 48, padding: open ? 0 : undefined, transition: 'all 0.4s cubic-bezier(.4,2,.6,1)'}}
+        style={{zIndex: 10, minWidth: open ? 56 : 120, minHeight: open ? 56 : 48, padding: open ? 0 : undefined, transition: 'all 0.4s cubic-bezier(.4,2,.6,1)'}}
+        onClick={() => setOpen(o => !o)}
       >
-        <span className={`transition-all duration-300 absolute ${open ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>İletişim</span>
+        <span className={`transition-all duration-300 ${open ? 'opacity-0 scale-75 absolute' : 'opacity-100 scale-100'}`}>İletişim</span>
         {open && (
           <img src={ico} alt="İletişim" className="w-7 h-7 object-contain transition-all duration-300" style={{zIndex: 21}} />
         )}
@@ -141,8 +141,7 @@ const ContactFabButton = ({ delay = 800 }) => {
         href="https://api.whatsapp.com/send?phone=905531029922"
         target="_blank"
         rel="noopener noreferrer"
-        className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500
-          ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-4' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+        className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-4' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
         style={{transitionDelay: open ? '80ms' : '0ms', zIndex: 19, transform: `translateY(-50%) ${open ? 'translateX(24px)' : 'translateX(0)'}`}}
         title="WhatsApp ile iletişim"
       >
@@ -150,8 +149,7 @@ const ContactFabButton = ({ delay = 800 }) => {
       </a>
       <a
         href="mailto:info@hospitadent.com"
-        className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500
-          ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-20' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+        className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-20' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
         style={{transitionDelay: open ? '160ms' : '0ms', zIndex: 18, transform: `translateY(-50%) ${open ? 'translateX(72px)' : 'translateX(0)'}`}}
         title="Mail ile iletişim"
       >
@@ -159,8 +157,7 @@ const ContactFabButton = ({ delay = 800 }) => {
       </a>
       <a
         href="tel:4449922"
-        className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500
-          ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+        className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
         style={{transitionDelay: open ? '240ms' : '0ms', zIndex: 17, transform: `translateY(-50%) ${open ? 'translateX(120px)' : 'translateX(0)'}`}}
         title="Telefon ile iletişim"
       >
@@ -275,12 +272,14 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
         <button
           type="button"
           onClick={() => setOpen(o => !o)}
-          className={`bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 flex items-center justify-center text-base md:text-lg outline-none focus:ring-2 focus:ring-blue-300 px-7 py-3 md:px-7 md:py-3 w-auto h-auto ${open ? 'rounded-full w-14 h-14 px-0' : ''}`}
+          className={`font-bold shadow-xl hover:shadow-2xl transition-all duration-500 flex items-center justify-center text-base md:text-lg outline-none focus:ring-2 focus:ring-blue-300 px-7 py-3 md:px-7 md:py-3 w-auto h-auto
+            ${open ? 'rounded-full w-14 h-14 px-0 bg-white text-[#0f4f78] border-2 border-[#2bb3ea]' : 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white rounded-full'}
+          `}
           style={{zIndex: 20, minWidth: open ? 56 : 120, minHeight: open ? 56 : 48, padding: open ? 0 : undefined, transition: 'all 0.4s cubic-bezier(.4,2,.6,1)'}}
         >
           <span className={`transition-all duration-300 ${open ? 'opacity-0 scale-75 absolute' : 'opacity-100 scale-100'}`}>{children}</span>
           {open && (
-            <FaGlobe className="w-7 h-7 object-contain transition-all duration-300" style={{zIndex: 21}} />
+            <img src={ico} alt="Randevu" className="w-7 h-7 object-contain transition-all duration-300" style={{zIndex: 21}} />
           )}
         </button>
         {/* Sola açılan butonlar */}
