@@ -163,9 +163,18 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   }, [nav]);
 
   return (
-    <div
-      className={`flex flex-col justify-start items-center md:hidden w-full fixed top-0 left-0 duration-500 h-screen bg-[rgba(0,0,0,.95)] z-50 ${nav ? "translate-x-0" : "-translate-x-full"}`}
-    >
+    <>
+      {/* Menü overlay'i: menü açıkken tüm ekranı kaplasın ve tıklanınca menüyü kapatsın */}
+      {nav && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-60 z-40 md:hidden"
+          onClick={handleNav}
+        />
+      )}
+      <div
+        className={`flex flex-col justify-start items-center md:hidden w-full fixed top-0 left-0 duration-500 h-screen bg-[rgba(0,0,0,.95)] z-50 ${nav ? "translate-x-0" : "-translate-x-full"}`}
+        style={{pointerEvents: nav ? 'auto' : 'none'}}
+      >
       {/* Kapatma butonu */}
       <button 
         onClick={handleNav} 
@@ -286,6 +295,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       </ul>
       </div>
     </div>
+    </>
   );
 };
 

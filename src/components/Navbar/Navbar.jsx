@@ -169,14 +169,14 @@ const Navbar = () => {
       {/* Ana Navbar */}
       <header className="sticky top-0 z-30 bg-white shadow-md w-full">
         <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-2 sm:px-4 py-2 gap-2">
-          {/* Sol: Logo */}
-          <div className="flex items-center flex-shrink-0 w-auto h-[clamp(2.2rem,5vw,3.5rem)]">
-            <a href="/" className="block select-none h-[clamp(2rem,4vw,3.2rem)]" style={{marginBottom: '0px'}}>
+          {/* Mobilde sadece hamburger menü ve logo */}
+          <div className="flex w-full items-center justify-between h-[clamp(2.2rem,5vw,3.5rem)] px-2 py-2 sm:flex-shrink-0">
+            <a href="/" className="block select-none h-[clamp(2rem,4vw,3.2rem)] mx-auto sm:mx-0" style={{marginBottom: '0px'}}>
               <img src={logo} alt="Logo" className="h-full w-auto mx-auto" />
             </a>
             {/* Mobilde hamburger */}
-            <button className="md:hidden flex items-center ml-2 text-blue text-2xl" onClick={handleNav} style={{marginLeft: '8px'}}>
-              <FaBars />
+            <button className="sm:hidden flex items-center ml-2 text-blue text-2xl" onClick={handleNav} style={{marginLeft: '8px'}}>
+              {nav ? <span className="text-3xl">&times;</span> : <FaBars />}
             </button>
           </div>
           {/* Orta: Menü + arama + typewriter */}
