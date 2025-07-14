@@ -21,7 +21,6 @@ const ParticleBackground = () => {
 const SpotlightTitle = ({ children, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [spot, setSpot] = useState({ x: 50, y: 50, active: false });
-  const [hovered, setHovered] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -36,21 +35,16 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
     const y = ((e.clientY - rect.top) / rect.height) * 100;
     setSpot({ x, y, active: true });
   };
-  const handleMouseLeave = () => { setSpot({ ...spot, active: false }); setHovered(false); };
-  const handleMouseEnter = () => setHovered(true);
+  const handleMouseLeave = () => setSpot({ ...spot, active: false });
 
   // Efekt renkleri
   const lightGradient = `radial-gradient(circle at ${spot.x}% ${spot.y}%, rgba(255,255,255,0.7) 0%, #2bb3ea33 40%, transparent 80%)`;
-
-  // Dalga animasyonu için harfleri span'lere böl
-  const chars = typeof children === 'string' ? children.split('') : [];
 
   return (
     <div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onMouseEnter={handleMouseEnter}
       className="relative w-full flex items-center justify-center mb-3 md:mb-5"
       style={{ minHeight: '3.5em' }}
     >
@@ -69,24 +63,7 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
         }`}
         style={{ zIndex: 2, lineHeight: 1.3, overflow: 'visible' }}
       >
-        {chars.length > 0
-          ? chars.map((char, i) => (
-              <span
-                key={i}
-                className="inline-block"
-                style={{
-                  transition: 'transform 0.35s cubic-bezier(.4,2,.6,1)',
-                  transform:
-                    hovered && char !== ' '
-                      ? `translateY(${Math.sin(i * 0.5 + Date.now() / 250) * 8}px)`
-                      : 'none',
-                  display: 'inline-block',
-                }}
-              >
-                {char}
-              </span>
-            ))
-          : children}
+        {children}
       </h1>
     </div>
   );
