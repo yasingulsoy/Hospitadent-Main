@@ -16,5 +16,71 @@
   },
   "footer": {
     "copyright": "All rights reserved."
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "With over 20 years of experience, we serve as one of Turkey's leading dental health organizations.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "We work to provide our patients with the highest quality dental health services and restore their smiles with modern technology and expert staff.",
+      "point1": "Modern Technology",
+      "point2": "Expert Staff",
+      "point3": "Patient Satisfaction"
+    },
+    "stats": {
+      "title": "Us in Numbers",
+      "years": "Years of Experience",
+      "patients": "Happy Patients",
+      "branches": "Branches",
+      "doctors": "Expert Doctors"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be Turkey's most reliable and preferred dental health organization, continuing to be a leader in the sector with international service quality standards."
+    },
+    "values": {
+      "quality": "Quality",
+      "quality.desc": "Providing the highest quality service",
+      "care": "Care",
+      "care.desc": "Approaching our patients with care",
+      "innovation": "Innovation",
+      "innovation.desc": "Continuous development and innovation"
+    },
+    "cta": {
+      "title": "We Are Here for Healthy Smiles",
+      "subtitle": "We are happy to serve you with our expert staff and modern technology.",
+      "button": "Book Appointment"
+    },
+    "history": {
+      "title": "Our History",
+      "text1": "Founded in 2007, Hospitadent serves as one of Turkey's leading dental health organizations.",
+      "text2": "Since our establishment, we have served thousands of patients with modern technology and expert staff.",
+      "text3": "With our patient-focused approach and quality service understanding, we maintain a leading position in the sector."
+    },
+    "technology": {
+      "title": "Our Technology",
+      "text1": "We follow the latest technological developments and offer our patients the best treatment options.",
+      "text2": "We use modern methods such as 3D digital scanning, CAD/CAM technology and laser treatments."
+    },
+    "team": {
+      "title": "Our Team",
+      "text1": "Our experienced and expert dentists continuously receive training and apply the most current treatment methods.",
+      "text2": "With our patient-focused approach and reliable service understanding, we continue to provide you with the best dental health service."
+    },
+    "facilities": {
+      "title": "Our Facilities",
+      "text1": "In our modern and hygienic clinics, we provide our patients with the most comfortable treatment environment.",
+      "text2": "We serve with sterilization standard equipment and safe treatment protocols."
+    },
+    "quality": {
+      "title": "Our Quality Policy",
+      "text1": "Providing service in accordance with international quality standards is our fundamental principle.",
+      "text2": "With our continuous improvement and patient satisfaction focused approach, we provide the highest quality dental health service."
+    },
+    "future": {
+      "title": "Our Future Vision",
+      "text1": "We will continue to offer our patients the most current treatment methods by closely following technological developments.",
+      "text2": "We are moving forward on the path of continuous development and innovation with our goal of becoming Turkey's and the world's leading dental health organization."
+    }
   }
 } 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
 const NavLinks = ({ item, handleNav, depth = 0 }) => {
@@ -47,18 +48,34 @@ const NavLinks = ({ item, handleNav, depth = 0 }) => {
   }
 
   // Normal menü (alt menüsü olmayanlar)
+  // Eğer path boşsa veya # ile başlıyorsa scroll link, değilse router link
+  if (!item.path || item.path === '' || item.path.startsWith('#')) {
+    return (
+      <li className="cursor-pointer text-blue text-lg font-bold tracking-wide hover:text-primary transition-colors duration-200">
+        <ScrollLink
+          to={item.path || 'home'}
+          offset={-40}
+          smooth={true}
+          duration={500}
+          onClick={handleNav}
+          className="block px-4 py-3"
+        >
+          {t(item.name)}
+        </ScrollLink>
+      </li>
+    );
+  }
+
+  // Sayfa yönlendirmesi için RouterLink kullan
   return (
     <li className="cursor-pointer text-blue text-lg font-bold tracking-wide hover:text-primary transition-colors duration-200">
-      <Link
+      <RouterLink
         to={item.path}
-        offset={-40}
-        smooth={true}
-        duration={500}
         onClick={handleNav}
         className="block px-4 py-3"
       >
         {t(item.name)}
-      </Link>
+      </RouterLink>
     </li>
   );
 };

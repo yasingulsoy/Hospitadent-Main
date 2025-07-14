@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import CountryFlag from "react-country-flag";
+import { Link as RouterLink } from "react-router-dom";
 
 const MobileNavLinks = ({ item, handleNav }) => {
   const [open, setOpen] = useState(false);
@@ -42,15 +43,31 @@ const MobileNavLinks = ({ item, handleNav }) => {
     );
   }
 
+  // Eğer path boşsa veya # ile başlıyorsa scroll link, değilse router link
+  if (!item.path || item.path === '' || item.path.startsWith('#')) {
+    return (
+      <li className="w-full">
+        <a
+          href={`#${item.path || 'home'}`}
+          className="block px-4 py-2 text-white hover:text-blue"
+          onClick={handleNav}
+        >
+          {item.name}
+        </a>
+      </li>
+    );
+  }
+
+  // Sayfa yönlendirmesi için RouterLink kullan
   return (
     <li className="w-full">
-      <a
-        href={`#${item.path}`}
+      <RouterLink
+        to={item.path}
         className="block px-4 py-2 text-white hover:text-blue"
         onClick={handleNav}
       >
         {item.name}
-      </a>
+      </RouterLink>
     </li>
   );
 };

@@ -16,5 +16,71 @@
   },
   "footer": {
     "copyright": "Tüm hakları saklıdır."
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "20 yılı aşkın deneyimimizle, Türkiye'nin önde gelen diş sağlığı kuruluşlarından biri olarak hizmet veriyoruz.",
+    "mission": {
+      "title": "Misyonumuz",
+      "text": "Hastalarımıza en yüksek kalitede diş sağlığı hizmeti sunmak, modern teknoloji ve uzman kadromuzla gülümsemelerini yeniden kazandırmak için çalışıyoruz.",
+      "point1": "Modern Teknoloji",
+      "point2": "Uzman Kadro",
+      "point3": "Hasta Memnuniyeti"
+    },
+    "stats": {
+      "title": "Rakamlarla Biz",
+      "years": "Yıllık Deneyim",
+      "patients": "Mutlu Hasta",
+      "branches": "Şube",
+      "doctors": "Uzman Hekim"
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "text": "Türkiye'nin en güvenilir ve tercih edilen diş sağlığı kuruluşu olmak, uluslararası standartlarda hizmet kalitesi ile sektörde öncü olmaya devam etmek."
+    },
+    "values": {
+      "quality": "Kalite",
+      "quality.desc": "En yüksek kalitede hizmet sunmak",
+      "care": "Özen",
+      "care.desc": "Hastalarımıza özenle yaklaşmak",
+      "innovation": "İnovasyon",
+      "innovation.desc": "Sürekli gelişim ve yenilik"
+    },
+    "cta": {
+      "title": "Sağlıklı Gülüşler İçin Biz Buradayız",
+      "subtitle": "Uzman kadromuz ve modern teknolojimizle sizlere hizmet vermekten mutluluk duyuyoruz.",
+      "button": "Randevu Al"
+    },
+    "history": {
+      "title": "Tarihçemiz",
+      "text1": "2007 yılında kurulan Hospitadent, Türkiye'nin önde gelen diş sağlığı kuruluşlarından biri olarak hizmet vermektedir.",
+      "text2": "Kurulduğumuz günden bu yana, modern teknoloji ve uzman kadromuzla binlerce hastaya hizmet verdik.",
+      "text3": "Hasta memnuniyeti odaklı yaklaşımımız ve kaliteli hizmet anlayışımızla sektörde öncü konumda yer almaktayız."
+    },
+    "technology": {
+      "title": "Teknolojimiz",
+      "text1": "En son teknolojik gelişmeleri takip ederek, hastalarımıza en iyi tedavi seçeneklerini sunuyoruz.",
+      "text2": "3D dijital tarama, CAD/CAM teknolojisi ve lazer tedavileri gibi modern yöntemler kullanıyoruz."
+    },
+    "team": {
+      "title": "Ekibimiz",
+      "text1": "Deneyimli ve uzman diş hekimlerimiz, sürekli eğitim alarak en güncel tedavi yöntemlerini uygulamaktadır.",
+      "text2": "Hasta odaklı yaklaşımımız ve güvenilir hizmet anlayışımızla, sizlere en iyi diş sağlığı hizmetini sunmaya devam ediyoruz."
+    },
+    "facilities": {
+      "title": "Tesislerimiz",
+      "text1": "Modern ve hijyenik kliniklerimizde, hastalarımıza en konforlu tedavi ortamını sunuyoruz.",
+      "text2": "Sterilizasyon standartlarına uygun ekipmanlarımız ve güvenli tedavi protokollerimizle hizmet veriyoruz."
+    },
+    "quality": {
+      "title": "Kalite Politikamız",
+      "text1": "Uluslararası kalite standartlarına uygun hizmet sunmak temel prensibimizdir.",
+      "text2": "Sürekli iyileştirme ve hasta memnuniyeti odaklı yaklaşımımızla, en yüksek kalitede diş sağlığı hizmeti sunuyoruz."
+    },
+    "future": {
+      "title": "Gelecek Vizyonumuz",
+      "text1": "Teknolojik gelişmeleri yakından takip ederek, hastalarımıza en güncel tedavi yöntemlerini sunmaya devam edeceğiz.",
+      "text2": "Türkiye'nin ve dünyanın önde gelen diş sağlığı kuruluşu olma hedefimizle, sürekli gelişim ve yenilikçilik yolunda ilerliyoruz."
+    }
   }
 } 
