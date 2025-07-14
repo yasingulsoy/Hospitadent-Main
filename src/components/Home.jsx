@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from 'react-i18next';
-import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone, FaRobot } from 'react-icons/fa';
 import ico from "../assets/ico.png";
 
 // Particle efekti için basit SVG animasyonu
@@ -246,6 +246,74 @@ const bizData = [
   { number: '+250', label: 'Dentists', icon: <FaUserMd /> },
 ];
 
+// Kolaytik açma fonksiyonu (örnek)
+const openKolaytik = () => {
+  if (window.KolaytikChatbot) {
+    window.KolaytikChatbot.open();
+  } else {
+    alert('Kolaytik chatbot yüklenemedi!');
+  }
+};
+
+// RandevuFabButton: Masaüstünde tıklanınca sola doğru 3 yuvarlak buton açılır, mobilde klasik görünür
+const RandevuFabButton = ({ children, delay = 600 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+  // Mobilde klasik AnimatedButton, masaüstünde fab
+  return (
+    <>
+      {/* Mobilde klasik buton */}
+      <span className="sm:hidden">
+        <AnimatedButton delay={delay} variant="primary">{children}</AnimatedButton>
+      </span>
+      {/* Masaüstünde fab buton */}
+      <span className="hidden sm:inline-block relative">
+        <button
+          type="button"
+          onClick={() => setOpen(o => !o)}
+          className={`bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 flex items-center justify-center text-base md:text-lg outline-none focus:ring-2 focus:ring-blue-300 px-7 py-3 md:px-7 md:py-3 w-auto h-auto ${open ? 'rounded-full w-14 h-14 px-0' : ''}`}
+          style={{zIndex: 20, minWidth: open ? 56 : 120, minHeight: open ? 56 : 48, padding: open ? 0 : undefined, transition: 'all 0.4s cubic-bezier(.4,2,.6,1)'}}
+        >
+          <span className={`transition-all duration-300 ${open ? 'opacity-0 scale-75 absolute' : 'opacity-100 scale-100'}`}>{children}</span>
+          {open && (
+            <FaGlobe className="w-7 h-7 object-contain transition-all duration-300" style={{zIndex: 21}} />
+          )}
+        </button>
+        {/* Sola açılan butonlar */}
+        <a
+          href="tel:4449922"
+          className={`absolute top-1/2 right-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-4' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+          style={{transform: `translateY(-50%) ${open ? 'translateX(-56px)' : 'translateX(0)'}`, transitionDelay: open ? '80ms' : '0ms', zIndex: 19}}
+          title="Telefonla Randevu"
+        >
+          <FaPhone className="w-5 h-5" />
+        </a>
+        <button
+          type="button"
+          onClick={openKolaytik}
+          className={`absolute top-1/2 right-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-20' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+          style={{transform: `translateY(-50%) ${open ? 'translateX(-104px)' : 'translateX(0)'}`, transitionDelay: open ? '160ms' : '0ms', zIndex: 18}}
+          title="Yapay Zeka Asistanı"
+        >
+          <FaRobot className="w-6 h-6" />
+        </button>
+        <a
+          href="/online-randevu"
+          className={`absolute top-1/2 right-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+          style={{transform: `translateY(-50%) ${open ? 'translateX(-152px)' : 'translateX(0)'}`, transitionDelay: open ? '240ms' : '0ms', zIndex: 17}}
+          title="Online Randevu"
+        >
+          <FaGlobe className="w-5 h-5" />
+        </a>
+      </span>
+    </>
+  );
+};
+
 const Hero = () => {
   const { t } = useTranslation();
   return (
@@ -262,9 +330,7 @@ const Hero = () => {
         </AnimatedSubtitle>
         {/* Butonlar */}
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-5 sm:mb-6 md:mb-8 items-center justify-center">
-          <AnimatedButton delay={600} variant="primary">
-            {t('home.button')}
-          </AnimatedButton>
+          <RandevuFabButton delay={600}>{t('home.button')}</RandevuFabButton>
           <ContactFabButton delay={800} />
         </div>
         {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
