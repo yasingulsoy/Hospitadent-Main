@@ -85,7 +85,7 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
         }}
       />
       <h1
-        className={`relative text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] leading-tight drop-shadow-2xl transition-all duration-1000 transform ${
+        className={`relative text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] dark:from-yellow-200 dark:via-yellow-400 dark:to-yellow-200 leading-tight drop-shadow-2xl transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
         style={{ zIndex: 2 }}
@@ -105,7 +105,7 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
   }, [delay]);
   return (
     <p
-      className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-200 mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform ${
+      className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 dark:text-white mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
@@ -122,7 +122,7 @@ const AnimatedButton = ({ children, delay = 600, variant = "primary" }) => {
     return () => clearTimeout(timer);
   }, [delay]);
   const buttonClasses = variant === "primary"
-    ? "bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] hover:from-[#0f4f78] hover:to-[#2bb3ea] text-white"
+    ? "bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] hover:from-[#0f4f78] hover:to-[#2bb3ea] text-white dark:text-yellow-200"
     : "bg-white dark:bg-[#23272f] hover:bg-gray-50 border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78] dark:text-yellow-300 dark:border-yellow-300";
   return (
     <a
@@ -147,8 +147,8 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     <div className={`flex flex-col items-center justify-center bg-white dark:bg-[#23272f] rounded-xl shadow-md p-3 md:p-4 min-w-[110px] min-h-[90px] transition-all duration-700 border border-blue-100/60 dark:border-gray-700 hover:shadow-lg hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       style={{ transitionDelay: `${delay}ms` }}>
       <div className="mb-1 text-blue-400 dark:text-yellow-300 text-2xl md:text-3xl">{icon}</div>
-      <div className="font-bold text-base md:text-lg text-[#0f4f78] dark:text-yellow-200 mb-0.5">{number}</div>
-      <div className="text-xs md:text-sm text-blue-500 dark:text-yellow-300 font-semibold leading-tight">{label}</div>
+      <div className="font-bold text-base md:text-lg text-[#0f4f78] dark:text-yellow-100 mb-0.5">{number}</div>
+      <div className="text-xs md:text-sm text-blue-500 dark:text-yellow-200 font-semibold leading-tight">{label}</div>
       {sublabel && <div className="text-xs text-blue-400 dark:text-yellow-400 mt-0.5">{sublabel}</div>}
     </div>
   );
