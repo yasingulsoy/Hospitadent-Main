@@ -176,11 +176,11 @@ const Navbar = () => {
             </a>
             {/* Mobilde hamburger */}
             <button className="sm:hidden flex items-center ml-2 text-blue text-2xl" onClick={handleNav} style={{marginLeft: '8px'}}>
-              {nav ? <span className="text-3xl">&times;</span> : <FaBars />}
+              {nav ? <span className="text-4xl">&times;</span> : <FaBars />}
             </button>
           </div>
-          {/* Orta: Menü + arama + typewriter */}
-          <div className="flex-1 flex flex-col items-center justify-center">
+          {/* Masaüstünde klasik navbar */}
+          <div className="hidden sm:flex flex-1 flex-col sm:flex-row items-center justify-between w-full">
             <ul className="flex items-center gap-0.5 text-[clamp(0.85rem,1.5vw,1.1rem)] mb-1">
               {navLinksData.map((item, index) => (
                 <li key={index} className="text-blue font-bold tracking-wide hover:text-primary transition-colors duration-200 cursor-pointer whitespace-nowrap text-[clamp(0.9rem,2vw,1.3rem)]">
