@@ -58,10 +58,10 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
         }}
       />
       <h1
-        className={`relative text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
+        className={`relative text-lg sm:text-2xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
-        style={{ zIndex: 2, lineHeight: 1.3, overflow: 'visible' }}
+        style={{ zIndex: 2, lineHeight: 1.25, overflow: 'visible' }}
       >
         {children}
       </h1>
@@ -78,7 +78,7 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
   }, [delay]);
   return (
     <p
-      className={`text-sm sm:text-base md:text-lg lg:text-xl mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform text-gray-700 ${
+      className={`text-xs sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform text-gray-700 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
@@ -249,7 +249,7 @@ const bizData = [
 const Hero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 md:px-6 lg:px-12 pt-10 md:pt-20 lg:pt-32 pb-8 md:pb-16 lg:pb-24 min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] overflow-hidden">
+    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-8 sm:pt-12 md:pt-20 lg:pt-32 pb-6 sm:pb-10 md:pb-16 lg:pb-24 min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] overflow-hidden">
       {/* Particle background */}
       <ParticleBackground />
       {/* Ana içerik - ortalanmış */}
@@ -261,14 +261,14 @@ const Hero = () => {
           {t('home.subtitle')}<br className="hidden sm:block"/>{t('home.desc')}
         </AnimatedSubtitle>
         {/* Butonlar */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-6 md:mb-8">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-5 sm:mb-6 md:mb-8 items-center justify-center">
           <AnimatedButton delay={600} variant="primary">
             {t('home.button')}
           </AnimatedButton>
           <ContactFabButton delay={800} />
         </div>
         {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
-        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 mt-1 md:mt-4 mb-6 md:mb-10">
+        <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-1 md:mt-4 mb-6 md:mb-10">
           {bizData.map((item, i) => (
             <BizMiniCard key={i} {...item} delay={i * 120} />
           ))}
