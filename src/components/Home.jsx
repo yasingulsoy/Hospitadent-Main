@@ -5,100 +5,150 @@ import { OrbitControls } from "@react-three/drei";
 const ToothModel = () => {
   return (
     <group>
-      {/* Ana diş modeli */}
+      {/* Gerçekçi Diş Modeli */}
       <group position={[0, 0, 0]}>
-        {/* Diş taç kısmı (crown) - ana gövde */}
-        <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
-          <cylinderGeometry args={[0.8, 0.9, 1.5, 32]} />
-          <meshStandardMaterial color="#f8f9fa" roughness={0.2} metalness={0.1} />
+        {/* Diş taç kısmı - daha anatomik */}
+        <mesh castShadow receiveShadow position={[0, 0.3, 0]}>
+          <cylinderGeometry args={[0.6, 0.7, 1.2, 32]} />
+          <meshStandardMaterial color="#f8f9fa" roughness={0.1} metalness={0.2} />
         </mesh>
         
-        {/* Diş kökü (root) */}
-        <mesh castShadow receiveShadow position={[0, -0.8, 0]}>
-          <cylinderGeometry args={[0.4, 0.3, 1.2, 16]} />
-          <meshStandardMaterial color="#e9ecef" roughness={0.3} metalness={0.05} />
+        {/* Diş minesinin üst kısmı - daha yuvarlak */}
+        <mesh castShadow receiveShadow position={[0, 0.9, 0]}>
+          <sphereGeometry args={[0.55, 24, 24]} />
+          <meshStandardMaterial color="#ffffff" roughness={0.05} metalness={0.4} />
         </mesh>
         
-        {/* Diş eti (gum) */}
-        <mesh castShadow receiveShadow position={[0, -0.2, 0]}>
-          <torusGeometry args={[0.6, 0.15, 16, 32]} />
-          <meshStandardMaterial color="#ff6b6b" roughness={0.8} metalness={0} />
+        {/* Diş yüzeyindeki çukurlar (fissures) */}
+        <mesh position={[0, 0.7, 0.5]}>
+          <boxGeometry args={[0.15, 0.1, 0.02]} />
+          <meshStandardMaterial color="#e9ecef" roughness={0.6} />
+        </mesh>
+        <mesh position={[0.2, 0.7, 0.4]}>
+          <boxGeometry args={[0.1, 0.08, 0.02]} />
+          <meshStandardMaterial color="#e9ecef" roughness={0.6} />
+        </mesh>
+        <mesh position={[-0.2, 0.7, 0.4]}>
+          <boxGeometry args={[0.1, 0.08, 0.02]} />
+          <meshStandardMaterial color="#e9ecef" roughness={0.6} />
         </mesh>
         
-        {/* Diş minesinin parlak kısmı */}
-        <mesh castShadow receiveShadow position={[0, 0.8, 0]}>
-          <sphereGeometry args={[0.7, 16, 16]} />
-          <meshStandardMaterial color="#ffffff" roughness={0.1} metalness={0.3} />
+        {/* Diş kökü - daha ince ve uzun */}
+        <mesh castShadow receiveShadow position={[0, -0.6, 0]}>
+          <cylinderGeometry args={[0.3, 0.2, 1.4, 16]} />
+          <meshStandardMaterial color="#e9ecef" roughness={0.4} metalness={0.1} />
         </mesh>
         
-        {/* Diş yüzeyindeki detaylar */}
-        <mesh position={[0, 0.3, 0.7]}>
-          <boxGeometry args={[0.1, 0.1, 0.05]} />
-          <meshStandardMaterial color="#e9ecef" roughness={0.5} />
+        {/* Diş eti - daha gerçekçi pembe */}
+        <mesh castShadow receiveShadow position={[0, -0.1, 0]}>
+          <torusGeometry args={[0.5, 0.12, 16, 32]} />
+          <meshStandardMaterial color="#ff8fa3" roughness={0.9} metalness={0} />
         </mesh>
         
-        {/* Işık efektleri için ek parlaklık */}
-        <mesh position={[0, 0.6, 0.5]}>
-          <sphereGeometry args={[0.3, 8, 8]} />
-          <meshStandardMaterial color="#ffffff" roughness={0.05} metalness={0.8} transparent opacity={0.3} />
+        {/* Diş eti detayları */}
+        <mesh position={[0, -0.05, 0.4]}>
+          <sphereGeometry args={[0.45, 16, 16]} />
+          <meshStandardMaterial color="#ff8fa3" roughness={0.9} metalness={0} />
         </mesh>
       </group>
 
-      {/* Diş hekimi figürü (basit) */}
-      <group position={[1.5, 0, 0]}>
-        {/* Baş */}
-        <mesh castShadow receiveShadow position={[0, 1.2, 0]}>
-          <sphereGeometry args={[0.3, 16, 16]} />
-          <meshStandardMaterial color="#ffdbac" roughness={0.8} />
+      {/* Gerçekçi Diş Hekimi */}
+      <group position={[1.8, 0, 0]}>
+        {/* Baş - daha detaylı */}
+        <mesh castShadow receiveShadow position={[0, 1.3, 0]}>
+          <sphereGeometry args={[0.25, 24, 24]} />
+          <meshStandardMaterial color="#ffdbac" roughness={0.7} />
         </mesh>
         
-        {/* Gövde */}
-        <mesh castShadow receiveShadow position={[0, 0.6, 0]}>
-          <cylinderGeometry args={[0.25, 0.3, 1.2, 16]} />
-          <meshStandardMaterial color="#2bb3ea" roughness={0.5} />
+        {/* Saç */}
+        <mesh castShadow receiveShadow position={[0, 1.45, 0]}>
+          <sphereGeometry args={[0.28, 16, 16]} />
+          <meshStandardMaterial color="#4a4a4a" roughness={0.9} />
         </mesh>
         
-        {/* Kollar */}
-        <mesh castShadow receiveShadow position={[-0.4, 0.7, 0]}>
-          <cylinderGeometry args={[0.08, 0.08, 0.6, 8]} />
-          <meshStandardMaterial color="#2bb3ea" roughness={0.5} />
+        {/* Yüz detayları */}
+        <mesh position={[0, 1.35, 0.2]}>
+          <sphereGeometry args={[0.02, 8, 8]} />
+          <meshStandardMaterial color="#333" roughness={0.5} />
         </mesh>
-        <mesh castShadow receiveShadow position={[0.4, 0.7, 0]}>
-          <cylinderGeometry args={[0.08, 0.08, 0.6, 8]} />
-          <meshStandardMaterial color="#2bb3ea" roughness={0.5} />
-        </mesh>
-        
-        {/* Bacaklar */}
-        <mesh castShadow receiveShadow position={[-0.15, -0.2, 0]}>
-          <cylinderGeometry args={[0.1, 0.1, 0.8, 8]} />
-          <meshStandardMaterial color="#2bb3ea" roughness={0.5} />
-        </mesh>
-        <mesh castShadow receiveShadow position={[0.15, -0.2, 0]}>
-          <cylinderGeometry args={[0.1, 0.1, 0.8, 8]} />
-          <meshStandardMaterial color="#2bb3ea" roughness={0.5} />
+        <mesh position={[0.08, 1.32, 0.18]}>
+          <sphereGeometry args={[0.02, 8, 8]} />
+          <meshStandardMaterial color="#333" roughness={0.5} />
         </mesh>
         
-        {/* Gözlük */}
-        <mesh position={[0, 1.3, 0.25]}>
-          <torusGeometry args={[0.12, 0.02, 8, 16]} />
+        {/* Gözlük çerçevesi */}
+        <mesh position={[0, 1.35, 0.22]}>
+          <torusGeometry args={[0.1, 0.015, 8, 16]} />
           <meshStandardMaterial color="#333" roughness={0.3} />
         </mesh>
-        <mesh position={[0, 1.3, 0.25]}>
-          <torusGeometry args={[0.12, 0.02, 8, 16]} />
+        <mesh position={[0.12, 1.35, 0.22]}>
+          <torusGeometry args={[0.1, 0.015, 8, 16]} />
           <meshStandardMaterial color="#333" roughness={0.3} />
+        </mesh>
+        
+        {/* Gözlük köprüsü */}
+        <mesh position={[0.06, 1.35, 0.22]}>
+          <boxGeometry args={[0.04, 0.01, 0.01]} />
+          <meshStandardMaterial color="#333" roughness={0.3} />
+        </mesh>
+        
+        {/* Gövde - beyaz önlük */}
+        <mesh castShadow receiveShadow position={[0, 0.7, 0]}>
+          <cylinderGeometry args={[0.2, 0.25, 1.2, 16]} />
+          <meshStandardMaterial color="#ffffff" roughness={0.3} />
+        </mesh>
+        
+        {/* Kollar - beyaz önlük */}
+        <mesh castShadow receiveShadow position={[-0.35, 0.8, 0]}>
+          <cylinderGeometry args={[0.06, 0.06, 0.5, 8]} />
+          <meshStandardMaterial color="#ffffff" roughness={0.3} />
+        </mesh>
+        <mesh castShadow receiveShadow position={[0.35, 0.8, 0]}>
+          <cylinderGeometry args={[0.06, 0.06, 0.5, 8]} />
+          <meshStandardMaterial color="#ffffff" roughness={0.3} />
+        </mesh>
+        
+        {/* Bacaklar - siyah pantolon */}
+        <mesh castShadow receiveShadow position={[-0.12, -0.1, 0]}>
+          <cylinderGeometry args={[0.08, 0.08, 0.8, 8]} />
+          <meshStandardMaterial color="#2c2c2c" roughness={0.8} />
+        </mesh>
+        <mesh castShadow receiveShadow position={[0.12, -0.1, 0]}>
+          <cylinderGeometry args={[0.08, 0.08, 0.8, 8]} />
+          <meshStandardMaterial color="#2c2c2c" roughness={0.8} />
+        </mesh>
+        
+        {/* Eller */}
+        <mesh castShadow receiveShadow position={[-0.35, 0.55, 0]}>
+          <sphereGeometry args={[0.05, 12, 12]} />
+          <meshStandardMaterial color="#ffdbac" roughness={0.7} />
+        </mesh>
+        <mesh castShadow receiveShadow position={[0.35, 0.55, 0]}>
+          <sphereGeometry args={[0.05, 12, 12]} />
+          <meshStandardMaterial color="#ffdbac" roughness={0.7} />
         </mesh>
       </group>
 
-      {/* Tıbbi aletler */}
-      <group position={[-1, 0.5, 0]}>
-        {/* Ayna */}
+      {/* Tıbbi Aletler - daha detaylı */}
+      <group position={[-1.2, 0.3, 0]}>
+        {/* Diş aynası */}
         <mesh castShadow receiveShadow position={[0, 0, 0]}>
-          <cylinderGeometry args={[0.15, 0.15, 0.02, 16]} />
-          <meshStandardMaterial color="#silver" roughness={0.1} metalness={0.9} />
+          <cylinderGeometry args={[0.12, 0.12, 0.02, 16]} />
+          <meshStandardMaterial color="#c0c0c0" roughness={0.1} metalness={0.9} />
         </mesh>
-        <mesh castShadow receiveShadow position={[0, -0.2, 0]}>
-          <cylinderGeometry args={[0.02, 0.02, 0.4, 8]} />
-          <meshStandardMaterial color="#silver" roughness={0.3} metalness={0.7} />
+        <mesh castShadow receiveShadow position={[0, -0.15, 0]}>
+          <cylinderGeometry args={[0.015, 0.015, 0.3, 8]} />
+          <meshStandardMaterial color="#c0c0c0" roughness={0.3} metalness={0.7} />
+        </mesh>
+        
+        {/* Diş sondası */}
+        <mesh castShadow receiveShadow position={[0.2, 0, 0]}>
+          <cylinderGeometry args={[0.005, 0.005, 0.2, 8]} />
+          <meshStandardMaterial color="#c0c0c0" roughness={0.2} metalness={0.8} />
+        </mesh>
+        <mesh castShadow receiveShadow position={[0.2, 0.1, 0]}>
+          <sphereGeometry args={[0.008, 8, 8]} />
+          <meshStandardMaterial color="#c0c0c0" roughness={0.2} metalness={0.8} />
         </mesh>
       </group>
     </group>
