@@ -6,62 +6,59 @@ import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd } from 'react-
 const ParticleBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Animasyonlu diş şeklinde parçacıklar */}
       <div className="absolute top-10 left-10 animate-bounce">
         <svg className="w-8 h-8 text-blue-200 opacity-60" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
         </svg>
       </div>
-      <div className="absolute top-20 right-20 animate-pulse">
-        <svg className="w-6 h-6 text-blue-300 opacity-50" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      </div>
-      <div className="absolute bottom-20 left-1/4 animate-bounce delay-1000">
-        <svg className="w-4 h-4 text-blue-400 opacity-40" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      </div>
-      <div className="absolute bottom-10 right-1/3 animate-pulse delay-500">
-        <svg className="w-5 h-5 text-blue-500 opacity-30" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      </div>
-      {/* Daha fazla parçacık */}
-      <div className="absolute top-1/3 left-1/4 animate-ping delay-300">
-        <div className="w-3 h-3 bg-blue-300 rounded-full opacity-60"></div>
-      </div>
-      <div className="absolute top-2/3 right-1/4 animate-ping delay-700">
-        <div className="w-2 h-2 bg-blue-400 rounded-full opacity-50"></div>
-      </div>
-      <div className="absolute top-1/2 left-1/2 animate-pulse delay-1000">
-        <div className="w-4 h-4 bg-blue-200 rounded-full opacity-40"></div>
-      </div>
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-blue-100/20"></div>
     </div>
   );
 };
 
-// Animasyonlu başlık komponenti (parlama efekti için ref ekliyorum)
-const AnimatedTitle = React.forwardRef(({ children, delay = 0 }, ref) => {
+// Hero başlığı için spotlight efektli component
+const SpotlightTitle = ({ children, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [spot, setSpot] = useState({ x: 50, y: 50, active: false });
+  const ref = useRef();
+
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), delay);
     return () => clearTimeout(timer);
   }, [delay]);
+
+  // Mouse hareketiyle spotlight efekti
+  const handleMouseMove = (e) => {
+    const rect = ref.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setSpot({ x, y, active: true });
+  };
+  const handleMouseLeave = () => setSpot({ ...spot, active: false });
+
   return (
     <h1
       ref={ref}
-      className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] mb-4 md:mb-6 leading-tight drop-shadow-2xl transition-all duration-1000 transform ${
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`relative text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] mb-3 md:mb-5 leading-tight drop-shadow-2xl transition-all duration-1000 transform ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
-      style={{ position: 'relative', zIndex: 2 }}
+      style={{ zIndex: 2 }}
     >
-      {children}
+      <span
+        style={spot.active ? {
+          background: `radial-gradient(circle at ${spot.x}% ${spot.y}%, #fff 0%, #2bb3ea 30%, transparent 70%)`,
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          transition: 'background 0.2s',
+        } : {}}
+      >
+        {children}
+      </span>
     </h1>
   );
-});
+};
 
 // Animasyonlu alt başlık
 const AnimatedSubtitle = ({ children, delay = 300 }) => {
@@ -72,7 +69,7 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
   }, [delay]);
   return (
     <p
-      className={`text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto transition-all duration-1000 transform ${
+      className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
@@ -94,7 +91,7 @@ const AnimatedButton = ({ children, delay = 600, variant = "primary" }) => {
   return (
     <a
       href={variant === "primary" ? "#randevu" : "#contact"}
-      className={`${buttonClasses} transition-all duration-500 font-bold py-3 px-6 md:px-8 rounded-full text-base md:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto text-center inline-block transition-all duration-1000 ${
+      className={`${buttonClasses} transition-all duration-500 font-bold py-2 px-4 md:py-3 md:px-7 rounded-full text-sm md:text-base shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto text-center inline-block transition-all duration-1000 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
@@ -103,7 +100,7 @@ const AnimatedButton = ({ children, delay = 600, variant = "primary" }) => {
   );
 };
 
-// Küçük, ikonlu, görseldeki gibi "Biz" kartı
+// Küçük, ikonlu, animasyonlu "Biz" kartı
 const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -111,11 +108,12 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     return () => clearTimeout(timer);
   }, [delay]);
   return (
-    <div className={`flex flex-col items-center justify-center bg-white rounded-xl shadow-md p-4 md:p-6 min-w-[140px] min-h-[120px] transition-all duration-500 border border-blue-100/60 hover:shadow-lg hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-      <div className="mb-2 text-blue-400 text-3xl md:text-4xl">{icon}</div>
-      <div className="font-bold text-xl md:text-2xl text-[#0f4f78] mb-1">{number}</div>
-      <div className="text-sm md:text-base text-blue-500 font-semibold leading-tight">{label}</div>
-      {sublabel && <div className="text-xs md:text-sm text-blue-400 mt-1">{sublabel}</div>}
+    <div className={`flex flex-col items-center justify-center bg-white rounded-xl shadow-md p-3 md:p-4 min-w-[110px] min-h-[90px] transition-all duration-700 border border-blue-100/60 hover:shadow-lg hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      style={{ transitionDelay: `${delay}ms` }}>
+      <div className="mb-1 text-blue-400 text-2xl md:text-3xl">{icon}</div>
+      <div className="font-bold text-base md:text-lg text-[#0f4f78] mb-0.5">{number}</div>
+      <div className="text-xs md:text-sm text-blue-500 font-semibold leading-tight">{label}</div>
+      {sublabel && <div className="text-xs text-blue-400 mt-0.5">{sublabel}</div>}
     </div>
   );
 };
@@ -131,22 +129,20 @@ const bizData = [
 
 const Hero = () => {
   const { t } = useTranslation();
-  const titleRef = useRef();
-
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-4 md:px-8 lg:px-12 py-8 md:py-12 lg:py-0 overflow-hidden">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 md:px-6 lg:px-12 py-6 md:py-10 lg:py-0 overflow-hidden">
       {/* Particle background */}
       <ParticleBackground />
       {/* Ana içerik - ortalanmış */}
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center">
-        <AnimatedTitle ref={titleRef} delay={200}>
+        <SpotlightTitle delay={200}>
           {t('home.title')}
-        </AnimatedTitle>
+        </SpotlightTitle>
         <AnimatedSubtitle delay={400}>
           {t('home.subtitle')}<br className="hidden sm:block"/>{t('home.desc')}
         </AnimatedSubtitle>
         {/* Butonlar */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8 md:mb-10">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-6 md:mb-8">
           <AnimatedButton delay={600} variant="primary">
             {t('home.button')}
           </AnimatedButton>
@@ -154,10 +150,10 @@ const Hero = () => {
             İletişim
           </AnimatedButton>
         </div>
-        {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar */}
-        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-6 mt-2 md:mt-6 mb-8 md:mb-12">
+        {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
+        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 mt-1 md:mt-4 mb-6 md:mb-10">
           {bizData.map((item, i) => (
-            <BizMiniCard key={i} {...item} delay={1000 + i * 120} />
+            <BizMiniCard key={i} {...item} delay={i * 120} />
           ))}
         </div>
         {/* Scroll indicator */}
