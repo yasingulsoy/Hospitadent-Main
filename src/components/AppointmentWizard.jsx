@@ -329,9 +329,23 @@ const TimePicker = ({ days, selectedDayIdx, setSelectedDayIdx, selectedSlot, set
 };
 
 // 5. Adım: İletişim Formu
-const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting }) => {
+const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, selectedDay, selectedSlot, onEdit }) => {
   return (
     <form className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg mx-auto flex flex-col gap-6" onSubmit={e => { e.preventDefault(); onSubmit(); }}>
+      {/* Özet ve düzenle */}
+      <div className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-xl p-4 mb-2">
+        <div className="flex-1">
+          <div className="text-sm text-gray-500">Seçilen Randevu</div>
+          <div className="font-bold text-lg text-gray-800">{selectedDay?.date} ({selectedDay?.day}) - {selectedSlot}</div>
+        </div>
+        <button
+          type="button"
+          onClick={onEdit}
+          className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-semibold shadow hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all"
+        >
+          Düzenle
+        </button>
+      </div>
       <div>
         <label className="block text-lg font-bold mb-2 text-gray-700">Ad Soyad</label>
         <input
@@ -399,6 +413,7 @@ const AppointmentWizard = () => {
     }, 250);
   };
 
+  // Otomatik geçişi kaldırdık, butonlar geri geliyor
   // Saat seçildiğinde otomatik geçiş
   useEffect(() => {
     if (step === 4 && selectedSlot) {
@@ -503,14 +518,31 @@ const AppointmentWizard = () => {
               onSelect={setSelectedDoctorIdx}
               branchName={selectedBranch}
             />
-            {/* Sağ: Takvim ve saat seçici */}
-            <TimePicker
-              days={days}
-              selectedDayIdx={selectedDayIdx}
-              setSelectedDayIdx={setSelectedDayIdx}
-              selectedSlot={selectedSlot}
-              setSelectedSlot={setSelectedSlot}
-            />
+            {/* Sağ: Takvim ve saat seçici + butonlar */}
+            <div className="flex flex-col items-center gap-6">
+              <TimePicker
+                days={days}
+                selectedDayIdx={selectedDayIdx}
+                setSelectedDayIdx={setSelectedDayIdx}
+                selectedSlot={selectedSlot}
+                setSelectedSlot={setSelectedSlot}
+              />
+              <div className="flex justify-between w-full gap-4 mt-4">
+                <button
+                  className="w-1/2 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg shadow hover:bg-gray-300 transition-all text-lg"
+                  onClick={() => setStep(3)}
+                >
+                  Geri
+                </button>
+                <button
+                  className="w-1/2 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={() => selectedSlot && setStep(5)}
+                  disabled={!selectedSlot}
+                >
+                  Devam Et
+                </button>
+              </div>
+            </div>
           </div>
         )}
         {/* 5. Adım: İletişim ve onay */}
@@ -522,6 +554,9 @@ const AppointmentWizard = () => {
               phone={phone}
               setPhone={setPhone}
               submitting={submitting}
+              selectedDay={days[selectedDayIdx]}
+              selectedSlot={selectedSlot}
+              onEdit={() => setStep(4)}
               onSubmit={() => {
                 setSubmitting(true);
                 setTimeout(() => {
