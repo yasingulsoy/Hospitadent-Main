@@ -140,14 +140,11 @@ const bizData = [
 const Hero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 md:px-6 lg:px-12 py-6 md:py-10 lg:py-0 overflow-hidden">
+    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 md:px-6 lg:px-12 pt-10 md:pt-20 lg:pt-32 pb-8 md:pb-16 lg:pb-24 min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] overflow-hidden">
       {/* Particle background */}
       <ParticleBackground />
       {/* Ana içerik - ortalanmış */}
-      <div
-        className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center"
-        style={{ marginTop: 'clamp(16px, 8vw, 80px)' }}
-      >
+      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full">
         <SpotlightTitle delay={200}>
           {t('home.title')}
         </SpotlightTitle>

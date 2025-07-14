@@ -236,24 +236,25 @@ const Navbar = () => {
           <div className="flex flex-col items-end gap-2 min-w-[120px]">
             <div className="flex items-center gap-3 bg-gray-100 rounded-lg px-3 py-1 shadow-sm">
               <button
-                className="flex items-center rounded bg-gray-200 text-blue font-bold hover:bg-gray-300 transition gap-1 px-3 py-1 text-[clamp(0.9rem,1.7vw,1.15rem)]"
+                className="flex items-center rounded bg-gray-200 text-blue font-bold hover:bg-gray-300 transition gap-1 px-3 py-1 text-[clamp(0.95rem,1.7vw,1.15rem)] min-w-[110px] md:min-w-[130px] lg:min-w-[150px] h-10 md:h-11 lg:h-12"
+                style={{fontSize: 'clamp(0.95rem,1.1vw,1.15rem)', padding: '0.5rem 1.2rem'}}
                 onClick={() => setLangOpen(!langOpen)}
               >
-                <CountryFlag countryCode={selectedLang.flag} svg className="w-5 h-5 rounded" />
-                <span>{selectedLang.name}</span>
+                <CountryFlag countryCode={selectedLang.flag} svg className="w-5 h-5 md:w-6 md:h-6 rounded" />
+                <span className="whitespace-nowrap">{selectedLang.name}</span>
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
               </button>
               {langOpen && (
-                <ul className="absolute right-0 top-full mt-1 bg-primary text-white rounded shadow-xl z-50 min-w-[8rem]">
+                <ul className="absolute right-0 top-full mt-1 bg-primary text-white rounded shadow-xl z-50 min-w-[8rem] md:min-w-[10rem] lg:min-w-[12rem] text-base md:text-lg py-2">
                   {getSortedLanguages().map((lang, idx) => (
                     <li key={lang.code}>
                       <button
-                        className={`flex items-center w-full text-left ${lang.code === selectedLang.code ? 'bg-white text-primary font-bold cursor-default' : 'hover:bg-blue-900'}`}
+                        className={`flex items-center w-full text-left px-4 py-2 md:px-5 md:py-2.5 text-base md:text-lg ${lang.code === selectedLang.code ? 'bg-white text-primary font-bold cursor-default' : 'hover:bg-blue-900'}`}
                         onClick={() => handleLangChange(lang)}
                         disabled={lang.code === selectedLang.code}
                       >
-                        <CountryFlag countryCode={lang.flag} svg className="w-5 h-5 rounded" />
-                        <span className="ml-2">{lang.name}</span>
+                        <CountryFlag countryCode={lang.flag} svg className="w-5 h-5 md:w-6 md:h-6 rounded" />
+                        <span className="ml-2 whitespace-nowrap">{lang.name}</span>
                       </button>
                     </li>
                   ))}
@@ -262,22 +263,22 @@ const Navbar = () => {
             </div>
             {/* Sosyal medya ikonları */}
             <div className="hidden sm:flex items-center gap-2 mt-1">
-              <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
-                <FaFacebookF />
+              <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
+                <FaFacebookF className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </a>
-              <a href="https://x.com/Hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
-                <FaXTwitter />
+              <a href="https://x.com/Hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
+                <FaXTwitter className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </a>
-              <a href="https://www.youtube.com/c/HospitadentTV" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <a href="https://www.youtube.com/c/HospitadentTV" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
+                <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
               </a>
-              <a href="https://www.instagram.com/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
-                <FaInstagram />
+              <a href="https://www.instagram.com/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
+                <FaInstagram className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </a>
-              <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
-                <FaLinkedinIn />
+              <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
+                <FaLinkedinIn className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </a>
             </div>
           </div>
