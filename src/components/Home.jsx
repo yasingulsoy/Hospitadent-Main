@@ -181,14 +181,11 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     if (!isVisible) return;
     let start = 0;
     let end = 0;
-    let suffix = '';
     // Rakam ve + işareti ayrıştırma
     if (typeof number === 'string' && number.startsWith('+')) {
-      suffix = '+';
       end = parseInt(number.replace(/\D/g, ''));
     } else if (typeof number === 'string' && number.includes('.')) {
       end = parseInt(number.replace(/\D/g, ''));
-      suffix = number.replace(/[0-9.]/g, '');
     } else {
       end = parseInt(number);
     }
@@ -254,12 +251,7 @@ const openKolaytik = () => {
 
 // RandevuFabButton: Masaüstünde tıklanınca sola doğru 3 yuvarlak buton açılır, mobilde klasik görünür
 const RandevuFabButton = ({ children, delay = 600 }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
   // Mobilde klasik AnimatedButton, masaüstünde fab
   return (
     <>
@@ -313,8 +305,73 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
   );
 };
 
+// Hero başlığı için typewriter başlık-alt yazı
+const heroSlides = [
+  {
+    title: "Dental Sağlık Turizminde Lideriz",
+    subtitle: "Üst üste 4 yıl birincilik, dünya standartlarında tedavi."
+  },
+  {
+    title: "%99 Hasta Memnuniyeti",
+    subtitle: "Binlerce mutlu hasta, güvenilir ve kaliteli hizmet."
+  },
+  {
+    title: "Dijital Diş Hekimliğinde Yeni Dönem",
+    subtitle: "3D teknolojilerle, sağlıklı ve estetik gülüşler için hemen randevu alın."
+  },
+  {
+    title: "Modern Klinik, Uzman Kadro",
+    subtitle: "Dijital çözümlerle hızlı, konforlu ve güvenli tedavi."
+  }
+];
+
+// Typewriter efektli başlık ve alt yazı hook'u
+function useTypewriterSlides(slides, writeSpeed = 50, eraseSpeed = 25, pause = 15000) {
+  const [index, setIndex] = useState(0);
+  const [displayTitle, setDisplayTitle] = useState("");
+  const [displaySubtitle, setDisplaySubtitle] = useState("");
+  const [phase, setPhase] = useState("write"); // write | pause | erase
+
+  useEffect(() => {
+    let timeout;
+    const fullTitle = slides[index].title;
+    const fullSubtitle = slides[index].subtitle;
+
+    if (phase === "write") {
+      if (displayTitle.length < fullTitle.length) {
+        timeout = setTimeout(() => setDisplayTitle(fullTitle.slice(0, displayTitle.length + 1)), writeSpeed);
+      } else if (displaySubtitle.length < fullSubtitle.length) {
+        timeout = setTimeout(() => setDisplaySubtitle(fullSubtitle.slice(0, displaySubtitle.length + 1)), writeSpeed);
+      } else {
+        timeout = setTimeout(() => setPhase("pause"), pause);
+      }
+    } else if (phase === "pause") {
+      timeout = setTimeout(() => setPhase("erase"), 1000);
+    } else if (phase === "erase") {
+      if (displaySubtitle.length > 0) {
+        timeout = setTimeout(() => setDisplaySubtitle(displaySubtitle.slice(0, -1)), eraseSpeed);
+      } else if (displayTitle.length > 0) {
+        timeout = setTimeout(() => setDisplayTitle(displayTitle.slice(0, -1)), eraseSpeed);
+      } else {
+        setIndex((prev) => (prev + 1) % slides.length);
+        setPhase("write");
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [displayTitle, displaySubtitle, phase, slides, index, writeSpeed, eraseSpeed, pause]);
+
+  useEffect(() => {
+    if (phase === "write") {
+      setDisplayTitle("");
+      setDisplaySubtitle("");
+    }
+  }, [index, phase]);
+
+  return { displayTitle, displaySubtitle };
+}
+
 const Hero = () => {
-  const { t } = useTranslation();
+  const { displayTitle, displaySubtitle } = useTypewriterSlides(heroSlides, 50, 25, 15000);
   return (
     <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-8 sm:pt-12 md:pt-20 lg:pt-32 pb-6 sm:pb-10 md:pb-16 lg:pb-24 min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] overflow-hidden">
       {/* Particle background */}
@@ -322,14 +379,14 @@ const Hero = () => {
       {/* Ana içerik - ortalanmış */}
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full">
         <SpotlightTitle delay={200}>
-          {t('home.title')}
+          {displayTitle}
         </SpotlightTitle>
         <AnimatedSubtitle delay={400}>
-          {t('home.subtitle')}<br className="hidden sm:block"/>{t('home.desc')}
+          {displaySubtitle}
         </AnimatedSubtitle>
         {/* Butonlar */}
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-5 sm:mb-6 md:mb-8 items-center justify-center">
-          <RandevuFabButton delay={600}>{t('home.button')}</RandevuFabButton>
+          <RandevuFabButton delay={600}>Randevu Al</RandevuFabButton>
           <ContactFabButton delay={800} />
         </div>
         {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}

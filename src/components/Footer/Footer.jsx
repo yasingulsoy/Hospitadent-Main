@@ -13,56 +13,56 @@ const Footer = () => {
           <div>
             <h4 className="text-blue font-bold mb-3 tracking-wide text-base md:text-lg uppercase">KURUMSAL</h4>
             <ul className="space-y-1 text-sm md:text-base text-[#0f4f78]">
-              <li><a href="#">Hakkımızda</a></li>
-              <li><a href="#">Franchise – Ortaklık Başvurusu</a></li>
-              <li><a href="#">İK İş Başvuru Formu</a></li>
-              <li><a href="#">Kurumsal Kimlik</a></li>
-              <li><a href="#">Politikalarımız</a></li>
-              <li><a href="#">Çerez Politikamız</a></li>
-              <li><a href="#">Gizlilik İlkesi</a></li>
-              <li><a href="#">KVKK</a></li>
-              <li><a href="#">İstenmeyen Olay Bildirim Formu</a></li>
+              <li><a href="/about">Hakkımızda</a></li>
+              <li><a href="/franchise">Franchise – Ortaklık Başvurusu</a></li>
+              <li><a href="/careers">İK İş Başvuru Formu</a></li>
+              <li><a href="/corporate">Kurumsal Kimlik</a></li>
+              <li><a href="/policies">Politikalarımız</a></li>
+              <li><a href="/cookies">Çerez Politikamız</a></li>
+              <li><a href="/privacy">Gizlilik İlkesi</a></li>
+              <li><a href="/kvkk">KVKK</a></li>
+              <li><a href="/report">İstenmeyen Olay Bildirim Formu</a></li>
             </ul>
           </div>
           {/* Faydalı Linkler */}
           <div>
             <h4 className="text-blue font-bold mb-3 tracking-wide text-base md:text-lg uppercase">FAYDALI LİNKLER</h4>
             <ul className="space-y-1 text-sm md:text-base text-[#0f4f78]">
-              <li><a href="#">Hekimlerimiz</a></li>
-              <li><a href="#">Anlaşmalı Kurumlar</a></li>
-              <li><a href="#">Hasta Yorumları</a></li>
-              <li><a href="#">Hasta Memnuniyet Videoları</a></li>
-              <li><a href="#">Ödüller</a></li>
-              <li><a href="#">Sosyal Sorumluluk</a></li>
-              <li><a href="#">HD Times</a></li>
-              <li><a href="#">Hospitadent Akademi</a></li>
+              <li><a href="/doctors">Hekimlerimiz</a></li>
+              <li><a href="/partners">Anlaşmalı Kurumlar</a></li>
+              <li><a href="/reviews">Hasta Yorumları</a></li>
+              <li><a href="/videos">Hasta Memnuniyet Videoları</a></li>
+              <li><a href="/awards">Ödüller</a></li>
+              <li><a href="/social">Sosyal Sorumluluk</a></li>
+              <li><a href="/times">HD Times</a></li>
+              <li><a href="/academy">Hospitadent Akademi</a></li>
             </ul>
           </div>
           {/* Online */}
           <div>
             <h4 className="text-blue font-bold mb-3 tracking-wide text-base md:text-lg uppercase">ONLINE</h4>
             <ul className="space-y-1 text-sm md:text-base text-[#0f4f78]">
-              <li><a href="#">Online Randevu</a></li>
-              <li><a href="#">Röntgen Gönder</a></li>
-              <li><a href="#">Fiyat Alın</a></li>
-              <li><a href="#">Doktora Sor</a></li>
-              <li><a href="#">Görüş ve Önerileriniz</a></li>
-              <li><a href="#">Şikayet Var</a></li>
-              <li><a href="#">Hospifikir</a></li>
+              <li><a href="/appointment">Online Randevu</a></li>
+              <li><a href="/xray">Röntgen Gönder</a></li>
+              <li><a href="/pricing">Fiyat Alın</a></li>
+              <li><a href="/ask-doctor">Doktora Sor</a></li>
+              <li><a href="/feedback">Görüş ve Önerileriniz</a></li>
+              <li><a href="/complaint">Şikayet Var</a></li>
+              <li><a href="/hospifikir">Hospifikir</a></li>
             </ul>
           </div>
           {/* Tedavilerimiz */}
           <div>
             <h4 className="text-blue font-bold mb-3 tracking-wide text-base md:text-lg uppercase">TEDAVİLERİMİZ</h4>
             <ul className="space-y-1 text-sm md:text-base text-[#0f4f78]">
-              <li><a href="#">Implant</a></li>
-              <li><a href="#">Dijital Gülüş Tasarımı</a></li>
-              <li><a href="#">Zirkonyum Kaplama</a></li>
-              <li><a href="#">Lamina Diş Kaplama</a></li>
-              <li><a href="#">Porselen Kaplama</a></li>
-              <li><a href="#">Diş Beyazlatma</a></li>
-              <li><a href="#">Ortodonti</a></li>
-              <li><a href="#">Diş Eti Tedavisi</a></li>
+              <li><a href="/treatments/implant">Implant</a></li>
+              <li><a href="/treatments/digital-smile">Dijital Gülüş Tasarımı</a></li>
+              <li><a href="/treatments/zirconium">Zirkonyum Kaplama</a></li>
+              <li><a href="/treatments/laminate">Lamina Diş Kaplama</a></li>
+              <li><a href="/treatments/porcelain">Porselen Kaplama</a></li>
+              <li><a href="/treatments/whitening">Diş Beyazlatma</a></li>
+              <li><a href="/treatments/orthodontics">Ortodonti</a></li>
+              <li><a href="/treatments/gum">Diş Eti Tedavisi</a></li>
             </ul>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Footer = () => {
               <FaWhatsapp className="w-4 h-4" />
             </a>
           </div>
-          <a href="#" className="w-full bg-blue text-white font-bold rounded-md py-3 mb-2 flex items-center justify-center gap-2 text-base hover:bg-primary transition"><span className="material-icons">location_on</span> Şubeleri Göster</a>
+          <a href="/branches" className="w-full bg-blue text-white font-bold rounded-md py-3 mb-2 flex items-center justify-center gap-2 text-base hover:bg-primary transition"><span className="material-icons">location_on</span> Şubeleri Göster</a>
           <a href="tel:4449922" className="w-full bg-blue text-white font-bold rounded-md py-3 mb-2 flex items-center justify-center gap-2 text-base hover:bg-primary transition"><span className="material-icons">call</span> Şimdi Ara</a>
           <a href="mailto:info@hospitadent.com" className="w-full bg-blue text-white font-bold rounded-md py-3 flex items-center justify-center gap-2 text-base hover:bg-primary transition"><span className="material-icons">mail</span> E-Posta Gönder</a>
         </div>

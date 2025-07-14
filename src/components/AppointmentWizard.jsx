@@ -127,200 +127,100 @@ const days = [
 const NAVBAR_COLOR = '#0f4f78';
 const ACCENT_COLOR = '#2bb3ea';
 
-// Yatay kaydırmalı carousel
-const HorizontalCarousel = ({ options, selectedIdx, onSelect, label }) => {
-  const handlePrev = () => {
-    onSelect((selectedIdx - 1 + options.length) % options.length);
-  };
-
-  const handleNext = () => {
-    onSelect((selectedIdx + 1) % options.length);
-  };
-
+// Modern şehir seçici
+const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
   return (
-    <div className="flex flex-col items-center mb-8">
-      <label className="block text-xl font-bold mb-8 text-gray-800 text-center tracking-wide">{label}</label>
-      
-      <div className="relative w-full max-w-lg mx-auto">
-        {/* Ana seçili öğe */}
-        <div className="relative mb-8">
-          <div 
-            className="relative bg-gradient-to-br from-[#2bb3ea] via-[#1a9fd8] to-[#0f4f78] text-white rounded-3xl p-8 shadow-2xl transform transition-all duration-700 scale-110 overflow-hidden"
-            style={{
-              boxShadow: `0 0 0 12px ${ACCENT_COLOR}15, 0 25px 50px rgba(43, 179, 234, 0.4), inset 0 1px 0 rgba(255,255,255,0.2)`
-            }}
-          >
-            {/* Arka plan dekoratif elementler */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-5 rounded-full translate-y-12 -translate-x-12"></div>
-            
-            <div className="text-center relative z-10">
-              <div className="text-3xl font-black mb-3 tracking-tight">{options[selectedIdx]}</div>
-              <div className="text-sm font-medium opacity-90 bg-white bg-opacity-20 rounded-full px-4 py-1 inline-block backdrop-blur-sm">
-                Seçili
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Kaydırma kontrolleri */}
-        <div className="flex items-center justify-between mb-6">
-          {/* Sol ok */}
+    <div className="mb-8">
+      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Şehir Seçin</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        {cities.map((city, idx) => (
           <button
-            onClick={handlePrev}
-            className="group relative w-14 h-14 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 flex items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-white"
+            key={idx}
+            onClick={() => onSelect(idx)}
+            className={`p-4 rounded-xl border-2 transition-all duration-200 font-semibold text-sm sm:text-base ${
+              selectedCityIdx === idx
+                ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
+                : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+            }`}
           >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
-              </svg>
-            </div>
+            {city}
           </button>
-
-          {/* Öğe göstergesi */}
-          <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg">
-            {options.map((_, idx) => (
-              <div
-                key={idx}
-                className={`w-3 h-3 rounded-full transition-all duration-500 ${
-                  idx === selectedIdx 
-                    ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] scale-150 shadow-lg' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Sağ ok */}
-          <button
-            onClick={handleNext}
-            className="group relative w-14 h-14 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 flex items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-white"
-          >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </button>
-        </div>
-
-        {/* Önceki ve sonraki öğeler (küçük ve flu) */}
-        <div className="flex justify-between items-center px-6">
-          <div className="text-center opacity-30 transform scale-90 transition-all duration-500 hover:opacity-50">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 text-gray-700 font-semibold shadow-lg border border-white/20">
-              {options[(selectedIdx - 1 + options.length) % options.length]}
-            </div>
-          </div>
-          <div className="text-center opacity-30 transform scale-90 transition-all duration-500 hover:opacity-50">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 text-gray-700 font-semibold shadow-lg border border-white/20">
-              {options[(selectedIdx + 1) % options.length]}
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
 
-// Doktor seçme component'i (örnekteki gibi)
+// Modern şube seçici
+const BranchSelector = ({ branches, selectedBranchIdx, onSelect }) => {
+  return (
+    <div className="mb-8">
+      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Şube Seçin</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        {branches.map((branch, idx) => (
+          <button
+            key={idx}
+            onClick={() => onSelect(idx)}
+            className={`p-4 rounded-xl border-2 transition-all duration-200 font-semibold text-sm sm:text-base ${
+              selectedBranchIdx === idx
+                ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
+                : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+            }`}
+          >
+            {branch}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Modern doktor seçici (yatay scroll)
 const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
-  const handlePrev = () => {
-    onSelect((selectedIdx - 1 + doctors.length) % doctors.length);
-  };
-
-  const handleNext = () => {
-    onSelect((selectedIdx + 1) % doctors.length);
-  };
-
-  const selectedDoctor = doctors[selectedIdx];
-
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 mb-8 w-full max-w-5xl mx-auto px-4">
-      {/* Sol: Büyük dairede doktor info */}
-      <div className="flex-shrink-0 flex flex-col items-center justify-between bg-white rounded-full shadow-2xl w-[420px] h-[420px] overflow-hidden p-8">
-        <div className="flex flex-col items-center w-full flex-1 justify-start">
-          <div className="text-xl text-gray-500 font-medium mb-3 text-center">{branchName} Diş Kliniği</div>
-          <div className="text-3xl font-bold text-gray-800 mb-2 leading-tight break-words text-center">{selectedDoctor.name}</div>
-          <div className="text-lg text-gray-600 font-medium text-center">{selectedDoctor.specialty}</div>
-        </div>
-        <div className="flex flex-col items-center justify-end w-full flex-1 mt-2">
-          <img
-            src={selectedDoctor.image}
-            alt={selectedDoctor.name}
-            className="w-64 h-64 object-cover rounded-full border-4 border-white shadow-2xl bg-gray-100"
-            style={{objectPosition: 'center top'}}
-          />
-        </div>
-        {/* Oklar ve noktalar dairenin altında ortalanmış */}
-        <div className="flex flex-col items-center justify-center w-full mt-4">
-          <div className="flex items-center justify-center gap-6 mb-2">
-            <button
-              onClick={handlePrev}
-              className="group w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:scale-110"
-            >
-              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={handleNext}
-              className="group w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:scale-110"
-            >
-              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            {doctors.map((_, idx) => (
-              <div
-                key={idx}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  idx === selectedIdx 
-                    ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] scale-125' 
-                    : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
+    <div className="mb-8">
+      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">{branchName} Diş Kliniği - Doktor Seçin</h3>
+      {/* Mobilde yatay scroll, masaüstünde grid */}
+      <div className="flex overflow-x-auto gap-4 pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:overflow-x-visible">
+        {doctors.map((doctor, idx) => (
+          <button
+            key={idx}
+            onClick={() => onSelect(idx)}
+            className={`min-w-[220px] sm:min-w-0 p-4 rounded-xl border-2 transition-all duration-200 text-left flex flex-col items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2bb3ea] focus:z-10 ${selectedIdx === idx ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105' : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'} ${selectedIdx === idx ? 'ring-2 ring-[#2bb3ea]' : ''}`}
+            style={{ flex: '0 0 auto' }}
+          >
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              className="w-20 h-20 rounded-full object-cover border-2 border-white shadow-md mb-2"
+            />
+            <div className="font-bold text-base text-center">{doctor.name}</div>
+            <div className="text-xs opacity-80 text-center">{doctor.specialty}</div>
+          </button>
+        ))}
       </div>
-      {/* Sağ: Boş alan veya ileride takvim kutusu için yer */}
-      <div className="flex-1" />
     </div>
   );
 };
 
-// Saat seçici component
-const TimePicker = ({ days, selectedDayIdx, setSelectedDayIdx, selectedSlot, setSelectedSlot }) => {
+// Modern tarih seçici
+const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
   return (
-    <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-2xl min-w-[340px]">
-      <div className="flex items-end justify-between mb-6">
+    <div className="mb-6">
+      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Tarih Seçin</h3>
+      <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
         {days.map((day, idx) => (
           <button
             key={idx}
-            onClick={() => setSelectedDayIdx(idx)}
-            className={`flex flex-col items-center px-2 py-1 rounded-xl transition-all duration-200 ${selectedDayIdx === idx ? 'bg-gradient-to-t from-[#2bb3ea] to-[#0f4f78] text-white scale-110 shadow-lg' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+            onClick={() => onSelect(idx)}
+            className={`p-3 rounded-lg border-2 transition-all duration-200 ${
+              selectedDayIdx === idx
+                ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
+                : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+            }`}
           >
-            <span className="text-xs font-bold mb-1">{day.date}</span>
-            <span className="text-xs font-medium">{day.day}</span>
-          </button>
-        ))}
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-        {days[selectedDayIdx].slots.map((slot, idx) => (
-          <button
-            key={idx}
-            disabled={slot.status !== 'available'}
-            onClick={() => setSelectedSlot(slot.time)}
-            className={`py-2 px-4 rounded-xl text-sm font-bold border transition-all duration-200
-              ${slot.status === 'available' && selectedSlot === slot.time ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] scale-105 shadow-lg' : ''}
-              ${slot.status === 'available' && selectedSlot !== slot.time ? 'bg-white text-[#0f4f78] border-[#2bb3ea] hover:bg-[#e6f7fd]' : ''}
-              ${slot.status === 'full' ? 'bg-gray-200 text-gray-400 border-gray-300 line-through cursor-not-allowed' : ''}
-              ${slot.status === 'closed' ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed' : ''}
-            `}
-          >
-            {slot.status === 'closed' ? 'Kapalı' : slot.time + (slot.status === 'full' ? ' (Dolu)' : '')}
+            <div className="text-xs font-bold">{day.date}</div>
+            <div className="text-xs opacity-80">{day.day}</div>
           </button>
         ))}
       </div>
@@ -328,60 +228,96 @@ const TimePicker = ({ days, selectedDayIdx, setSelectedDayIdx, selectedSlot, set
   );
 };
 
-// 5. Adım: İletişim Formu
+// Modern saat seçici
+const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
+  return (
+    <div className="mb-6">
+      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Saat Seçin</h3>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
+        {slots.map((slot, idx) => (
+          <button
+            key={idx}
+            disabled={slot.status !== 'available'}
+            onClick={() => onSelect(slot.time)}
+            className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${
+              slot.status === 'available' && selectedSlot === slot.time
+                ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
+                : slot.status === 'available'
+                ? 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                : 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
+            }`}
+          >
+            {slot.status === 'closed' ? 'Kapalı' : slot.time}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Modern iletişim formu
 const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, selectedDay, selectedSlot, onEdit }) => {
   return (
-    <form className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg mx-auto flex flex-col gap-6" onSubmit={e => { e.preventDefault(); onSubmit(); }}>
-      {/* Özet ve düzenle */}
-      <div className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-xl p-4 mb-2">
-        <div className="flex-1">
-          <div className="text-sm text-gray-500">Seçilen Randevu</div>
-          <div className="font-bold text-lg text-gray-800">{selectedDay?.date} ({selectedDay?.day}) - {selectedSlot}</div>
-        </div>
+    <div className="max-w-md mx-auto">
+      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">İletişim Bilgileri</h3>
+      
+      {/* Seçim özeti */}
+      <div className="bg-gray-50 rounded-xl p-4 mb-6">
+        <div className="text-sm text-gray-600 mb-2">Seçilen Randevu:</div>
+        <div className="font-semibold text-gray-800">{selectedDay?.date} ({selectedDay?.day}) - {selectedSlot}</div>
         <button
-          type="button"
           onClick={onEdit}
-          className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-semibold shadow hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all"
+          className="text-[#2bb3ea] text-sm font-medium mt-2 hover:underline"
         >
           Düzenle
         </button>
       </div>
-      <div>
-        <label className="block text-lg font-bold mb-2 text-gray-700">Ad Soyad</label>
-        <input
-          type="text"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          required
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none text-lg transition-all"
-          placeholder="Adınızı ve soyadınızı girin"
-        />
-      </div>
-      <div>
-        <label className="block text-lg font-bold mb-2 text-gray-700">Telefon Numarası</label>
-        <input
-          type="tel"
-          value={phone}
-          onChange={e => setPhone(e.target.value)}
-          required
-          pattern="^05\d{9}$"
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none text-lg transition-all"
-          placeholder="05XXXXXXXXX"
-        />
-        <span className="text-xs text-gray-400">Başında 0 olacak şekilde, örn: 05XXXXXXXXX</span>
-      </div>
-      <div className="bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-4 rounded-xl text-base flex items-center gap-2">
-        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-        Randevu talebiniz alınacak, en kısa sürede aranacaksınız.
-      </div>
-      <button
-        type="submit"
-        disabled={submitting || !name || !/^05\d{9}$/.test(phone)}
-        className="w-full bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {submitting ? 'Gönderiliyor...' : 'Randevuyu Tamamla'}
-      </button>
-    </form>
+
+      <form onSubmit={e => { e.preventDefault(); onSubmit(); }} className="space-y-4">
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Ad Soyad</label>
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all"
+            placeholder="Adınızı ve soyadınızı girin"
+          />
+        </div>
+        
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Telefon Numarası</label>
+          <input
+            type="tel"
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
+            required
+            pattern="^05\d{9}$"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all"
+            placeholder="05XXXXXXXXX"
+          />
+          <div className="text-xs text-gray-500 mt-1">Başında 0 olacak şekilde, örn: 05XXXXXXXXX</div>
+        </div>
+
+        <div className="bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-4 rounded-lg text-sm">
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Randevu talebiniz alınacak, en kısa sürede aranacaksınız.</span>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          disabled={submitting || !name || !/^05\d{9}$/.test(phone)}
+          className="w-full bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {submitting ? 'Gönderiliyor...' : 'Randevuyu Tamamla'}
+        </button>
+      </form>
+    </div>
   );
 };
 
@@ -392,154 +328,125 @@ const AppointmentWizard = () => {
   const [selectedDoctorIdx, setSelectedDoctorIdx] = useState(0);
   const [selectedDayIdx, setSelectedDayIdx] = useState(1);
   const [selectedSlot, setSelectedSlot] = useState(null);
-  const [animate, setAnimate] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
   // Şehirler listesi
   const cities = branchGroups.map(g => g.city);
-  const selectedCity = cities[selectedCityIdx];
   // Seçilen şehirdeki şubeler
   const currentBranches = branchGroups[selectedCityIdx].branches;
   const selectedBranch = currentBranches[selectedBranchIdx];
 
-  // Adım geçişlerinde animasyon
-  const goToStep = (n) => {
-    setAnimate(true);
-    setTimeout(() => {
-      setStep(n);
-      setAnimate(false);
-    }, 250);
-  };
-
   return (
-    <section className="py-20 bg-gray-100">
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl p-8 transition-all duration-500 flex flex-col">
-        <h2 className="text-3xl font-extrabold text-center mb-8 tracking-tight" style={{color: NAVBAR_COLOR, letterSpacing: '0.01em'}}>Online Randevu</h2>
+    <section className="py-8 bg-gray-50">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">Online Randevu</h2>
+        
         {/* Adım göstergesi */}
-        <div className="flex items-center justify-center gap-2 mb-10">
-          {[1,2,3,4,5].map((n) => (
+        <div className="flex items-center justify-center gap-2 mb-8">
+          {[1,2,3,4].map((n) => (
             <React.Fragment key={n}>
-              <div className={`w-9 h-9 flex items-center justify-center rounded-full font-bold text-lg border-2 shadow transition-all duration-300 ${step===n ? 'scale-110' : 'scale-100'}`}
-                style={{
-                  background: step===n ? ACCENT_COLOR : '#f3f4f6',
-                  color: step===n ? '#fff' : NAVBAR_COLOR,
-                  borderColor: step===n ? ACCENT_COLOR : '#e5e7eb',
-                  boxShadow: step===n ? `0 0 0 4px ${ACCENT_COLOR}22` : 'none',
-                }}
-              >{n<10?`0${n}`:n}</div>
-              {n!==5 && <div className="w-10 h-1 rounded bg-gray-300" style={{background: step>n ? ACCENT_COLOR : '#e5e7eb'}}></div>}
+              <div className={`w-8 h-8 flex items-center justify-center rounded-full font-bold text-sm border-2 transition-all duration-300 ${
+                step >= n 
+                  ? 'bg-[#2bb3ea] text-white border-[#2bb3ea]' 
+                  : 'bg-gray-100 text-gray-400 border-gray-200'
+              }`}>
+                {n}
+              </div>
+              {n !== 4 && (
+                <div className={`w-8 h-1 rounded transition-all duration-300 ${
+                  step > n ? 'bg-[#2bb3ea]' : 'bg-gray-200'
+                }`}></div>
+              )}
             </React.Fragment>
           ))}
         </div>
-        {/* 1. Adım: İl seçimi */}
+
+        {/* 1. Adım: Şehir ve Şube Seçimi */}
         {step === 1 && (
-          <div className={`transition-all duration-500 ${animate ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-            <HorizontalCarousel
-              options={cities}
-              selectedIdx={selectedCityIdx}
+          <div className="space-y-8">
+            <CitySelector
+              cities={cities}
+              selectedCityIdx={selectedCityIdx}
               onSelect={setSelectedCityIdx}
-              label="İl Seç"
             />
-            <button
-              className="mt-6 w-full bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => goToStep(2)}
-            >
-              Devam Et
-            </button>
-          </div>
-        )}
-        {/* 2. Adım: Şube seçimi */}
-        {step === 2 && (
-          <div className={`transition-all duration-500 ${animate ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-            <HorizontalCarousel
-              options={currentBranches}
-              selectedIdx={selectedBranchIdx}
+            <BranchSelector
+              branches={currentBranches}
+              selectedBranchIdx={selectedBranchIdx}
               onSelect={setSelectedBranchIdx}
-              label="Şube Seç"
             />
-            <div className="flex justify-between mt-6 gap-4">
+            <div className="flex justify-center">
               <button
-                className="w-1/2 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg shadow hover:bg-gray-300 transition-all text-lg"
-                onClick={() => goToStep(1)}
-              >
-                Geri
-              </button>
-              <button
-                className="w-1/2 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-                onClick={() => goToStep(3)}
+                onClick={() => setStep(2)}
+                className="bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all"
               >
                 Devam Et
               </button>
             </div>
           </div>
         )}
-        {/* 3. Adım: Doktor seçimi */}
+
+        {/* 2. Adım: Doktor Seçimi */}
+        {step === 2 && (
+          <div>
+            <DoctorSelector
+              doctors={doctors}
+              selectedIdx={selectedDoctorIdx}
+              onSelect={setSelectedDoctorIdx}
+              branchName={selectedBranch}
+            />
+            <div className="flex justify-between gap-4">
+              <button
+                onClick={() => setStep(1)}
+                className="flex-1 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-300 transition-all"
+              >
+                Geri
+              </button>
+              <button
+                onClick={() => setStep(3)}
+                className="flex-1 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all"
+              >
+                Devam Et
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* 3. Adım: Tarih ve Saat Seçimi */}
         {step === 3 && (
-          <div className={`transition-all duration-500 ${animate ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-            <DoctorSelector
-              doctors={doctors}
-              selectedIdx={selectedDoctorIdx}
-              onSelect={setSelectedDoctorIdx}
-              branchName={selectedBranch}
+          <div>
+            <DateSelector
+              days={days}
+              selectedDayIdx={selectedDayIdx}
+              onSelect={setSelectedDayIdx}
             />
-            <div className="flex justify-between mt-6 gap-4">
+            <TimeSelector
+              slots={days[selectedDayIdx].slots}
+              selectedSlot={selectedSlot}
+              onSelect={setSelectedSlot}
+            />
+            <div className="flex justify-between gap-4">
               <button
-                className="w-1/2 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg shadow hover:bg-gray-300 transition-all text-lg"
-                onClick={() => goToStep(2)}
+                onClick={() => setStep(2)}
+                className="flex-1 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-300 transition-all"
               >
                 Geri
               </button>
               <button
-                className="w-1/2 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-                onClick={() => goToStep(4)}
+                onClick={() => selectedSlot && setStep(4)}
+                disabled={!selectedSlot}
+                className="flex-1 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Devam Et
               </button>
             </div>
           </div>
         )}
-        {/* 4. Adım: Tarih ve Saat seçimi */}
+
+        {/* 4. Adım: İletişim Bilgileri */}
         {step === 4 && (
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 transition-all duration-500">
-            {/* Sol: Doktor info dairesi */}
-            <DoctorSelector
-              doctors={doctors}
-              selectedIdx={selectedDoctorIdx}
-              onSelect={setSelectedDoctorIdx}
-              branchName={selectedBranch}
-            />
-            {/* Sağ: Takvim ve saat seçici + butonlar */}
-            <div className="flex flex-col items-center gap-6">
-              <TimePicker
-                days={days}
-                selectedDayIdx={selectedDayIdx}
-                setSelectedDayIdx={setSelectedDayIdx}
-                selectedSlot={selectedSlot}
-                setSelectedSlot={setSelectedSlot}
-              />
-              <div className="flex justify-between w-full gap-4 mt-4">
-                <button
-                  className="w-1/2 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg shadow hover:bg-gray-300 transition-all text-lg"
-                  onClick={() => setStep(3)}
-                >
-                  Geri
-                </button>
-                <button
-                  className="w-1/2 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-                  onClick={() => selectedSlot && setStep(5)}
-                  disabled={!selectedSlot}
-                >
-                  Devam Et
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-        {/* 5. Adım: İletişim ve onay */}
-        {step === 5 && (
-          <div className="flex flex-col items-center justify-center min-h-[400px]">
+          <div>
             <ContactForm
               name={name}
               setName={setName}
@@ -548,7 +455,7 @@ const AppointmentWizard = () => {
               submitting={submitting}
               selectedDay={days[selectedDayIdx]}
               selectedSlot={selectedSlot}
-              onEdit={() => setStep(4)}
+              onEdit={() => setStep(3)}
               onSubmit={() => {
                 setSubmitting(true);
                 setTimeout(() => {
@@ -557,9 +464,16 @@ const AppointmentWizard = () => {
                 }, 1500);
               }}
             />
+            <div className="flex justify-center mt-6">
+              <button
+                onClick={() => setStep(3)}
+                className="bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 transition-all"
+              >
+                Geri
+              </button>
+            </div>
           </div>
         )}
-        {/* Diğer adımlar buraya eklenecek */}
       </div>
     </section>
   );
