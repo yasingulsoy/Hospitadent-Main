@@ -4,7 +4,7 @@ import { navLinksData } from "../../data/data";
 import ResponsiveMenu from "./ResponsiveMenu";
 import logo from '../../assets/logo.webp';
 import CountryFlag from 'react-country-flag';
-import { FaFacebookF, FaXTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
+import { FaFacebookF, FaXTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
 import { FaBars } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -114,7 +114,7 @@ const Navbar = () => {
       setSearchResults(
         allLinks.filter(l => l.name.toLowerCase().includes(searchValue.toLowerCase()))
       );
-    } else {
+      } else {
       setSearchResults([]);
     }
   }, [searchValue, allLinks]);
@@ -220,8 +220,8 @@ const Navbar = () => {
                               {res.name}
                             </a>
                           </li>
-                        ))}
-                      </ul>
+            ))}
+          </ul>
                     )}
                   </div>
                 )}
@@ -231,7 +231,7 @@ const Navbar = () => {
                 {typewriterText}
               </div>
             </div>
-          </div>
+        </div>
           {/* Sağ: Dil seçici ve sosyal medya */}
           <div className="flex flex-col items-end gap-2 min-w-[120px]">
             <div className="flex items-center gap-3 bg-gray-100 rounded-lg px-3 py-1 shadow-sm">
@@ -259,8 +259,8 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-              )}
-            </div>
+          )}
+        </div>
             {/* Sosyal medya ikonları */}
             <div className="hidden sm:flex items-center gap-2 mt-1">
               <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
@@ -280,10 +280,13 @@ const Navbar = () => {
               <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
                 <FaLinkedinIn className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
               </a>
+              <a href="https://api.whatsapp.com/send?phone=905531029922" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
+                <FaWhatsapp className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
+              </a>
             </div>
           </div>
-        </nav>
-      </header>
+      </nav>
+    </header>
       
       {/* Responsive Menu */}
       <ResponsiveMenu 
