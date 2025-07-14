@@ -155,8 +155,8 @@ const HorizontalCarousel = ({ options, selectedIdx, onSelect, label }) => {
   );
 };
 
-// Doktor seçme component'i
-const DoctorSelector = ({ doctors, selectedIdx, onSelect }) => {
+// Doktor seçme component'i (örnekteki gibi)
+const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
   const handlePrev = () => {
     onSelect((selectedIdx - 1 + doctors.length) % doctors.length);
   };
@@ -168,113 +168,58 @@ const DoctorSelector = ({ doctors, selectedIdx, onSelect }) => {
   const selectedDoctor = doctors[selectedIdx];
 
   return (
-    <div className="flex flex-col items-center mb-8">
-      <label className="block text-xl font-bold mb-8 text-gray-800 text-center tracking-wide">Doktor Seç</label>
-      
-      <div className="relative w-full max-w-lg mx-auto">
-        {/* Ana seçili doktor */}
-        <div className="relative mb-8">
-          <div 
-            className="relative bg-gradient-to-br from-[#2bb3ea] via-[#1a9fd8] to-[#0f4f78] text-white rounded-3xl p-8 shadow-2xl transform transition-all duration-700 scale-110 overflow-hidden"
-            style={{
-              boxShadow: `0 0 0 12px ${ACCENT_COLOR}15, 0 25px 50px rgba(43, 179, 234, 0.4), inset 0 1px 0 rgba(255,255,255,0.2)`
-            }}
-          >
-            {/* Arka plan dekoratif elementler */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-5 rounded-full translate-y-12 -translate-x-12"></div>
-            
-            <div className="text-center relative z-10">
-              <div className="mb-4 flex justify-center">
-                <img 
-                  src={selectedDoctor.image} 
-                  alt={selectedDoctor.name}
-                  className="w-24 h-24 rounded-full object-cover border-4 border-white/30 shadow-lg"
-                />
-              </div>
-              <div className="text-2xl font-black mb-2 tracking-tight">{selectedDoctor.name}</div>
-              <div className="text-lg font-semibold mb-3 opacity-90">{selectedDoctor.specialty}</div>
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="bg-white bg-opacity-20 rounded-full px-3 py-1 text-sm font-medium backdrop-blur-sm">
-                  {selectedDoctor.experience}
-                </div>
-                <div className="flex items-center gap-1 bg-white bg-opacity-20 rounded-full px-3 py-1 text-sm font-medium backdrop-blur-sm">
-                  <span>⭐</span>
-                  <span>{selectedDoctor.rating}</span>
-                </div>
-              </div>
-              <div className="text-sm font-medium opacity-90 bg-white bg-opacity-20 rounded-full px-4 py-1 inline-block backdrop-blur-sm">
-                Seçili
-              </div>
-            </div>
-          </div>
+    <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 mb-8 w-full max-w-5xl mx-auto px-4">
+      {/* Sol: Büyük dairede doktor info */}
+      <div className="flex-shrink-0 flex flex-col items-center justify-between bg-white rounded-full shadow-2xl w-[420px] h-[420px] overflow-hidden p-8">
+        <div className="flex flex-col items-center w-full flex-1 justify-start">
+          <div className="text-xl text-gray-500 font-medium mb-3 text-center">{branchName} Diş Kliniği</div>
+          <div className="text-3xl font-bold text-gray-800 mb-2 leading-tight break-words text-center">{selectedDoctor.name}</div>
+          <div className="text-lg text-gray-600 font-medium text-center">{selectedDoctor.specialty}</div>
         </div>
-
-        {/* Kaydırma kontrolleri */}
-        <div className="flex items-center justify-between mb-6">
-          {/* Sol ok */}
-          <button
-            onClick={handlePrev}
-            className="group relative w-14 h-14 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 flex items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-white"
-          >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex flex-col items-center justify-end w-full flex-1 mt-2">
+          <img
+            src={selectedDoctor.image}
+            alt={selectedDoctor.name}
+            className="w-64 h-64 object-cover rounded-full border-4 border-white shadow-2xl bg-gray-100"
+            style={{objectPosition: 'center top'}}
+          />
+        </div>
+        {/* Oklar ve noktalar dairenin altında ortalanmış */}
+        <div className="flex flex-col items-center justify-center w-full mt-4">
+          <div className="flex items-center justify-center gap-6 mb-2">
+            <button
+              onClick={handlePrev}
+              className="group w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:scale-110"
+            >
+              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
               </svg>
-            </div>
-          </button>
-
-          {/* Öğe göstergesi */}
-          <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg">
+            </button>
+            <button
+              onClick={handleNext}
+              className="group w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:scale-110"
+            >
+              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+          <div className="flex items-center gap-2">
             {doctors.map((_, idx) => (
               <div
                 key={idx}
-                className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                   idx === selectedIdx 
-                    ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] scale-150 shadow-lg' 
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] scale-125' 
+                    : 'bg-gray-300'
                 }`}
               />
             ))}
           </div>
-
-          {/* Sağ ok */}
-          <button
-            onClick={handleNext}
-            className="group relative w-14 h-14 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 flex items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-white"
-          >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </button>
-        </div>
-
-        {/* Önceki ve sonraki doktorlar */}
-        <div className="flex justify-between items-center px-6">
-          <div className="text-center opacity-30 transform scale-90 transition-all duration-500 hover:opacity-50">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 text-gray-700 shadow-lg border border-white/20">
-              <img 
-                src={doctors[(selectedIdx - 1 + doctors.length) % doctors.length].image}
-                alt={doctors[(selectedIdx - 1 + doctors.length) % doctors.length].name}
-                className="w-12 h-12 rounded-full object-cover mx-auto mb-2 border-2 border-white/50"
-              />
-              <div className="font-semibold text-sm">{doctors[(selectedIdx - 1 + doctors.length) % doctors.length].name}</div>
-            </div>
-          </div>
-          <div className="text-center opacity-30 transform scale-90 transition-all duration-500 hover:opacity-50">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 text-gray-700 shadow-lg border border-white/20">
-              <img 
-                src={doctors[(selectedIdx + 1) % doctors.length].image}
-                alt={doctors[(selectedIdx + 1) % doctors.length].name}
-                className="w-12 h-12 rounded-full object-cover mx-auto mb-2 border-2 border-white/50"
-              />
-              <div className="font-semibold text-sm">{doctors[(selectedIdx + 1) % doctors.length].name}</div>
-            </div>
-          </div>
         </div>
       </div>
+      {/* Sağ: Boş alan veya ileride takvim kutusu için yer */}
+      <div className="flex-1" />
     </div>
   );
 };
@@ -371,6 +316,7 @@ const AppointmentWizard = () => {
               doctors={doctors}
               selectedIdx={selectedDoctorIdx}
               onSelect={setSelectedDoctorIdx}
+              branchName={selectedBranch}
             />
             <div className="flex justify-between mt-6 gap-4">
               <button
