@@ -98,7 +98,6 @@ export const navLinksData = [
           { name: 'Bonding Tedavisi Nedir? Nasıl Uygulanır?', path: 'bonding' },
         ]
       },
-      // Diğer ana tedavi başlıkları da benzer şekilde eklenebilir...
       { name: 'Eksik Diş', path: 'eksik-dis' },
       { name: 'İmplant', path: 'implant' },
       { name: 'Genel Diş Tedavileri', path: 'genel-tedaviler' },

@@ -2,85 +2,85 @@ import React from "react";
 import logo from "../../assets/logo.webp"; // Logo dosyanızı assets klasörüne ekleyin
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
-const footerLinks = [
-  {
-    title: "KURUMSAL",
-    links: [
-      { name: "Hakkımızda", href: "#" },
-      { name: "Franchise – Ortaklık Başvurusu", href: "#" },
-      { name: "İK İş Başvuru Formu", href: "#" },
-      { name: "Kurumsal Kimlik", href: "#" },
-      { name: "Politikalarımız", href: "#" },
-      { name: "Çerez Politikamız", href: "#" },
-      { name: "Gizlilik İlkesi", href: "#" },
-      { name: "KVKK", href: "#" },
-      { name: "İstenmeyen Olay Bildirim Formu", href: "#" },
-    ],
-  },
-  {
-    title: "FAYDALI LİNKLER",
-    links: [
-      { name: "Hekimlerimiz", href: "#" },
-      { name: "Anlaşmalı Kurumlar", href: "#" },
-      { name: "Hasta Yorumları", href: "#" },
-      { name: "Hasta Memnuniyet Videoları", href: "#" },
-      { name: "Ödüller", href: "#" },
-      { name: "Sosyal Sorumluluk", href: "#" },
-      { name: "HD Times", href: "#" },
-      { name: "Hospitadent Akademi", href: "#" },
-    ],
-  },
-  {
-    title: "ONLINE",
-    links: [
-      { name: "Online Randevu", href: "#" },
-      { name: "Röntgen Gönder", href: "#" },
-      { name: "Fiyat Alın", href: "#" },
-      { name: "Doktora Sor", href: "#" },
-      { name: "Görüş ve Önerileriniz", href: "#" },
-      { name: "Şikayet Var", href: "#" },
-      { name: "Hospifikir", href: "#" },
-    ],
-  },
-  {
-    title: "TEDAVİLERİMİZ",
-    links: [
-      { name: "İmplant", href: "#" },
-      { name: "Dijital Gülüş Tasarımı", href: "#" },
-      { name: "Zirkonyum Kaplama", href: "#" },
-      { name: "Lamina Diş Kaplama", href: "#" },
-      { name: "Porselen Kaplama", href: "#" },
-      { name: "Diş Beyazlatma", href: "#" },
-      { name: "Ortodonti", href: "#" },
-      { name: "Diş Eti Tedavisi", href: "#" },
-    ],
-  },
-];
-
-const footerButtons = [
-  {
-    icon: faLocationDot,
-    text: "Şubeleri Göster",
-    color: "#2bb3ea",
-    href: "#",
-  },
-  {
-    icon: faPhone,
-    text: "Şimdi Ara",
-    color: "#2bb3ea",
-    href: "tel:+902125550123",
-  },
-  {
-    icon: faEnvelope,
-    text: "E-Posta Gönder",
-    color: "#2bb3ea",
-    href: "mailto:info@hospitadent.com",
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const footerLinks = [
+    {
+      title: t('footer.corporate'),
+      links: [
+        { name: t('footer.about'), href: "#" },
+        { name: t('footer.franchise'), href: "#" },
+        { name: t('footer.job'), href: "#" },
+        { name: t('footer.identity'), href: "#" },
+        { name: t('footer.policies'), href: "#" },
+        { name: t('footer.cookies'), href: "#" },
+        { name: t('footer.privacy'), href: "#" },
+        { name: t('footer.kvkk'), href: "#" },
+        { name: t('footer.incident'), href: "#" },
+      ],
+    },
+    {
+      title: t('footer.useful'),
+      links: [
+        { name: t('footer.doctors'), href: "#" },
+        { name: t('footer.partners'), href: "#" },
+        { name: t('footer.comments'), href: "#" },
+        { name: t('footer.videos'), href: "#" },
+        { name: t('footer.awards'), href: "#" },
+        { name: t('footer.social'), href: "#" },
+        { name: t('footer.times'), href: "#" },
+        { name: t('footer.academy'), href: "#" },
+      ],
+    },
+    {
+      title: t('footer.online'),
+      links: [
+        { name: t('footer.appointment'), href: "#" },
+        { name: t('footer.xray'), href: "#" },
+        { name: t('footer.price'), href: "#" },
+        { name: t('footer.ask'), href: "#" },
+        { name: t('footer.feedback'), href: "#" },
+        { name: t('footer.complaint'), href: "#" },
+        { name: t('footer.idea'), href: "#" },
+      ],
+    },
+    {
+      title: t('footer.treatments'),
+      links: [
+        { name: t('footer.implant'), href: "#" },
+        { name: t('footer.smile'), href: "#" },
+        { name: t('footer.zirconium'), href: "#" },
+        { name: t('footer.lamina'), href: "#" },
+        { name: t('footer.porcelain'), href: "#" },
+        { name: t('footer.whitening'), href: "#" },
+        { name: t('footer.ortho'), href: "#" },
+        { name: t('footer.gum'), href: "#" },
+      ],
+    },
+  ];
+  const footerButtons = [
+    {
+      icon: faLocationDot,
+      text: t('footer.showBranches'),
+      color: "#2bb3ea",
+      href: "#",
+    },
+    {
+      icon: faPhone,
+      text: t('footer.callNow'),
+      color: "#2bb3ea",
+      href: "tel:+902125550123",
+    },
+    {
+      icon: faEnvelope,
+      text: t('footer.sendMail'),
+      color: "#2bb3ea",
+      href: "mailto:info@hospitadent.com",
+    },
+  ];
   return (
     <footer className="bg-white border-t border-gray-100 pt-12 pb-4 px-2 md:px-0">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-0">
@@ -96,7 +96,7 @@ const Footer = () => {
                       href={link.href}
                       className="flex items-center text-[#0f4f78] hover:text-[#2bb3ea] text-sm md:text-base transition-colors duration-200"
                     >
-                      <span className="mr-2 text-xs">&#8250;</span> {/* › işareti */}
+                      <span className="mr-2 text-xs">&#8250;</span>
                       {link.name}
                     </a>
                   </li>
@@ -125,8 +125,8 @@ const Footer = () => {
       </div>
       {/* Alt Bilgi */}
       <div className="max-w-7xl mx-auto mt-8 border-t border-gray-200 pt-4 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
-        <span>© {currentYear} Hospitadent. Tüm hakları saklıdır.</span>
-        <span>Geliştirici: <span className="text-[#0f4f78] font-semibold">Yasin Gülsoy</span></span>
+        <span>© {currentYear} Hospitadent. {t('footer.copyright')}</span>
+        <span>{t('footer.developer')}: <span className="text-[#0f4f78] font-semibold">Yasin Gülsoy</span></span>
       </div>
     </footer>
   );

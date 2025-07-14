@@ -220,10 +220,23 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       {/* Sosyal medya ve iletişim */}
       <div className="flex flex-col items-center gap-4 mt-16 mb-4">
         <div className="flex gap-3">
-          <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9"><FaFacebookF /></button>
-          <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9"><FaTwitter /></button>
-          <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9"><FaInstagram /></button>
-          <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9"><FaLinkedinIn /></button>
+          <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
+            <FaFacebookF />
+          </a>
+          <a href="https://x.com/Hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
+            <FaTwitter />
+          </a>
+          <a href="https://www.youtube.com/c/HospitadentTV" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
+            <FaInstagram />
+          </a>
+          <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
+            <FaLinkedinIn />
+          </a>
         </div>
         <div className="flex flex-col items-center gap-1 text-white text-base">
           <a href="tel:4449922" className="flex items-center gap-1 hover:text-primary transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg> 444 99 22</a>

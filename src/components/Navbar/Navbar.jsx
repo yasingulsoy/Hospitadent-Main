@@ -6,15 +6,17 @@ import logo from '../../assets/logo.webp';
 import CountryFlag from 'react-country-flag';
 import { FaFacebookF, FaXTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import { FaBars } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const languages = [
-  { code: 'tr', name: 'Türkçe' },
-  { code: 'us', name: 'English' },
-  { code: 'fr', name: 'Français' },
-  { code: 'de', name: 'Deutsch' },
-  { code: 'ru', name: 'Русский' },
-  { code: 'es', name: 'Español' },
-  { code: 'sa', name: 'العربية' },
+  { code: 'tr', name: 'Türkçe', flag: 'TR' },
+  { code: 'en', name: 'English', flag: 'GB' },
+  { code: 'fr', name: 'Français', flag: 'FR' },
+  { code: 'de', name: 'Deutsch', flag: 'DE' },
+  { code: 'ru', name: 'Русский', flag: 'RU' },
+  { code: 'es', name: 'Español', flag: 'ES' },
+  { code: 'ar', name: 'العربية', flag: 'SA' },
 ];
 
 // Typewriter animasyon verileri
@@ -23,10 +25,21 @@ const typewriterWords = [
   "İmplant",
   "Ortodonti",
   "Diş teli",
-  "Zirkonyum kaplama"
+  "Zirkonyum kaplama",
+  "Lamina kaplama",
+  "Porselen diş",
+  "Diş çekimi",
+  "Diş eti tedavisi",
+  "Çocuk diş hekimliği",
+  "Diş dolgusu",
+  "Kanal tedavisi",
+  "Diş temizliği",
+  "Gülüş tasarımı",
+  "Diş protezi",
+  "Diş röntgeni"
 ];
 
-function useTypewriter(words, speed = 90, pause = 1200) {
+function useTypewriter(words, speed = 60, pause = 800) {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
@@ -64,6 +77,8 @@ const Navbar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const inputRef = React.useRef(null);
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
   
   // Dropdown'da Türkçe her zaman üstte ve vurgulu, diğer diller aşağıda olacak şekilde sıralama fonksiyonu
   const getSortedLanguages = () => {
@@ -112,36 +127,50 @@ const Navbar = () => {
     }
   }
 
+  // Dil değişince i18n dilini de değiştir
+  const handleLangChange = (lang) => {
+    setSelectedLang(lang);
+    setLangOpen(false);
+    if(lang.code === 'tr') navigate('/');
+    else navigate('/' + lang.code);
+    i18n.changeLanguage(lang.code);
+  };
+
+  // Typewriter yazısına tıklayınca arama inputuna focus
+  const handleTypewriterClick = () => {
+    setSearchOpen(true);
+    setTimeout(() => {
+      if (inputRef.current) inputRef.current.focus();
+    }, 50);
+  };
+
   return (
     <>
       {/* Üst Bar */}
-      <div className="w-full bg-secondary border-b border-gray-200">
-        <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-2 sm:px-4 py-1 gap-2 text-[clamp(0.8rem,1.7vw,1.15rem)] font-semibold">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-6">
-            <a href="tel:4449922" className="flex items-center hover:text-primary transition gap-1 text-sm sm:text-base">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-[1.1em] h-[1.1em]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg>
-              444 99 22
+      <div className="w-full bg-secondary border-b border-gray-200 relative overflow-hidden">
+        {/* Animasyonlu diş SVG */}
+        <svg className="absolute top-1/2 left-0 -translate-y-1/2 animate-tooth-move opacity-10 pointer-events-none" width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4C22 4 12 12 12 28c0 12 8 28 20 28s20-16 20-28C52 12 42 4 32 4z" fill="#fff" stroke="#2bb3ea" strokeWidth="2"/>
+        </svg>
+        <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center px-2 sm:px-4 py-2 gap-2 text-[clamp(1rem,2vw,1.3rem)] font-semibold relative z-10">
+          <div className="flex items-center gap-6 justify-center">
+            <a href="tel:4449922" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-lg group">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg>
+              <span>444 99 22</span>
             </a>
-            <a href="mailto:info@hospitadent.com" className="hidden sm:flex items-center hover:text-primary transition gap-1">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-[1.1em] h-[1.1em]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
-              info@hospitadent.com
+            <a href="mailto:info@hospitadent.com" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-lg group">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
+              <span>info@hospitadent.com</span>
             </a>
-          </div>
-          {/* Sosyal medya ikonları büyük ekranda, küçükte gizli */}
-          <div className="hidden sm:flex items-center gap-2">
-            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaFacebookF /></button>
-            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaXTwitter /></button>
-            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaInstagram /></button>
-            <button className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8"><FaLinkedinIn /></button>
           </div>
         </div>
       </div>
       
       {/* Ana Navbar */}
       <header className="sticky top-0 z-30 bg-white shadow-md w-full">
-        <nav className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-2 sm:px-4 py-2 gap-2">
-          {/* Logo ve hamburger */}
-          <div className="flex items-center flex-shrink-0 w-auto justify-between h-[clamp(2.2rem,5vw,3.5rem)]">
+        <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-2 sm:px-4 py-2 gap-2">
+          {/* Sol: Logo */}
+          <div className="flex items-center flex-shrink-0 w-auto h-[clamp(2.2rem,5vw,3.5rem)]">
             <a href="/" className="block select-none h-[clamp(2rem,4vw,3.2rem)]">
               <img src={logo} alt="Logo" className="h-full w-auto" />
             </a>
@@ -150,39 +179,80 @@ const Navbar = () => {
               <FaBars />
             </button>
           </div>
-          
-          {/* Menü */}
-          <div className="flex-1 hidden md:flex justify-center w-full">
-            <ul className="flex items-center gap-0.5 text-[clamp(0.85rem,1.5vw,1.1rem)]">
+          {/* Orta: Menü + arama + typewriter */}
+          <div className="flex-1 flex flex-col items-center justify-center">
+            <ul className="flex items-center gap-0.5 text-[clamp(0.85rem,1.5vw,1.1rem)] mb-1">
               {navLinksData.map((item, index) => (
                 <li key={index} className="text-blue font-bold tracking-wide hover:text-primary transition-colors duration-200 cursor-pointer whitespace-nowrap text-[clamp(0.9rem,2vw,1.3rem)]">
                   <NavLinks item={item} handleNav={handleNav} />
                 </li>
               ))}
             </ul>
+            <div className="flex items-center justify-center gap-4">
+              {/* Arama */}
+              <div className="flex items-center gap-2">
+                <button
+                  className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2"
+                  onClick={() => setSearchOpen((v) => !v)}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                </button>
+                {searchOpen && (
+                  <div className="relative">
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      value={searchValue}
+                      onChange={e => setSearchValue(e.target.value)}
+                      onKeyDown={handleSearchKey}
+                      className="px-3 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px]"
+                      placeholder="Arayın..."
+                    />
+                    {searchResults.length > 0 && (
+                      <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
+                        {searchResults.map((res, i) => (
+                          <li key={res.path}>
+                            <a
+                              href={`#${res.path}`}
+                              className="block px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm"
+                              onClick={() => { setSearchOpen(false); setSearchValue(""); }}
+                            >
+                              {res.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
+              </div>
+              {/* Typewriter animasyon */}
+              <div className="min-w-[180px] text-blue font-medium text-sm cursor-pointer select-none" onClick={handleTypewriterClick} title="Arama için tıklayın">
+                {typewriterText}
+              </div>
+            </div>
           </div>
-          
-          {/* Dil ve arama büyük ekranda, küçükte hamburgerde */}
-          <div className="relative hidden md:flex items-center gap-2">
+          {/* Sağ: Dil seçici ve sosyal medya */}
+          <div className="flex flex-col items-end gap-2 min-w-[120px]">
             <div className="flex items-center gap-3 bg-gray-100 rounded-lg px-3 py-1 shadow-sm">
               <button
                 className="flex items-center rounded bg-gray-200 text-blue font-bold hover:bg-gray-300 transition gap-1 px-3 py-1 text-[clamp(0.9rem,1.7vw,1.15rem)]"
                 onClick={() => setLangOpen(!langOpen)}
               >
-                <CountryFlag countryCode={selectedLang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
+                <CountryFlag countryCode={selectedLang.flag} svg className="w-5 h-5 rounded" />
                 <span>{selectedLang.name}</span>
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
               </button>
               {langOpen && (
-                <ul className="absolute right-0 mt-2 bg-primary text-white rounded shadow-xl z-50 min-w-[8rem]">
+                <ul className="absolute right-0 top-full mt-1 bg-primary text-white rounded shadow-xl z-50 min-w-[8rem]">
                   {getSortedLanguages().map((lang, idx) => (
                     <li key={lang.code}>
                       <button
                         className={`flex items-center w-full text-left ${lang.code === selectedLang.code ? 'bg-white text-primary font-bold cursor-default' : 'hover:bg-blue-900'}`}
-                        onClick={() => { if(lang.code !== selectedLang.code) { setSelectedLang(lang); setLangOpen(false); } }}
+                        onClick={() => handleLangChange(lang)}
                         disabled={lang.code === selectedLang.code}
                       >
-                        <CountryFlag countryCode={lang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
+                        <CountryFlag countryCode={lang.flag} svg className="w-5 h-5 rounded" />
                         <span className="ml-2">{lang.name}</span>
                       </button>
                     </li>
@@ -190,48 +260,25 @@ const Navbar = () => {
                 </ul>
               )}
             </div>
-            
-            {/* Arama */}
-            <div className="flex items-center gap-2">
-              <button
-                className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2"
-                onClick={() => setSearchOpen((v) => !v)}
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-              </button>
-              {searchOpen && (
-                <div className="relative">
-                  <input
-                    ref={inputRef}
-                    type="text"
-                    value={searchValue}
-                    onChange={e => setSearchValue(e.target.value)}
-                    onKeyDown={handleSearchKey}
-                    className="px-3 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px]"
-                    placeholder="Arayın..."
-                  />
-                  {searchResults.length > 0 && (
-                    <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
-                      {searchResults.map((res, i) => (
-                        <li key={res.path}>
-                          <a
-                            href={`#${res.path}`}
-                            className="block px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm"
-                            onClick={() => { setSearchOpen(false); setSearchValue(""); }}
-                          >
-                            {res.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              )}
-            </div>
-            
-            {/* Typewriter animasyon */}
-            <div className="hidden lg:block min-w-[150px] text-blue font-medium text-sm">
-              {typewriterText}
+            {/* Sosyal medya ikonları */}
+            <div className="hidden sm:flex items-center gap-2 mt-1">
+              <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
+                <FaFacebookF />
+              </a>
+              <a href="https://x.com/Hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
+                <FaXTwitter />
+              </a>
+              <a href="https://www.youtube.com/c/HospitadentTV" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
+                <FaInstagram />
+              </a>
+              <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 hover:scale-110">
+                <FaLinkedinIn />
+              </a>
             </div>
           </div>
         </nav>

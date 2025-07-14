@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
+import { useTranslation } from 'react-i18next';
 
 const NavLinks = ({ item, handleNav, depth = 0 }) => {
   const [dropdown, setDropdown] = useState(false);
+  const { t } = useTranslation();
 
   // Eğer submenu varsa ve en az bir alt eleman varsa açılır menü göster
   if (item.submenu && Array.isArray(item.submenu) && item.submenu.length > 0) {
@@ -14,7 +16,7 @@ const NavLinks = ({ item, handleNav, depth = 0 }) => {
         onMouseLeave={() => setDropdown(false)}
       >
         <span className={`flex items-center gap-1 py-3 px-4 ${!isRoot ? 'justify-between w-full' : ''}`}>
-          {item.name}
+          {t(item.name)}
           <svg className={`ml-2 w-4 h-4 transition-transform duration-200 ${dropdown && !isRoot ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </span>
         <ul
@@ -38,7 +40,7 @@ const NavLinks = ({ item, handleNav, depth = 0 }) => {
           rel="noopener noreferrer"
           className="block px-4 py-3"
         >
-          {item.name}
+          {t(item.name)}
         </a>
       </li>
     );
@@ -55,7 +57,7 @@ const NavLinks = ({ item, handleNav, depth = 0 }) => {
         onClick={handleNav}
         className="block px-4 py-3"
       >
-        {item.name}
+        {t(item.name)}
       </Link>
     </li>
   );

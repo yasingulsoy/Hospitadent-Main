@@ -1,0 +1,20 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "process": "Process",
+    "clients": "Clients",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "home": {
+    "title": "A New Era in Digital Dentistry",
+    "subtitle": "Get an appointment now for healthy and aesthetic smiles with 3D technologies.",
+    "desc": "Modern clinic, expert staff, digital solutions.",
+    "button": "Book Appointment"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+} 

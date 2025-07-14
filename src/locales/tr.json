@@ -1,0 +1,20 @@
+{
+  "navbar": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "process": "Süreç",
+    "clients": "Referanslar",
+    "contact": "İletişim",
+    "language": "Dil"
+  },
+  "home": {
+    "title": "Dijital Diş Hekimliğinde Yeni Dönem",
+    "subtitle": "3D teknolojilerle, sağlıklı ve estetik gülüşler için hemen randevu alın.",
+    "desc": "Modern klinik, uzman kadro, dijital çözümler.",
+    "button": "Randevu Al"
+  },
+  "footer": {
+    "copyright": "Tüm hakları saklıdır."
+  }
+} 
