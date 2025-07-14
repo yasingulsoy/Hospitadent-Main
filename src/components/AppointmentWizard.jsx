@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const branchGroups = [
   { city: 'İstanbul', branches: ['Mecidiyeköy', 'Bağcılar', 'Bakırköy', 'Fatih', 'Çamlıca', 'Pendik', 'Şerifali', 'Cevizlibağ', 'Ataşehir', 'Göktürk'] },
@@ -412,14 +412,6 @@ const AppointmentWizard = () => {
       setAnimate(false);
     }, 250);
   };
-
-  // Otomatik geçişi kaldırdık, butonlar geri geliyor
-  // Saat seçildiğinde otomatik geçiş
-  useEffect(() => {
-    if (step === 4 && selectedSlot) {
-      setTimeout(() => setStep(5), 400);
-    }
-  }, [step, selectedSlot]);
 
   return (
     <section className="py-20 bg-gray-100">
