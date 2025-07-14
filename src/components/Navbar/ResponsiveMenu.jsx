@@ -165,12 +165,11 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   return (
     <div
       className={`flex flex-col justify-start items-center md:hidden w-full fixed top-0 left-0 duration-500 h-screen bg-[rgba(0,0,0,.95)] z-50 ${nav ? "translate-x-0" : "-translate-x-full"}`}
-      style={{pointerEvents: nav ? 'auto' : 'none'}}
     >
       {/* Kapatma butonu */}
       <button 
         onClick={handleNav} 
-        className="absolute top-4 right-4 text-white text-3xl hover:text-blue transition-colors z-50"
+        className="absolute top-4 right-4 text-white text-3xl hover:text-blue transition-colors"
         aria-label="Menüyü kapat"
       >
         &times;
@@ -240,7 +239,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
           <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
             <FaLinkedinIn />
           </a>
-          <a href="https://api.whatsapp.com/send?phone=905531029922" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
+          <a href="https://api.whatsapp.com/send?phone=905531029922" target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition w-9 h-9 hover:scale-110">
             <FaWhatsapp />
           </a>
         </div>
