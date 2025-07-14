@@ -152,14 +152,14 @@ const Navbar = () => {
         <svg className="absolute top-1/2 left-0 -translate-y-1/2 animate-tooth-move opacity-10 pointer-events-none" width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M32 4C22 4 12 12 12 28c0 12 8 28 20 28s20-16 20-28C52 12 42 4 32 4z" fill="#fff" stroke="#2bb3ea" strokeWidth="2"/>
         </svg>
-        <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center px-2 sm:px-4 py-2 gap-2 text-[clamp(1rem,2vw,1.3rem)] font-semibold relative z-10">
-          <div className="flex items-center gap-6 justify-center">
-            <a href="tel:4449922" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-lg group">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg>
+        <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-center px-2 sm:px-4 py-2 gap-2 sm:gap-6 text-[clamp(1rem,2vw,1.3rem)] font-semibold relative z-10">
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-6 w-full justify-center">
+            <a href="tel:4449922" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-base sm:text-lg group">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg>
               <span>444 99 22</span>
             </a>
-            <a href="mailto:info@hospitadent.com" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-lg group">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
+            <a href="mailto:info@hospitadent.com" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-base sm:text-lg group">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
               <span>info@hospitadent.com</span>
             </a>
           </div>
@@ -171,11 +171,11 @@ const Navbar = () => {
         <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-2 sm:px-4 py-2 gap-2">
           {/* Sol: Logo */}
           <div className="flex items-center flex-shrink-0 w-auto h-[clamp(2.2rem,5vw,3.5rem)]">
-            <a href="/" className="block select-none h-[clamp(2rem,4vw,3.2rem)]" style={{marginBottom: '30px'}}>
-              <img src={logo} alt="Logo" className="h-full w-auto" />
+            <a href="/" className="block select-none h-[clamp(2rem,4vw,3.2rem)]" style={{marginBottom: '0px'}}>
+              <img src={logo} alt="Logo" className="h-full w-auto mx-auto" />
             </a>
             {/* Mobilde hamburger */}
-            <button className="md:hidden flex items-center ml-2 text-blue text-2xl" onClick={handleNav}>
+            <button className="md:hidden flex items-center ml-2 text-blue text-2xl" onClick={handleNav} style={{marginLeft: '8px'}}>
               <FaBars />
             </button>
           </div>
