@@ -2,27 +2,31 @@ import React from 'react'
 import Heading from '../Heading'
 import ServiceItems from './ServiceItems'
 import { servicesData } from '../../data/data'
-import Marquee from 'react-fast-marquee'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper'
+import 'swiper/css'
 
 const Services = () => {
   return (
     <section name='services' className="py-20 bg-white scroll-pt-24 ">
       <div className="w-full max-w-none px-0">
         <Heading  title='Hizmetlerimiz'/>
-        {/* react-fast-marquee ile otomatik kayan hizmetler */}
-        <Marquee
-          gradient={false}
-          speed={30}
-          pauseOnHover={true}
-          pauseOnClick={true}
-          style={{width: '100%', gap: '24px'}}
+        {/* Swiper ile otomatik ve elle kaydırılabilen hizmetler */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={12}
+          slidesPerView={'auto'}
+          loop={true}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          grabCursor={true}
+          style={{paddingBottom: 16}}
         >
           {servicesData.map((item, index) => (
-            <div key={index} style={{minWidth: 320, maxWidth: 320, height: 340, marginRight: 24, display: 'flex', flexDirection: 'column'}}>
+            <SwiperSlide key={index} style={{minWidth: 260, maxWidth: 320, width: '100%', height: 340, display: 'flex', flexDirection: 'column'}}>
               <ServiceItems item={item} />
-            </div>
+            </SwiperSlide>
           ))}
-        </Marquee>
+        </Swiper>
       </div>
     </section>
   )

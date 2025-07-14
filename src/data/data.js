@@ -114,51 +114,30 @@ export const navLinksData = [
 
 // ServicesData
 export const servicesData = [
-  {
-    img: ImgOne,
-    title: 'Gülüş Tasarımı',
-    desc: 'Dijital planlama ile kişiye özel estetik gülüşler.'
-  },
-  {
-    img: ImgTwo,
-    title: 'Diş Beyazlatma',
-    desc: 'Modern yöntemlerle hızlı ve güvenli diş beyazlatma uygulamaları.'
-  },
-  {
-    img: ImgThree,
-    title: 'Zirkonyum Kaplama',
-    desc: 'Doğal görünümlü, dayanıklı ve estetik diş kaplama çözümleri.'
-  },
-  {
-    img: ImgFour,
-    title: 'İmplant Tedavisi',
-    desc: 'Eksik dişler için ömür boyu konfor ve estetik sağlayan implant uygulamaları.'
-  },
-  {
-    img: ImgFive,
-    title: 'Ortodonti (Diş Teli)',
-    desc: 'Çocuk ve yetişkinler için şeffaf plak ve klasik diş teli tedavileri.'
-  },
-  {
-    img: ImgSix,
-    title: 'Çocuk Diş Hekimliği',
-    desc: 'Çocuklara özel koruyucu ve tedavi edici diş hekimliği hizmetleri.'
-  },
-  {
-    img: ImgOne,
-    title: 'Kanal Tedavisi',
-    desc: 'Ağrısız ve hızlı kanal tedavisi ile dişlerinizi kurtarın.'
-  },
-  {
-    img: ImgTwo,
-    title: 'Diş Eti Tedavisi',
-    desc: 'Diş eti hastalıklarının teşhis ve tedavisinde uzman yaklaşım.'
-  },
-  {
-    img: ImgThree,
-    title: 'Protez Diş Tedavileri',
-    desc: 'Sabit ve hareketli protezlerle eksik dişlerin fonksiyon ve estetiğini geri kazandırıyoruz.'
-  }
+  { img: ImgOne, title: 'Gülüş Tasarımı', desc: 'Dijital planlama ile kişiye özel estetik gülüşler.' },
+  { img: ImgTwo, title: 'Diş Beyazlatma', desc: 'Modern yöntemlerle hızlı ve güvenli diş beyazlatma uygulamaları.' },
+  { img: ImgOne, title: 'Zirkonyum Kaplama', desc: 'Doğal görünümlü, dayanıklı ve estetik diş kaplama çözümleri.' },
+  { img: ImgFour, title: 'İmplant Tedavisi', desc: 'Eksik dişler için ömür boyu konfor ve estetik sağlayan implant uygulamaları.' },
+  { img: ImgFive, title: 'Ortodonti (Diş Teli)', desc: 'Çocuk ve yetişkinler için şeffaf plak ve klasik diş teli tedavileri.' },
+  { img: ImgSix, title: 'Çocuk Diş Hekimliği', desc: 'Çocuklara özel koruyucu ve tedavi edici diş hekimliği hizmetleri.' },
+  { img: ImgFour, title: 'Kanal Tedavisi', desc: 'Ağrısız ve hızlı kanal tedavisi ile dişlerinizi kurtarın.' },
+  { img: ImgThree, title: 'Diş Eti Tedavisi', desc: 'Diş eti hastalıklarının teşhis ve tedavisinde uzman yaklaşım.' },
+  { img: ImgOne, title: 'Protez Diş Tedavileri', desc: 'Sabit ve hareketli protezlerle eksik dişlerin fonksiyon ve estetiğini geri kazandırıyoruz.' },
+  { img: ImgFour, title: 'Diş Çekimi', desc: 'Cerrahi ve klasik yöntemlerle ağrısız diş çekimi.' },
+  { img: ImgThree, title: 'Diş Taşı Temizliği', desc: 'Diş taşı ve plak temizliği ile sağlıklı diş etleri.' },
+  { img: ImgOne, title: 'Lamine Kaplama', desc: 'Estetik ve ince yaprak porselen kaplamalar.' },
+  { img: ImgOne, title: 'Porselen Kaplama', desc: 'Dayanıklı ve doğal görünümlü porselen diş kaplamaları.' },
+  { img: ImgOne, title: 'Emax Kaplama', desc: 'Yüksek estetik ve dayanıklılığa sahip Emax diş kaplamaları.' },
+  { img: ImgThree, title: 'Bonding Uygulaması', desc: 'Dişlerdeki küçük kusurlar için estetik bonding uygulamaları.' },
+  { img: ImgThree, title: 'Diş Dolgusu', desc: 'Estetik ve dayanıklı diş dolgusu çözümleri.' },
+  { img: ImgSix, title: 'Pedodonti', desc: 'Çocuklara özel diş sağlığı ve tedavi hizmetleri.' },
+  { img: ImgThree, title: 'Periodontoloji', desc: 'Diş eti hastalıklarının teşhis ve tedavisi.' },
+  { img: ImgFour, title: 'Endodonti', desc: 'Kök kanal tedavisi ve dişin iç yapısının korunması.' },
+  { img: ImgFour, title: 'Cerrahi Diş Tedavileri', desc: 'Gömülü diş çekimi ve cerrahi işlemler.' },
+  { img: ImgFive, title: 'Diş Sıkma Tedavisi', desc: 'Bruksizm (diş sıkma) için gece plağı ve tedavi.' },
+  { img: ImgTwo, title: 'Diş Röntgeni', desc: 'Dijital röntgen ile hızlı ve güvenli teşhis.' },
+  { img: ImgFive, title: 'Ağız Kokusu Tedavisi', desc: 'Ağız kokusunun nedenlerinin tespiti ve tedavisi.' },
+  { img: ImgOne, title: 'Diş Protezi Onarımı', desc: 'Kırık veya hasarlı diş protezlerinin hızlı onarımı.' }
 ]
 
 // ProcessData
