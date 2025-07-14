@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavLinks from "./NavLinks";
 import { navLinksData } from "../../data/data";
-import Button from "../Button";
 import ResponsiveMenu from "./ResponsiveMenu";
 import logo from '../../assets/logo.webp';
 import CountryFlag from 'react-country-flag';
@@ -59,13 +58,13 @@ function useTypewriter(words, speed = 90, pause = 1200) {
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [bg, setBg] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState(languages[0]);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const inputRef = React.useRef(null);
+  
   // Dropdown'da Türkçe her zaman üstte ve vurgulu, diğer diller aşağıda olacak şekilde sıralama fonksiyonu
   const getSortedLanguages = () => {
     const others = languages.filter(l => l.code !== selectedLang.code && l.code !== 'tr');
@@ -75,18 +74,6 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY) {
-        setBg(true);
-      } else {
-        setBg(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const typewriterText = useTypewriter(typewriterWords);
 
@@ -115,7 +102,7 @@ const Navbar = () => {
     } else {
       setSearchResults([]);
     }
-  }, [searchValue]);
+  }, [searchValue, allLinks]);
 
   function handleSearchKey(e) {
     if (e.key === "Enter" && searchResults.length > 0) {
@@ -128,16 +115,14 @@ const Navbar = () => {
   return (
     <>
       {/* Üst Bar */}
-      <div
-        className="w-full bg-secondary border-b border-gray-200"
-      >
+      <div className="w-full bg-secondary border-b border-gray-200">
         <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-2 sm:px-4 py-1 gap-2 text-[clamp(0.8rem,1.7vw,1.15rem)] font-semibold">
           <div className="flex flex-wrap items-center gap-2 sm:gap-6">
-            <a href="tel:4449922" className="flex items-center hover:text-primary transition gap-1">
+            <a href="tel:4449922" className="flex items-center hover:text-primary transition gap-1 text-sm sm:text-base">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-[1.1em] h-[1.1em]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg>
               444 99 22
             </a>
-            <a href="mailto:info@hospitadent.com" className="flex items-center hover:text-primary transition gap-1">
+            <a href="mailto:info@hospitadent.com" className="hidden sm:flex items-center hover:text-primary transition gap-1">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-[1.1em] h-[1.1em]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
               info@hospitadent.com
             </a>
@@ -151,6 +136,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      
       {/* Ana Navbar */}
       <header className="sticky top-0 z-30 bg-white shadow-md w-full">
         <nav className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-2 sm:px-4 py-2 gap-2">
@@ -164,6 +150,7 @@ const Navbar = () => {
               <FaBars />
             </button>
           </div>
+          
           {/* Menü */}
           <div className="flex-1 hidden md:flex justify-center w-full">
             <ul className="flex items-center gap-0.5 text-[clamp(0.85rem,1.5vw,1.1rem)]">
@@ -174,6 +161,7 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
+          
           {/* Dil ve arama büyük ekranda, küçükte hamburgerde */}
           <div className="relative hidden md:flex items-center gap-2">
             <div className="flex items-center gap-3 bg-gray-100 rounded-lg px-3 py-1 shadow-sm">
@@ -201,52 +189,62 @@ const Navbar = () => {
                   ))}
                 </ul>
               )}
-              {/* Arama butonu ve typewriter/input */}
-              <div className="flex items-center relative ml-2">
-                <button
-                  className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2 text-xl"
-                  onClick={() => setSearchOpen((v) => !v)}
-                  tabIndex={0}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-                </button>
-                {searchOpen ? (
-                  <div className="relative">
-                    <input
-                      ref={inputRef}
-                      type="text"
-                      value={searchValue}
-                      onChange={e => setSearchValue(e.target.value)}
-                      onKeyDown={handleSearchKey}
-                      className="ml-2 px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-base min-w-[160px]"
-                      placeholder="Arayın..."
-                    />
-                    {searchResults.length > 0 && (
-                      <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
-                        {searchResults.map((res, i) => (
-                          <li key={res.path}>
-                            <a
-                              href={`#${res.path}`}
-                              className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
-                              onClick={() => { setSearchOpen(false); setSearchValue(""); }}
-                            >
-                              {res.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ) : (
-                  <span className="ml-2 min-w-[120px] text-blue font-medium text-[clamp(0.95rem,1.3vw,1.15rem)] transition-all duration-300 select-none" style={{letterSpacing:'0.01em'}}>{typewriterText}</span>
-                )}
-              </div>
+            </div>
+            
+            {/* Arama */}
+            <div className="flex items-center gap-2">
+              <button
+                className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2"
+                onClick={() => setSearchOpen((v) => !v)}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+              </button>
+              {searchOpen && (
+                <div className="relative">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={searchValue}
+                    onChange={e => setSearchValue(e.target.value)}
+                    onKeyDown={handleSearchKey}
+                    className="px-3 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px]"
+                    placeholder="Arayın..."
+                  />
+                  {searchResults.length > 0 && (
+                    <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
+                      {searchResults.map((res, i) => (
+                        <li key={res.path}>
+                          <a
+                            href={`#${res.path}`}
+                            className="block px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm"
+                            onClick={() => { setSearchOpen(false); setSearchValue(""); }}
+                          >
+                            {res.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
+            </div>
+            
+            {/* Typewriter animasyon */}
+            <div className="hidden lg:block min-w-[150px] text-blue font-medium text-sm">
+              {typewriterText}
             </div>
           </div>
-          {/* Mobil Menü (ResponsiveMenu) */}
-          <ResponsiveMenu navLinksData={navLinksData} nav={nav} handleNav={handleNav} selectedLang={selectedLang} setSelectedLang={setSelectedLang} />
         </nav>
       </header>
+      
+      {/* Responsive Menu */}
+      <ResponsiveMenu 
+        navLinksData={navLinksData} 
+        nav={nav} 
+        handleNav={handleNav} 
+        selectedLang={selectedLang} 
+        setSelectedLang={setSelectedLang} 
+      />
     </>
   );
 };

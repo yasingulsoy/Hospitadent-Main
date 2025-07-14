@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 
@@ -21,34 +21,76 @@ const ToothModel = () => {
 };
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
-    <section className="w-full min-h-[70vh] flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#eaf6fb] to-white px-4 md:px-12 py-12 md:py-0">
+    <section className="w-full min-h-[70vh] flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#eaf6fb] to-white px-4 md:px-12 py-12 md:py-0 overflow-hidden">
       {/* Sol: Başlık ve Buton */}
-      <div className="flex-1 flex flex-col items-start justify-center max-w-xl z-10">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-[#0f4f78] mb-6 leading-tight drop-shadow-sm">
+      <div className="flex-1 flex flex-col items-start justify-center max-w-xl z-10 order-2 md:order-1">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#0f4f78] mb-4 md:mb-6 leading-tight drop-shadow-sm">
           Dijital Diş Hekimliğinde <span className="text-[#2bb3ea]">Yeni Dönem</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-700 mb-8">
-          3D teknolojilerle, sağlıklı ve estetik gülüşler için <b>hemen randevu alın</b>.<br/>
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed">
+          3D teknolojilerle, sağlıklı ve estetik gülüşler için <b>hemen randevu alın</b>.<br className="hidden sm:block"/>
           Modern klinik, uzman kadro, dijital çözümler.
         </p>
         <a
           href="#randevu"
-          className="bg-[#2bb3ea] hover:bg-[#0f4f78] transition-colors duration-300 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg"
+          className="bg-[#2bb3ea] hover:bg-[#0f4f78] transition-colors duration-300 text-white font-bold py-3 px-6 md:px-8 rounded-lg text-base md:text-lg shadow-lg w-full sm:w-auto text-center"
         >
           Randevu Al
         </a>
       </div>
-      {/* Sağ: 3D Diş Modeli */}
-      <div className="flex-1 flex items-center justify-center w-full h-[300px] md:h-[400px] lg:h-[500px] z-0">
-        <Canvas shadows camera={{ position: [3, 2, 5], fov: 40 }} style={{ width: '100%', height: '100%' }}>
-          <ambientLight intensity={0.7} />
-          <directionalLight position={[5, 10, 5]} intensity={1.2} castShadow />
-          <Stage environment="city" intensity={0.6} shadows={false}>
-            <ToothModel />
-          </Stage>
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.2} />
-        </Canvas>
+      
+      {/* Sağ: 3D Diş Modeli - Mobilde daha küçük */}
+      <div className="flex-1 flex items-center justify-center w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] z-0 order-1 md:order-2 mb-6 md:mb-0">
+        {!isMobile ? (
+          <Canvas 
+            shadows 
+            camera={{ position: [3, 2, 5], fov: 40 }} 
+            style={{ width: '100%', height: '100%' }}
+            gl={{ antialias: true, alpha: true }}
+            dpr={[1, 2]} // Mobilde daha düşük çözünürlük
+          >
+            <ambientLight intensity={0.7} />
+            <directionalLight position={[5, 10, 5]} intensity={1.2} castShadow />
+            <Stage environment="city" intensity={0.6} shadows={false}>
+              <ToothModel />
+            </Stage>
+            <OrbitControls 
+              enableZoom={false} 
+              autoRotate 
+              autoRotateSpeed={1.2}
+              enablePan={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+          </Canvas>
+        ) : (
+          // Mobilde basit bir placeholder
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg">
+            <div className="text-center">
+              <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <svg className="w-12 h-12 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <p className="text-blue-600 font-semibold">3D Diş Modeli</p>
+              <p className="text-blue-500 text-sm">Masaüstünde görüntüleyin</p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

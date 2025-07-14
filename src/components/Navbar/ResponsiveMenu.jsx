@@ -61,6 +61,16 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   const [searchResults, setSearchResults] = useState([]);
   const inputRef = useRef(null);
 
+  const languages = [
+    { code: 'tr', name: 'Türkçe' },
+    { code: 'us', name: 'English' },
+    { code: 'fr', name: 'Français' },
+    { code: 'de', name: 'Deutsch' },
+    { code: 'ru', name: 'Русский' },
+    { code: 'es', name: 'Español' },
+    { code: 'sa', name: 'العربية' },
+  ];
+
   // Typewriter animasyon verileri
   const typewriterWords = [
     "Diş beyazlatma",
@@ -69,11 +79,13 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     "Diş teli",
     "Zirkonyum kaplama"
   ];
+  
   function useTypewriter(words, speed = 90, pause = 1200) {
     const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
     const [deleting, setDeleting] = useState(false);
     const [blink, setBlink] = useState(true);
+    
     useEffect(() => {
       if (subIndex === words[index].length + 1 && !deleting) {
         setTimeout(() => setDeleting(true), pause);
@@ -89,12 +101,15 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       }, deleting ? speed / 2 : speed);
       return () => clearTimeout(timeout);
     }, [subIndex, index, deleting, words, speed, pause]);
+    
     useEffect(() => {
       const blinkInterval = setInterval(() => setBlink((v) => !v), 500);
       return () => clearInterval(blinkInterval);
     }, []);
+    
     return `${words[index].substring(0, subIndex)}${blink ? "|" : " "}`;
   }
+  
   const typewriterText = useTypewriter(typewriterWords);
 
   // navLinksData'dan düz başlık listesi çıkar
@@ -122,7 +137,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     } else {
       setSearchResults([]);
     }
-  }, [searchValue]);
+  }, [searchValue, allLinks]);
 
   function handleSearchKey(e) {
     if (e.key === "Enter" && searchResults.length > 0) {
@@ -132,14 +147,32 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     }
   }
 
+  // Menü açıkken body scroll'u engelle
+  useEffect(() => {
+    if (nav) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [nav]);
+
   return (
     <div
       className={`flex flex-col justify-start items-center md:hidden w-full fixed top-0 left-0 duration-500 h-screen bg-[rgba(0,0,0,.95)] z-50 ${nav ? "translate-x-0" : "-translate-x-full"}`}
     >
       {/* Kapatma butonu */}
-      <button onClick={handleNav} className="absolute top-4 right-4 text-white text-3xl">
+      <button 
+        onClick={handleNav} 
+        className="absolute top-4 right-4 text-white text-3xl hover:text-blue transition-colors"
+        aria-label="Menüyü kapat"
+      >
         &times;
       </button>
+      
       {/* Arama ve typewriter mobilde üstte */}
       <div className="w-full flex flex-col items-center gap-2 pt-8 pb-3 px-6 bg-white/90 z-50 shadow-md sticky top-0">
         <div className="flex items-center w-full justify-center">
@@ -147,6 +180,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
             className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2 text-xl"
             onClick={() => setSearchOpen((v) => !v)}
             tabIndex={0}
+            aria-label="Arama"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           </button>
@@ -168,7 +202,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                       <a
                         href={`#${res.path}`}
                         className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
-                        onClick={() => { setSearchOpen(false); setSearchValue(""); }}
+                        onClick={() => { setSearchOpen(false); setSearchValue(""); handleNav(); }}
                       >
                         {res.name}
                       </a>
@@ -182,6 +216,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
           )}
         </div>
       </div>
+      
       {/* Sosyal medya ve iletişim */}
       <div className="flex flex-col items-center gap-4 mt-16 mb-4">
         <div className="flex gap-3">
@@ -194,24 +229,24 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
           <a href="tel:4449922" className="flex items-center gap-1 hover:text-primary transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg> 444 99 22</a>
           <a href="mailto:info@hospitadent.com" className="flex items-center gap-1 hover:text-primary transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg> info@hospitadent.com</a>
         </div>
+        
         {/* Dil seçimi */}
         <div className="relative">
           <button
             className="flex items-center rounded bg-gray-200 text-blue font-bold hover:bg-gray-300 transition gap-1 px-3 py-1 text-base"
-            onClick={() => setShowLang(l => !l)}
+            onClick={() => setShowLang(!showLang)}
           >
             <CountryFlag countryCode={selectedLang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
             <span>{selectedLang.name}</span>
             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          {/* Dropdown */}
-          {typeof window !== 'undefined' && window.showLang && (
+          {showLang && (
             <ul className="absolute left-0 mt-2 bg-primary text-white rounded shadow-xl z-50 min-w-[8rem]">
-              {[{code:'tr',name:'Türkçe'}, {code:'us',name:'English'}, {code:'fr',name:'Français'}, {code:'de',name:'Deutsch'}, {code:'ru',name:'Русский'}, {code:'es',name:'Español'}, {code:'sa',name:'العربية'}].map((lang) => (
+              {languages.map((lang, idx) => (
                 <li key={lang.code}>
                   <button
                     className={`flex items-center w-full text-left ${lang.code === selectedLang.code ? 'bg-white text-primary font-bold cursor-default' : 'hover:bg-blue-900'}`}
-                    onClick={() => { if(lang.code !== selectedLang.code) { setSelectedLang(lang); window.showLang = false; } }}
+                    onClick={() => { if(lang.code !== selectedLang.code) { setSelectedLang(lang); setShowLang(false); } }}
                     disabled={lang.code === selectedLang.code}
                   >
                     <CountryFlag countryCode={lang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
@@ -223,12 +258,15 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
           )}
         </div>
       </div>
-      {/* Menü */}
-      <ul className="flex flex-col items-start space-y-2 w-full px-6 mt-2">
-        {navLinksData.map((item, index) => (
-          <MobileNavLinks item={item} key={index} />
-        ))}
-      </ul>
+      
+      {/* Ana menü */}
+      <div className="flex-1 w-full overflow-y-auto">
+        <ul className="w-full">
+          {navLinksData.map((item, index) => (
+            <MobileNavLinks item={item} key={index} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
