@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Heading from './Heading'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
