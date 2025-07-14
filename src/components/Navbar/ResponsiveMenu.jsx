@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import CountryFlag from "react-country-flag";
 
-const MobileNavLinks = ({ item }) => {
+const MobileNavLinks = ({ item, handleNav }) => {
   const [open, setOpen] = useState(false);
 
   if (item.submenu) {
@@ -18,7 +18,7 @@ const MobileNavLinks = ({ item }) => {
         {open && (
           <ul className="pl-4 border-l border-blue-400">
             {item.submenu.map((sub, idx) => (
-              <MobileNavLinks item={sub} key={idx} />
+              <MobileNavLinks item={sub} key={idx} handleNav={handleNav} />
             ))}
           </ul>
         )}
@@ -34,6 +34,7 @@ const MobileNavLinks = ({ item }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="block px-4 py-2 text-white hover:text-blue"
+          onClick={handleNav}
         >
           {item.name}
         </a>
@@ -46,6 +47,7 @@ const MobileNavLinks = ({ item }) => {
       <a
         href={`#${item.path}`}
         className="block px-4 py-2 text-white hover:text-blue"
+        onClick={handleNav}
       >
         {item.name}
       </a>
@@ -279,7 +281,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       <div className="flex-1 w-full overflow-y-auto">
         <ul className="w-full">
           {navLinksData.map((item, index) => (
-            <MobileNavLinks item={item} key={index} />
+            <MobileNavLinks item={item} key={index} handleNav={handleNav} />
           ))}
       </ul>
       </div>
