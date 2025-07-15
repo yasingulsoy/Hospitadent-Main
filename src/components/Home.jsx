@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useTranslation } from 'react-i18next';
 import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone, FaRobot } from 'react-icons/fa';
 import ico from "../assets/ico.png";
 
@@ -100,7 +99,7 @@ const AnimatedButton = ({ children, delay = 600, variant = "primary" }) => {
   return (
     <a
       href={variant === "primary" ? "#randevu" : "#contact"}
-      className={`${buttonClasses} transition-all duration-500 font-bold py-2 px-4 md:py-3 md:px-7 rounded-full text-sm md:text-base shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto text-center inline-block transition-all duration-1000 ${
+      className={`${buttonClasses} font-bold py-2 px-4 md:py-3 md:px-7 rounded-full text-sm md:text-base shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto text-center inline-block transition-all duration-1000 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >

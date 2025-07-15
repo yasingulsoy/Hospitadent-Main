@@ -124,8 +124,7 @@ const days = [
   ] },
 ];
 
-const NAVBAR_COLOR = '#0f4f78';
-const ACCENT_COLOR = '#2bb3ea';
+// Kullanılmayan değişkenler kaldırıldı
 
 // Modern şehir seçici
 const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
