@@ -2,6 +2,16 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Footer } from '../components';
 
+// Import resimler
+import ahmetSelvi from '../assets/idari_kadro/1.Diş Hekimi Ahmet Selvi.png';
+import recepEsker from '../assets/idari_kadro/2.Recep Eşkar.png';
+import halitBurak from '../assets/idari_kadro/3.Halit Burak ALTINKAYA.png';
+import canerCoban from '../assets/idari_kadro/Caner ÇOBAN.png';
+import bayramSayman from '../assets/idari_kadro/Bayram SAYMAN.png';
+import neslihanDemir from '../assets/idari_kadro/Neslihan DEMİR.png';
+import idariErkek from '../assets/idari_kadro/IDARI-ERKEK.png';
+import idariKadin from '../assets/idari_kadro/IDARI-KADIN.png';
+
 const Staff = () => {
   const { t } = useTranslation();
 
@@ -15,79 +25,415 @@ const Staff = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-cyan-200/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-cyan-200/30 to-blue-200/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-100/20 to-cyan-100/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
+
       {/* Header */}
-      <div className="bg-white py-8">
+      <div className="relative z-10 bg-white/80 backdrop-blur-sm py-12 border-b border-white/20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-[#0f4f78]">
+          <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
             İdari Kadro
           </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] mx-auto mt-6 rounded-full"></div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-8 pb-32">
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg mx-auto">
-            
-            <h2 className="text-3xl font-bold text-[#0f4f78] mb-6">
-              Yönetim Kurulu
-            </h2>
-            <p className="text-lg text-[#0f4f78] leading-relaxed mb-8">
-              Hospitadent'in başarılı yönetim kadrosu, sektörde uzun yıllara dayanan deneyimleri ve vizyoner yaklaşımlarıyla şirketin büyümesine öncülük ediyor.
-            </p>
-
-            <h2 className="text-3xl font-bold text-[#0f4f78] mb-6">
-              Genel Müdürlük
-            </h2>
-            <div className="space-y-4 mb-8">
-              <p className="text-lg text-[#0f4f78] leading-relaxed">
-                <strong>Genel Müdür:</strong> Şirketin genel stratejilerini belirleyen ve tüm operasyonları yöneten deneyimli liderimiz.
-              </p>
-              <p className="text-lg text-[#0f4f78] leading-relaxed">
-                <strong>Operasyon Müdürü:</strong> Günlük operasyonları koordine eden ve hizmet kalitesini sürekli iyileştiren uzman yöneticimiz.
-              </p>
-              <p className="text-lg text-[#0f4f78] leading-relaxed">
-                <strong>Finans Müdürü:</strong> Finansal sürdürülebilirliği sağlayan ve büyüme stratejilerini destekleyen finans uzmanımız.
-              </p>
+      <div className="container mx-auto px-4 py-16 pb-32 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Glassmorphism Cards Container */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Card 1 - Ahmet SELVİ */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={ahmetSelvi} 
+                          alt="Diş Hekimi Ahmet SELVİ" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Diş Hekimi Ahmet SELVİ
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        Yönetim Kurulu Başkanı
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-[#0f4f78] mb-6">
-              Departman Yöneticileri
-            </h2>
-            <div className="space-y-4 mb-8">
-              <p className="text-lg text-[#0f4f78] leading-relaxed">
-                <strong>İnsan Kaynakları Müdürü:</strong> Çalışan memnuniyetini ve gelişimini öncelik edinen HR uzmanımız.
-              </p>
-              <p className="text-lg text-[#0f4f78] leading-relaxed">
-                <strong>Pazarlama Müdürü:</strong> Marka değerini artıran ve müşteri deneyimini iyileştiren pazarlama stratejilerini yöneten uzmanımız.
-              </p>
-              <p className="text-lg text-[#0f4f78] leading-relaxed">
-                <strong>Teknoloji Müdürü:</strong> Dijital dönüşümü yöneten ve teknolojik altyapıyı sürekli geliştiren IT uzmanımız.
-              </p>
-              <p className="text-lg text-[#0f4f78] leading-relaxed">
-                <strong>Kalite Müdürü:</strong> Hizmet kalitesini sürekli izleyen ve iyileştiren kalite yönetim uzmanımız.
-              </p>
+            {/* Card 2 - Recep EŞKAR */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={recepEsker} 
+                          alt="Diş Hekimi Recep EŞKAR" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Diş Hekimi Recep EŞKAR
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        CEO Genel Müdür
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-[#0f4f78] mb-6">
-              Şube Yöneticileri
-            </h2>
-            <p className="text-lg text-[#0f4f78] leading-relaxed mb-8">
-              Her şubemizde deneyimli yöneticilerimiz, yerel ihtiyaçları anlayarak en iyi hizmeti sunmak için çalışıyor. 22 şubemizin her birinde uzman yönetici kadromuz bulunuyor.
-            </p>
+            {/* Card 3 - Halit Burak ALTINKAYA */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={halitBurak} 
+                          alt="Halit Burak ALTINKAYA" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Halit Burak ALTINKAYA
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        Bilgi Yönetim Sistemleri Müdürü
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <h2 className="text-3xl font-bold text-[#0f4f78] mb-6">
-              Danışma Kurulu
-            </h2>
-            <p className="text-lg text-[#0f4f78] leading-relaxed mb-8">
-              Sektörde uzmanlaşmış danışmanlarımız, şirketin stratejik kararlarında rehberlik ediyor ve sürekli gelişim için değerli öneriler sunuyor.
-            </p>
+            {/* Card 4 - Abdullah DEMİRCAN */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={idariErkek} 
+                          alt="Abdullah DEMİRCAN" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Abdullah DEMİRCAN
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        Satış Ve Pazarlama Müdürü
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <p className="text-lg text-[#0f4f78] leading-relaxed">
-              Hospitadent'in idari kadrosu, güçlü liderlik, deneyim ve vizyon ile şirketin başarısını sürdürüyor ve gelecekteki büyüme hedeflerine ulaşmak için çalışıyor.
-            </p>
+            {/* Card 5 - Caner ÇOBAN */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={canerCoban} 
+                          alt="Caner ÇOBAN" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Caner ÇOBAN
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        İş Geliştirme Operasyon Müdürü
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            {/* Card 6 - Bayram SAYMAN */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={bayramSayman} 
+                          alt="Bayram SAYMAN" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Bayram SAYMAN
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        Muhasebe Müdürü
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 7 - Zeynep Aydın SOYDANER */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={idariKadin} 
+                          alt="Zeynep Aydın SOYDANER" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-lg md:text-xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Zeynep Aydın SOYDANER
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        Avukat
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 8 - Neslihan DEMİR */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={neslihanDemir} 
+                          alt="Neslihan DEMİR" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Neslihan DEMİR
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        Bağcılar İdari İşler Müdürü
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 9 - Tuğba KAVALCI */}
+            <div className="group perspective-1000">
+              <div className="relative transform transition-all duration-700 group-hover:rotate-y-12">
+                {/* Glassmorphism Card */}
+                <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(43,179,234,0.25)] transition-all duration-700 hover:scale-105 border border-white/30 overflow-hidden relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                  
+                  {/* Card Content */}
+                  <div className="relative p-10 text-center">
+                    {/* Profile Image Container */}
+                    <div className="relative mx-auto mb-8">
+                      {/* Outer Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] rounded-3xl p-1 blur-sm group-hover:blur-md transition-all duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <img 
+                          src={idariKadin} 
+                          alt="Tuğba KAVALCI" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Name with Gradient */}
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform duration-300">
+                      Tuğba KAVALCI
+                    </h3>
+                    
+                    {/* Title with Enhanced Styling */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2bb3ea]/20 to-[#0f4f78]/20 rounded-full blur-sm"></div>
+                      <p className="relative text-sm md:text-base text-[#0f4f78] font-semibold bg-white/50 backdrop-blur-sm px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/30">
+                        Fatih İdari İşler Müdürü
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
