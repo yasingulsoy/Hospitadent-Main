@@ -131,16 +131,18 @@ const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
   return (
     <div className="mb-8">
       <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Şehir Seçin</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      {/* Mobilde yatay scroll, masaüstünde grid */}
+      <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-3 md:grid-cols-4 sm:gap-3 sm:overflow-x-visible">
         {cities.map((city, idx) => (
           <button
             key={idx}
             onClick={() => onSelect(idx)}
-            className={`p-4 rounded-xl border-2 transition-all duration-200 font-semibold text-sm sm:text-base ${
+            className={`min-w-[140px] sm:min-w-0 p-6 sm:p-4 rounded-xl border-2 transition-all duration-200 font-semibold text-base sm:text-sm md:text-base h-20 sm:h-auto flex items-center justify-center ${
               selectedCityIdx === idx
                 ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
                 : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
             }`}
+            style={{ flex: '0 0 auto' }}
           >
             {city}
           </button>
@@ -155,16 +157,18 @@ const BranchSelector = ({ branches, selectedBranchIdx, onSelect }) => {
   return (
     <div className="mb-8">
       <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Şube Seçin</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      {/* Mobilde yatay scroll, masaüstünde grid */}
+      <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-3 md:grid-cols-4 sm:gap-3 sm:overflow-x-visible">
         {branches.map((branch, idx) => (
           <button
             key={idx}
             onClick={() => onSelect(idx)}
-            className={`p-4 rounded-xl border-2 transition-all duration-200 font-semibold text-sm sm:text-base ${
+            className={`min-w-[140px] sm:min-w-0 p-6 sm:p-4 rounded-xl border-2 transition-all duration-200 font-semibold text-base sm:text-sm md:text-base h-20 sm:h-auto flex items-center justify-center ${
               selectedBranchIdx === idx
                 ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
                 : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
             }`}
+            style={{ flex: '0 0 auto' }}
           >
             {branch}
           </button>
@@ -180,21 +184,21 @@ const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
     <div className="mb-8">
       <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">{branchName} Diş Kliniği - Doktor Seçin</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
-      <div className="flex overflow-x-auto gap-4 pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:overflow-x-visible">
+      <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:overflow-x-visible">
         {doctors.map((doctor, idx) => (
           <button
             key={idx}
             onClick={() => onSelect(idx)}
-            className={`min-w-[220px] sm:min-w-0 p-4 rounded-xl border-2 transition-all duration-200 text-left flex flex-col items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2bb3ea] focus:z-10 ${selectedIdx === idx ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105' : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'} ${selectedIdx === idx ? 'ring-2 ring-[#2bb3ea]' : ''}`}
+            className={`min-w-[280px] sm:min-w-0 p-6 sm:p-4 rounded-xl border-2 transition-all duration-200 text-left flex flex-col items-center justify-center gap-3 sm:gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2bb3ea] focus:z-10 h-48 sm:h-auto ${selectedIdx === idx ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105' : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'} ${selectedIdx === idx ? 'ring-2 ring-[#2bb3ea]' : ''}`}
             style={{ flex: '0 0 auto' }}
           >
             <img
               src={doctor.image}
               alt={doctor.name}
-              className="w-20 h-20 rounded-full object-cover border-2 border-white shadow-md mb-2"
+              className="w-24 h-24 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-white shadow-md mb-2"
             />
-            <div className="font-bold text-base text-center">{doctor.name}</div>
-            <div className="text-xs opacity-80 text-center">{doctor.specialty}</div>
+            <div className="font-bold text-lg sm:text-base text-center">{doctor.name}</div>
+            <div className="text-sm sm:text-xs opacity-80 text-center">{doctor.specialty}</div>
           </button>
         ))}
       </div>
@@ -207,19 +211,21 @@ const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
   return (
     <div className="mb-6">
       <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Tarih Seçin</h3>
-      <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+      {/* Mobilde yatay scroll, masaüstünde grid */}
+      <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-6 sm:gap-2 sm:overflow-x-visible">
         {days.map((day, idx) => (
           <button
             key={idx}
             onClick={() => onSelect(idx)}
-            className={`p-3 rounded-lg border-2 transition-all duration-200 ${
+            className={`min-w-[100px] sm:min-w-0 p-4 sm:p-3 rounded-lg border-2 transition-all duration-200 h-20 sm:h-auto flex flex-col items-center justify-center ${
               selectedDayIdx === idx
                 ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
                 : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
             }`}
+            style={{ flex: '0 0 auto' }}
           >
-            <div className="text-xs font-bold">{day.date}</div>
-            <div className="text-xs opacity-80">{day.day}</div>
+            <div className="text-sm sm:text-xs font-bold">{day.date}</div>
+            <div className="text-sm sm:text-xs opacity-80">{day.day}</div>
           </button>
         ))}
       </div>
@@ -232,21 +238,29 @@ const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
   return (
     <div className="mb-6">
       <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Saat Seçin</h3>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
+      {/* Mobilde yatay scroll, masaüstünde grid */}
+      <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-4 md:grid-cols-5 sm:gap-2 sm:overflow-x-visible">
         {slots.map((slot, idx) => (
           <button
             key={idx}
             disabled={slot.status !== 'available'}
             onClick={() => onSelect(slot.time)}
-            className={`p-3 rounded-lg border-2 transition-all duration-200 text-sm font-semibold ${
+            className={`min-w-[80px] sm:min-w-0 p-4 sm:p-3 rounded-lg border-2 transition-all duration-200 text-base sm:text-sm font-semibold h-16 sm:h-auto flex items-center justify-center ${
               slot.status === 'available' && selectedSlot === slot.time
-                ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
+                ? 'bg-blue-500 text-white border-blue-600 shadow-lg scale-105'
                 : slot.status === 'available'
-                ? 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
-                : 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
+                ? 'bg-green-100 text-green-800 border-green-600 hover:bg-green-200'
+                : slot.status === 'full'
+                ? 'bg-red-100 text-red-800 border-red-600'
+                : 'bg-gray-100 text-gray-600 border-gray-500'
             }`}
+            style={{ flex: '0 0 auto' }}
           >
-            {slot.status === 'closed' ? 'Kapalı' : slot.time}
+            {slot.status === 'closed' ? (
+              <span>Kapalı</span>
+            ) : (
+              <span>{slot.time}</span>
+            )}
           </button>
         ))}
       </div>
@@ -280,7 +294,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
             value={name}
             onChange={e => setName(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all"
+            className="w-full px-4 py-4 sm:py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all text-base"
             placeholder="Adınızı ve soyadınızı girin"
           />
         </div>
@@ -293,7 +307,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
             onChange={e => setPhone(e.target.value)}
             required
             pattern="^05\d{9}$"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all"
+            className="w-full px-4 py-4 sm:py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all text-base"
             placeholder="05XXXXXXXXX"
           />
           <div className="text-xs text-gray-500 mt-1">Başında 0 olacak şekilde, örn: 05XXXXXXXXX</div>
@@ -311,7 +325,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
         <button
           type="submit"
           disabled={submitting || !name || !/^05\d{9}$/.test(phone)}
-          className="w-full bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-4 sm:py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all disabled:opacity-50 disabled:cursor-not-allowed text-base"
         >
           {submitting ? 'Gönderiliyor...' : 'Randevuyu Tamamla'}
         </button>

@@ -1,20 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone, FaRobot } from 'react-icons/fa';
 import ico from "../assets/ico.png";
+import logo from "../assets/logo.webp";
 
-// Particle efekti için basit SVG animasyonu
-const ParticleBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-10 left-10 animate-bounce">
-        <svg className="w-8 h-8 text-blue-200 opacity-60" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-blue-100/20"></div>
-    </div>
-  );
-};
+
 
 // Hero başlığı için spotlight efektli component (arka plan dahil)
 const SpotlightTitle = ({ children, delay = 0 }) => {
@@ -170,14 +159,23 @@ const ContactFabButton = ({ delay = 800 }) => {
 const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [displayNumber, setDisplayNumber] = useState(0);
+  const [animationCompleted, setAnimationCompleted] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+      setDisplayNumber(0);
+      setAnimationCompleted(false);
+    }, delay);
     return () => clearTimeout(timer);
   }, [delay]);
 
-  // Animasyonlu sayı (count-up)
+  // Animasyonlu sayı (count-up) - sadece bir kez çalışsın
   useEffect(() => {
     if (!isVisible) return;
+    
+    // Eğer animasyon zaten tamamlandıysa tekrar çalıştırma
+    if (animationCompleted) return;
+    
     let start = 0;
     let end = 0;
     // Rakam ve + işareti ayrıştırma
@@ -188,23 +186,27 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     } else {
       end = parseInt(number);
     }
+    
     let current = start;
     const duration = 1200; // ms
     const steps = 40;
     const increment = Math.ceil(end / steps);
     let step = 0;
+    
     const interval = setInterval(() => {
       step++;
       current += increment;
       if (current >= end || step >= steps) {
         setDisplayNumber(end);
+        setAnimationCompleted(true);
         clearInterval(interval);
       } else {
         setDisplayNumber(current);
       }
     }, duration / steps);
+    
     return () => clearInterval(interval);
-  }, [isVisible, number]);
+  }, [isVisible]); // number dependency'sini kaldırdık
 
   // Formatlı gösterim
   const formatted = () => {
@@ -216,15 +218,15 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
   };
 
   return (
-    <div className={`relative flex flex-col items-center justify-center rounded-xl shadow-md p-3 md:p-4 min-w-[110px] min-h-[90px] transition-all duration-700 border bg-white border-blue-100/60 text-[#0f4f78] group hover:shadow-2xl hover:z-20 hover:-rotate-2 hover:scale-105 ${
+    <div className={`relative flex flex-col items-center justify-center rounded-xl shadow-md p-2 md:p-4 min-w-[80px] md:min-w-[110px] min-h-[70px] md:min-h-[90px] transition-all duration-700 border bg-white border-blue-100/60 text-[#0f4f78] group hover:shadow-2xl hover:z-20 hover:-rotate-2 hover:scale-105 ${
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
     }`}
       style={{ transitionDelay: `${delay}ms` }}>
       {/* Parıltı efekti */}
       <div className="absolute inset-0 -z-10 rounded-xl opacity-0 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-300 blur-xl"></div>
-      <div className="mb-1 text-2xl md:text-3xl text-blue-400">{icon}</div>
-      <div className="font-bold text-base md:text-lg mb-0.5 text-[#0f4f78]">{isVisible ? formatted() : ''}</div>
-      <div className="text-xs md:text-sm font-semibold leading-tight text-blue-500">{label}</div>
+      <div className="mb-1 text-lg md:text-3xl text-blue-400">{icon}</div>
+      <div className="font-bold text-sm md:text-lg mb-0.5 text-[#0f4f78]">{isVisible ? formatted() : ''}</div>
+      <div className="text-xs md:text-sm font-semibold leading-tight text-blue-500 text-center">{label}</div>
       {sublabel && <div className="text-xs mt-0.5 text-blue-400">{sublabel}</div>}
     </div>
   );
@@ -372,11 +374,13 @@ function useTypewriterSlides(slides, writeSpeed = 50, eraseSpeed = 25, pause = 1
 const Hero = () => {
   const { displayTitle, displaySubtitle } = useTypewriterSlides(heroSlides, 50, 25, 15000);
   return (
-    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-8 sm:pt-12 md:pt-20 lg:pt-32 pb-6 sm:pb-10 md:pb-16 lg:pb-24 min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] overflow-hidden">
-      {/* Particle background */}
-      <ParticleBackground />
+    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-20 lg:pb-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden">
       {/* Ana içerik - ortalanmış */}
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full">
+        {/* Logo - mobilde görünür */}
+        <div className="mb-4 md:mb-6">
+          <img src={logo} alt="Hospitadent Logo" className="w-64 h-32 md:w-32 md:h-16 object-contain" />
+        </div>
         <SpotlightTitle delay={200}>
           {displayTitle}
         </SpotlightTitle>
@@ -384,18 +388,18 @@ const Hero = () => {
           {displaySubtitle}
         </AnimatedSubtitle>
         {/* Butonlar */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-5 sm:mb-6 md:mb-8 items-center justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8 sm:mb-10 md:mb-12 items-center justify-center">
           <RandevuFabButton delay={600}>Randevu Al</RandevuFabButton>
           <ContactFabButton delay={800} />
         </div>
         {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
-        <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-1 md:mt-4 mb-6 md:mb-10">
+        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-4 md:mt-6 mb-8 md:mb-12">
           {bizData.map((item, i) => (
             <BizMiniCard key={i} {...item} delay={i * 120} />
           ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 

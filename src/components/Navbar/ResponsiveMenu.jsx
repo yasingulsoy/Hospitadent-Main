@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import CountryFlag from "react-country-flag";
 import { Link as RouterLink } from "react-router-dom";
+import logo from '../../assets/logo.webp';
 
 const MobileNavLinks = ({ item, handleNav }) => {
   const [open, setOpen] = useState(false);
@@ -10,14 +11,14 @@ const MobileNavLinks = ({ item, handleNav }) => {
     return (
       <li className="w-full">
         <button
-          className="flex justify-between items-center w-full px-4 py-2 text-left text-white hover:text-blue focus:outline-none"
+          className="flex justify-between items-center w-full px-4 py-3 text-left text-white hover:text-blue-300 focus:outline-none border-b border-white/10"
           onClick={() => setOpen(!open)}
         >
-          <span>{item.name}</span>
+          <span className="font-medium">{item.name}</span>
           <svg className={`ml-2 w-4 h-4 transform transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
         {open && (
-          <ul className="pl-4 border-l border-blue-400">
+          <ul className="pl-4 border-l border-white/20 bg-white/5">
             {item.submenu.map((sub, idx) => (
               <MobileNavLinks item={sub} key={idx} handleNav={handleNav} />
             ))}
@@ -34,7 +35,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
           href={item.path}
           target="_blank"
           rel="noopener noreferrer"
-          className="block px-4 py-2 text-white hover:text-blue"
+          className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
           onClick={handleNav}
         >
           {item.name}
@@ -49,7 +50,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
       <li className="w-full">
         <a
           href={`#${item.path || 'home'}`}
-          className="block px-4 py-2 text-white hover:text-blue"
+          className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
           onClick={handleNav}
         >
           {item.name}
@@ -63,7 +64,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
     <li className="w-full">
       <RouterLink
         to={item.path}
-        className="block px-4 py-2 text-white hover:text-blue"
+        className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
         onClick={handleNav}
       >
         {item.name}
@@ -79,6 +80,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const inputRef = useRef(null);
+  const menuRef = useRef(null);
 
   const languages = [
     { code: 'tr', name: 'Türkçe' },
@@ -179,128 +181,148 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     };
   }, [nav]);
 
+  // Menü dışına tıklayınca kapat
+  useEffect(() => {
+    if (!nav) return;
+    function handleClick(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        handleNav();
+      }
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [nav, handleNav]);
+
   return (
     <div
-      className={`flex flex-col justify-start items-center md:hidden w-full fixed top-0 left-0 duration-500 h-screen bg-[rgba(0,0,0,.95)] z-50 ${nav ? "translate-x-0" : "-translate-x-full"}`}
+      ref={menuRef}
+      className={`flex flex-col justify-start items-center md:hidden w-full fixed top-0 left-0 duration-500 h-screen bg-[rgba(15,79,120,0.98)] z-50 ${nav ? "translate-x-0" : "-translate-x-full"}`}
     >
       {/* Kapatma butonu */}
       <button 
         onClick={handleNav} 
-        className="absolute top-4 right-4 text-white text-3xl hover:text-blue transition-colors"
+        className="fixed top-4 right-4 text-white text-3xl hover:text-blue-300 transition-colors z-50 bg-[#0f4f78] w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
         aria-label="Menüyü kapat"
       >
         &times;
       </button>
       
-      {/* Arama ve typewriter mobilde üstte */}
-      <div className="w-full flex flex-col items-center gap-2 pt-8 pb-3 px-6 bg-white/90 z-50 shadow-md sticky top-0">
-        <div className="flex items-center w-full justify-center">
-          <button
-            className="rounded bg-gray-200 text-blue hover:bg-gray-300 transition p-2 text-xl"
-            onClick={() => setSearchOpen((v) => !v)}
-            tabIndex={0}
-            aria-label="Arama"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          </button>
-          {searchOpen ? (
-            <div className="relative w-full">
-              <input
-                ref={inputRef}
-                type="text"
-                value={searchValue}
-                onChange={e => setSearchValue(e.target.value)}
-                onKeyDown={handleSearchKey}
-                className="ml-2 px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-base min-w-[120px] w-full"
-                placeholder="Arayın..."
-              />
-              {searchResults.length > 0 && (
-                <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
-                  {searchResults.map((res, i) => (
-                    <li key={res.path}>
-                      <a
-                        href={`#${res.path}`}
-                        className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
-                        onClick={() => { setSearchOpen(false); setSearchValue(""); handleNav(); }}
-                      >
-                        {res.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ) : (
-            <span className="ml-2 min-w-[100px] text-blue font-medium text-base transition-all duration-300 select-none" style={{letterSpacing:'0.01em'}}>{typewriterText}</span>
-          )}
-        </div>
+      {/* Logo ve başlık */}
+      <div className="w-full flex flex-col items-center pt-8 pb-4 px-6 bg-white/10 backdrop-blur-sm">
+        <img src={logo} alt="Hospitadent Logo" className="h-12 w-auto mb-3" />
+        <h1 className="text-white text-lg font-bold">Hospitadent</h1>
       </div>
       
-      {/* Sosyal medya ve iletişim */}
-      <div className="flex flex-col items-center gap-4 mt-16 mb-4">
-        <div className="flex gap-3">
-          <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
-            <FaFacebookF />
-          </a>
-          <a href="https://x.com/Hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
-            <FaTwitter />
-          </a>
-          <a href="https://www.youtube.com/c/HospitadentTV" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
-            <FaInstagram />
-          </a>
-          <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-9 h-9 hover:scale-110">
-            <FaLinkedinIn />
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=905531029922" target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition w-9 h-9 hover:scale-110">
-            <FaWhatsapp />
-          </a>
-        </div>
-        <div className="flex flex-col items-center gap-1 text-white text-base">
-          <a href="tel:4449922" className="flex items-center gap-1 hover:text-primary transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg> 444 99 22</a>
-          <a href="mailto:info@hospitadent.com" className="flex items-center gap-1 hover:text-primary transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg> info@hospitadent.com</a>
+      {/* Menü içeriği */}
+      <div className="w-full flex-1 flex flex-col items-center gap-2 pt-4 pb-3 px-6 overflow-y-auto">
+        {/* Arama ve typewriter mobilde üstte */}
+        <div className="w-full flex flex-col items-center gap-2 pb-4">
+          <div className="flex items-center w-full justify-center">
+            <button
+              className="rounded bg-white/20 text-white hover:bg-white/30 transition p-2 text-xl"
+              onClick={() => setSearchOpen((v) => !v)}
+              tabIndex={0}
+              aria-label="Arama"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+            </button>
+            {searchOpen ? (
+              <div className="relative w-full">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={searchValue}
+                  onChange={e => setSearchValue(e.target.value)}
+                  onKeyDown={handleSearchKey}
+                  className="ml-2 px-2 py-1 rounded border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-300 text-white bg-white/10 placeholder-white/70 text-base min-w-[120px] w-full"
+                  placeholder="Arayın..."
+                />
+                {searchResults.length > 0 && (
+                  <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
+                    {searchResults.map((res, i) => (
+                      <li key={res.path}>
+                        <a
+                          href={`#${res.path}`}
+                          className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
+                          onClick={() => { setSearchOpen(false); setSearchValue(""); handleNav(); }}
+                        >
+                          {res.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ) : (
+              <span className="ml-2 min-w-[100px] text-white font-medium text-base transition-all duration-300 select-none" style={{letterSpacing:'0.01em'}}>{typewriterText}</span>
+            )}
+          </div>
         </div>
         
-        {/* Dil seçimi */}
-        <div className="relative">
-          <button
-            className="flex items-center rounded bg-gray-200 text-blue font-bold hover:bg-gray-300 transition gap-1 px-3 py-1 text-base"
-            onClick={() => setShowLang(!showLang)}
-          >
-            <CountryFlag countryCode={selectedLang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
-            <span>{selectedLang.name}</span>
-            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-          </button>
-          {showLang && (
-            <ul className="absolute left-0 mt-2 bg-primary text-white rounded shadow-xl z-50 min-w-[8rem]">
-              {languages.map((lang, idx) => (
-                <li key={lang.code}>
-                  <button
-                    className={`flex items-center w-full text-left ${lang.code === selectedLang.code ? 'bg-white text-primary font-bold cursor-default' : 'hover:bg-blue-900'}`}
-                    onClick={() => { if(lang.code !== selectedLang.code) { setSelectedLang(lang); setShowLang(false); } }}
-                    disabled={lang.code === selectedLang.code}
-                  >
-                    <CountryFlag countryCode={lang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
-                    <span className="ml-2">{lang.name}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </div>
-      
-      {/* Ana menü */}
-      <div className="flex-1 w-full overflow-y-auto">
-        <ul className="w-full">
-          {navLinksData.map((item, index) => (
-            <MobileNavLinks item={item} key={index} handleNav={handleNav} />
+        {/* Menü linkleri */}
+        <ul className="w-full flex-1 flex flex-col gap-1 overflow-y-auto pb-8">
+          {navLinksData.map((item, idx) => (
+            <MobileNavLinks item={item} key={idx} handleNav={handleNav} />
           ))}
-      </ul>
+        </ul>
+        
+        {/* Sosyal medya ve iletişim */}
+        <div className="flex flex-col items-center gap-4 mt-4 mb-4">
+          <div className="flex gap-3">
+            <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-[#2bb3ea] rounded-full flex items-center justify-center text-white hover:bg-[#0f4f78] transition w-9 h-9 hover:scale-110">
+              <FaFacebookF />
+            </a>
+            <a href="https://x.com/Hospitadent" target="_blank" rel="noopener noreferrer" className="bg-[#2bb3ea] rounded-full flex items-center justify-center text-white hover:bg-[#0f4f78] transition w-9 h-9 hover:scale-110">
+              <FaTwitter />
+            </a>
+            <a href="https://www.youtube.com/c/HospitadentTV" target="_blank" rel="noopener noreferrer" className="bg-[#2bb3ea] rounded-full flex items-center justify-center text-white hover:bg-[#0f4f78] transition w-9 h-9 hover:scale-110">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-[#2bb3ea] rounded-full flex items-center justify-center text-white hover:bg-[#0f4f78] transition w-9 h-9 hover:scale-110">
+              <FaInstagram />
+            </a>
+            <a href="https://www.linkedin.com/company/hospitadent/" target="_blank" rel="noopener noreferrer" className="bg-[#2bb3ea] rounded-full flex items-center justify-center text-white hover:bg-[#0f4f78] transition w-9 h-9 hover:scale-110">
+              <FaLinkedinIn />
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=905531029922" target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition w-9 h-9 hover:scale-110">
+              <FaWhatsapp />
+            </a>
+          </div>
+          <div className="flex flex-col items-center gap-1 text-white text-base">
+            <a href="tel:4449922" className="flex items-center gap-1 hover:text-blue-300 transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg> 444 99 22</a>
+            <a href="mailto:info@hospitadent.com" className="flex items-center gap-1 hover:text-blue-300 transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg> info@hospitadent.com</a>
+          </div>
+          
+          {/* Dil seçimi */}
+          <div className="relative">
+            <button
+              className="flex items-center rounded bg-white/20 text-white font-bold hover:bg-white/30 transition gap-1 px-3 py-1 text-base"
+              onClick={() => setShowLang(!showLang)}
+            >
+              <CountryFlag countryCode={selectedLang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
+              <span>{selectedLang.name}</span>
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            {showLang && (
+              <ul className="absolute left-0 mt-2 bg-[#0f4f78] text-white rounded shadow-xl z-50 min-w-[8rem]">
+                {languages.map((lang, idx) => (
+                  <li key={lang.code}>
+                    <button
+                      className={`flex items-center w-full text-left ${lang.code === selectedLang.code ? 'bg-white text-[#0f4f78] font-bold cursor-default' : 'hover:bg-[#2bb3ea]'}`}
+                      onClick={() => { if(lang.code !== selectedLang.code) { setSelectedLang(lang); setShowLang(false); } }}
+                      disabled={lang.code === selectedLang.code}
+                    >
+                      <CountryFlag countryCode={lang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
+                      <span className="ml-2">{lang.name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

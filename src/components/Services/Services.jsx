@@ -8,13 +8,13 @@ import 'swiper/css'
 
 const Services = () => {
   return (
-    <section name='services' className="py-20 bg-white scroll-pt-24 ">
+    <section name='services' className="py-8 md:py-20 bg-white scroll-pt-24 ">
       <div className="w-full max-w-none px-0">
         <Heading  title='Hizmetlerimiz'/>
         {/* Swiper ile otomatik ve elle kaydırılabilen hizmetler */}
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={12}
+          spaceBetween={8}
           slidesPerView={'auto'}
           loop={true}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -22,7 +22,7 @@ const Services = () => {
           style={{paddingBottom: 16}}
         >
           {servicesData.map((item, index) => (
-            <SwiperSlide key={index} style={{minWidth: 260, maxWidth: 320, width: '100%', height: 340, display: 'flex', flexDirection: 'column'}}>
+            <SwiperSlide key={index} style={{minWidth: 200, maxWidth: 280, width: '100%', height: 280, display: 'flex', flexDirection: 'column'}}>
               <ServiceItems item={item} />
             </SwiperSlide>
           ))}

@@ -146,12 +146,12 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Mobilde hamburger menü butonu */}
+      <button className="md:hidden flex items-center justify-center text-white text-2xl fixed top-4 left-4 z-50 bg-[#0f4f78] w-12 h-12 rounded-full shadow-lg hover:bg-[#2bb3ea] transition-colors duration-300" onClick={handleNav}>
+        <FaBars />
+      </button>
       {/* Üst Bar */}
-      <div className="w-full bg-secondary border-b border-gray-200 relative overflow-hidden">
-        {/* Animasyonlu diş SVG */}
-        <svg className="absolute top-1/2 left-0 -translate-y-1/2 animate-tooth-move opacity-10 pointer-events-none" width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M32 4C22 4 12 12 12 28c0 12 8 28 20 28s20-16 20-28C52 12 42 4 32 4z" fill="#fff" stroke="#2bb3ea" strokeWidth="2"/>
-        </svg>
+      <div className="w-full bg-secondary border-b border-gray-200 relative overflow-hidden hidden md:block">
         <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-center px-2 sm:px-4 py-2 gap-2 sm:gap-6 text-[clamp(1rem,2vw,1.3rem)] font-semibold relative z-10">
           <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-6 w-full justify-center">
             <a href="tel:4449922" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-base sm:text-lg group">
@@ -167,18 +167,15 @@ const Navbar = () => {
       </div>
       
       {/* Ana Navbar */}
-      <header className="sticky top-0 z-30 bg-white shadow-md w-full">
+      <header className="sticky top-0 z-30 bg-white shadow-md w-full hidden md:block">
         <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-2 sm:px-4 py-2 gap-2">
           {/* Sol: Logo */}
           <div className="flex items-center flex-shrink-0 w-auto h-[clamp(2.2rem,5vw,3.5rem)] -mt-7">
             <a href="/" className="block select-none h-[clamp(2rem,4vw,3.2rem)]" style={{marginBottom: '0px'}}>
               <img src={logo} alt="Logo" className="h-full w-auto mx-auto" />
             </a>
-            {/* Mobilde hamburger */}
-            <button className="md:hidden flex items-center ml-2 text-blue text-2xl" onClick={handleNav} style={{marginLeft: '8px'}}>
-              <FaBars />
-            </button>
           </div>
+          {/* Mobilde hamburger */}
           {/* Orta: Menü + arama + typewriter */}
           <div className="flex-1 flex flex-col items-center justify-center">
             <ul className="flex items-center gap-0.5 text-[clamp(0.85rem,1.5vw,1.1rem)] mb-1">
@@ -288,13 +285,13 @@ const Navbar = () => {
       </nav>
     </header>
       
-      {/* Responsive Menu */}
-      <ResponsiveMenu 
-        navLinksData={navLinksData} 
-        nav={nav} 
-        handleNav={handleNav} 
-        selectedLang={selectedLang} 
-        setSelectedLang={setSelectedLang} 
+      {/* Mobil Menü */}
+      <ResponsiveMenu
+        navLinksData={navLinksData}
+        nav={nav}
+        handleNav={handleNav}
+        selectedLang={selectedLang}
+        setSelectedLang={setSelectedLang}
       />
     </>
   );
