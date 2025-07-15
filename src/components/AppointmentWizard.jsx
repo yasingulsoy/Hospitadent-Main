@@ -346,7 +346,7 @@ const AppointmentWizard = () => {
   const selectedBranch = currentBranches[selectedBranchIdx];
 
   return (
-    <section className="py-8 bg-gray-50">
+    <section id="randevu" className="py-8 bg-gray-50">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">Online Randevu</h2>
         

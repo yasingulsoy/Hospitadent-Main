@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone, FaRobot } from 'react-icons/fa';
 import ico from "../assets/ico.png";
-import logo from "../assets/logo.webp";
 
 
 
@@ -46,10 +45,10 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
         }}
       />
       <h1
-        className={`relative text-lg sm:text-2xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
+        className={`relative text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
-        style={{ zIndex: 2, lineHeight: 1.25, overflow: 'visible' }}
+        style={{ zIndex: 2, lineHeight: 1.15, overflow: 'visible' }}
       >
         {children}
       </h1>
@@ -144,7 +143,9 @@ const ContactFabButton = ({ delay = 800 }) => {
         <FaEnvelope className="w-5 h-5" />
       </a>
       <a
-        href="tel:4449922"
+        href="https://tk.emsal.com.tr/hospitadent/"
+        target="_blank"
+        rel="noopener noreferrer"
         className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
         style={{transitionDelay: open ? '240ms' : '0ms', zIndex: 17, transform: `translateY(-50%) ${open ? 'translateX(120px)' : 'translateX(0)'}`}}
         title="Telefon ile iletişim"
@@ -160,6 +161,18 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [displayNumber, setDisplayNumber] = useState(0);
   const [animationCompleted, setAnimationCompleted] = useState(false);
+  
+  // Sayıyı parse etme fonksiyonu
+  const parseNumber = (num) => {
+    if (typeof num === 'string' && num.startsWith('+')) {
+      return parseInt(num.replace(/\D/g, ''));
+    } else if (typeof num === 'string' && num.includes('.')) {
+      return parseInt(num.replace(/\D/g, ''));
+    } else {
+      return parseInt(num);
+    }
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
@@ -169,35 +182,24 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     return () => clearTimeout(timer);
   }, [delay]);
 
-  // Animasyonlu sayı (count-up) - sadece bir kez çalışsın
+  // Animasyonlu sayı (count-up) - güvenilir versiyon
   useEffect(() => {
     if (!isVisible) return;
     
-    // Eğer animasyon zaten tamamlandıysa tekrar çalıştırma
-    if (animationCompleted) return;
+    const endNumber = parseNumber(number);
+    if (isNaN(endNumber)) return;
     
-    let start = 0;
-    let end = 0;
-    // Rakam ve + işareti ayrıştırma
-    if (typeof number === 'string' && number.startsWith('+')) {
-      end = parseInt(number.replace(/\D/g, ''));
-    } else if (typeof number === 'string' && number.includes('.')) {
-      end = parseInt(number.replace(/\D/g, ''));
-    } else {
-      end = parseInt(number);
-    }
-    
-    let current = start;
+    let current = 0;
     const duration = 1200; // ms
     const steps = 40;
-    const increment = Math.ceil(end / steps);
+    const increment = Math.ceil(endNumber / steps);
     let step = 0;
     
     const interval = setInterval(() => {
       step++;
       current += increment;
-      if (current >= end || step >= steps) {
-        setDisplayNumber(end);
+      if (current >= endNumber || step >= steps) {
+        setDisplayNumber(endNumber);
         setAnimationCompleted(true);
         clearInterval(interval);
       } else {
@@ -206,10 +208,12 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     }, duration / steps);
     
     return () => clearInterval(interval);
-  }, [isVisible]); // number dependency'sini kaldırdık
+  }, [isVisible, number]); // number dependency'sini geri ekledik
 
   // Formatlı gösterim
   const formatted = () => {
+    if (displayNumber === 0 && !isVisible) return '';
+    
     if (typeof number === 'string' && number.includes('.')) {
       // 3.000.000 gibi ise
       return `${displayNumber.toLocaleString('tr-TR')}${number.replace(/[0-9.]/g, '')}`;
@@ -271,7 +275,9 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
         </button>
         {/* Sola açılan butonlar */}
         <a
-          href="tel:4449922"
+          href="https://tk.emsal.com.tr/hospitadent/"
+          target="_blank"
+          rel="noopener noreferrer"
           className={`absolute top-1/2 right-full bg-[#2bb3ea] text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-4' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
           style={{transform: `translateY(-50%) ${open ? 'translateX(-56px)' : 'translateX(0)'}`, transitionDelay: open ? '80ms' : '0ms', zIndex: 19}}
           title="Telefonla Randevu"
@@ -288,7 +294,7 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
           <FaRobot className="w-6 h-6" />
         </button>
         <a
-          href="/online-randevu"
+          href="#randevu"
           className={`absolute top-1/2 right-full bg-[#2bb3ea] text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
           style={{transform: `translateY(-50%) ${open ? 'translateX(-152px)' : 'translateX(0)'}`, transitionDelay: open ? '240ms' : '0ms', zIndex: 17}}
           title="Online Randevu"
@@ -367,13 +373,9 @@ function useTypewriterSlides(slides, writeSpeed = 50, eraseSpeed = 25, pause = 1
 const Hero = () => {
   const { displayTitle, displaySubtitle } = useTypewriterSlides(heroSlides, 50, 25, 15000);
   return (
-    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-20 lg:pb-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden">
+    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-16 lg:pt-20 xl:pt-28 pb-8 sm:pb-12 md:pb-12 lg:pb-16 xl:pb-24 min-h-[60vh] sm:min-h-[65vh] md:min-h-[65vh] lg:min-h-[70vh] xl:min-h-[80vh] overflow-hidden">
       {/* Ana içerik - ortalanmış */}
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full">
-        {/* Logo - mobilde görünür */}
-        <div className="mb-4 md:mb-6">
-          <img src={logo} alt="Hospitadent Logo" className="w-64 h-32 md:w-32 md:h-16 object-contain" />
-        </div>
         <SpotlightTitle delay={200}>
           {displayTitle}
         </SpotlightTitle>
@@ -381,12 +383,12 @@ const Hero = () => {
           {displaySubtitle}
         </AnimatedSubtitle>
         {/* Butonlar */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8 sm:mb-10 md:mb-12 items-center justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10 items-center justify-center">
           <RandevuFabButton delay={600}>Randevu Al</RandevuFabButton>
           <ContactFabButton delay={800} />
         </div>
         {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
-        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-4 md:mt-6 mb-8 md:mb-12">
+        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-1 sm:mt-2 md:mt-4 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
           {bizData.map((item, i) => (
             <BizMiniCard key={i} {...item} delay={i * 120} />
           ))}
