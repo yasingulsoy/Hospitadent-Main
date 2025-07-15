@@ -8,6 +8,12 @@ body, html, * {
   font-feature-settings: "liga", "kern", "calt", "ss01";
 }
 
+/* Smooth scroll ve offset ayarları */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Navbar yüksekliği + ekstra boşluk */
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', Arial, sans-serif;
 }

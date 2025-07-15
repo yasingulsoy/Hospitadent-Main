@@ -246,12 +246,37 @@ const bizData = [
   { number: '+250', label: 'Dentists', icon: <FaUserMd /> },
 ];
 
-// Kolaytik açma fonksiyonu (örnek)
+// Kolaytik açma fonksiyonu
 const openKolaytik = () => {
-  if (window.KolaytikChatbot) {
-    window.KolaytikChatbot.open();
+  console.log('Kolaytik ikonu aranıyor...');
+  
+  // Kolaytik'in kendi ikonunu bul ve tıkla
+  const kolaytikIcon = document.querySelector('[data-kolaytik], .kolaytik-icon, #kolaytik-icon, [class*="kolaytik"], [id*="kolaytik"]');
+  
+  if (kolaytikIcon) {
+    console.log('Kolaytik ikonu bulundu, tıklanıyor...');
+    kolaytikIcon.click();
   } else {
-    alert('Kolaytik chatbot yüklenemedi!');
+    console.log('Kolaytik ikonu bulunamadı, tüm butonları kontrol ediliyor...');
+    
+    // Tüm butonları kontrol et
+    const allButtons = document.querySelectorAll('button, [role="button"], .btn, [class*="button"]');
+    let found = false;
+    
+    allButtons.forEach(button => {
+      if (button.textContent.toLowerCase().includes('kolaytik') || 
+          button.innerHTML.toLowerCase().includes('kolaytik') ||
+          button.getAttribute('aria-label')?.toLowerCase().includes('kolaytik')) {
+        console.log('Kolaytik butonu bulundu:', button);
+        button.click();
+        found = true;
+      }
+    });
+    
+    if (!found) {
+      console.log('Kolaytik ikonu bulunamadı!');
+      alert('Kolaytik chatbot bulunamadı! Lütfen sayfayı yenileyin.');
+    }
   }
 };
 
