@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone, FaRobot } from 'react-icons/fa';
 import ico from "../assets/ico.png";
+import logo from "../assets/logo.webp";
 
 
 
@@ -45,10 +46,10 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
         }}
       />
       <h1
-        className={`relative text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-black drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
+        className={`relative text-lg sm:text-2xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
-        style={{ zIndex: 2, lineHeight: 1.1, overflow: 'visible' }}
+        style={{ zIndex: 2, lineHeight: 1.25, overflow: 'visible' }}
       >
         {children}
       </h1>
@@ -65,7 +66,7 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
   }, [delay]);
   return (
     <p
-      className={`text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg mb-1 sm:mb-2 md:mb-3 lg:mb-4 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform text-gray-700 ${
+      className={`text-xs sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform text-gray-700 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
@@ -373,9 +374,13 @@ function useTypewriterSlides(slides, writeSpeed = 50, eraseSpeed = 25, pause = 1
 const Hero = () => {
   const { displayTitle, displaySubtitle } = useTypewriterSlides(heroSlides, 50, 25, 15000);
   return (
-    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-8 sm:pt-12 md:pt-12 lg:pt-16 xl:pt-24 pb-6 sm:pb-8 md:pb-8 lg:pb-12 xl:pb-20 min-h-[50vh] sm:min-h-[55vh] md:min-h-[55vh] lg:min-h-[60vh] xl:min-h-[70vh] overflow-hidden">
+    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-20 lg:pb-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden">
       {/* Ana içerik - ortalanmış */}
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full">
+        {/* Logo - sadece mobilde görünür */}
+        <div className="mb-4 md:hidden">
+          <img src={logo} alt="Hospitadent Logo" className="w-64 h-32 object-contain" />
+        </div>
         <SpotlightTitle delay={200}>
           {displayTitle}
         </SpotlightTitle>
@@ -383,12 +388,12 @@ const Hero = () => {
           {displaySubtitle}
         </AnimatedSubtitle>
         {/* Butonlar */}
-        <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto mb-2 sm:mb-4 md:mb-6 lg:mb-8 items-center justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8 sm:mb-10 md:mb-12 items-center justify-center">
           <RandevuFabButton delay={600}>Randevu Al</RandevuFabButton>
           <ContactFabButton delay={800} />
         </div>
         {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
-        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-3 mt-0 sm:mt-1 md:mt-2 mb-2 sm:mb-4 md:mb-6 lg:mb-8">
+        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-4 md:mt-6 mb-8 md:mb-12">
           {bizData.map((item, i) => (
             <BizMiniCard key={i} {...item} delay={i * 120} />
           ))}
