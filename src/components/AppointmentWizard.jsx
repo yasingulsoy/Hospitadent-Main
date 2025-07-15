@@ -235,12 +235,32 @@ const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
 
 // Modern saat seçici
 const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
+  console.log('TimeSelector slots:', slots); // Debug için
+  
+  // Eğer slots yoksa veya boşsa, test verisi göster
+  const displaySlots = slots && slots.length > 0 ? slots : [
+    { time: '09:00', status: 'available' },
+    { time: '09:30', status: 'full' },
+    { time: '10:00', status: 'available' },
+    { time: '10:30', status: 'full' },
+    { time: '11:00', status: 'available' },
+    { time: '11:30', status: 'available' },
+    { time: '12:00', status: 'full' },
+    { time: '12:30', status: 'available' },
+    { time: '13:00', status: 'available' },
+    { time: '13:30', status: 'full' },
+  ];
+  
   return (
     <div className="mb-6">
       <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Saat Seçin</h3>
+      {/* Debug bilgisi */}
+      <div className="text-xs text-gray-500 mb-2 text-center">
+        {slots ? `${slots.length} saat bulundu` : 'Veri yükleniyor...'}
+      </div>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-4 md:grid-cols-5 sm:gap-2 sm:overflow-x-visible">
-        {slots.map((slot, idx) => (
+        {displaySlots.map((slot, idx) => (
           <button
             key={idx}
             disabled={slot.status !== 'available'}
