@@ -4,6 +4,7 @@ import { Navbar, Home, About, Services, Process, Clients, Contact, Footer } from
 import AboutPage from './pages/About';
 import BranchPage from './pages/BranchPage';
 import Branches from './pages/Branches';
+import Staff from './pages/Staff';
 
 const Placeholder = ({ lang }) => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-3xl font-bold text-blue-700">
@@ -28,6 +29,7 @@ function App() {
           </>
         } />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/idari-kadro" element={<Staff />} />
         
         {/* Şubeler Ana Sayfa */}
         <Route path="/subelerimiz" element={<Branches />} />

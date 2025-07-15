@@ -26,7 +26,7 @@ export const navLinksData = [
     path: '',
     submenu: [
       { name: 'Hakkımızda', path: 'about' },
-      { name: 'İdari Kadro', path: 'staff' },
+      { name: 'İdari Kadro', path: 'idari-kadro' },
       { name: 'Hasta Memnuniyet Videoları', path: 'patient-videos' },
       { name: 'Hasta Yorumları', path: 'reviews' },
       { name: 'Anlaşmalı Kurumlar', path: 'partners' },
