@@ -249,10 +249,10 @@ const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
               slot.status === 'available' && selectedSlot === slot.time
                 ? 'bg-blue-500 text-white border-blue-600 shadow-lg scale-105'
                 : slot.status === 'available'
-                ? 'bg-green-100 text-green-800 border-green-600 hover:bg-green-200'
+                ? 'bg-green-500 text-white border-green-600 hover:bg-green-600'
                 : slot.status === 'full'
-                ? 'bg-red-100 text-red-800 border-red-600'
-                : 'bg-gray-100 text-gray-600 border-gray-500'
+                ? 'bg-red-500 text-white border-red-600'
+                : 'bg-gray-500 text-white border-gray-600'
             }`}
             style={{ flex: '0 0 auto' }}
           >
