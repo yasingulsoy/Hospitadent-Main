@@ -235,52 +235,26 @@ const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
 
 // Modern saat seçici
 const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
-  console.log('TimeSelector slots:', slots); // Debug için
-  
-  // Eğer slots yoksa veya boşsa, test verisi göster
-  const displaySlots = slots && slots.length > 0 ? slots : [
-    { time: '09:00', status: 'available' },
-    { time: '09:30', status: 'full' },
-    { time: '10:00', status: 'available' },
-    { time: '10:30', status: 'full' },
-    { time: '11:00', status: 'available' },
-    { time: '11:30', status: 'available' },
-    { time: '12:00', status: 'full' },
-    { time: '12:30', status: 'available' },
-    { time: '13:00', status: 'available' },
-    { time: '13:30', status: 'full' },
-  ];
-  
   return (
     <div className="mb-6">
       <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Saat Seçin</h3>
-      {/* Debug bilgisi */}
-      <div className="text-xs text-gray-500 mb-2 text-center">
-        {slots ? `${slots.length} saat bulundu` : 'Veri yükleniyor...'}
-      </div>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-4 md:grid-cols-5 sm:gap-2 sm:overflow-x-visible">
-        {displaySlots.map((slot, idx) => (
+        {slots.map((slot, idx) => (
           <button
             key={idx}
             disabled={slot.status !== 'available'}
             onClick={() => onSelect(slot.time)}
             className={`min-w-[80px] sm:min-w-0 p-4 sm:p-3 rounded-lg border-2 transition-all duration-200 text-base sm:text-sm font-semibold h-16 sm:h-auto flex items-center justify-center ${
               slot.status === 'available' && selectedSlot === slot.time
-                ? 'bg-blue-500 text-white border-blue-600 shadow-lg scale-105'
+                ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white border-[#2bb3ea] shadow-lg scale-105'
                 : slot.status === 'available'
-                ? 'bg-green-500 text-white border-green-600 hover:bg-green-600'
-                : slot.status === 'full'
-                ? 'bg-red-500 text-white border-red-600'
-                : 'bg-gray-500 text-white border-gray-600'
+                ? 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                : 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
             }`}
             style={{ flex: '0 0 auto' }}
           >
-            {slot.status === 'closed' ? (
-              <span>Kapalı</span>
-            ) : (
-              <span>{slot.time}</span>
-            )}
+            {slot.status === 'closed' ? 'Kapalı' : slot.time}
           </button>
         ))}
       </div>

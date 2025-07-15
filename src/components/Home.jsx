@@ -250,18 +250,12 @@ const openKolaytik = () => {
   }
 };
 
-// RandevuFabButton: Masaüstünde tıklanınca sola doğru 3 yuvarlak buton açılır, mobilde klasik görünür
+// RandevuFabButton: Hem mobilde hem masaüstünde tıklanınca sola doğru 3 yuvarlak buton açılır
 const RandevuFabButton = ({ children, delay = 600 }) => {
   const [open, setOpen] = useState(false);
-  // Mobilde klasik AnimatedButton, masaüstünde fab
+  // Hem mobilde hem masaüstünde fab buton
   return (
-    <>
-      {/* Mobilde klasik buton */}
-      <span className="sm:hidden">
-        <AnimatedButton delay={delay} variant="primary">{children}</AnimatedButton>
-      </span>
-      {/* Masaüstünde fab buton */}
-      <span className="hidden sm:inline-block relative">
+    <span className="relative">
         <button
           type="button"
           onClick={() => setOpen(o => !o)}
@@ -278,7 +272,7 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
         {/* Sola açılan butonlar */}
         <a
           href="tel:4449922"
-          className={`absolute top-1/2 right-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-4' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+          className={`absolute top-1/2 right-full bg-[#2bb3ea] text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-4' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
           style={{transform: `translateY(-50%) ${open ? 'translateX(-56px)' : 'translateX(0)'}`, transitionDelay: open ? '80ms' : '0ms', zIndex: 19}}
           title="Telefonla Randevu"
         >
@@ -287,7 +281,7 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
         <button
           type="button"
           onClick={openKolaytik}
-          className={`absolute top-1/2 right-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-20' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+          className={`absolute top-1/2 right-full bg-[#2bb3ea] text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-20' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
           style={{transform: `translateY(-50%) ${open ? 'translateX(-104px)' : 'translateX(0)'}`, transitionDelay: open ? '160ms' : '0ms', zIndex: 18}}
           title="Yapay Zeka Asistanı"
         >
@@ -295,14 +289,13 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
         </button>
         <a
           href="/online-randevu"
-          className={`absolute top-1/2 right-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
+          className={`absolute top-1/2 right-full bg-[#2bb3ea] text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
           style={{transform: `translateY(-50%) ${open ? 'translateX(-152px)' : 'translateX(0)'}`, transitionDelay: open ? '240ms' : '0ms', zIndex: 17}}
           title="Online Randevu"
         >
           <FaGlobe className="w-5 h-5" />
         </a>
       </span>
-    </>
   );
 };
 
