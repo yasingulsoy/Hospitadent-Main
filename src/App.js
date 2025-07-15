@@ -5,6 +5,7 @@ import AboutPage from './pages/About';
 import BranchPage from './pages/BranchPage';
 import Branches from './pages/Branches';
 import Staff from './pages/Staff';
+import SearchResults from './pages/SearchResults';
 
 const Placeholder = ({ lang }) => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-3xl font-bold text-blue-700">
@@ -54,6 +55,9 @@ function App() {
         <Route path="/subelerimiz/bursa" element={<BranchPage />} />
         <Route path="/subelerimiz/almanya" element={<BranchPage />} />
         <Route path="/subelerimiz/hollanda" element={<BranchPage />} />
+        
+        {/* Arama Sonuçları Sayfası */}
+        <Route path="/search" element={<SearchResults />} />
         
         <Route path="/en" element={<Placeholder lang="English" />} />
         <Route path="/fr" element={<Placeholder lang="Français" />} />

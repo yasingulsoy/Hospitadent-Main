@@ -120,8 +120,8 @@ const Navbar = () => {
   }, [searchValue, allLinks]);
 
   function handleSearchKey(e) {
-    if (e.key === "Enter" && searchResults.length > 0) {
-      window.location.hash = `#${searchResults[0].path}`;
+    if (e.key === "Enter" && searchValue.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchValue.trim())}`);
       setSearchOpen(false);
       setSearchValue("");
     }
@@ -210,15 +210,27 @@ const Navbar = () => {
                         {searchResults.map((res, i) => (
                           <li key={res.path}>
                             <a
-                              href={`#${res.path}`}
+                              href={`/${res.path}`}
                               className="block px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm"
                               onClick={() => { setSearchOpen(false); setSearchValue(""); }}
                             >
                               {res.name}
                             </a>
                           </li>
-            ))}
-          </ul>
+                        ))}
+                        <li className="border-t border-gray-200">
+                          <button
+                            onClick={() => {
+                              navigate(`/search?q=${encodeURIComponent(searchValue.trim())}`);
+                              setSearchOpen(false);
+                              setSearchValue("");
+                            }}
+                            className="block w-full px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm text-left"
+                          >
+                            Tüm sonuçları görüntüle ({searchResults.length})
+                          </button>
+                        </li>
+                      </ul>
                     )}
                   </div>
                 )}

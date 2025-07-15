@@ -161,8 +161,8 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   }, [searchValue, allLinks]);
 
   function handleSearchKey(e) {
-    if (e.key === "Enter" && searchResults.length > 0) {
-      window.location.hash = `#${searchResults[0].path}`;
+    if (e.key === "Enter" && searchValue.trim()) {
+      window.location.href = `/search?q=${encodeURIComponent(searchValue.trim())}`;
       setSearchOpen(false);
       setSearchValue("");
     }
@@ -242,7 +242,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                     {searchResults.map((res, i) => (
                       <li key={res.path}>
                         <a
-                          href={`#${res.path}`}
+                          href={`/${res.path}`}
                           className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
                           onClick={() => { setSearchOpen(false); setSearchValue(""); handleNav(); }}
                         >
@@ -250,6 +250,19 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                         </a>
                       </li>
                     ))}
+                    <li className="border-t border-gray-200">
+                      <button
+                        onClick={() => {
+                          window.location.href = `/search?q=${encodeURIComponent(searchValue.trim())}`;
+                          setSearchOpen(false);
+                          setSearchValue("");
+                          handleNav();
+                        }}
+                        className="block w-full px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm text-left"
+                      >
+                        Tüm sonuçları görüntüle ({searchResults.length})
+                      </button>
+                    </li>
                   </ul>
                 )}
               </div>
