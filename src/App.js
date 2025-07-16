@@ -36,7 +36,7 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/hakkimizda" element={<AboutPage />} />
         <Route path="/idari-kadro" element={<Staff />} />
         
         {/* Şubeler Ana Sayfa */}

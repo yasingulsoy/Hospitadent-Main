@@ -25,7 +25,7 @@ export const navLinksData = [
     name: 'Kurumsal',
     path: '',
     submenu: [
-      { name: 'Hakkımızda', path: 'about' },
+      { name: 'Hakkımızda', path: 'hakkimizda' },
       { name: 'İdari Kadro', path: 'idari-kadro' },
       { name: 'Hasta Memnuniyet Videoları', path: 'hasta-memnuniyet-videolari' },
       { name: 'Hasta Yorumları', path: 'hasta-yorumlari' },

@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <h4 className="text-blue font-bold mb-3 tracking-wide text-base md:text-lg uppercase">KURUMSAL</h4>
             <ul className="space-y-1 text-sm md:text-base text-[#0f4f78]">
-              <li><a href="/about">Hakkımızda</a></li>
+              <li><a href="/hakkimizda">Hakkımızda</a></li>
               <li><a href="/franchise">Franchise – Ortaklık Başvurusu</a></li>
               <li><a href="/careers">İK İş Başvuru Formu</a></li>
               <li><a href="/corporate">Kurumsal Kimlik</a></li>
