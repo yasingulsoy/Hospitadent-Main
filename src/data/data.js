@@ -36,7 +36,7 @@ export const navLinksData = [
       { name: 'Hospitadent Akademi', path: 'akademi' },
       { name: 'Hospitadent Sosyal Sorumluluk', path: 'hospitadent-sosyal-sorumluluk' },
       { name: 'Ödüllerimiz', path: 'odullerimiz' },
-      { name: 'Kurumsal Kimlik', path: 'https://www.hospitadent.com/wp-content/uploads/2022/11/u-hospitadent-guideline.pdf', external: true },
+      { name: 'Kurumsal Kimlik', path: 'kurumsal-kimlik' },
     ]
   },
   {

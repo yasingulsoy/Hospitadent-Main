@@ -400,6 +400,17 @@ const Hero = () => {
   const { displayTitle, displaySubtitle } = useTypewriterSlides(heroSlides, 50, 25, 15000);
   return (
     <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-20 lg:pb-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden">
+      {/* Arka Plan Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none z-0"
+        src={require('../assets/videos/firat_okur.mp4')}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      {/* Hafif karartma efekti istersen: */}
+      {/* <div className="absolute inset-0 bg-black/20 z-0"></div> */}
       {/* Ana içerik - ortalanmış */}
       <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full">
         {/* Logo - sadece mobilde görünür */}
