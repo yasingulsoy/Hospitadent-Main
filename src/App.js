@@ -6,6 +6,9 @@ import BranchPage from './pages/BranchPage';
 import Branches from './pages/Branches';
 import Staff from './pages/Staff';
 import SearchResults from './pages/SearchResults';
+import HastaMemnuniyetVideolari from './pages/HastaMemnuniyetVideolari';
+import HastaYorumlari from './pages/HastaYorumlari';
+import HospitadentSosyalSorumluluk from './pages/HospitadentSosyalSorumluluk';
 
 const Placeholder = ({ lang }) => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-3xl font-bold text-blue-700">
@@ -65,6 +68,9 @@ function App() {
         <Route path="/ru" element={<Placeholder lang="Русский" />} />
         <Route path="/es" element={<Placeholder lang="Español" />} />
         <Route path="/sa" element={<Placeholder lang="العربية" />} />
+        <Route path="/hasta-memnuniyet-videolari" element={<HastaMemnuniyetVideolari />} />
+        <Route path="/hasta-yorumlari" element={<HastaYorumlari />} />
+        <Route path="/hospitadent-sosyal-sorumluluk" element={<HospitadentSosyalSorumluluk />} />
       </Routes>
     </>
   );

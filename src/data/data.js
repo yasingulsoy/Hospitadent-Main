@@ -27,14 +27,14 @@ export const navLinksData = [
     submenu: [
       { name: 'Hakkımızda', path: 'about' },
       { name: 'İdari Kadro', path: 'idari-kadro' },
-      { name: 'Hasta Memnuniyet Videoları', path: 'patient-videos' },
-      { name: 'Hasta Yorumları', path: 'reviews' },
+      { name: 'Hasta Memnuniyet Videoları', path: 'hasta-memnuniyet-videolari' },
+      { name: 'Hasta Yorumları', path: 'hasta-yorumlari' },
       { name: 'Anlaşmalı Kurumlar', path: 'partners' },
       { name: 'İK İş Başvuru Formu', path: 'https://hospitadent.ulakbel.com/WebBasvuru/isbasvuru#/', external: true },
       { name: 'Franchise – Ortaklık Başvurusu', path: 'https://hospitadent.ulakbel.com/WebBasvuru/franchise-ortaklik-basvurusu', external: true },
       { name: 'İstenmeyen Olay Bildirim Formu', path: 'https://panel.kolaytik.com/team/hospitadent/istenmeyen-olay-bildirim-formu-', external: true },
       { name: 'Hospitadent Akademi', path: 'academy' },
-      { name: 'Hospitadent Sosyal Sorumluluk', path: 'social-responsibility' },
+      { name: 'Hospitadent Sosyal Sorumluluk', path: 'hospitadent-sosyal-sorumluluk' },
       { name: 'Ödüllerimiz', path: 'awards' },
       { name: 'Kurumsal Kimlik', path: 'https://www.hospitadent.com/wp-content/uploads/2022/11/u-hospitadent-guideline.pdf', external: true },
     ]
