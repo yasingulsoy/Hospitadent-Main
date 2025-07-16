@@ -11,6 +11,7 @@ import HastaYorumlari from './pages/HastaYorumlari';
 import HospitadentSosyalSorumluluk from './pages/HospitadentSosyalSorumluluk';
 import AnlasmaliKurumlar from './pages/AnlasmaliKurumlar';
 import Academy from './pages/Academy';
+import Awards from './pages/Awards';
 
 const Placeholder = ({ lang }) => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-3xl font-bold text-blue-700">
@@ -75,6 +76,7 @@ function App() {
         <Route path="/hospitadent-sosyal-sorumluluk" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/anlasmali-kurumlar" element={<AnlasmaliKurumlar />} />
         <Route path="/akademi" element={<Academy />} />
+        <Route path="/odullerimiz" element={<Awards />} />
       </Routes>
     </>
   );

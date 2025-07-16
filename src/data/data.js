@@ -35,7 +35,7 @@ export const navLinksData = [
       { name: 'İstenmeyen Olay Bildirim Formu', path: 'https://panel.kolaytik.com/team/hospitadent/istenmeyen-olay-bildirim-formu-', external: true },
       { name: 'Hospitadent Akademi', path: 'akademi' },
       { name: 'Hospitadent Sosyal Sorumluluk', path: 'hospitadent-sosyal-sorumluluk' },
-      { name: 'Ödüllerimiz', path: 'awards' },
+      { name: 'Ödüllerimiz', path: 'odullerimiz' },
       { name: 'Kurumsal Kimlik', path: 'https://www.hospitadent.com/wp-content/uploads/2022/11/u-hospitadent-guideline.pdf', external: true },
     ]
   },
