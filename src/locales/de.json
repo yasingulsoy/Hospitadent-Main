@@ -1,0 +1,247 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "process": "Prozess",
+    "clients": "Kunden",
+    "contact": "Kontakt",
+    "language": "Sprache",
+    "search": "Suchen",
+    "searchPlaceholder": "Suchen...",
+    "viewAllResults": "Alle Ergebnisse anzeigen",
+    "contactUs": "Kontakt",
+    "aiAssistant": "KI-Assistent",
+    "onlineAppointment": "Online-Termin",
+    "phoneAppointment": "Telefontermin",
+    "corporate": "Unternehmen",
+    "administrativeStaff": "Verwaltungspersonal",
+    "patientSatisfactionVideos": "Patientenzufriedenheitsvideos",
+    "patientReviews": "Patientenbewertungen",
+    "contractedInstitutions": "Vertragsinstitutionen",
+    "hrJobApplicationForm": "HR-Stellenbewerbungsformular",
+    "franchisePartnershipApplication": "Franchise-Partnerschaftsantrag",
+    "adverseEventNotificationForm": "Formular für unerwünschte Ereignisse",
+    "hospitadentAcademy": "Hospitadent Akademie",
+    "hospitadentSocialResponsibility": "Hospitadent soziale Verantwortung",
+    "ourAwards": "Auszeichnungen",
+    "corporateIdentity": "Unternehmensidentität",
+    "ourBranches": "Filialen",
+    "istanbul": "Istanbul",
+    "mecidiyekoy": "Mecidiyekoy",
+    "bagcilar": "Bagcilar",
+    "bakirkoy": "Bakirkoy",
+    "fatih": "Fatih",
+    "camlica": "Camlica",
+    "pendik": "Pendik",
+    "serifali": "Serifali",
+    "cevizlibag": "Cevizlibag",
+    "gokturk": "Gokturk",
+    "kayseri": "Kayseri",
+    "bodrum": "Bodrum",
+    "alanya": "Alanya",
+    "antalya": "Antalya",
+    "ankara": "Ankara",
+    "denizli": "Denizli",
+    "kocaeli": "Kocaeli",
+    "bursa": "Bursa",
+    "germany": "Deutschland",
+    "netherlands": "Niederlande",
+    "ourTreatments": "Behandlungen",
+    "cosmeticDentistry": "Ästhetische Zahnheilkunde",
+    "hollywoodSmile": "Was ist Hollywood Smile (Lächeldesign)?",
+    "smileDesign": "Was ist Lächeldesign (Ästhetik)? Wie wird es gemacht?",
+    "teethWhitening": "Was ist Zahnaufhellung? Was sind die Methoden?",
+    "pinkAesthetics": "Wie wird rosa Ästhetik (Zahnfleischästhetik) gemacht?",
+    "laminateVeneer": "Was ist Laminate Veneer? Wie wird es gemacht?",
+    "zirconiumCrown": "Wie wird Zirkonkrone gemacht?",
+    "porcelainCrown": "Was ist Porzellankrone? Wie wird sie gemacht?",
+    "lumineersVeneer": "Was ist Lumineers Veneer? Wie wird es gemacht?",
+    "emaxCrown": "Wie wird Emax-Krone gemacht? Wie lange hält sie?",
+    "aestheticFilling": "Was ist ästhetische Füllung? Wie wird sie gemacht?",
+    "bisectomy": "Was ist Bisectomie (Wangenästhetik)?",
+    "laserDentalTreatment": "Laser-Zahnbehandlung",
+    "inlayFilling": "Was ist Inlay-Füllung? Wie wird sie angewendet?",
+    "onlayFilling": "Was ist Onlay-Füllung? Wie wird sie angewendet?",
+    "dentalDiamond": "Was ist Zahndiamant (Zahnkristall)?",
+    "dentalTattoo": "Was ist Zahntattoo? Wie wird es angewendet?",
+    "dentalJewelry": "Was ist Zahnersatz / Grillz? Wie wird es gemacht?",
+    "bondingTreatment": "Was ist Bonding-Behandlung? Wie wird sie angewendet?",
+    "missingTeeth": "Fehlende Zähne",
+    "implant": "Implantat",
+    "generalDentalTreatments": "Allgemeine Zahnbehandlungen",
+    "orthodontics": "Kieferorthopädie",
+    "pedodontics": "Kinderzahnheilkunde",
+    "periodontology": "Parodontologie",
+    "specialDentalTreatments": "Spezielle Zahnbehandlungen",
+    "ourDoctors": "Ärzte",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Eine neue Ära in der digitalen Zahnheilkunde",
+    "subtitle": "Vereinbaren Sie jetzt einen Termin für gesunde und ästhetische Lächeln mit 3D-Technologien.",
+    "desc": "Moderne Klinik, erfahrenes Personal, digitale Lösungen.",
+    "button": "Termin vereinbaren",
+    "heroSlides": {
+      "slide1": {
+        "title": "Führer im zahnmedizinischen Gesundheitstourismus",
+        "subtitle": "4 aufeinanderfolgende Jahre an erster Stelle, weltklasse Behandlung."
+      },
+      "slide2": {
+        "title": "99% Patientenzufriedenheit",
+        "subtitle": "Tausende glücklicher Patienten, zuverlässiger und qualitativ hochwertiger Service."
+      },
+      "slide3": {
+        "title": "Eine neue Ära in der digitalen Zahnheilkunde",
+        "subtitle": "Vereinbaren Sie jetzt einen Termin für gesunde und ästhetische Lächeln mit 3D-Technologien."
+      },
+      "slide4": {
+        "title": "Moderne Klinik, erfahrenes Personal",
+        "subtitle": "Schnelle, komfortable und sichere Behandlung mit digitalen Lösungen."
+      }
+    },
+    "typewriterWords": [
+      "Zahnaufhellung",
+      "Implantat",
+      "Kieferorthopädie",
+      "Zahnspange",
+      "Zirkonkrone",
+      "Laminate Veneer",
+      "Porzellanzähne",
+      "Zahnextraktion",
+      "Zahnfleischbehandlung",
+      "Kinderzahnheilkunde",
+      "Zahnfüllung",
+      "Wurzelkanalbehandlung",
+      "Zahnreinigung",
+      "Lächeldesign",
+      "Zahnersatz",
+      "Zahnröntgen"
+    ],
+    "stats": {
+      "years": "Jahre Erfahrung",
+      "patients": "Glückliche Patienten",
+      "employees": "Glückliche Mitarbeiter",
+      "branches": "Filialen",
+      "countries": "Länder",
+      "dentists": "Zahnärzte"
+    },
+    "contactButton": "Kontakt",
+    "whatsappContact": "Kontakt über WhatsApp",
+    "aiAssistantTitle": "KI-Assistent",
+    "onlineAppointmentTitle": "Online-Termin",
+    "phoneAppointmentTitle": "Telefontermin"
+  },
+  "services": {
+    "title": "Dienstleistungen",
+    "viewAll": "Alle anzeigen",
+    "prev": "Vorherige",
+    "next": "Nächste"
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "about": {
+    "title": "Über uns",
+    "subtitle": "Mit über 20 Jahren Erfahrung dienen wir als eine der führenden zahnmedizinischen Gesundheitsorganisationen der Türkei.",
+    "mission": {
+      "title": "Unsere Mission",
+      "text": "Wir arbeiten daran, unseren Patienten die höchste Qualität an zahnmedizinischen Gesundheitsdiensten zu bieten und ihre Lächeln mit moderner Technologie und erfahrenem Personal wiederherzustellen.",
+      "point1": "Moderne Technologie",
+      "point2": "Erfahrenes Personal",
+      "point3": "Patientenzufriedenheit"
+    },
+    "stats": {
+      "title": "Wir in Zahlen",
+      "years": "Jahre Erfahrung",
+      "patients": "Glückliche Patienten",
+      "branches": "Filialen",
+      "doctors": "Erfahrene Ärzte"
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "text": "Die zuverlässigste und bevorzugte zahnmedizinische Gesundheitsorganisation der Türkei zu sein und mit internationalen Servicequalitätsstandards weiterhin führend im Sektor zu sein."
+    },
+    "values": {
+      "quality": "Qualität",
+      "quality.desc": "Höchste Qualität an Service bieten",
+      "care": "Fürsorge",
+      "care.desc": "Unsere Patienten mit Fürsorge behandeln",
+      "innovation": "Innovation",
+      "innovation.desc": "Kontinuierliche Entwicklung und Innovation"
+    },
+    "cta": {
+      "title": "Wir sind hier für gesunde Lächeln",
+      "subtitle": "Wir freuen uns, Ihnen mit unserem erfahrenen Personal und moderner Technologie zu dienen.",
+      "button": "Termin vereinbaren"
+    },
+    "history": {
+      "title": "Unsere Geschichte",
+      "text1": "Gegründet im Jahr 2007, dient Hospitadent als eine der führenden zahnmedizinischen Gesundheitsorganisationen der Türkei.",
+      "text2": "Seit unserer Gründung haben wir Tausende von Patienten mit moderner Technologie und erfahrenem Personal bedient.",
+      "text3": "Mit unserem patientenorientierten Ansatz und unserem Verständnis für Qualitätsservice behalten wir eine führende Position im Sektor."
+    },
+    "technology": {
+      "title": "Unsere Technologie",
+      "text1": "Wir verfolgen die neuesten technologischen Entwicklungen und bieten unseren Patienten die besten Behandlungsoptionen.",
+      "text2": "Wir verwenden moderne Methoden wie 3D-Digital-Scanning, CAD/CAM-Technologie und Laserbehandlungen."
+    },
+    "team": {
+      "title": "Unser Team",
+      "text1": "Unsere erfahrenen und sachkundigen Zahnärzte erhalten kontinuierlich Schulungen und wenden die aktuellsten Behandlungsmethoden an.",
+      "text2": "Mit unserem patientenorientierten Ansatz und unserem Verständnis für zuverlässigen Service bieten wir Ihnen weiterhin den besten zahnmedizinischen Gesundheitsdienst."
+    },
+    "facilities": {
+      "title": "Unsere Einrichtungen",
+      "text1": "In unseren modernen und hygienischen Kliniken bieten wir unseren Patienten die komfortabelste Behandlungsumgebung.",
+      "text2": "Wir dienen mit Sterilisationsstandard-Ausrüstung und sicheren Behandlungsprotokollen."
+    },
+    "quality": {
+      "title": "Unsere Qualitätspolitik",
+      "text1": "Service in Übereinstimmung mit internationalen Qualitätsstandards zu bieten ist unser Grundprinzip.",
+      "text2": "Mit unserem kontinuierlichen Verbesserungsansatz und patientenorientierten Ansatz bieten wir den höchsten Qualitätszahnmedizinischen Gesundheitsdienst."
+    },
+    "future": {
+      "title": "Unsere Zukunftsvision",
+      "text1": "Wir werden weiterhin unseren Patienten die aktuellsten Behandlungsmethoden anbieten, indem wir technologische Entwicklungen genau verfolgen.",
+      "text2": "Wir bewegen uns auf dem Weg der kontinuierlichen Entwicklung und Innovation mit unserem Ziel, die führende zahnmedizinische Gesundheitsorganisation der Türkei und der Welt zu werden."
+    }
+  },
+  "appointment": {
+    "title": "Online-Termin",
+    "step1": "Stadt auswählen",
+    "step2": "Filiale auswählen",
+    "step3": "Arzt auswählen",
+    "step4": "Termin vereinbaren",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "book": "Termin vereinbaren",
+    "name": "Vollständiger Name",
+    "phone": "Telefonnummer",
+    "namePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+    "phonePlaceholder": "Geben Sie Ihre Telefonnummer ein",
+    "submit": "Termin einreichen",
+    "submitting": "Wird eingereicht...",
+    "success": "Termin erfolgreich eingereicht!",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "close": "Schließen",
+    "open": "Öffnen",
+    "yes": "Ja",
+    "no": "Nein",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "website": "Webseite",
+    "followUs": "Folgen Sie uns",
+    "contactInfo": "Kontaktinformationen"
+  }
+} 

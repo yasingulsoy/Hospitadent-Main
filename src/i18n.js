@@ -3,10 +3,20 @@ import { initReactI18next } from 'react-i18next';
 
 import tr from './locales/tr.json';
 import en from './locales/en.json';
+import fr from './locales/fr.json';
+import de from './locales/de.json';
+import ru from './locales/ru.json';
+import es from './locales/es.json';
+import ar from './locales/ar.json';
 
 const resources = {
   tr: { translation: tr },
   en: { translation: en },
+  fr: { translation: fr },
+  de: { translation: de },
+  ru: { translation: ru },
+  es: { translation: es },
+  ar: { translation: ar },
 };
 
 // URL'den dil algılama

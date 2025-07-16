@@ -1,0 +1,247 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "process": "Processus",
+    "clients": "Clients",
+    "contact": "Contact",
+    "language": "Langue",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher...",
+    "viewAllResults": "Voir tous les résultats",
+    "contactUs": "Contact",
+    "aiAssistant": "Assistant IA",
+    "onlineAppointment": "Rendez-vous en ligne",
+    "phoneAppointment": "Rendez-vous par téléphone",
+    "corporate": "Entreprise",
+    "administrativeStaff": "Personnel administratif",
+    "patientSatisfactionVideos": "Vidéos de satisfaction des patients",
+    "patientReviews": "Avis des patients",
+    "contractedInstitutions": "Institutions contractées",
+    "hrJobApplicationForm": "Formulaire de candidature RH",
+    "franchisePartnershipApplication": "Demande de franchise - partenariat",
+    "adverseEventNotificationForm": "Formulaire de notification d'événement indésirable",
+    "hospitadentAcademy": "Académie Hospitadent",
+    "hospitadentSocialResponsibility": "Responsabilité sociale Hospitadent",
+    "ourAwards": "Récompenses",
+    "corporateIdentity": "Identité d'entreprise",
+    "ourBranches": "Succursales",
+    "istanbul": "Istanbul",
+    "mecidiyekoy": "Mecidiyekoy",
+    "bagcilar": "Bagcilar",
+    "bakirkoy": "Bakirkoy",
+    "fatih": "Fatih",
+    "camlica": "Camlica",
+    "pendik": "Pendik",
+    "serifali": "Serifali",
+    "cevizlibag": "Cevizlibag",
+    "gokturk": "Gokturk",
+    "kayseri": "Kayseri",
+    "bodrum": "Bodrum",
+    "alanya": "Alanya",
+    "antalya": "Antalya",
+    "ankara": "Ankara",
+    "denizli": "Denizli",
+    "kocaeli": "Kocaeli",
+    "bursa": "Bursa",
+    "germany": "Allemagne",
+    "netherlands": "Pays-Bas",
+    "ourTreatments": "Traitements",
+    "cosmeticDentistry": "Dentisterie esthétique",
+    "hollywoodSmile": "Qu'est-ce que le Hollywood Smile (Design du sourire)?",
+    "smileDesign": "Qu'est-ce que le Design du sourire (Esthétique)? Comment est-ce fait?",
+    "teethWhitening": "Qu'est-ce que le blanchiment des dents? Quelles sont les méthodes?",
+    "pinkAesthetics": "Comment se fait l'esthétique rose (Esthétique des gencives)?",
+    "laminateVeneer": "Qu'est-ce que la facette en stratifié? Comment est-ce fait?",
+    "zirconiumCrown": "Comment se fait la couronne en zircone?",
+    "porcelainCrown": "Qu'est-ce que la couronne en porcelaine? Comment est-ce fait?",
+    "lumineersVeneer": "Qu'est-ce que la facette Lumineers? Comment est-ce fait?",
+    "emaxCrown": "Comment se fait la couronne Emax? Combien de temps dure-t-elle?",
+    "aestheticFilling": "Qu'est-ce que l'obturation esthétique? Comment est-ce fait?",
+    "bisectomy": "Qu'est-ce que la bisectomie (Esthétique des joues)?",
+    "laserDentalTreatment": "Traitement dentaire au laser",
+    "inlayFilling": "Qu'est-ce que l'obturation inlay? Comment est-elle appliquée?",
+    "onlayFilling": "Qu'est-ce que l'obturation onlay? Comment est-elle appliquée?",
+    "dentalDiamond": "Qu'est-ce que le diamant dentaire (Cristal dentaire)?",
+    "dentalTattoo": "Qu'est-ce que le tatouage dentaire? Comment est-il appliqué?",
+    "dentalJewelry": "Qu'est-ce que la bijouterie dentaire / Grillz? Comment est-ce fait?",
+    "bondingTreatment": "Qu'est-ce que le traitement de collage? Comment est-il appliqué?",
+    "missingTeeth": "Dents manquantes",
+    "implant": "Implant",
+    "generalDentalTreatments": "Traitements dentaires généraux",
+    "orthodontics": "Orthodontie",
+    "pedodontics": "Pédodontie / Dentisterie pédiatrique",
+    "periodontology": "Parodontologie",
+    "specialDentalTreatments": "Traitements dentaires spéciaux",
+    "ourDoctors": "Médecins",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Une nouvelle ère en dentisterie numérique",
+    "subtitle": "Prenez rendez-vous maintenant pour des sourires sains et esthétiques avec les technologies 3D.",
+    "desc": "Clinique moderne, personnel expert, solutions numériques.",
+    "button": "Prendre rendez-vous",
+    "heroSlides": {
+      "slide1": {
+        "title": "Leader en tourisme dentaire",
+        "subtitle": "4 années consécutives de première place, traitement de classe mondiale."
+      },
+      "slide2": {
+        "title": "99% de satisfaction des patients",
+        "subtitle": "Des milliers de patients heureux, service fiable et de qualité."
+      },
+      "slide3": {
+        "title": "Une nouvelle ère en dentisterie numérique",
+        "subtitle": "Prenez rendez-vous maintenant pour des sourires sains et esthétiques avec les technologies 3D."
+      },
+      "slide4": {
+        "title": "Clinique moderne, personnel expert",
+        "subtitle": "Traitement rapide, confortable et sûr avec des solutions numériques."
+      }
+    },
+    "typewriterWords": [
+      "Blanchiment des dents",
+      "Implant",
+      "Orthodontie",
+      "Appareil dentaire",
+      "Couronne en zircone",
+      "Facette en stratifié",
+      "Dents en porcelaine",
+      "Extraction dentaire",
+      "Traitement des gencives",
+      "Dentisterie pédiatrique",
+      "Obturation dentaire",
+      "Traitement de canal",
+      "Nettoyage des dents",
+      "Design du sourire",
+      "Prothèse dentaire",
+      "Radiographie dentaire"
+    ],
+    "stats": {
+      "years": "Années d'expérience",
+      "patients": "Patients heureux",
+      "employees": "Employés heureux",
+      "branches": "Succursales",
+      "countries": "Pays",
+      "dentists": "Dentistes"
+    },
+    "contactButton": "Contact",
+    "whatsappContact": "Contact via WhatsApp",
+    "aiAssistantTitle": "Assistant IA",
+    "onlineAppointmentTitle": "Rendez-vous en ligne",
+    "phoneAppointmentTitle": "Rendez-vous par téléphone"
+  },
+  "services": {
+    "title": "Services",
+    "viewAll": "Voir tout",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "footer": {
+    "copyright": "Tous droits réservés."
+  },
+  "about": {
+    "title": "À propos de nous",
+    "subtitle": "Avec plus de 20 ans d'expérience, nous servons comme l'une des principales organisations de santé dentaire de Turquie.",
+    "mission": {
+      "title": "Mission",
+      "text": "Nous travaillons pour fournir à nos patients les services de santé dentaire de la plus haute qualité et restaurer leurs sourires avec une technologie moderne et un personnel expert.",
+      "point1": "Technologie moderne",
+      "point2": "Personnel expert",
+      "point3": "Satisfaction des patients"
+    },
+    "stats": {
+      "title": "Nous en chiffres",
+      "years": "Années d'expérience",
+      "patients": "Patients heureux",
+      "branches": "Succursales",
+      "doctors": "Médecins experts"
+    },
+    "vision": {
+      "title": "Vision",
+      "text": "Être l'organisation de santé dentaire la plus fiable et préférée de Turquie, continuant à être un leader dans le secteur avec des normes de qualité de service internationales."
+    },
+    "values": {
+      "quality": "Qualité",
+      "quality.desc": "Fournir le service de la plus haute qualité",
+      "care": "Soin",
+      "care.desc": "Approcher nos patients avec soin",
+      "innovation": "Innovation",
+      "innovation.desc": "Développement continu et innovation"
+    },
+    "cta": {
+      "title": "Nous sommes là pour des sourires sains",
+      "subtitle": "Nous sommes heureux de vous servir avec notre personnel expert et notre technologie moderne.",
+      "button": "Prendre rendez-vous"
+    },
+    "history": {
+      "title": "Histoire",
+      "text1": "Fondé en 2007, Hospitadent sert comme l'une des principales organisations de santé dentaire de Turquie.",
+      "text2": "Depuis notre création, nous avons servi des milliers de patients avec une technologie moderne et un personnel expert.",
+      "text3": "Avec notre approche centrée sur le patient et notre compréhension du service de qualité, nous maintenons une position de leader dans le secteur."
+    },
+    "technology": {
+      "title": "Technologie",
+      "text1": "Nous suivons les derniers développements technologiques et offrons à nos patients les meilleures options de traitement.",
+      "text2": "Nous utilisons des méthodes modernes telles que le scan numérique 3D, la technologie CAD/CAM et les traitements laser."
+    },
+    "team": {
+      "title": "Équipe",
+      "text1": "Nos dentistes expérimentés et experts reçoivent une formation continue et appliquent les méthodes de traitement les plus actuelles.",
+      "text2": "Avec notre approche centrée sur le patient et notre compréhension du service fiable, nous continuons à vous fournir le meilleur service de santé dentaire."
+    },
+    "facilities": {
+      "title": "Installations",
+      "text1": "Dans nos cliniques modernes et hygiéniques, nous fournissons à nos patients l'environnement de traitement le plus confortable.",
+      "text2": "Nous servons avec un équipement aux normes de stérilisation et des protocoles de traitement sûrs."
+    },
+    "quality": {
+      "title": "Politique de qualité",
+      "text1": "Fournir un service conforme aux normes de qualité internationales est notre principe fondamental.",
+      "text2": "Avec notre approche d'amélioration continue et centrée sur la satisfaction des patients, nous fournissons le service de santé dentaire de la plus haute qualité."
+    },
+    "future": {
+      "title": "Vision future",
+      "text1": "Nous continuerons à offrir à nos patients les méthodes de traitement les plus actuelles en suivant de près les développements technologiques.",
+      "text2": "Nous avançons sur la voie du développement continu et de l'innovation avec notre objectif de devenir l'organisation de santé dentaire leader de Turquie et du monde."
+    }
+  },
+  "appointment": {
+    "title": "Rendez-vous en ligne",
+    "step1": "Sélectionner la ville",
+    "step2": "Sélectionner la succursale",
+    "step3": "Sélectionner le médecin",
+    "step4": "Prendre rendez-vous",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "book": "Prendre rendez-vous",
+    "name": "Nom complet",
+    "phone": "Numéro de téléphone",
+    "namePlaceholder": "Entrez votre nom complet",
+    "phonePlaceholder": "Entrez votre numéro de téléphone",
+    "submit": "Soumettre le rendez-vous",
+    "submitting": "Soumission...",
+    "success": "Rendez-vous soumis avec succès!",
+    "error": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "yes": "Oui",
+    "no": "Non",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "address": "Adresse",
+    "website": "Site web",
+    "followUs": "Suivez-nous",
+    "contactInfo": "Informations de contact"
+  }
+} 

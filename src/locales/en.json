@@ -13,7 +13,69 @@
     "contactUs": "Contact",
     "aiAssistant": "AI Assistant",
     "onlineAppointment": "Online Appointment",
-    "phoneAppointment": "Phone Appointment"
+    "phoneAppointment": "Phone Appointment",
+    "corporate": "Corporate",
+    "administrativeStaff": "Administrative Staff",
+    "patientSatisfactionVideos": "Patient Satisfaction Videos",
+    "patientReviews": "Patient Reviews",
+    "contractedInstitutions": "Contracted Institutions",
+    "hrJobApplicationForm": "HR Job Application Form",
+    "franchisePartnershipApplication": "Franchise - Partnership Application",
+    "adverseEventNotificationForm": "Adverse Event Notification Form",
+    "hospitadentAcademy": "Hospitadent Academy",
+    "hospitadentSocialResponsibility": "Hospitadent Social Responsibility",
+    "ourAwards": "Awards",
+    "corporateIdentity": "Corporate Identity",
+    "ourBranches": "Branches",
+    "istanbul": "Istanbul",
+    "mecidiyekoy": "Mecidiyekoy",
+    "bagcilar": "Bagcilar",
+    "bakirkoy": "Bakirkoy",
+    "fatih": "Fatih",
+    "camlica": "Camlica",
+    "pendik": "Pendik",
+    "serifali": "Serifali",
+    "cevizlibag": "Cevizlibag",
+    "gokturk": "Gokturk",
+    "kayseri": "Kayseri",
+    "bodrum": "Bodrum",
+    "alanya": "Alanya",
+    "antalya": "Antalya",
+    "ankara": "Ankara",
+    "denizli": "Denizli",
+    "kocaeli": "Kocaeli",
+    "bursa": "Bursa",
+    "germany": "Germany",
+    "netherlands": "Netherlands",
+    "ourTreatments": "Treatments",
+    "cosmeticDentistry": "Cosmetic Dentistry",
+    "hollywoodSmile": "What is Hollywood Smile (Smile Design)?",
+    "smileDesign": "What is Smile Design (Aesthetics)? How is it done?",
+    "teethWhitening": "What is Teeth Whitening? What are the methods?",
+    "pinkAesthetics": "How is Pink Aesthetics (Gum Aesthetics) done?",
+    "laminateVeneer": "What is Laminate Veneer? How is it done?",
+    "zirconiumCrown": "How is Zirconium Crown done?",
+    "porcelainCrown": "What is Porcelain Crown? How is it done?",
+    "lumineersVeneer": "What is Lumineers Veneer? How is it done?",
+    "emaxCrown": "How is Emax Crown done? How long does it last?",
+    "aestheticFilling": "What is Aesthetic Filling? How is it done?",
+    "bisectomy": "What is Bisectomy (Cheek Aesthetics)?",
+    "laserDentalTreatment": "Laser Dental Treatment",
+    "inlayFilling": "What is Inlay Filling? How is it applied?",
+    "onlayFilling": "What is Onlay Filling? How is it applied?",
+    "dentalDiamond": "What is Dental Diamond (Dental Crystal)?",
+    "dentalTattoo": "What is Dental Tattoo? How is it applied?",
+    "dentalJewelry": "What is Dental Jewelry / Grillz? How is it done?",
+    "bondingTreatment": "What is Bonding Treatment? How is it applied?",
+    "missingTeeth": "Missing Teeth",
+    "implant": "Implant",
+    "generalDentalTreatments": "General Dental Treatments",
+    "orthodontics": "Orthodontics",
+    "pedodontics": "Pedodontics / Pediatric Dentistry",
+    "periodontology": "Periodontology",
+    "specialDentalTreatments": "Special Dental Treatments",
+    "ourDoctors": "Doctors",
+    "blog": "Blog"
   },
   "home": {
     "title": "A New Era in Digital Dentistry",
@@ -71,7 +133,7 @@
     "phoneAppointmentTitle": "Phone Appointment"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Services",
     "viewAll": "View All",
     "prev": "Previous",
     "next": "Next"
@@ -83,7 +145,7 @@
     "title": "About Us",
     "subtitle": "With over 20 years of experience, we serve as one of Turkey's leading dental health organizations.",
     "mission": {
-      "title": "Our Mission",
+      "title": "Mission",
       "text": "We work to provide our patients with the highest quality dental health services and restore their smiles with modern technology and expert staff.",
       "point1": "Modern Technology",
       "point2": "Expert Staff",
@@ -97,7 +159,7 @@
       "doctors": "Expert Doctors"
     },
     "vision": {
-      "title": "Our Vision",
+      "title": "Vision",
       "text": "To be Turkey's most reliable and preferred dental health organization, continuing to be a leader in the sector with international service quality standards."
     },
     "values": {
@@ -114,33 +176,33 @@
       "button": "Book Appointment"
     },
     "history": {
-      "title": "Our History",
+      "title": "History",
       "text1": "Founded in 2007, Hospitadent serves as one of Turkey's leading dental health organizations.",
       "text2": "Since our establishment, we have served thousands of patients with modern technology and expert staff.",
       "text3": "With our patient-focused approach and quality service understanding, we maintain a leading position in the sector."
     },
     "technology": {
-      "title": "Our Technology",
+      "title": "Technology",
       "text1": "We follow the latest technological developments and offer our patients the best treatment options.",
       "text2": "We use modern methods such as 3D digital scanning, CAD/CAM technology and laser treatments."
     },
     "team": {
-      "title": "Our Team",
+      "title": "Team",
       "text1": "Our experienced and expert dentists continuously receive training and apply the most current treatment methods.",
       "text2": "With our patient-focused approach and reliable service understanding, we continue to provide you with the best dental health service."
     },
     "facilities": {
-      "title": "Our Facilities",
+      "title": "Facilities",
       "text1": "In our modern and hygienic clinics, we provide our patients with the most comfortable treatment environment.",
       "text2": "We serve with sterilization standard equipment and safe treatment protocols."
     },
     "quality": {
-      "title": "Our Quality Policy",
+      "title": "Quality Policy",
       "text1": "Providing service in accordance with international quality standards is our fundamental principle.",
       "text2": "With our continuous improvement and patient satisfaction focused approach, we provide the highest quality dental health service."
     },
     "future": {
-      "title": "Our Future Vision",
+      "title": "Future Vision",
       "text1": "We will continue to offer our patients the most current treatment methods by closely following technological developments.",
       "text2": "We are moving forward on the path of continuous development and innovation with our goal of becoming Turkey's and the world's leading dental health organization."
     }

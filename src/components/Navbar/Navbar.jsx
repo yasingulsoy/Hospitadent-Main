@@ -118,12 +118,12 @@ const Navbar = () => {
   useEffect(() => {
     if (searchValue) {
       setSearchResults(
-        allLinks.filter(l => l.name.toLowerCase().includes(searchValue.toLowerCase()))
+        allLinks.filter(l => t(l.name).toLowerCase().includes(searchValue.toLowerCase()))
       );
       } else {
       setSearchResults([]);
     }
-  }, [searchValue, allLinks]);
+  }, [searchValue, allLinks, t]);
 
   function handleSearchKey(e) {
     if (e.key === "Enter" && searchValue.trim()) {
@@ -244,7 +244,7 @@ const Navbar = () => {
                               className="block px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm"
                               onClick={() => { setSearchOpen(false); setSearchValue(""); }}
                             >
-                              {res.name}
+                              {t(res.name)}
                             </a>
                           </li>
                         ))}

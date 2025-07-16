@@ -1,0 +1,247 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "process": "Proceso",
+    "clients": "Clientes",
+    "contact": "Contacto",
+    "language": "Idioma",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar...",
+    "viewAllResults": "Ver todos los resultados",
+    "contactUs": "Contacto",
+    "aiAssistant": "Asistente IA",
+    "onlineAppointment": "Cita en línea",
+    "phoneAppointment": "Cita por teléfono",
+    "corporate": "Corporativo",
+    "administrativeStaff": "Personal administrativo",
+    "patientSatisfactionVideos": "Videos de satisfacción del paciente",
+    "patientReviews": "Reseñas de pacientes",
+    "contractedInstitutions": "Instituciones contratadas",
+    "hrJobApplicationForm": "Formulario de solicitud de empleo RRHH",
+    "franchisePartnershipApplication": "Solicitud de franquicia - asociación",
+    "adverseEventNotificationForm": "Formulario de notificación de eventos adversos",
+    "hospitadentAcademy": "Academia Hospitadent",
+    "hospitadentSocialResponsibility": "Responsabilidad social Hospitadent",
+    "ourAwards": "Premios",
+    "corporateIdentity": "Identidad corporativa",
+    "ourBranches": "Sucursales",
+    "istanbul": "Estambul",
+    "mecidiyekoy": "Mecidiyekoy",
+    "bagcilar": "Bagcilar",
+    "bakirkoy": "Bakirkoy",
+    "fatih": "Fatih",
+    "camlica": "Camlica",
+    "pendik": "Pendik",
+    "serifali": "Serifali",
+    "cevizlibag": "Cevizlibag",
+    "gokturk": "Gokturk",
+    "kayseri": "Kayseri",
+    "bodrum": "Bodrum",
+    "alanya": "Alanya",
+    "antalya": "Antalya",
+    "ankara": "Ankara",
+    "denizli": "Denizli",
+    "kocaeli": "Kocaeli",
+    "bursa": "Bursa",
+    "germany": "Alemania",
+    "netherlands": "Países Bajos",
+    "ourTreatments": "Tratamientos",
+    "cosmeticDentistry": "Odontología cosmética",
+    "hollywoodSmile": "¿Qué es Hollywood Smile (Diseño de sonrisa)?",
+    "smileDesign": "¿Qué es el diseño de sonrisa (Estética)? ¿Cómo se hace?",
+    "teethWhitening": "¿Qué es el blanqueamiento dental? ¿Cuáles son los métodos?",
+    "pinkAesthetics": "¿Cómo se hace la estética rosa (Estética de encías)?",
+    "laminateVeneer": "¿Qué es la carilla de laminado? ¿Cómo se hace?",
+    "zirconiumCrown": "¿Cómo se hace la corona de circonio?",
+    "porcelainCrown": "¿Qué es la corona de porcelana? ¿Cómo se hace?",
+    "lumineersVeneer": "¿Qué es la carilla Lumineers? ¿Cómo se hace?",
+    "emaxCrown": "¿Cómo se hace la corona Emax? ¿Cuánto dura?",
+    "aestheticFilling": "¿Qué es el empaste estético? ¿Cómo se hace?",
+    "bisectomy": "¿Qué es la bisectomía (Estética de mejillas)?",
+    "laserDentalTreatment": "Tratamiento dental con láser",
+    "inlayFilling": "¿Qué es el empaste inlay? ¿Cómo se aplica?",
+    "onlayFilling": "¿Qué es el empaste onlay? ¿Cómo se aplica?",
+    "dentalDiamond": "¿Qué es el diamante dental (Cristal dental)?",
+    "dentalTattoo": "¿Qué es el tatuaje dental? ¿Cómo se aplica?",
+    "dentalJewelry": "¿Qué es la joyería dental / Grillz? ¿Cómo se hace?",
+    "bondingTreatment": "¿Qué es el tratamiento de unión? ¿Cómo se aplica?",
+    "missingTeeth": "Dientes faltantes",
+    "implant": "Implante",
+    "generalDentalTreatments": "Tratamientos dentales generales",
+    "orthodontics": "Ortodoncia",
+    "pedodontics": "Odontopediatría",
+    "periodontology": "Periodoncia",
+    "specialDentalTreatments": "Tratamientos dentales especiales",
+    "ourDoctors": "Médicos",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Una nueva era en odontología digital",
+    "subtitle": "Obtén una cita ahora para sonrisas saludables y estéticas con tecnologías 3D.",
+    "desc": "Clínica moderna, personal experto, soluciones digitales.",
+    "button": "Reservar cita",
+    "heroSlides": {
+      "slide1": {
+        "title": "Líder en turismo de salud dental",
+        "subtitle": "4 años consecutivos en primer lugar, tratamiento de clase mundial."
+      },
+      "slide2": {
+        "title": "99% de satisfacción del paciente",
+        "subtitle": "Miles de pacientes felices, servicio confiable y de calidad."
+      },
+      "slide3": {
+        "title": "Una nueva era en odontología digital",
+        "subtitle": "Obtén una cita ahora para sonrisas saludables y estéticas con tecnologías 3D."
+      },
+      "slide4": {
+        "title": "Clínica moderna, personal experto",
+        "subtitle": "Tratamiento rápido, cómodo y seguro con soluciones digitales."
+      }
+    },
+    "typewriterWords": [
+      "Blanqueamiento dental",
+      "Implante",
+      "Ortodoncia",
+      "Brackets",
+      "Corona de circonio",
+      "Carilla de laminado",
+      "Dientes de porcelana",
+      "Extracción dental",
+      "Tratamiento de encías",
+      "Odontopediatría",
+      "Empaste dental",
+      "Tratamiento de conducto",
+      "Limpieza dental",
+      "Diseño de sonrisa",
+      "Prótesis dental",
+      "Radiografía dental"
+    ],
+    "stats": {
+      "years": "Años de experiencia",
+      "patients": "Pacientes felices",
+      "employees": "Empleados felices",
+      "branches": "Sucursales",
+      "countries": "Países",
+      "dentists": "Dentistas"
+    },
+    "contactButton": "Contacto",
+    "whatsappContact": "Contacto vía WhatsApp",
+    "aiAssistantTitle": "Asistente IA",
+    "onlineAppointmentTitle": "Cita en línea",
+    "phoneAppointmentTitle": "Cita por teléfono"
+  },
+  "services": {
+    "title": "Servicios",
+    "viewAll": "Ver todo",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados."
+  },
+  "about": {
+    "title": "Acerca de nosotros",
+    "subtitle": "Con más de 20 años de experiencia, servimos como una de las principales organizaciones de salud dental de Turquía.",
+    "mission": {
+      "title": "Nuestra misión",
+      "text": "Trabajamos para proporcionar a nuestros pacientes servicios de salud dental de la más alta calidad y restaurar sus sonrisas con tecnología moderna y personal experto.",
+      "point1": "Tecnología moderna",
+      "point2": "Personal experto",
+      "point3": "Satisfacción del paciente"
+    },
+    "stats": {
+      "title": "Nosotros en números",
+      "years": "Años de experiencia",
+      "patients": "Pacientes felices",
+      "branches": "Sucursales",
+      "doctors": "Médicos expertos"
+    },
+    "vision": {
+      "title": "Nuestra visión",
+      "text": "Ser la organización de salud dental más confiable y preferida de Turquía, continuando siendo líder en el sector con estándares internacionales de calidad de servicio."
+    },
+    "values": {
+      "quality": "Calidad",
+      "quality.desc": "Proporcionar el servicio de la más alta calidad",
+      "care": "Cuidado",
+      "care.desc": "Acercarse a nuestros pacientes con cuidado",
+      "innovation": "Innovación",
+      "innovation.desc": "Desarrollo continuo e innovación"
+    },
+    "cta": {
+      "title": "Estamos aquí para sonrisas saludables",
+      "subtitle": "Nos complace servirle con nuestro personal experto y tecnología moderna.",
+      "button": "Reservar cita"
+    },
+    "history": {
+      "title": "Nuestra historia",
+      "text1": "Fundado en 2007, Hospitadent sirve como una de las principales organizaciones de salud dental de Turquía.",
+      "text2": "Desde nuestra fundación, hemos servido a miles de pacientes con tecnología moderna y personal experto.",
+      "text3": "Con nuestro enfoque centrado en el paciente y nuestra comprensión del servicio de calidad, mantenemos una posición de liderazgo en el sector."
+    },
+    "technology": {
+      "title": "Nuestra tecnología",
+      "text1": "Seguimos los últimos desarrollos tecnológicos y ofrecemos a nuestros pacientes las mejores opciones de tratamiento.",
+      "text2": "Utilizamos métodos modernos como escaneo digital 3D, tecnología CAD/CAM y tratamientos láser."
+    },
+    "team": {
+      "title": "Nuestro equipo",
+      "text1": "Nuestros dentistas experimentados y expertos reciben capacitación continua y aplican los métodos de tratamiento más actuales.",
+      "text2": "Con nuestro enfoque centrado en el paciente y nuestra comprensión del servicio confiable, continuamos brindándole el mejor servicio de salud dental."
+    },
+    "facilities": {
+      "title": "Nuestras instalaciones",
+      "text1": "En nuestras clínicas modernas e higiénicas, proporcionamos a nuestros pacientes el entorno de tratamiento más cómodo.",
+      "text2": "Servimos con equipos de estándar de esterilización y protocolos de tratamiento seguros."
+    },
+    "quality": {
+      "title": "Nuestra política de calidad",
+      "text1": "Proporcionar servicio de acuerdo con los estándares internacionales de calidad es nuestro principio fundamental.",
+      "text2": "Con nuestro enfoque de mejora continua y centrado en la satisfacción del paciente, proporcionamos el servicio de salud dental de la más alta calidad."
+    },
+    "future": {
+      "title": "Nuestra visión futura",
+      "text1": "Continuaremos ofreciendo a nuestros pacientes los métodos de tratamiento más actuales siguiendo de cerca los desarrollos tecnológicos.",
+      "text2": "Nos movemos en el camino del desarrollo continuo y la innovación con nuestro objetivo de convertirnos en la organización de salud dental líder de Turquía y el mundo."
+    }
+  },
+  "appointment": {
+    "title": "Cita en línea",
+    "step1": "Seleccionar ciudad",
+    "step2": "Seleccionar sucursal",
+    "step3": "Seleccionar médico",
+    "step4": "Reservar cita",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "book": "Reservar cita",
+    "name": "Nombre completo",
+    "phone": "Número de teléfono",
+    "namePlaceholder": "Ingrese su nombre completo",
+    "phonePlaceholder": "Ingrese su número de teléfono",
+    "submit": "Enviar cita",
+    "submitting": "Enviando...",
+    "success": "¡Cita enviada exitosamente!",
+    "error": "Ocurrió un error. Por favor inténtelo de nuevo."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "yes": "Sí",
+    "no": "No",
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "address": "Dirección",
+    "website": "Sitio web",
+    "followUs": "Síguenos",
+    "contactInfo": "Información de contacto"
+  }
+} 

@@ -7,6 +7,7 @@ import logo from '../../assets/logo.webp';
 
 const MobileNavLinks = ({ item, handleNav }) => {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
 
   if (item.submenu) {
     return (
@@ -15,7 +16,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
           className="flex justify-between items-center w-full px-4 py-3 text-left text-white hover:text-blue-300 focus:outline-none border-b border-white/10"
           onClick={() => setOpen(!open)}
         >
-          <span className="font-medium">{item.name}</span>
+          <span className="font-medium">{t(item.name)}</span>
           <svg className={`ml-2 w-4 h-4 transform transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
         {open && (
@@ -39,7 +40,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
           className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
           onClick={handleNav}
         >
-          {item.name}
+          {t(item.name)}
         </a>
       </li>
     );
@@ -54,7 +55,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
           className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
           onClick={handleNav}
         >
-          {item.name}
+          {t(item.name)}
         </a>
       </li>
     );
@@ -68,7 +69,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
         className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
         onClick={handleNav}
       >
-        {item.name}
+        {t(item.name)}
       </RouterLink>
     </li>
   );
@@ -175,12 +176,12 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   useEffect(() => {
     if (searchValue) {
       setSearchResults(
-        allLinks.filter(l => l.name.toLowerCase().includes(searchValue.toLowerCase()))
+        allLinks.filter(l => t(l.name).toLowerCase().includes(searchValue.toLowerCase()))
       );
     } else {
       setSearchResults([]);
     }
-  }, [searchValue, allLinks]);
+  }, [searchValue, allLinks, t]);
 
   function handleSearchKey(e) {
     if (e.key === "Enter" && searchValue.trim()) {
@@ -302,7 +303,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                           className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
                           onClick={() => { setSearchOpen(false); setSearchValue(""); handleNav(); }}
                         >
-                          {res.name}
+                          {t(res.name)}
                         </a>
                       </li>
                     ))}

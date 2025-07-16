@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Footer } from '../components';
-import kurumsalKimlikPDF from '../assets/pdfs/hospitadent-kurumsal-kimlik.pdf';
+import kurumsalKimlikPDF from '../assets/videos/pdfs/hospitadent-kurumsal-kimlik.pdf';
 
 const CorporateIdentity = () => {
   // Sayfa yüklendiğinde scroll'u aktif hale getir
