@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import NavLinks from "./NavLinks";
 import { navLinksData } from "../../data/data";
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -19,25 +19,11 @@ const languages = [
   { code: 'ar', name: 'العربية', flag: 'SA' },
 ];
 
-// Typewriter animasyon verileri
-const typewriterWords = [
-  "Diş beyazlatma",
-  "İmplant",
-  "Ortodonti",
-  "Diş teli",
-  "Zirkonyum kaplama",
-  "Lamina kaplama",
-  "Porselen diş",
-  "Diş çekimi",
-  "Diş eti tedavisi",
-  "Çocuk diş hekimliği",
-  "Diş dolgusu",
-  "Kanal tedavisi",
-  "Diş temizliği",
-  "Gülüş tasarımı",
-  "Diş protezi",
-  "Diş röntgeni"
-];
+// Typewriter animasyon verileri - dinamik çeviri ile
+const useTypewriterWords = () => {
+  const { t } = useTranslation();
+  return t('home.typewriterWords', { returnObjects: true });
+};
 
 function useTypewriter(words, speed = 60, pause = 800) {
   const [index, setIndex] = useState(0);
@@ -70,9 +56,9 @@ function useTypewriter(words, speed = 60, pause = 800) {
 }
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [nav, setNav] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -80,17 +66,37 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
   
-  // Dropdown'da Türkçe her zaman üstte ve vurgulu, diğer diller aşağıda olacak şekilde sıralama fonksiyonu
-  const getSortedLanguages = () => {
-    const others = languages.filter(l => l.code !== selectedLang.code && l.code !== 'tr');
-    return [selectedLang, ...languages.filter(l => l.code === 'tr' && selectedLang.code !== 'tr'), ...others];
-  };
+  // Mevcut dili URL'den algıla - useMemo ile optimize edilmiş
+  const currentLanguage = useMemo(() => {
+    const path = window.location.pathname;
+    
+    // /en, /fr, /de gibi dil kodlarını kontrol et
+    if (path.startsWith('/en')) {
+      return languages.find(lang => lang.code === 'en') || languages[0];
+    } else if (path.startsWith('/fr')) {
+      return languages.find(lang => lang.code === 'fr') || languages[0];
+    } else if (path.startsWith('/de')) {
+      return languages.find(lang => lang.code === 'de') || languages[0];
+    } else if (path.startsWith('/ru')) {
+      return languages.find(lang => lang.code === 'ru') || languages[0];
+    } else if (path.startsWith('/es')) {
+      return languages.find(lang => lang.code === 'es') || languages[0];
+    } else if (path.startsWith('/ar')) {
+      return languages.find(lang => lang.code === 'ar') || languages[0];
+    } else {
+      return languages.find(lang => lang.code === 'tr') || languages[0];
+    }
+  }, [window.location.pathname]);
+  
+  const [selectedLang, setSelectedLang] = useState(currentLanguage);
+  
+
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-  const typewriterText = useTypewriter(typewriterWords);
+  const typewriterText = useTypewriter(useTypewriterWords());
 
   // navLinksData'dan düz başlık listesi çıkar
   function flattenLinks(links) {
@@ -129,11 +135,15 @@ const Navbar = () => {
 
   // Dil değişince i18n dilini de değiştir
   const handleLangChange = (lang) => {
-    setSelectedLang(lang);
-    setLangOpen(false);
-    if(lang.code === 'tr') navigate('/');
-    else navigate('/' + lang.code);
+    // Önce i18n dilini değiştir
     i18n.changeLanguage(lang.code);
+    
+    // Sonra sayfayı tamamen yeniden yükle
+    if(lang.code === 'tr') {
+      window.location.href = '/';
+    } else {
+      window.location.href = '/' + lang.code;
+    }
   };
 
   // Typewriter yazısına tıklayınca arama inputuna focus
@@ -143,6 +153,8 @@ const Navbar = () => {
       if (inputRef.current) inputRef.current.focus();
     }, 50);
   };
+
+
 
   // Dil dropdown'ının dışına tıklandığında kapanması
   useEffect(() => {
@@ -221,7 +233,7 @@ const Navbar = () => {
                       onChange={e => setSearchValue(e.target.value)}
                       onKeyDown={handleSearchKey}
                       className="px-3 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px]"
-                      placeholder="Arayın..."
+                      placeholder={t('navbar.searchPlaceholder')}
                     />
                     {searchResults.length > 0 && (
                       <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
@@ -245,7 +257,7 @@ const Navbar = () => {
                             }}
                             className="block w-full px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm text-left"
                           >
-                            Tüm sonuçları görüntüle ({searchResults.length})
+                            {t('navbar.viewAllResults')} ({searchResults.length})
                           </button>
                         </li>
                       </ul>
@@ -254,31 +266,31 @@ const Navbar = () => {
                 )}
               </div>
               {/* Typewriter animasyon */}
-              <div className="min-w-[180px] text-blue font-medium text-sm cursor-pointer select-none" onClick={handleTypewriterClick} title="Arama için tıklayın">
+              <div className="min-w-[180px] text-blue font-medium text-sm cursor-pointer select-none" onClick={handleTypewriterClick} title={t('navbar.search')}>
                 {typewriterText}
               </div>
             </div>
           </div>
           {/* Sağ: Dil seçici ve sosyal medya */}
           <div className="flex flex-col items-end gap-2 min-w-[120px]">
-            <div className="flex items-center gap-3 bg-gray-100 rounded-lg px-3 py-1 shadow-sm">
+            <div className="relative language-dropdown">
               <button
                 className="flex items-center rounded bg-gray-200 text-blue font-bold hover:bg-gray-300 transition gap-1 px-3 py-1 text-[clamp(0.95rem,1.7vw,1.15rem)] min-w-[110px] md:min-w-[130px] lg:min-w-[150px] h-10 md:h-11 lg:h-12"
                 style={{fontSize: 'clamp(0.95rem,1.1vw,1.15rem)', padding: '0.5rem 1.2rem'}}
                 onClick={() => setLangOpen(!langOpen)}
               >
-                <CountryFlag countryCode={selectedLang.flag} svg className="w-5 h-5 md:w-6 md:h-6 rounded" />
-                <span className="whitespace-nowrap">{selectedLang.name}</span>
+                <CountryFlag countryCode={currentLanguage.flag} svg className="w-5 h-5 md:w-6 md:h-6 rounded" />
+                <span className="whitespace-nowrap">{currentLanguage.name}</span>
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
               </button>
               {langOpen && (
                 <ul className="absolute right-0 top-full mt-1 bg-primary text-white rounded shadow-xl z-50 min-w-[8rem] md:min-w-[10rem] lg:min-w-[12rem] text-base md:text-lg py-2">
-                  {getSortedLanguages().map((lang, idx) => (
+                  {languages.map((lang, idx) => (
                     <li key={lang.code}>
                       <button
-                        className={`flex items-center w-full text-left px-4 py-2 md:px-5 md:py-2.5 text-base md:text-lg ${lang.code === selectedLang.code ? 'bg-white text-primary font-bold cursor-default' : 'hover:bg-blue-900'}`}
+                        className={`flex items-center w-full text-left px-4 py-2 md:px-5 md:py-2.5 text-base md:text-lg ${lang.code === currentLanguage.code ? 'bg-white text-primary font-bold cursor-default' : 'hover:bg-blue-900'}`}
                         onClick={() => handleLangChange(lang)}
-                        disabled={lang.code === selectedLang.code}
+                        disabled={lang.code === currentLanguage.code}
                       >
                         <CountryFlag countryCode={lang.flag} svg className="w-5 h-5 md:w-6 md:h-6 rounded" />
                         <span className="ml-2 whitespace-nowrap">{lang.name}</span>

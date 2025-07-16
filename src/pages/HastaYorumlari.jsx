@@ -1,11 +1,31 @@
 import React from 'react';
 import { Footer } from '../components';
+import SEOHead from '../components/SEO/SEOHead';
 
 const HastaYorumlari = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-      {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm py-12 border-b border-gray-200">
+    <>
+      <SEOHead 
+        title="Hasta Yorumları"
+        description="Hospitadent hasta yorumları ve değerlendirmeleri. Gerçek hasta deneyimleri, Google ve Trustpilot yorumları. 4.8/5 puan ortalaması ile hasta memnuniyeti."
+        keywords="hospitadent yorumları, hasta değerlendirmeleri, google yorumları, trustpilot, hasta memnuniyeti, diş hekimi yorumları"
+        url="https://hospitadent.com/hasta-yorumlari"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "AggregateRating",
+          "itemReviewed": {
+            "@type": "Dentist",
+            "name": "Hospitadent"
+          },
+          "ratingValue": "4.8",
+          "reviewCount": "15000",
+          "bestRating": "5",
+          "worstRating": "1"
+        }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+        {/* Header */}
+        <div className="bg-white/80 backdrop-blur-sm py-12 border-b border-gray-200">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
             Hasta Yorumları
@@ -271,6 +291,7 @@ const HastaYorumlari = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

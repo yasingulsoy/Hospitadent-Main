@@ -6,13 +6,75 @@
     "process": "Process",
     "clients": "Clients",
     "contact": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "search": "Search",
+    "searchPlaceholder": "Search...",
+    "viewAllResults": "View all results",
+    "contactUs": "Contact",
+    "aiAssistant": "AI Assistant",
+    "onlineAppointment": "Online Appointment",
+    "phoneAppointment": "Phone Appointment"
   },
   "home": {
     "title": "A New Era in Digital Dentistry",
     "subtitle": "Get an appointment now for healthy and aesthetic smiles with 3D technologies.",
     "desc": "Modern clinic, expert staff, digital solutions.",
-    "button": "Book Appointment"
+    "button": "Book Appointment",
+    "heroSlides": {
+      "slide1": {
+        "title": "Leader in Dental Health Tourism",
+        "subtitle": "4 consecutive years of first place, world-class treatment."
+      },
+      "slide2": {
+        "title": "99% Patient Satisfaction",
+        "subtitle": "Thousands of happy patients, reliable and quality service."
+      },
+      "slide3": {
+        "title": "New Era in Digital Dentistry",
+        "subtitle": "Get an appointment now for healthy and aesthetic smiles with 3D technologies."
+      },
+      "slide4": {
+        "title": "Modern Clinic, Expert Staff",
+        "subtitle": "Fast, comfortable and safe treatment with digital solutions."
+      }
+    },
+    "typewriterWords": [
+      "Teeth whitening",
+      "Implant",
+      "Orthodontics",
+      "Braces",
+      "Zirconium crown",
+      "Laminate veneer",
+      "Porcelain teeth",
+      "Tooth extraction",
+      "Gum treatment",
+      "Pediatric dentistry",
+      "Tooth filling",
+      "Root canal treatment",
+      "Teeth cleaning",
+      "Smile design",
+      "Dental prosthesis",
+      "Dental x-ray"
+    ],
+    "stats": {
+      "years": "Years of Experience",
+      "patients": "Happy Patients",
+      "employees": "Happy Employees",
+      "branches": "Branches",
+      "countries": "Countries",
+      "dentists": "Dentists"
+    },
+    "contactButton": "Contact",
+    "whatsappContact": "Contact via WhatsApp",
+    "aiAssistantTitle": "AI Assistant",
+    "onlineAppointmentTitle": "Online Appointment",
+    "phoneAppointmentTitle": "Phone Appointment"
+  },
+  "services": {
+    "title": "Our Services",
+    "viewAll": "View All",
+    "prev": "Previous",
+    "next": "Next"
   },
   "footer": {
     "copyright": "All rights reserved."
@@ -82,5 +144,42 @@
       "text1": "We will continue to offer our patients the most current treatment methods by closely following technological developments.",
       "text2": "We are moving forward on the path of continuous development and innovation with our goal of becoming Turkey's and the world's leading dental health organization."
     }
+  },
+  "appointment": {
+    "title": "Online Appointment",
+    "step1": "Select City",
+    "step2": "Select Branch",
+    "step3": "Select Doctor",
+    "step4": "Book Appointment",
+    "next": "Next",
+    "previous": "Previous",
+    "book": "Book Appointment",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "namePlaceholder": "Enter your full name",
+    "phonePlaceholder": "Enter your phone number",
+    "submit": "Submit Appointment",
+    "submitting": "Submitting...",
+    "success": "Appointment submitted successfully!",
+    "error": "An error occurred. Please try again."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "open": "Open",
+    "yes": "Yes",
+    "no": "No",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "website": "Website",
+    "followUs": "Follow Us",
+    "contactInfo": "Contact Information"
   }
 } 

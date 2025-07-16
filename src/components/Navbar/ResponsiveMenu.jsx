@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { useTranslation } from 'react-i18next';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import CountryFlag from "react-country-flag";
 import { Link as RouterLink } from "react-router-dom";
@@ -74,6 +75,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
 };
 
 const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelectedLang }) => {
+  const { t, i18n } = useTranslation();
   const [showLang, setShowLang] = useState(false);
   // Arama için ek state'ler
   const [searchOpen, setSearchOpen] = useState(false);
@@ -81,25 +83,45 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   const [searchResults, setSearchResults] = useState([]);
   const inputRef = useRef(null);
   const menuRef = useRef(null);
-
+  
+  // Dil listesi - useMemo'dan önce tanımlanmalı
   const languages = [
-    { code: 'tr', name: 'Türkçe' },
-    { code: 'us', name: 'English' },
-    { code: 'fr', name: 'Français' },
-    { code: 'de', name: 'Deutsch' },
-    { code: 'ru', name: 'Русский' },
-    { code: 'es', name: 'Español' },
-    { code: 'sa', name: 'العربية' },
+    { code: 'tr', name: 'Türkçe', flag: 'TR' },
+    { code: 'en', name: 'English', flag: 'GB' },
+    { code: 'fr', name: 'Français', flag: 'FR' },
+    { code: 'de', name: 'Deutsch', flag: 'DE' },
+    { code: 'ru', name: 'Русский', flag: 'RU' },
+    { code: 'es', name: 'Español', flag: 'ES' },
+    { code: 'ar', name: 'العربية', flag: 'SA' },
   ];
+  
+  // Mevcut dili URL'den algıla - useMemo ile optimize edilmiş
+  const currentLanguage = useMemo(() => {
+    const path = window.location.pathname;
+    
+    // /en, /fr, /de gibi dil kodlarını kontrol et
+    if (path.startsWith('/en')) {
+      return languages.find(lang => lang.code === 'en') || languages[0];
+    } else if (path.startsWith('/fr')) {
+      return languages.find(lang => lang.code === 'fr') || languages[0];
+    } else if (path.startsWith('/de')) {
+      return languages.find(lang => lang.code === 'de') || languages[0];
+    } else if (path.startsWith('/ru')) {
+      return languages.find(lang => lang.code === 'ru') || languages[0];
+    } else if (path.startsWith('/es')) {
+      return languages.find(lang => lang.code === 'es') || languages[0];
+    } else if (path.startsWith('/ar')) {
+      return languages.find(lang => lang.code === 'ar') || languages[0];
+    } else {
+      return languages.find(lang => lang.code === 'tr') || languages[0];
+    }
+  }, [window.location.pathname]);
 
-  // Typewriter animasyon verileri
-  const typewriterWords = [
-    "Diş beyazlatma",
-    "İmplant",
-    "Ortodonti",
-    "Diş teli",
-    "Zirkonyum kaplama"
-  ];
+  // Typewriter animasyon verileri - dinamik çeviri ile
+  const useTypewriterWords = () => {
+    const { t } = useTranslation();
+    return t('home.typewriterWords', { returnObjects: true }).slice(0, 5);
+  };
   
   function useTypewriter(words, speed = 90, pause = 1200) {
     const [index, setIndex] = useState(0);
@@ -131,7 +153,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     return `${words[index].substring(0, subIndex)}${blink ? "|" : " "}`;
   }
   
-  const typewriterText = useTypewriter(typewriterWords);
+  const typewriterText = useTypewriter(useTypewriterWords());
 
   // navLinksData'dan düz başlık listesi çıkar
   function flattenLinks(links) {
@@ -181,6 +203,8 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     };
   }, [nav]);
 
+
+
   // Menü dışına tıklayınca kapat
   useEffect(() => {
     if (!nav) return;
@@ -223,7 +247,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
           className="block w-full px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg text-left"
           onClick={handleNav}
         >
-          Anasayfa
+          {t('navbar.home')}
         </RouterLink>
         
         {/* Logo */}
@@ -267,7 +291,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                   onChange={e => setSearchValue(e.target.value)}
                   onKeyDown={handleSearchKey}
                   className="ml-2 px-2 py-1 rounded border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-300 text-white bg-white/10 placeholder-white/70 text-base min-w-[120px] w-full"
-                  placeholder="Arayın..."
+                  placeholder={t('navbar.searchPlaceholder')}
                 />
                 {searchResults.length > 0 && (
                   <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
@@ -292,7 +316,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                         }}
                         className="block w-full px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm text-left"
                       >
-                        Tüm sonuçları görüntüle ({searchResults.length})
+                        {t('navbar.viewAllResults')} ({searchResults.length})
                       </button>
                     </li>
                   </ul>
@@ -346,8 +370,8 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
               className="flex items-center rounded bg-white/20 text-white font-bold hover:bg-white/30 transition gap-1 px-3 py-1 text-base"
               onClick={() => setShowLang(!showLang)}
             >
-              <CountryFlag countryCode={selectedLang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
-              <span>{selectedLang.name}</span>
+              <CountryFlag countryCode={currentLanguage.flag} svg className="w-5 h-5 rounded" />
+              <span>{currentLanguage.name}</span>
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {showLang && (
@@ -355,11 +379,22 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                 {languages.map((lang, idx) => (
                   <li key={lang.code}>
                     <button
-                      className={`flex items-center w-full text-left ${lang.code === selectedLang.code ? 'bg-white text-[#0f4f78] font-bold cursor-default' : 'hover:bg-[#2bb3ea]'}`}
-                      onClick={() => { if(lang.code !== selectedLang.code) { setSelectedLang(lang); setShowLang(false); } }}
-                      disabled={lang.code === selectedLang.code}
+                      className={`flex items-center w-full text-left px-3 py-2 ${lang.code === currentLanguage.code ? 'bg-white text-[#0f4f78] font-bold cursor-default' : 'hover:bg-[#2bb3ea]'}`}
+                      onClick={() => { 
+                        if(lang.code !== currentLanguage.code) { 
+                          i18n.changeLanguage(lang.code);
+                          
+                          // Sayfayı tamamen yeniden yükle
+                          if(lang.code === 'tr') {
+                            window.location.href = '/';
+                          } else {
+                            window.location.href = '/' + lang.code;
+                          }
+                        } 
+                      }}
+                      disabled={lang.code === currentLanguage.code}
                     >
-                      <CountryFlag countryCode={lang.code.toUpperCase()} svg className="w-5 h-5 rounded" />
+                      <CountryFlag countryCode={lang.flag} svg className="w-5 h-5 rounded" />
                       <span className="ml-2">{lang.name}</span>
                     </button>
                   </li>

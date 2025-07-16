@@ -6,13 +6,75 @@
     "process": "Süreç",
     "clients": "Referanslar",
     "contact": "İletişim",
-    "language": "Dil"
+    "language": "Dil",
+    "search": "Ara",
+    "searchPlaceholder": "Arayın...",
+    "viewAllResults": "Tüm sonuçları görüntüle",
+    "contactUs": "İletişim",
+    "aiAssistant": "Yapay Zeka Asistanı",
+    "onlineAppointment": "Online Randevu",
+    "phoneAppointment": "Telefonla Randevu"
   },
   "home": {
     "title": "Dijital Diş Hekimliğinde Yeni Dönem",
     "subtitle": "3D teknolojilerle, sağlıklı ve estetik gülüşler için hemen randevu alın.",
     "desc": "Modern klinik, uzman kadro, dijital çözümler.",
-    "button": "Randevu Al"
+    "button": "Randevu Al",
+    "heroSlides": {
+      "slide1": {
+        "title": "Dental Sağlık Turizminde Lideriz",
+        "subtitle": "Üst üste 4 yıl birincilik, dünya standartlarında tedavi."
+      },
+      "slide2": {
+        "title": "%99 Hasta Memnuniyeti",
+        "subtitle": "Binlerce mutlu hasta, güvenilir ve kaliteli hizmet."
+      },
+      "slide3": {
+        "title": "Dijital Diş Hekimliğinde Yeni Dönem",
+        "subtitle": "3D teknolojilerle, sağlıklı ve estetik gülüşler için hemen randevu alın."
+      },
+      "slide4": {
+        "title": "Modern Klinik, Uzman Kadro",
+        "subtitle": "Dijital çözümlerle hızlı, konforlu ve güvenli tedavi."
+      }
+    },
+    "typewriterWords": [
+      "Diş beyazlatma",
+      "İmplant",
+      "Ortodonti",
+      "Diş teli",
+      "Zirkonyum kaplama",
+      "Lamina kaplama",
+      "Porselen diş",
+      "Diş çekimi",
+      "Diş eti tedavisi",
+      "Çocuk diş hekimliği",
+      "Diş dolgusu",
+      "Kanal tedavisi",
+      "Diş temizliği",
+      "Gülüş tasarımı",
+      "Diş protezi",
+      "Diş röntgeni"
+    ],
+    "stats": {
+      "years": "Yıllık Tecrübe",
+      "patients": "Mutlu Hasta",
+      "employees": "Mutlu Çalışanlar",
+      "branches": "Şube",
+      "countries": "Ülke",
+      "dentists": "Diş Hekimi"
+    },
+    "contactButton": "İletişim",
+    "whatsappContact": "WhatsApp ile iletişim",
+    "aiAssistantTitle": "Yapay Zeka Asistanı",
+    "onlineAppointmentTitle": "Online Randevu",
+    "phoneAppointmentTitle": "Telefonla Randevu"
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "viewAll": "Tümünü Gör",
+    "prev": "Önceki",
+    "next": "Sonraki"
   },
   "footer": {
     "copyright": "Tüm hakları saklıdır."
@@ -82,5 +144,42 @@
       "text1": "Teknolojik gelişmeleri yakından takip ederek, hastalarımıza en güncel tedavi yöntemlerini sunmaya devam edeceğiz.",
       "text2": "Türkiye'nin ve dünyanın önde gelen diş sağlığı kuruluşu olma hedefimizle, sürekli gelişim ve yenilikçilik yolunda ilerliyoruz."
     }
+  },
+  "appointment": {
+    "title": "Online Randevu",
+    "step1": "Şehir Seç",
+    "step2": "Şube Seç",
+    "step3": "Doktor Seç",
+    "step4": "Randevu Al",
+    "next": "İleri",
+    "previous": "Geri",
+    "book": "Randevu Al",
+    "name": "Ad Soyad",
+    "phone": "Telefon Numarası",
+    "namePlaceholder": "Adınızı ve soyadınızı girin",
+    "phonePlaceholder": "Telefon numaranızı girin",
+    "submit": "Randevu Gönder",
+    "submitting": "Gönderiliyor...",
+    "success": "Randevu başarıyla gönderildi!",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "close": "Kapat",
+    "open": "Aç",
+    "yes": "Evet",
+    "no": "Hayır",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "address": "Adres",
+    "website": "Web Sitesi",
+    "followUs": "Bizi Takip Edin",
+    "contactInfo": "İletişim Bilgileri"
   }
 } 

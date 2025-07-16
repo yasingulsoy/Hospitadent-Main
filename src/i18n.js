@@ -9,11 +9,19 @@ const resources = {
   en: { translation: en },
 };
 
+// URL'den dil algılama
+const getLanguageFromURL = () => {
+  const path = window.location.pathname;
+  const langMatch = path.match(/^\/([a-z]{2})(\/|$)/);
+  const detectedLang = langMatch ? langMatch[1] : 'tr';
+  return detectedLang;
+};
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'tr',
+    lng: getLanguageFromURL(),
     fallbackLng: 'tr',
     interpolation: {
       escapeValue: false,

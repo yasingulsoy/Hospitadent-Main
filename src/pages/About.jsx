@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Footer } from '../components';
+import SEOHead from '../components/SEO/SEOHead';
 
 const About = () => {
   const { t } = useTranslation();
@@ -15,9 +16,30 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-white">
-      {/* Header */}
-      <div className="bg-white py-8">
+    <>
+      <SEOHead 
+        title="Hakkımızda"
+        description="Hospitadent hakkında detaylı bilgi. 20+ yıllık deneyim, vizyon, misyon ve değerlerimiz. Türkiye'nin en büyük diş sağlığı kuruluşu."
+        keywords="hospitadent hakkında, diş kliniği tarihçe, vizyon misyon, değerler, deneyim"
+        url="https://hospitadent.com/hakkimizda"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Hospitadent",
+          "description": "Türkiye'nin en büyük diş sağlığı kuruluşu",
+          "url": "https://hospitadent.com",
+          "foundingDate": "2004",
+          "numberOfEmployees": "500+",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "TR",
+            "addressLocality": "Istanbul"
+          }
+        }}
+      />
+      <div className="bg-white">
+        {/* Header */}
+        <div className="bg-white py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-[#0f4f78]">
             {t('about.title', 'Hakkımızda')}
@@ -137,6 +159,7 @@ const About = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

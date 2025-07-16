@@ -1,18 +1,23 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { Navbar, Home, About, Services, Process, Clients, Contact, Footer } from './components';
-import AboutPage from './pages/About';
-import BranchPage from './pages/BranchPage';
-import Branches from './pages/Branches';
-import Staff from './pages/Staff';
-import SearchResults from './pages/SearchResults';
-import HastaMemnuniyetVideolari from './pages/HastaMemnuniyetVideolari';
-import HastaYorumlari from './pages/HastaYorumlari';
-import HospitadentSosyalSorumluluk from './pages/HospitadentSosyalSorumluluk';
-import AnlasmaliKurumlar from './pages/AnlasmaliKurumlar';
-import Academy from './pages/Academy';
-import Awards from './pages/Awards';
-import CorporateIdentity from './pages/CorporateIdentity';
+import GoogleAnalytics from './components/Analytics/GoogleAnalytics';
+import Breadcrumbs from './components/SEO/Breadcrumbs';
+
+// Lazy loading için sayfa bileşenleri
+const AboutPage = lazy(() => import('./pages/About'));
+const BranchPage = lazy(() => import('./pages/BranchPage'));
+const Branches = lazy(() => import('./pages/Branches'));
+const Staff = lazy(() => import('./pages/Staff'));
+const SearchResults = lazy(() => import('./pages/SearchResults'));
+const HastaMemnuniyetVideolari = lazy(() => import('./pages/HastaMemnuniyetVideolari'));
+const HastaYorumlari = lazy(() => import('./pages/HastaYorumlari'));
+const HospitadentSosyalSorumluluk = lazy(() => import('./pages/HospitadentSosyalSorumluluk'));
+const AnlasmaliKurumlar = lazy(() => import('./pages/AnlasmaliKurumlar'));
+const Academy = lazy(() => import('./pages/Academy'));
+const Awards = lazy(() => import('./pages/Awards'));
+const CorporateIdentity = lazy(() => import('./pages/CorporateIdentity'));
 
 const Placeholder = ({ lang }) => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center text-3xl font-bold text-blue-700">
@@ -22,9 +27,16 @@ const Placeholder = ({ lang }) => (
 
 function App() {
   return (
-    <>
+    <HelmetProvider>
+      <GoogleAnalytics />
       <Navbar />
-      <Routes>
+      <Breadcrumbs />
+      <Suspense fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#004876]"></div>
+        </div>
+      }>
+        <Routes>
         <Route path="/" element={
           <>
             <Home />
@@ -66,7 +78,17 @@ function App() {
         {/* Arama Sonuçları Sayfası */}
         <Route path="/search" element={<SearchResults />} />
         
-        <Route path="/en" element={<Placeholder lang="English" />} />
+        <Route path="/en" element={
+          <>
+            <Home />
+            <About />
+            <Services />
+            <Process />
+            <Clients />
+            <Contact />
+            <Footer />
+          </>
+        } />
         <Route path="/fr" element={<Placeholder lang="Français" />} />
         <Route path="/de" element={<Placeholder lang="Deutsch" />} />
         <Route path="/ru" element={<Placeholder lang="Русский" />} />
@@ -79,8 +101,9 @@ function App() {
         <Route path="/akademi" element={<Academy />} />
         <Route path="/odullerimiz" element={<Awards />} />
         <Route path="/kurumsal-kimlik" element={<CorporateIdentity />} />
-      </Routes>
-    </>
+        </Routes>
+      </Suspense>
+    </HelmetProvider>
   );
 }
 

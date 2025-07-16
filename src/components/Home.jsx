@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone, FaRobot } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import ico from "../assets/ico.png";
 import logo from "../assets/logo.webp";
+import SEOHead from "./SEO/SEOHead";
 
 
 
@@ -99,6 +101,7 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
 
 // Animasyonlu iletişim FAB butonu
 const ContactFabButton = ({ delay = 800 }) => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -119,7 +122,7 @@ const ContactFabButton = ({ delay = 800 }) => {
         style={{zIndex: 10, minWidth: open ? 56 : 120, minHeight: open ? 56 : 48, padding: open ? 0 : undefined, transition: 'all 0.4s cubic-bezier(.4,2,.6,1)'}}
         onClick={() => setOpen(o => !o)}
       >
-        <span className={`transition-all duration-300 ${open ? 'opacity-0 scale-75 absolute' : 'opacity-100 scale-100'}`}>İletişim</span>
+        <span className={`transition-all duration-300 ${open ? 'opacity-0 scale-75 absolute' : 'opacity-100 scale-100'}`}>{t('home.contactButton')}</span>
         {open && (
           <img src={ico} alt="İletişim" className="w-7 h-7 object-contain transition-all duration-300" style={{zIndex: 21}} />
         )}
@@ -131,7 +134,7 @@ const ContactFabButton = ({ delay = 800 }) => {
         rel="noopener noreferrer"
         className={`absolute top-1/2 left-full bg-blue text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto translate-x-4' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
         style={{transitionDelay: open ? '80ms' : '0ms', zIndex: 19, transform: `translateY(-50%) ${open ? 'translateX(24px)' : 'translateX(0)'}`}}
-        title="WhatsApp ile iletişim"
+        title={t('home.whatsappContact')}
       >
         <FaWhatsapp className="w-5 h-5" />
       </a>
@@ -237,14 +240,17 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
   );
 };
 
-const bizData = [
-  { number: '+18', label: 'Yıllık Tecrübe', icon: <FaAward /> },
-  { number: '+3.000.000', label: 'Mutlu Hasta', icon: <FaSmile /> },
-  { number: '+750', label: 'Mutlu Çalışanlar', icon: <FaUsers /> },
-  { number: '+21', label: 'Şube', icon: <FaBuilding /> },
-  { number: '+4', label: 'Ülke', icon: <FaGlobe /> },
-  { number: '+250', label: 'Dentists', icon: <FaUserMd /> },
-];
+const useBizData = () => {
+  const { t } = useTranslation();
+  return [
+    { number: '+18', label: t('home.stats.years'), icon: <FaAward /> },
+    { number: '+3.000.000', label: t('home.stats.patients'), icon: <FaSmile /> },
+    { number: '+750', label: t('home.stats.employees'), icon: <FaUsers /> },
+    { number: '+21', label: t('home.stats.branches'), icon: <FaBuilding /> },
+    { number: '+4', label: t('home.stats.countries'), icon: <FaGlobe /> },
+    { number: '+250', label: t('home.stats.dentists'), icon: <FaUserMd /> },
+  ];
+};
 
 // Kolaytik açma fonksiyonu
 const openKolaytik = () => {
@@ -282,6 +288,7 @@ const openKolaytik = () => {
 
 // RandevuFabButton: Hem mobilde hem masaüstünde tıklanınca sola doğru 3 yuvarlak buton açılır
 const RandevuFabButton = ({ children, delay = 600 }) => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   // Hem mobilde hem masaüstünde fab buton
   return (
@@ -315,7 +322,7 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
           onClick={openKolaytik}
           className={`absolute top-1/2 right-full bg-[#2bb3ea] text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-20' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
           style={{transform: `translateY(-50%) ${open ? 'translateX(-104px)' : 'translateX(0)'}`, transitionDelay: open ? '160ms' : '0ms', zIndex: 18}}
-          title="Yapay Zeka Asistanı"
+          title={t('home.aiAssistantTitle')}
         >
           <FaRobot className="w-6 h-6" />
         </button>
@@ -323,7 +330,7 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
           href="#randevu"
           className={`absolute top-1/2 right-full bg-[#2bb3ea] text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg transition-all duration-500 ${open ? 'opacity-100 scale-100 pointer-events-auto -translate-x-36' : 'opacity-0 scale-50 pointer-events-none translate-x-0'}`}
           style={{transform: `translateY(-50%) ${open ? 'translateX(-152px)' : 'translateX(0)'}`, transitionDelay: open ? '240ms' : '0ms', zIndex: 17}}
-          title="Online Randevu"
+          title={t('home.onlineAppointmentTitle')}
         >
           <FaGlobe className="w-5 h-5" />
         </a>
@@ -331,25 +338,28 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
   );
 };
 
-// Hero başlığı için typewriter başlık-alt yazı
-const heroSlides = [
-  {
-    title: "Dental Sağlık Turizminde Lideriz",
-    subtitle: "Üst üste 4 yıl birincilik, dünya standartlarında tedavi."
-  },
-  {
-    title: "%99 Hasta Memnuniyeti",
-    subtitle: "Binlerce mutlu hasta, güvenilir ve kaliteli hizmet."
-  },
-  {
-    title: "Dijital Diş Hekimliğinde Yeni Dönem",
-    subtitle: "3D teknolojilerle, sağlıklı ve estetik gülüşler için hemen randevu alın."
-  },
-  {
-    title: "Modern Klinik, Uzman Kadro",
-    subtitle: "Dijital çözümlerle hızlı, konforlu ve güvenli tedavi."
-  }
-];
+// Hero başlığı için typewriter başlık-alt yazı - dinamik çeviri ile
+const useHeroSlides = () => {
+  const { t } = useTranslation();
+  return [
+    {
+      title: t('home.heroSlides.slide1.title'),
+      subtitle: t('home.heroSlides.slide1.subtitle')
+    },
+    {
+      title: t('home.heroSlides.slide2.title'),
+      subtitle: t('home.heroSlides.slide2.subtitle')
+    },
+    {
+      title: t('home.heroSlides.slide3.title'),
+      subtitle: t('home.heroSlides.slide3.subtitle')
+    },
+    {
+      title: t('home.heroSlides.slide4.title'),
+      subtitle: t('home.heroSlides.slide4.subtitle')
+    }
+  ];
+};
 
 // Typewriter efektli başlık ve alt yazı hook'u
 function useTypewriterSlides(slides, writeSpeed = 50, eraseSpeed = 25, pause = 15000) {
@@ -397,9 +407,18 @@ function useTypewriterSlides(slides, writeSpeed = 50, eraseSpeed = 25, pause = 1
 }
 
 const Hero = () => {
+  const { t } = useTranslation();
+  const heroSlides = useHeroSlides();
   const { displayTitle, displaySubtitle } = useTypewriterSlides(heroSlides, 50, 25, 15000);
   return (
-    <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-20 lg:pb-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden">
+    <>
+              <SEOHead 
+        title={t('home.title')}
+        description={t('home.subtitle')}
+        keywords="hospitadent ana sayfa, diş hekimi randevu, implant tedavisi, ortodonti, diş beyazlatma, zirkonyum kaplama"
+        url="https://hospitadent.com/"
+      />
+      <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-20 lg:pb-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden">
       {/* Arka Plan Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none z-0"
@@ -425,17 +444,18 @@ const Hero = () => {
         </AnimatedSubtitle>
         {/* Butonlar */}
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8 sm:mb-10 md:mb-12 items-center justify-center">
-          <RandevuFabButton delay={600}>Randevu Al</RandevuFabButton>
+          <RandevuFabButton delay={600}>{t('home.button')}</RandevuFabButton>
           <ContactFabButton delay={800} />
         </div>
         {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
         <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-4 md:mt-6 mb-8 md:mb-12">
-          {bizData.map((item, i) => (
+          {useBizData().map((item, i) => (
             <BizMiniCard key={i} {...item} delay={i * 120} />
           ))}
         </div>
       </div>
     </section>
+    </>
   );
 };
 

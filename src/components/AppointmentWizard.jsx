@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const branchGroups = [
   { city: 'İstanbul', branches: ['Mecidiyeköy', 'Bağcılar', 'Bakırköy', 'Fatih', 'Çamlıca', 'Pendik', 'Şerifali', 'Cevizlibağ', 'Ataşehir', 'Göktürk'] },
@@ -329,6 +330,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
 };
 
 const AppointmentWizard = () => {
+  const { t } = useTranslation();
   const [step, setStep] = useState(1);
   const [selectedCityIdx, setSelectedCityIdx] = useState(0);
   const [selectedBranchIdx, setSelectedBranchIdx] = useState(0);
@@ -348,7 +350,7 @@ const AppointmentWizard = () => {
   return (
     <section id="randevu" className="py-8 bg-gray-50">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#004876]">Online Randevu</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#004876]">{t('appointment.title')}</h2>
         
         {/* Adım göstergesi */}
         <div className="flex items-center justify-center gap-2 mb-8">
