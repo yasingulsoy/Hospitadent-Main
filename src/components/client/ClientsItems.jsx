@@ -48,7 +48,7 @@ const ClientsItems = ({ clientsData }) => {
               <StarIcons type={faStar} />
               <StarIcons type={faStarHalfStroke} />
             </div>
-            <h3 className="capitalize text-black font-medium md:text-xl mb-1">
+            <h3 className="capitalize text-[#004876] font-medium md:text-xl mb-1">
               {client.name}
             </h3>
             <span className="capitalize text-light-color">{client.title}</span>

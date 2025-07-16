@@ -130,7 +130,7 @@ const days = [
 const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Şehir Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">Şehir Seçin</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-3 md:grid-cols-4 sm:gap-3 sm:overflow-x-visible">
         {cities.map((city, idx) => (
@@ -156,7 +156,7 @@ const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
 const BranchSelector = ({ branches, selectedBranchIdx, onSelect }) => {
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Şube Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">Şube Seçin</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-3 md:grid-cols-4 sm:gap-3 sm:overflow-x-visible">
         {branches.map((branch, idx) => (
@@ -182,7 +182,7 @@ const BranchSelector = ({ branches, selectedBranchIdx, onSelect }) => {
 const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">{branchName} Diş Kliniği - Doktor Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">{branchName} Diş Kliniği - Doktor Seçin</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:overflow-x-visible">
         {doctors.map((doctor, idx) => (
@@ -210,7 +210,7 @@ const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
 const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
   return (
     <div className="mb-6">
-      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Tarih Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-4 text-center">Tarih Seçin</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-6 sm:gap-2 sm:overflow-x-visible">
         {days.map((day, idx) => (
@@ -237,7 +237,7 @@ const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
 const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
   return (
     <div className="mb-6">
-      <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Saat Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-4 text-center">Saat Seçin</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-4 md:grid-cols-5 sm:gap-2 sm:overflow-x-visible">
         {slots.map((slot, idx) => (
@@ -266,12 +266,12 @@ const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
 const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, selectedDay, selectedSlot, onEdit }) => {
   return (
     <div className="max-w-md mx-auto">
-      <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">İletişim Bilgileri</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">İletişim Bilgileri</h3>
       
       {/* Seçim özeti */}
       <div className="bg-gray-50 rounded-xl p-4 mb-6">
         <div className="text-sm text-gray-600 mb-2">Seçilen Randevu:</div>
-        <div className="font-semibold text-gray-800">{selectedDay?.date} ({selectedDay?.day}) - {selectedSlot}</div>
+        <div className="font-semibold text-[#004876]">{selectedDay?.date} ({selectedDay?.day}) - {selectedSlot}</div>
         <button
           onClick={onEdit}
           className="text-[#2bb3ea] text-sm font-medium mt-2 hover:underline"
@@ -348,7 +348,7 @@ const AppointmentWizard = () => {
   return (
     <section id="randevu" className="py-8 bg-gray-50">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">Online Randevu</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#004876]">Online Randevu</h2>
         
         {/* Adım göstergesi */}
         <div className="flex items-center justify-center gap-2 mb-8">

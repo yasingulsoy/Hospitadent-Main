@@ -48,7 +48,7 @@ const BranchPage = () => {
       {/* Header */}
       <div className="bg-white py-8">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800">
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-[#004876]">
             Hospitadent {branchName} Şubesi
           </h1>
         </div>

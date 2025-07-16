@@ -9,7 +9,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       white: '#ffffff',
-      black: '#22292f',
+      black: '#004876',
       primary: '#0f4f78', // Ana mavi
       accent: '#0f4f78',  // Ana mavi (koyu)
       secondary: '#f5f7fa', // Açık gri

@@ -46,7 +46,7 @@ const SpotlightTitle = ({ children, delay = 0 }) => {
         }}
       />
       <h1
-        className={`relative text-lg sm:text-2xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
+        className={`relative text-lg sm:text-2xl md:text-5xl lg:text-6xl font-bold drop-shadow-2xl transition-all duration-1000 transform text-transparent bg-clip-text bg-gradient-to-r from-[#0f4f78] via-[#2bb3ea] to-[#0f4f78] ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
         style={{ zIndex: 2, lineHeight: 1.25, overflow: 'visible' }}
@@ -66,7 +66,7 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
   }, [delay]);
   return (
     <p
-      className={`text-xs sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform text-gray-700 ${
+      className={`text-xs sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 transform text-[#004876] font-semibold ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >

@@ -75,7 +75,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={ahmetSelvi} 
                           alt="Diş Hekimi Ahmet SELVİ" 
@@ -118,7 +118,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={recepEsker} 
                           alt="Diş Hekimi Recep EŞKAR" 
@@ -161,7 +161,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={halitBurak} 
                           alt="Halit Burak ALTINKAYA" 
@@ -204,7 +204,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariErkek} 
                           alt="Abdullah DEMİRCAN" 
@@ -247,7 +247,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={canerCoban} 
                           alt="Caner ÇOBAN" 
@@ -290,7 +290,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={bayramSayman} 
                           alt="Bayram SAYMAN" 
@@ -333,7 +333,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariKadin} 
                           alt="Zeynep Aydın SOYDANER" 
@@ -376,7 +376,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={neslihanDemir} 
                           alt="Neslihan DEMİR" 
@@ -419,7 +419,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariKadin} 
                           alt="Tuğba KAVALCI" 
@@ -462,7 +462,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariErkek} 
                           alt="Veysel YILMAZ" 
@@ -505,7 +505,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={ercumentMert} 
                           alt="Ercüment MERT" 
@@ -548,7 +548,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariKadin} 
                           alt="Nurşah IŞIK" 
@@ -591,7 +591,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={kadriyeSoysal} 
                           alt="Kadriye SOYSAL" 
@@ -634,7 +634,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={senaKeles} 
                           alt="Sena KELEŞ" 
@@ -677,7 +677,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={berraGorgulu} 
                           alt="Berra Sinanoğlu GÖRGÜLÜ" 
@@ -720,7 +720,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={selinHosceylan} 
                           alt="Selin HOŞCEYLAN" 
@@ -763,7 +763,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={iclalHarmanci} 
                           alt="İclal HARMANCI" 
@@ -806,7 +806,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={mehmetKok} 
                           alt="Mehmet Ziya KÖK" 
@@ -849,7 +849,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariErkek} 
                           alt="Müslüm YENİKAN" 
@@ -892,7 +892,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={gayeMercan} 
                           alt="Gaye MERCAN" 
@@ -935,7 +935,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariKadin} 
                           alt="Nurdagül KAHRAMANSOY" 
@@ -978,7 +978,7 @@ const Staff = () => {
                       
                       {/* Image Container */}
                       <div className="relative w-48 h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(43,179,234,0.5)] transition-all duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#004876]/20 to-transparent z-10"></div>
                         <img 
                           src={idariErkek} 
                           alt="İbrahim YÜCEL" 

@@ -52,7 +52,7 @@ const SearchResults = () => {
               </svg>
             </Link>
             <div className="flex-1">
-              <h1 className="text-2xl font-bold text-gray-900">Arama Sonuçları</h1>
+              <h1 className="text-2xl font-bold text-[#004876]">Arama Sonuçları</h1>
               <p className="text-gray-600 mt-1">
                 "{query}" için {results.length} sonuç bulundu
               </p>
@@ -88,7 +88,7 @@ const SearchResults = () => {
         ) : filteredResults.length === 0 ? (
           <div className="text-center py-12">
             <FaSearch className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-2 text-sm font-medium text-gray-900">Sonuç bulunamadı</h3>
+            <h3 className="mt-2 text-sm font-medium text-[#004876]">Sonuç bulunamadı</h3>
             <p className="mt-1 text-sm text-gray-500">
               "{query}" için sonuç bulunamadı. Farklı anahtar kelimeler deneyin.
             </p>
@@ -108,7 +108,7 @@ const SearchResults = () => {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-2">
+                    <h3 className="text-lg font-semibold text-[#004876] mb-1 line-clamp-2">
                       {item.title}
                     </h3>
                     <p className="text-sm text-gray-600 mb-2 line-clamp-3">
