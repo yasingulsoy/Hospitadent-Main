@@ -3,13 +3,13 @@ import React, { useEffect } from 'react';
 import { Footer } from '../components';
 
 // Import resimler
-import ahmetSelvi from '../assets/idari_kadro/1.Diş Hekimi Ahmet Selvi.png';
-import recepEsker from '../assets/idari_kadro/2.Recep Eşkar.png';
-import halitBurak from '../assets/idari_kadro/3.Halit Burak ALTINKAYA.png';
-import canerCoban from '../assets/idari_kadro/Caner ÇOBAN.png';
-import bayramSayman from '../assets/idari_kadro/Bayram SAYMAN.png';
-import neslihanDemir from '../assets/idari_kadro/Neslihan DEMİR.png';
-import ercumentMert from '../assets/idari_kadro/Ercüment MERT.png';
+import ahmetSelvi from '../assets/idari_kadro/1-dis-hekimi-ahmet-selvi.png';
+import recepEsker from '../assets/idari_kadro/2-recep-eskar.png';
+import halitBurak from '../assets/idari_kadro/3-halit-burak-altinkaya.png';
+import canerCoban from '../assets/idari_kadro/caner-coban.png';
+import bayramSayman from '../assets/idari_kadro/bayram-sayman.png';
+import neslihanDemir from '../assets/idari_kadro/neslihan-demir.png';
+import ercumentMert from '../assets/idari_kadro/ercument-mert.png';
 import idariErkek from '../assets/idari_kadro/IDARI-ERKEK.png';
 import idariKadin from '../assets/idari_kadro/IDARI-KADIN.png';
 
