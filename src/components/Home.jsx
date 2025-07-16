@@ -75,27 +75,27 @@ const AnimatedSubtitle = ({ children, delay = 300 }) => {
   );
 };
 
-// Animasyonlu buton
-const AnimatedButton = ({ children, delay = 600, variant = "primary" }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-  const buttonClasses = variant === "primary"
-    ? "bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] hover:from-[#0f4f78] hover:to-[#2bb3ea] text-white"
-    : "bg-white hover:bg-gray-50 border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78]";
-  return (
-    <a
-      href={variant === "primary" ? "#randevu" : "#contact"}
-      className={`${buttonClasses} font-bold py-2 px-4 md:py-3 md:px-7 rounded-full text-sm md:text-base shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto text-center inline-block transition-all duration-1000 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-      }`}
-    >
-      {children}
-    </a>
-  );
-};
+// Animasyonlu buton - Şu anda kullanılmıyor
+// const AnimatedButton = ({ children, delay = 600, variant = "primary" }) => {
+//   const [isVisible, setIsVisible] = useState(false);
+//   useEffect(() => {
+//     const timer = setTimeout(() => setIsVisible(true), delay);
+//     return () => clearTimeout(timer);
+//   }, [delay]);
+//   const buttonClasses = variant === "primary"
+//     ? "bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] hover:from-[#0f4f78] hover:to-[#2bb3ea] text-white"
+//     : "bg-white hover:bg-gray-50 border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78]";
+//   return (
+//     <a
+//       href={variant === "primary" ? "#randevu" : "#contact"}
+//       className={`${buttonClasses} font-bold py-2 px-4 md:py-3 md:px-7 rounded-full text-sm md:text-base shadow-xl hover:shadow-2xl transform hover:scale-105 w-full sm:w-auto text-center inline-block transition-all duration-1000 ${
+//         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+//       }`}
+//     >
+//       {children}
+//     </a>
+//   );
+// };
 
 // Animasyonlu iletişim FAB butonu
 const ContactFabButton = ({ delay = 800 }) => {
@@ -161,7 +161,7 @@ const ContactFabButton = ({ delay = 800 }) => {
 const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [displayNumber, setDisplayNumber] = useState(0);
-  const [animationCompleted, setAnimationCompleted] = useState(false);
+  // const [animationCompleted, setAnimationCompleted] = useState(false); // Şu anda kullanılmıyor
   
   // Sayıyı parse etme fonksiyonu
   const parseNumber = (num) => {
@@ -178,7 +178,7 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
     const timer = setTimeout(() => {
       setIsVisible(true);
       setDisplayNumber(0);
-      setAnimationCompleted(false);
+      // setAnimationCompleted(false); // Şu anda kullanılmıyor
     }, delay);
     return () => clearTimeout(timer);
   }, [delay]);
@@ -201,7 +201,7 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
       current += increment;
       if (current >= endNumber || step >= steps) {
         setDisplayNumber(endNumber);
-        setAnimationCompleted(true);
+        // setAnimationCompleted(true); // Şu anda kullanılmıyor
         clearInterval(interval);
       } else {
         setDisplayNumber(current);

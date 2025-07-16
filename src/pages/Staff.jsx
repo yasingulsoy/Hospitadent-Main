@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next'; // Şu anda kullanılmıyor
 import { Footer } from '../components';
 
 // Import resimler
@@ -14,16 +14,16 @@ import idariErkek from '../assets/idari_kadro/IDARI-ERKEK.png';
 import idariKadin from '../assets/idari_kadro/IDARI-KADIN.png';
 
 // Yeni idari kadro resimleri
-import kadriyeSoysal from '../assets/idari_kadro/Kadriye SOYSAL.png';
-import senaKeles from '../assets/idari_kadro/Sena KELEŞ.png';
-import berraGorgulu from '../assets/idari_kadro/Berra Sinanoğlu GÖRGÜLÜ.png';
-import selinHosceylan from '../assets/idari_kadro/Selin HOŞCEYLAN.png';
-import iclalHarmanci from '../assets/idari_kadro/İclal HARMANCI.png';
-import mehmetKok from '../assets/idari_kadro/Mehmet Ziya KÖK.png';
-import gayeMercan from '../assets/idari_kadro/Gaye MERCAN.png';
+import kadriyeSoysal from '../assets/idari_kadro/kadriye-soysal.png';
+import senaKeles from '../assets/idari_kadro/sena-keles.png';
+import berraGorgulu from '../assets/idari_kadro/berra-gorgulu.png';
+import selinHosceylan from '../assets/idari_kadro/selin-hosceylan.png';
+import iclalHarmanci from '../assets/idari_kadro/iclal-harmanci.png';
+import mehmetKok from '../assets/idari_kadro/mehmet-ziya-kok.png';
+import gayeMercan from '../assets/idari_kadro/gaye-mercan.png';
 
 const Staff = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation(); // Şu anda kullanılmıyor
 
   // Sayfa yüklendiğinde scroll'u aktif hale getir
   useEffect(() => {
