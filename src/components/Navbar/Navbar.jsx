@@ -144,28 +144,46 @@ const Navbar = () => {
     }, 50);
   };
 
+  // Dil dropdown'ının dışına tıklandığında kapanması
+  useEffect(() => {
+    if (!langOpen) return;
+    
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.language-dropdown')) {
+        setLangOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [langOpen]);
+
   return (
     <>
       {/* Mobilde hamburger menü butonu */}
-      <button className="md:hidden flex items-center justify-center text-white text-2xl fixed top-4 left-4 z-50 bg-[#0f4f78] w-12 h-12 rounded-full shadow-lg hover:bg-[#2bb3ea] transition-colors duration-300" onClick={handleNav}>
+      <button className="md:hidden flex items-center justify-center text-white text-2xl fixed top-4 left-4 z-[60] bg-[#0f4f78] w-12 h-12 rounded-full shadow-lg hover:bg-[#2bb3ea] transition-colors duration-300" onClick={handleNav}>
         <FaBars />
       </button>
-      {/* Üst Bar */}
-      <div className="w-full bg-secondary border-b border-gray-200 relative overflow-hidden hidden md:block">
-        <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-center px-2 sm:px-4 py-2 gap-2 sm:gap-6 text-[clamp(1rem,2vw,1.3rem)] font-semibold relative z-10">
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-6 w-full justify-center">
-            <a href="tel:4449922" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-base sm:text-lg group">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" /></svg>
-              <span>444 99 22</span>
-            </a>
-            <a href="mailto:info@hospitadent.com" className="flex items-center gap-2 text-[#0f4f78] hover:text-primary transition text-base sm:text-lg group">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 group-hover:text-[#2bb3ea] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
-              <span>info@hospitadent.com</span>
-            </a>
-          </div>
+
+      {/* Mobilde üst beyaz bar */}
+      <div className="w-full bg-white border-b border-gray-200 md:hidden pt-4">
+        <div className="flex items-center justify-between px-4 py-2">
+          {/* Sol: Boş alan (hamburger menü butonu için) */}
+          <div className="w-12"></div>
+          
+          {/* Orta: Telefon */}
+          <a href="tel:4449922" className="flex items-center gap-2 text-[#0f4f78] hover:text-[#2bb3ea] transition text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" />
+            </svg>
+            <span>444 99 22</span>
+          </a>
+          
+          {/* Sağ: Boş alan (denge için) */}
+          <div className="w-12"></div>
         </div>
       </div>
-      
+
       {/* Ana Navbar */}
       <header className="sticky top-0 z-30 bg-white shadow-md w-full hidden md:block">
         <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-2 sm:px-4 py-2 gap-2">
@@ -240,7 +258,7 @@ const Navbar = () => {
                 {typewriterText}
               </div>
             </div>
-        </div>
+          </div>
           {/* Sağ: Dil seçici ve sosyal medya */}
           <div className="flex flex-col items-end gap-2 min-w-[120px]">
             <div className="flex items-center gap-3 bg-gray-100 rounded-lg px-3 py-1 shadow-sm">
@@ -268,8 +286,8 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-          )}
-        </div>
+              )}
+            </div>
             {/* Sosyal medya ikonları */}
             <div className="hidden sm:flex items-center gap-2 mt-1">
               <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-blue rounded-full flex items-center justify-center text-white hover:bg-primary transition w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 hover:scale-110">
@@ -294,9 +312,8 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-      </nav>
-    </header>
-      
+        </nav>
+      </header>
       {/* Mobil Menü */}
       <ResponsiveMenu
         navLinksData={navLinksData}
@@ -307,6 +324,6 @@ const Navbar = () => {
       />
     </>
   );
-};
+}
 
 export default Navbar;

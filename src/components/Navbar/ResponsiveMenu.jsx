@@ -209,12 +209,44 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       
       {/* Logo ve başlık */}
       <div className="w-full flex flex-col items-center pt-8 pb-4 px-6 bg-white/10 backdrop-blur-sm">
-        <img src={logo} alt="Hospitadent Logo" className="h-12 w-auto mb-3" />
-        <h1 className="text-white text-lg font-bold">Hospitadent</h1>
+        <a href="/" className="flex flex-col items-center" onClick={handleNav}>
+          <img src={logo} alt="Hospitadent Logo" className="h-12 w-auto mb-3" />
+          <h1 className="text-white text-lg font-bold">Hospitadent</h1>
+        </a>
       </div>
       
       {/* Menü içeriği */}
       <div className="w-full flex-1 flex flex-col items-center gap-2 pt-4 pb-3 px-6 overflow-y-auto">
+        {/* Anasayfa seçeneği */}
+        <RouterLink
+          to="/"
+          className="block w-full px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg text-left"
+          onClick={handleNav}
+        >
+          Anasayfa
+        </RouterLink>
+        
+        {/* Logo */}
+        <div className="w-full flex justify-center py-4">
+          <img src={logo} alt="Hospitadent Logo" className="h-16 w-auto" />
+        </div>
+        
+        {/* İletişim İkonları */}
+        <div className="w-full flex justify-center gap-4 py-4 border-b border-white/10">
+          <a href="tel:4449922" className="flex items-center gap-2 text-white hover:text-blue-300 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" />
+            </svg>
+            <span>444 99 22</span>
+          </a>
+          <a href="mailto:info@hospitadent.com" className="flex items-center gap-2 text-white hover:text-blue-300 transition">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Mail</span>
+          </a>
+        </div>
+        
         {/* Arama ve typewriter mobilde üstte */}
         <div className="w-full flex flex-col items-center gap-2 pb-4">
           <div className="flex items-center w-full justify-center">
