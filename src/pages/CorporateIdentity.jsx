@@ -19,7 +19,6 @@ const CorporateIdentity = () => {
           <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
             Kurumsal Kimlik
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] mx-auto mt-6 rounded-full"></div>
           <p className="text-lg text-gray-600 text-center mt-6 max-w-3xl mx-auto">
             Hospitadent'in resmi marka kılavuzu ve kurumsal kimlik standartları
           </p>
