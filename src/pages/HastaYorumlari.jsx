@@ -25,7 +25,7 @@ const HastaYorumlari = () => {
               <div className="p-6">
                 {/* Profile Section */}
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
                     MN
                   </div>
                   <div>
@@ -43,8 +43,8 @@ const HastaYorumlari = () => {
                 </div>
                 
                 {/* Review Text */}
-                <p className="text-[#004876] text-sm leading-relaxed mb-4 line-clamp-4">
-                  Doktor Esra Akdoğan en iyi doktorlardan bir tanesi Ben kaç defa işlem yaptım kaç senedir tanıyorum her defasında memnun kaldım Benim dişlerim çok hassas ve farklı o yüzden her doktor işlem yapamaz ama hep memnun kaldım Kendisinden çok teşekkür ederim.
+                <p className="text-[#004876] text-sm leading-relaxed mb-4">
+                  Doktor Esra Akdoğan en iyi doktorlardan bir tanesi Ben kaç defa işlem yaptım kaç senedir tanıyorum her defasında memnun kaldım Benim dişlerim çok hassas ve farklı o yüzden her doktor işlem yapamaz ama hep memnun kaldım Kendisinden çok teşekkür ederim. işi yapabiliyorsa söyler yapamayan şeyleri de başka doktorlar önerir.
                 </p>
                 
                 {/* Platform & Link */}
@@ -75,7 +75,7 @@ const HastaYorumlari = () => {
               <div className="p-6">
                 {/* Profile Section */}
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
                     DB
                   </div>
                   <div>
@@ -93,8 +93,8 @@ const HastaYorumlari = () => {
                 </div>
                 
                 {/* Review Text */}
-                <p className="text-[#004876] text-sm leading-relaxed mb-4 line-clamp-4">
-                  Oğlum yasinin ortodonti tedavi için Mart ayından beri bagcılar hospitadente geliyoruz cok memnun kaldım. Tugce hanıma cok tesekkur ederiz. Resepsiyon Sevil Hanım ve Merve hanımın guler yuzlu ve ilgisinden dolayı cok tesekkur ederim.
+                <p className="text-[#004876] text-sm leading-relaxed mb-4">
+                  Oğlum yasinin ortodonti tedavi için Mart ayından beri bagcılar hospitadente geliyoruz cok memnun kaldım. Tugce hanıma cok tesekkur ederiz. Resepsiyon Sevil Hanım ve Merve hanımın guler yuzlu ve ilgisinden dolayı cok tesekkur ederim herkese hospitadent diş hastanesini tavsiye ederim. Çok teşekkür ederim.
                 </p>
                 
                 {/* Platform & Link */}
@@ -125,7 +125,7 @@ const HastaYorumlari = () => {
               <div className="p-6">
                 {/* Profile Section */}
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-700 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
                     MR
                   </div>
                   <div>
@@ -143,8 +143,8 @@ const HastaYorumlari = () => {
                 </div>
                 
                 {/* Review Text */}
-                <p className="text-[#004876] text-sm leading-relaxed mb-4 line-clamp-4">
-                  Having had a history of dental work in several countries my treatment with Hospitadent made a difference to my experience in dental care. From the consultation to the final fitting which lasted several days I felt to be under the care of professionals.
+                <p className="text-[#004876] text-sm leading-relaxed mb-4">
+                  Having had a history of dental work in several countries my treatment with Hospitadent made a difference to my experience in dental care. From the consultation to the final fitting which lasted several days I felt to be under the care of professionals. The translator that accompanied me throughout the treatment made a difference to my knowledge of the process and hugely helped to iron out problems that developed.
                 </p>
                 
                 {/* Platform & Link */}
@@ -172,7 +172,7 @@ const HastaYorumlari = () => {
               <div className="p-6">
                 {/* Profile Section */}
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
                     CB
                   </div>
                   <div>
@@ -190,8 +190,8 @@ const HastaYorumlari = () => {
                 </div>
                 
                 {/* Review Text */}
-                <p className="text-[#004876] text-sm leading-relaxed mb-4 line-clamp-4">
-                  Even I do not speak Turkish, my experience in Hospident Mecidiyeköy was very good, one of the translation lady Cansel was waiting for me in the lobby, she was very kind and patient explaining me all the times the procedures doctors were going to perform.
+                <p className="text-[#004876] text-sm leading-relaxed mb-4">
+                  Even I do not speak Turkish, my experience in Hospident Mecidiyeköy was very good, one of the translation lady Cansel was waiting for me in the lobby, she was very kind and patient explaining me all the times the procedures doctors were going to perform and never left my side, purely amazing. Also the doctors were very good and comprehensive with me, I have TMJ disorder so during the dental job I had to take breaks to avoid hurting my jaw joints, and the final results were amazing!
                 </p>
                 
                 {/* Platform & Link */}
@@ -219,7 +219,7 @@ const HastaYorumlari = () => {
               <div className="p-6">
                 {/* Profile Section */}
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-700 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg border-2 border-[#004876]/30">
                     YK
                   </div>
                   <div>
@@ -237,8 +237,8 @@ const HastaYorumlari = () => {
                 </div>
                 
                 {/* Review Text */}
-                <p className="text-[#004876] text-sm leading-relaxed mb-4 line-clamp-4">
-                  Merhaba 5 yaşındaki oğlumun diş ağrıları çürükleri vardı 4 veya 5 yere gitmemize rağmen yardımcı olamadılar malesef, eşimle birlikte çocuk diş doktoru ararken internetten hastaneyi bulduk ve muhteşem bir doktorla tanıştık.
+                <p className="text-[#004876] text-sm leading-relaxed mb-4">
+                  Merhaba 5 yaşındaki oğlumun diş ağrıları çürükleri vardı 4 veya 5 yere gitmemize rağmen yardımcı olamadılar malesef, eşimle birlikte çocuk diş doktoru ararken internetten hastaneyi bulduk ve muhteşem bir doktorla tanıştık iyiki de karşımıza çıktı iyikide karşılaştık. Bizi anlaması ve yönlendirmesi yardımları sayesinde oğlum artık diş ağrısı çekmiyor.
                 </p>
                 
                 {/* Platform & Link */}
