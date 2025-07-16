@@ -402,7 +402,7 @@ const Hero = () => {
     <section className="relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-2 sm:px-4 md:px-6 lg:px-12 pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-20 lg:pb-28 min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] overflow-hidden">
       {/* Arka Plan Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none z-0"
+        className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none z-0"
         src={require('../assets/videos/firat_okur.mp4')}
         autoPlay
         loop
