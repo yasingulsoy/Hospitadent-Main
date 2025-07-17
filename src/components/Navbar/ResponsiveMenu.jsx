@@ -85,8 +85,8 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   const inputRef = useRef(null);
   const menuRef = useRef(null);
   
-  // Dil listesi - useMemo'dan önce tanımlanmalı
-  const languages = [
+  // Dil listesi - useMemo ile optimize edilmiş
+  const languages = useMemo(() => [
     { code: 'tr', name: 'Türkçe', flag: 'TR' },
     { code: 'en', name: 'English', flag: 'GB' },
     { code: 'fr', name: 'Français', flag: 'FR' },
@@ -94,7 +94,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     { code: 'ru', name: 'Русский', flag: 'RU' },
     { code: 'es', name: 'Español', flag: 'ES' },
     { code: 'ar', name: 'العربية', flag: 'SA' },
-  ];
+  ], []);
   
   // Mevcut dili URL'den algıla - useMemo ile optimize edilmiş
   const currentLanguage = useMemo(() => {
@@ -116,7 +116,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     } else {
       return languages.find(lang => lang.code === 'tr') || languages[0];
     }
-  }, []);
+  }, [languages]);
 
   // Typewriter animasyon verileri - dinamik çeviri ile
   const useTypewriterWords = () => {
