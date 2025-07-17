@@ -410,6 +410,17 @@ const Hero = () => {
   const { t } = useTranslation();
   const heroSlides = useHeroSlides();
   const { displayTitle, displaySubtitle } = useTypewriterSlides(heroSlides, 50, 25, 15000);
+
+  // Mobilde tam ekran için --vh değişkenini ayarla
+  useEffect(() => {
+    const setVh = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
   return (
     <>
               <SEOHead 
@@ -418,10 +429,10 @@ const Hero = () => {
         keywords="hospitadent ana sayfa, diş hekimi randevu, implant tedavisi, ortodonti, diş beyazlatma, zirkonyum kaplama"
         url="https://hospitadent.com/"
       />
-      <section className="relative w-screen h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-1 sm:px-4 md:px-6 lg:px-12 pt-8 sm:pt-12 md:pt-24 lg:pt-32 pb-4 sm:pb-8 md:pb-20 lg:pb-28 overflow-hidden">
+      <section className="relative w-screen h-screen full-mobile-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] px-1 sm:px-4 md:px-6 lg:px-12 pt-8 sm:pt-12 md:pt-24 lg:pt-32 pb-4 sm:pb-8 md:pb-20 lg:pb-28 overflow-hidden">
       {/* Arka Plan Video */}
       <video
-        className="absolute inset-0 w-screen h-screen object-cover opacity-25 pointer-events-none z-0"
+        className="absolute inset-0 w-screen h-screen full-mobile-screen object-cover opacity-25 pointer-events-none z-0"
         style={{
           objectFit: 'cover',
           objectPosition: 'center',

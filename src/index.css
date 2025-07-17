@@ -44,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   --color-secondary: #f5f7fa;
   --color-accent: #0097a7;
   --color-bg-section: #f8fafc;
+  --vh: 1vh;
 }
 
 .bg-section {
@@ -82,6 +83,16 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-4px) scale(1.03);
 }
 
+@media (max-width: 768px) {
+  .full-mobile-screen {
+    height: calc(var(--vh, 1vh) * 100) !important;
+    width: 100vw !important;
+    min-height: 0 !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+  }
+}
 
 
 /* Scrollbar tamamen gizle (hizmetler için) */
