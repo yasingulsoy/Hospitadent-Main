@@ -13,11 +13,11 @@ const MobileNavLinks = ({ item, handleNav }) => {
     return (
       <li className="w-full">
         <button
-          className="flex justify-between items-center w-full px-4 py-3 text-left text-white hover:text-blue-300 focus:outline-none border-b border-white/10"
+          className="flex justify-between items-center w-full px-4 py-4 text-left text-white hover:text-blue-300 focus:outline-none border-b border-white/10"
           onClick={() => setOpen(!open)}
         >
-          <span className="font-medium">{t(item.name)}</span>
-          <svg className={`ml-2 w-4 h-4 transform transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          <span className="font-bold text-lg">{t(item.name)}</span>
+          <svg className={`ml-2 w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
         {open && (
           <ul className="pl-4 border-l border-white/20 bg-white/5">
@@ -37,7 +37,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
           href={item.path}
           target="_blank"
           rel="noopener noreferrer"
-          className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
+          className="block px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg"
           onClick={handleNav}
         >
           {t(item.name)}
@@ -52,7 +52,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
       <li className="w-full">
         <a
           href={`#${item.path || 'home'}`}
-          className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
+          className="block px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg"
           onClick={handleNav}
         >
           {t(item.name)}
@@ -66,7 +66,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
     <li className="w-full">
       <RouterLink
         to={item.path}
-        className="block px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-medium"
+        className="block px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg"
         onClick={handleNav}
       >
         {t(item.name)}
@@ -218,6 +218,20 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     return () => document.removeEventListener('mousedown', handleClick);
   }, [nav, handleNav]);
 
+  // Dil dropdown'ının dışına tıklandığında kapanması
+  useEffect(() => {
+    if (!showLang) return;
+    
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.language-dropdown-mobile')) {
+        setShowLang(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showLang]);
+
   return (
     <div
       ref={menuRef}
@@ -245,7 +259,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
         {/* Anasayfa seçeneği */}
         <RouterLink
           to="/"
-          className="block w-full px-4 py-3 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg text-left"
+          className="block w-full px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-xl text-left"
           onClick={handleNav}
         >
           {t('navbar.home')}
@@ -365,22 +379,22 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
             <a href="mailto:info@hospitadent.com" className="flex items-center gap-1 hover:text-blue-300 transition"><svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z" /></svg> info@hospitadent.com</a>
           </div>
           
-          {/* Dil seçimi */}
-          <div className="relative">
+          {/* Dil seçimi - Mobilde daha görünür */}
+          <div className="relative w-full max-w-xs language-dropdown-mobile">
             <button
-              className="flex items-center rounded bg-white/20 text-white font-bold hover:bg-white/30 transition gap-1 px-3 py-1 text-base"
+              className="flex items-center justify-center rounded bg-white/20 text-white font-bold hover:bg-white/30 transition gap-2 px-4 py-3 text-base w-full"
               onClick={() => setShowLang(!showLang)}
             >
-              <CountryFlag countryCode={currentLanguage.flag} svg className="w-5 h-5 rounded" />
-              <span>{currentLanguage.name}</span>
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              <CountryFlag countryCode={currentLanguage.flag} svg className="w-6 h-6 rounded" />
+              <span className="text-lg">{currentLanguage.name}</span>
+              <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {showLang && (
-              <ul className="absolute left-0 mt-2 bg-[#0f4f78] text-white rounded shadow-xl z-50 min-w-[8rem]">
+              <ul className="absolute left-0 right-0 mt-2 bg-[#0f4f78] text-white rounded shadow-xl z-50 w-full">
                 {languages.map((lang, idx) => (
                   <li key={lang.code}>
                     <button
-                      className={`flex items-center w-full text-left px-3 py-2 ${lang.code === currentLanguage.code ? 'bg-white text-[#0f4f78] font-bold cursor-default' : 'hover:bg-[#2bb3ea]'}`}
+                      className={`flex items-center w-full text-left px-4 py-3 text-base ${lang.code === currentLanguage.code ? 'bg-white text-[#0f4f78] font-bold cursor-default' : 'hover:bg-[#2bb3ea]'}`}
                       onClick={() => { 
                         if(lang.code !== currentLanguage.code) { 
                           i18n.changeLanguage(lang.code);
@@ -395,8 +409,8 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                       }}
                       disabled={lang.code === currentLanguage.code}
                     >
-                      <CountryFlag countryCode={lang.flag} svg className="w-5 h-5 rounded" />
-                      <span className="ml-2">{lang.name}</span>
+                      <CountryFlag countryCode={lang.flag} svg className="w-6 h-6 rounded" />
+                      <span className="ml-3 text-lg">{lang.name}</span>
                     </button>
                   </li>
                 ))}
