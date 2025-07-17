@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Footer } from '../components';
+import { Footer } from '../../components';
 import { useTranslation } from 'react-i18next';
 
 const Staff = () => {

@@ -144,166 +144,122 @@
   "about": {
     "title": "Über uns",
     "subtitle": "Mit über 20 Jahren Erfahrung dienen wir als eine der führenden zahnmedizinischen Gesundheitsorganisationen der Türkei.",
-    "mission": {
-      "title": "Unsere Mission",
-      "text": "Wir arbeiten daran, unseren Patienten die höchste Qualität an zahnmedizinischen Gesundheitsdiensten zu bieten und ihre Lächeln mit moderner Technologie und erfahrenem Personal wiederherzustellen.",
-      "point1": "Moderne Technologie",
-      "point2": "Erfahrenes Personal",
-      "point3": "Patientenzufriedenheit"
-    },
-    "stats": {
-      "title": "Wir in Zahlen",
-      "years": "Jahre Erfahrung",
-      "patients": "Glückliche Patienten",
-      "branches": "Filialen",
-      "doctors": "Erfahrene Ärzte"
-    },
     "vision": {
-      "title": "Unsere Vision",
-      "text": "Die zuverlässigste und bevorzugte zahnmedizinische Gesundheitsorganisation der Türkei zu sein und mit internationalen Servicequalitätsstandards weiterhin führend im Sektor zu sein."
+      "title": "UNSERE VISION",
+      "text": "Die nächste und innovativste Marke für Mund- und Zahngesundheit für die Patienten der Welt zu sein."
+    },
+    "mission": {
+      "title": "UNSERE MISSION",
+      "text": "Menschen, Gesellschaft und Umwelt mit hoher Servicequalität einen Mehrwert zu bieten; Vertrauen zu geben, indem wir jeden unserer Patienten wie unsere eigenen Angehörigen auf ethische, aufrichtige und einfühlsame Weise behandeln, mehr Menschen mit ausgewogenem physischem Wachstum zu erreichen, technologische und wissenschaftliche Entwicklungen zu verfolgen und sie in pionierhafter Weise anzuwenden, Menschen glücklich zu machen, indem wir ästhetische Lächeln mit Lächeln-Architekten gestalten."
     },
     "values": {
-      "quality": "Qualität",
-      "quality.desc": "Höchste Qualität an Service bieten",
-      "care": "Fürsorge",
-      "care.desc": "Unsere Patienten mit Fürsorge behandeln",
-      "innovation": "Innovation",
-      "innovation.desc": "Kontinuierliche Entwicklung und Innovation"
-    },
-    "cta": {
-      "title": "Wir sind hier für gesunde Lächeln",
-      "subtitle": "Wir freuen uns, Ihnen mit unserem erfahrenen Personal und moderner Technologie zu dienen.",
-      "button": "Termin vereinbaren"
+      "title": "UNSERE WERTE",
+      "value1": {
+        "title": "Wir Schätzen:",
+        "text": "Wir sind uns des Wertes von Menschen, Leben und der Welt bewusst."
+      },
+      "value2": {
+        "title": "Wir Kümmern Uns:",
+        "text": "Wir kümmern uns um unsere Patienten wie um unsere Angehörigen und Gäste, die wir zu Hause beherbergen."
+      },
+      "value3": {
+        "title": "Wir Geben Vertrauen:",
+        "text": "Jeder, der mit uns in Kontakt kommt (unsere Patienten, Lieferanten, Umwelt, etc.), ist sicher, dass wir versuchen, unser Bestes und das Richtige zu tun, und dass wir an ethische Regeln gebunden sind. Wir tun nur das, was wir sagen, und sagen nur das, was wir tun werden."
+      },
+      "value4": {
+        "title": "Wir Sind Aufrichtig und Nah:",
+        "text": "Wir zeigen ausgewogene Aufrichtigkeit und Nähe zu allen."
+      },
+      "value5": {
+        "title": "Wir Fühlen Uns Verantwortlich:",
+        "text": "Wir fühlen uns verantwortlich gegenüber Menschen, Gesellschaft, Umwelt, also dem gesamten Universum."
+      },
+      "value6": {
+        "title": "Wir Sind Innovativ:",
+        "text": "Wir sind immer neugierig und bereit für Innovationen und Entwicklungen."
+      },
+      "value7": {
+        "title": "Wir Schätzen Qualität:",
+        "text": "Die besten Materialien, die neueste Technologie und hohe Hygiene sind für uns unverzichtbar."
+      },
+      "value8": {
+        "title": "Wir Arbeiten Zusammen:",
+        "text": "Wir achten auf die Interessen unserer Patienten und Lieferanten, indem wir mit ihnen zusammenarbeiten, und im Team denken wir, dass wenn einer von uns fehlt, wir alle fehlen."
+      },
+      "value9": {
+        "title": "Wir Möchten Glück Geben:",
+        "text": "Wir denken, dass wahres Glück das Glück anderer ist und streben danach."
+      }
     },
     "history": {
-      "title": "Unsere Geschichte",
-      "text1": "Gegründet im Jahr 2007, dient Hospitadent als eine der führenden zahnmedizinischen Gesundheitsorganisationen der Türkei.",
-      "text2": "Seit unserer Gründung haben wir Tausende von Patienten mit moderner Technologie und erfahrenem Personal bedient.",
-      "text3": "Mit unserem patientenorientierten Ansatz und unserem Verständnis für Qualitätsservice behalten wir eine führende Position im Sektor."
+      "text1": "Hospitadent, das 2006 gegründet wurde, setzt seinen Dienst mit dem Slogan \"Vom ersten Tag an ist unser gesamtes Geschäft Zähne\" fort. Mit seinen 22 national und international etablierten Filialen, modernen medizinischen Geräten, angesehenem Ärztepersonal und Fachpersonal hebt Hospitadent die Standards in der Mund- und Zahngesundheit an."
     },
-    "technology": {
-      "title": "Unsere Technologie",
-      "text1": "Wir verfolgen die neuesten technologischen Entwicklungen und bieten unseren Patienten die besten Behandlungsoptionen.",
-      "text2": "Wir verwenden moderne Methoden wie 3D-Digital-Scanning, CAD/CAM-Technologie und Laserbehandlungen."
+    "branches": {
+      "title": "Hohe Servicequalität in Jeder Filiale",
+      "text1": "Nach dem ersten in Bağcılar eröffneten Zentrum eröffnete Hospitadent, das sich 2008 nach Fatih, 2009 nach Çamlıca, 2011 nach Pendik und Mecidiyeköy ausdehnte, 2012 seine erste internationale Filiale in Frankfurt, Deutschland. Die Krankenhausgruppe, die die Anzahl der Filialen mit einem neuen in Bakırköy eröffneten Zentrum erhöhte, eröffnete 2014 in Kayseri, 2015 in Den Haag, Niederlande, 2018 in Şerifali, 2021 in Alanya und Bodrum und 2022 die Ankara-Filiale, die Kocaeli-Filiale, die Antalya-Filiale, die Cevizlibağ-Filiale in Istanbul und schließlich die Bursa-Filiale. Hospitadent wächst mit selbstbewussten Schritten mit vielen Filialen in 4 verschiedenen Ländern weiter.",
+      "text2": "Zusätzlich zur rasch wachsenden Anzahl von Filialen wurde 2008 die Hospitadent Akademie für die kontinuierliche Ausbildung von Fachärzten und technischem Personal in beruflicher Entwicklung und technologischen Innovationen gegründet.",
+      "text3": "Hospitadent ist ein Pioniername, der mit seinen innovativen Projekten Standards im Gesundheitssektor setzt. Das Krankenhaus, das 2016 das Dent Guard Treueprogramm startete, schuf ein garantiertes Zahnersatzsystem mit personalisierten Karten und Vorteilen. In der 2017 gegründeten Dental Design Abteilung wurde mit dem digitalen Lächeln-Design begonnen. Hospitadent, das in jeder seiner Filialen überlegene technologische Infrastruktur bietet, dient seinen Patienten mit einem individuellen und langlebigen Zahnersatzansatz."
     },
-    "team": {
-      "title": "Unser Team",
-      "text1": "Unsere erfahrenen und sachkundigen Zahnärzte erhalten kontinuierlich Schulungen und wenden die aktuellsten Behandlungsmethoden an.",
-      "text2": "Mit unserem patientenorientierten Ansatz und unserem Verständnis für zuverlässigen Service bieten wir Ihnen weiterhin den besten zahnmedizinischen Gesundheitsdienst."
+    "innovations": {
+      "title": "Hospitadent, Adresse der Ersten",
+      "text": "Hospitadent, das 2007 als erstes in der Türkei mit dem Dental-Gesundheitstourismus begann, ist die gesuchte Adresse für Zahnersatz von Patienten aus der ganzen Welt geworden. Hospitadent, das eine Premiere im Gesundheitssektor erreichte und erstmals in der Türkei die Patientenerfahrungsabteilung gründete, legt großen Wert auf Patientenerfahrung und -zufriedenheit. Mit diesem Verständnis zielt das Krankenhaus, das 2016 ein spezielles Konzept namens Dental Spa schuf, darauf ab, die Angst vor Zahnärzten mit seinem VIP-Konzept zu beenden, das Patienten eine entspannende Umgebung und psychologische Unterstützung bietet."
     },
-    "facilities": {
-      "title": "Unsere Einrichtungen",
-      "text1": "In unseren modernen und hygienischen Kliniken bieten wir unseren Patienten die komfortabelste Behandlungsumgebung.",
-      "text2": "Wir dienen mit Sterilisationsstandard-Ausrüstung und sicheren Behandlungsprotokollen."
+    "awards": {
+      "title": "Erfolgsgeschichte Gekrönt mit Auszeichnungen",
+      "text1": "Hospitadents weltklasse Vision, Fachpersonal, innovative und kundenorientierte Arbeit wurden mit Auszeichnungen zertifiziert. Hospitadent, das bewies, dass es die Wahl des Volkes war, indem es bis 2010 mehr als 1 Million Patienten diente, gewann 2013 das TEMOS International Quality Certificate.",
+      "text2": "2015 wurde es als Ergebnis der Ekovitrin Magazine 14. Stars of the Year Survey als würdig für die Auszeichnung als Gesundheitsinstitution des Jahres erachtet.",
+      "text3": "Hospitadent wurde das erste Krankenhaus in der Türkei, das einen Stevie Award gewann, indem es den Most Innovative Customer Service Award des Jahres bei den Stevie Awards gewann, wo die erfolgreichsten Unternehmen der Welt 2018 ausgezeichnet werden.",
+      "text4": "Hospitadent, das in der Türkei Exporters Assembly's Turkey's 500 Service Exporters Forschung 2018 in der Kategorie Dental Treatment Services den ersten Platz belegte, bewies seinen Erfolg und seine Kompetenz im Gesundheitssektor einmal mehr.",
+      "text5": "Hospitadent, das sich qualifizierte, in das \"Turquality Brand Support Program\" einzutreten, das 2020 zum Zweck der Markierung türkischer Produkte im Ausland, der Etablierung und Unterstützung des türkischen Warenimages, das seit 16 Jahren in Kraft ist, geschaffen wurde, setzt fort, ein positives Image zu schaffen, indem es einen wichtigen Schritt in der Markierung macht. Das erste Dental-Gesundheitsgruppe zu sein, die am Turquality Markenunterstützungsprogramm teilnimmt, an dem nur fünf Krankenhäuser im Gesundheitsbereich beteiligt sind, demonstriert hohe Standards sowie die Schaffung eines Qualitätsimages.",
+      "text6": "Hospitadent, das sich qualifizierte, als \"Great Place To Work® Certified\" Unternehmen bezeichnet zu werden als Ergebnis der Bewertung und Analyse, die von GPTW Türkei in der letzten Periode von 2021 durchgeführt wurde, erlebt den berechtigten Stolz, die erste Dental-Gruppe zu sein, die das beste Unternehmenskulturzertifikat hat."
     },
-    "quality": {
-      "title": "Unsere Qualitätspolitik",
-      "text1": "Service in Übereinstimmung mit internationalen Qualitätsstandards zu bieten ist unser Grundprinzip.",
-      "text2": "Mit unserem kontinuierlichen Verbesserungsansatz und patientenorientierten Ansatz bieten wir den höchsten Qualitätszahnmedizinischen Gesundheitsdienst."
-    },
-    "future": {
-      "title": "Unsere Zukunftsvision",
-      "text1": "Wir werden weiterhin unseren Patienten die aktuellsten Behandlungsmethoden anbieten, indem wir technologische Entwicklungen genau verfolgen.",
-      "text2": "Wir bewegen uns auf dem Weg der kontinuierlichen Entwicklung und Innovation mit unserem Ziel, die führende zahnmedizinische Gesundheitsorganisation der Türkei und der Welt zu werden."
-    }
+    "conclusion": "Hospitadent, das kontinuierlich sich entwickelnde medizinische Technologien verfolgt und kontinuierlich Diagnose- und Behandlungsmethoden mit den aktuellsten Technologien vorantreibt, setzt fort, sichere und qualitativ hochwertige Gesundheitsdienstleistungen mit seinem Fachpersonal zu erbringen."
   },
-  "appointment": {
-    "title": "Online-Termin",
-    "selectCity": "Stadt auswählen",
-    "selectBranch": "Filiale auswählen",
-    "selectDoctor": "Arzt auswählen",
-    "selectDate": "Datum auswählen",
-    "selectTime": "Zeit auswählen",
-    "dentalClinic": "Zahnklinik",
-    "contactInfo": "Kontaktinformationen",
-    "selectedAppointment": "Ausgewählter Termin",
-    "name": "Vollständiger Name",
-    "phone": "Telefonnummer",
-    "namePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
-    "phonePlaceholder": "Geben Sie Ihre Telefonnummer ein",
-    "phoneFormat": "Beginnend mit 0, z.B.: 05XXXXXXXXX",
-    "appointmentInfo": "Ihr Terminantrag wird entgegengenommen und Sie werden so schnell wie möglich angerufen.",
-    "completeAppointment": "Termin abschließen",
-    "closed": "Geschlossen",
-    "next": "Weiter",
-    "previous": "Zurück",
-    "book": "Termin vereinbaren",
-    "submit": "Termin einreichen",
-    "submitting": "Wird eingereicht...",
-    "success": "Ihr Terminantrag wurde erfolgreich entgegengenommen!",
-    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
-  },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "Aktuelle Informationen über Zahngesundheit und Behandlungsmethoden",
-    "pageTitle": "Blog - Hospitadent",
-    "pageDescription": "Zahngesundheit, Behandlungsmethoden und aktuelle Zahnmedizin-Informationen. Tipps und Ratschläge von unseren Experten-Zahnärzten.",
-    "pageKeywords": "Zahngesundheit Blog, Zahnbehandlung Informationen, Zahnmedizin Artikel, Mundgesundheit, Zahnpflege",
-    "by": "Von:",
-    "readMore": "Weiterlesen",
-    "loadMore": "Mehr laden",
-    "categories": {
-      "dentalHealth": "Zahngesundheit",
-      "orthodontics": "Kieferorthopädie",
-      "implant": "Implantat",
-      "cosmetic": "Ästhetische Zahnmedizin",
-      "pediatric": "Kinderzahnmedizin",
-      "technology": "Technologie"
-    },
-    "post1": {
-      "title": "Bedeutung der täglichen Zahnpflege",
-      "excerpt": "Erfahren Sie, wie Ihre tägliche Pflegeroutine für gesunde Zähne sein sollte.",
-      "content": "Tägliche Zahnpflege ist die Grundlage der Mundgesundheit. Sie können Zahnprobleme mit richtigen Putztechniken, Zahnseide und regelmäßigen Kontrollen vorbeugen.",
-      "author": "Dr. Ahmet Yılmaz"
-    },
-    "post2": {
-      "title": "Kieferorthopädischer Behandlungsprozess",
-      "excerpt": "Was passiert während der kieferorthopädischen Behandlung und welcher Weg wird verfolgt?",
-      "content": "Kieferorthopädische Behandlung ist ein langfristiger Prozess, der angewendet wird, um Zähne richtig auszurichten. Die Patientencompliance ist in diesem Prozess sehr wichtig.",
-      "author": "Dr. Ayşe Demir"
-    },
-    "post3": {
-      "title": "Was Sie über Implantatbehandlung wissen müssen",
-      "excerpt": "Wie wird die Implantatbehandlung durchgeführt und wem kann sie angewendet werden?",
-      "content": "Implantatbehandlung ist eine moderne Behandlungsmethode, die dauerhafte Lösungen zum Ersetzen fehlender Zähne bietet. Detaillierte Informationen über den chirurgischen Prozess und die Nachwirkungen.",
-      "author": "Dr. Mehmet Kaya"
-    },
-    "post4": {
-      "title": "Lächeldesign und ästhetische Zahnmedizin",
-      "excerpt": "Ästhetische Zahnmedizin-Lösungen für perfektes Lächeln.",
-      "content": "Lächeldesign ist ein umfassender Behandlungsplan, der das ästhetische Erscheinungsbild der Zähne entsprechend der Gesichtsstruktur der Person verbessert.",
-      "author": "Dr. Fatma Özkan"
-    },
-    "post5": {
-      "title": "Zahngesundheit bei Kindern",
-      "excerpt": "Was Eltern für die Zahngesundheit ihrer Kinder wissen müssen.",
-      "content": "Zahngesundheit bei Kindern wird durch regelmäßige Pflege und Kontrollen von frühem Alter an sichergestellt. Die Rolle der Eltern ist sehr wichtig.",
-      "author": "Dr. Ali Çelik"
-    },
-    "post6": {
-      "title": "Digitale Zahnmedizin-Technologien",
-      "excerpt": "Digitale Technologien, die in der modernen Zahnmedizin verwendet werden.",
-      "content": "Digitale Zahnmedizin bietet innovative Technologien, die Behandlungsprozesse beschleunigen und den Patientenkomfort erhöhen.",
-      "author": "Dr. Zeynep Arslan"
-    }
-  },
-  "common": {
-    "loading": "Wird geladen...",
-    "error": "Fehler",
-    "success": "Erfolg",
-    "cancel": "Abbrechen",
-    "save": "Speichern",
-    "edit": "Bearbeiten",
-    "delete": "Löschen",
-    "close": "Schließen",
-    "open": "Öffnen",
-    "yes": "Ja",
-    "no": "Nein",
-    "phone": "Telefon",
-    "email": "E-Mail",
-    "address": "Adresse",
-    "website": "Webseite",
-    "followUs": "Folgen Sie uns",
-    "contactInfo": "Kontaktinformationen"
+  "staff": {
+    "title": "Verwaltungspersonal",
+    "description": "Unser erfahrenes Verwaltungsteam, das Sie professionell bedient",
+    "keywords": "verwaltungspersonal, hospitadent team, verwaltung, kundenservice",
+    "ahmet_name": "Ahmet SELVİ",
+    "ahmet_title": "Generaldirektor",
+    "recep_name": "Recep ESKAR",
+    "recep_title": "Betriebsdirektor",
+    "halit_name": "Halit Burak ALTINKAYA",
+    "halit_title": "Finanzdirektor",
+    "abdullah_name": "Abdullah KAYA",
+    "abdullah_title": "Personalchef",
+    "caner_name": "Caner ÇOBAN",
+    "caner_title": "Verkaufsdirektor",
+    "bayram_name": "Bayram SAYMAN",
+    "bayram_title": "Qualitätsdirektor",
+    "zeynep_name": "Zeynep YILMAZ",
+    "zeynep_title": "PR-Managerin",
+    "neslihan_name": "Neslihan DEMİR",
+    "neslihan_title": "Marketing-Managerin",
+    "tugba_name": "Tuğba KAYA",
+    "tugba_title": "Verkaufsmanagerin",
+    "veysel_name": "Veysel ÖZTÜRK",
+    "veysel_title": "Technischer Manager",
+    "ercument_name": "Erçüment MERT",
+    "ercument_title": "IT-Manager",
+    "nursah_name": "Nursah AKTAŞ",
+    "nursah_title": "Kundenbetreuerin",
+    "kadriye_name": "Kadriye SOYSAL",
+    "kadriye_title": "Verwaltungsmanagerin",
+    "sena_name": "Sena KELEŞ",
+    "sena_title": "Verwaltungsassistentin",
+    "berra_name": "Berra GÖRGÜLÜ",
+    "berra_title": "Marketing-Assistentin",
+    "selin_name": "Selin HOŞÇEYLAN",
+    "selin_title": "Verkaufsassistentin",
+    "iclal_name": "İclal HARMANCI",
+    "iclal_title": "HR-Assistentin",
+    "mehmet_name": "Mehmet Ziya KÖK",
+    "mehmet_title": "IT-Techniker",
+    "muslum_name": "Müslüm YILDIZ",
+    "muslum_title": "Wartungstechniker",
+    "gaye_name": "Gaye MERÇAN",
+    "gaye_title": "Qualitätsassistentin",
+    "ibrahim_name": "İbrahim ÇELİK",
+    "ibrahim_title": "Netzwerktechniker"
   }
 } 

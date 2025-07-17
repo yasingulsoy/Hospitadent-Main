@@ -144,68 +144,76 @@
   "about": {
     "title": "Acerca de nosotros",
     "subtitle": "Con más de 20 años de experiencia, servimos como una de las principales organizaciones de salud dental de Turquía.",
-    "mission": {
-      "title": "Nuestra misión",
-      "text": "Trabajamos para proporcionar a nuestros pacientes servicios de salud dental de la más alta calidad y restaurar sus sonrisas con tecnología moderna y personal experto.",
-      "point1": "Tecnología moderna",
-      "point2": "Personal experto",
-      "point3": "Satisfacción del paciente"
-    },
-    "stats": {
-      "title": "Nosotros en números",
-      "years": "Años de experiencia",
-      "patients": "Pacientes felices",
-      "branches": "Sucursales",
-      "doctors": "Médicos expertos"
-    },
     "vision": {
-      "title": "Nuestra visión",
-      "text": "Ser la organización de salud dental más confiable y preferida de Turquía, continuando siendo líder en el sector con estándares internacionales de calidad de servicio."
+      "title": "NUESTRA VISIÓN",
+      "text": "Ser la marca de salud bucal y dental más cercana e innovadora para los pacientes del mundo."
+    },
+    "mission": {
+      "title": "NUESTRA MISIÓN",
+      "text": "Agregar valor a las personas, la sociedad y el medio ambiente con alta calidad de servicio; dar confianza tratando a cada uno de nuestros pacientes como nuestros propios familiares de manera ética, sincera y compasiva, llegar a más personas con crecimiento físico equilibrado, seguir los desarrollos tecnológicos y científicos y aplicarlos de manera pionera, hacer felices a las personas diseñando sonrisas estéticas con arquitectos de sonrisas."
     },
     "values": {
-      "quality": "Calidad",
-      "quality.desc": "Proporcionar el servicio de la más alta calidad",
-      "care": "Cuidado",
-      "care.desc": "Acercarse a nuestros pacientes con cuidado",
-      "innovation": "Innovación",
-      "innovation.desc": "Desarrollo continuo e innovación"
-    },
-    "cta": {
-      "title": "Estamos aquí para sonrisas saludables",
-      "subtitle": "Nos complace servirle con nuestro personal experto y tecnología moderna.",
-      "button": "Reservar cita"
+      "title": "NUESTROS VALORES",
+      "value1": {
+        "title": "Valoramos:",
+        "text": "Somos conscientes del valor de las personas, la vida y el mundo."
+      },
+      "value2": {
+        "title": "Nos Preocupamos:",
+        "text": "Nos preocupamos por nuestros pacientes como nuestros familiares y huéspedes que recibimos en casa."
+      },
+      "value3": {
+        "title": "Damos Confianza:",
+        "text": "Todos los que entran en contacto con nosotros (nuestros pacientes, proveedores, medio ambiente, etc.) están seguros de que intentamos hacer nuestro mejor y correcto trabajo, y que estamos vinculados por reglas éticas. Solo hacemos lo que decimos, y solo decimos lo que haremos."
+      },
+      "value4": {
+        "title": "Somos Sinceros y Cercanos:",
+        "text": "Mostramos sinceridad y cercanía equilibradas a todos."
+      },
+      "value5": {
+        "title": "Sentimos Responsabilidad:",
+        "text": "Sentimos responsabilidad hacia las personas, la sociedad, el medio ambiente, es decir, todo el universo."
+      },
+      "value6": {
+        "title": "Somos Innovadores:",
+        "text": "Siempre somos curiosos y estamos listos para la innovación y el desarrollo."
+      },
+      "value7": {
+        "title": "Valoramos la Calidad:",
+        "text": "Los mejores materiales, las tecnologías más nuevas y la alta higiene son indispensables para nosotros."
+      },
+      "value8": {
+        "title": "Colaboramos:",
+        "text": "Nos preocupamos por los intereses de nuestros pacientes y proveedores colaborando con ellos, y en el equipo pensamos que si uno de nosotros está ausente, todos estamos ausentes."
+      },
+      "value9": {
+        "title": "Queremos Dar Felicidad:",
+        "text": "Pensamos que la verdadera felicidad es la felicidad de otros y aspiramos a esto."
+      }
     },
     "history": {
-      "title": "Nuestra historia",
-      "text1": "Fundado en 2007, Hospitadent sirve como una de las principales organizaciones de salud dental de Turquía.",
-      "text2": "Desde nuestra fundación, hemos servido a miles de pacientes con tecnología moderna y personal experto.",
-      "text3": "Con nuestro enfoque centrado en el paciente y nuestra comprensión del servicio de calidad, mantenemos una posición de liderazgo en el sector."
+      "text1": "Fundado en 2006, Hospitadent continúa sirviendo con el lema \"Desde el primer día, todo nuestro negocio son los dientes\". Con 22 sucursales creadas en el país y en el extranjero, equipos médicos modernos, personal médico distintivo y personal experto, Hospitadent eleva los estándares en salud bucal y dental."
     },
-    "technology": {
-      "title": "Nuestra tecnología",
-      "text1": "Seguimos los últimos desarrollos tecnológicos y ofrecemos a nuestros pacientes las mejores opciones de tratamiento.",
-      "text2": "Utilizamos métodos modernos como escaneo digital 3D, tecnología CAD/CAM y tratamientos láser."
+    "branches": {
+      "title": "Alta Calidad de Servicio en Cada Sucursal",
+      "text1": "Después del primer centro abierto en Bagcilar, Hospitadent, que se expandió a Fatih en 2008, Camlica en 2009, Pendik y Mecidiyekoy en 2011, abrió su primera sucursal internacional en Frankfurt, Alemania en 2012. El grupo hospitalario, que aumentó el número de sucursales con el nuevo centro abierto en Bakirkoy, abrió la sucursal de Ankara, la sucursal de Kocaeli, la sucursal de Antalya, la sucursal de Cevizlibag en Estambul y finalmente la sucursal de Bursa en 2014 en Kayseri, 2015 en La Haya, Países Bajos, 2018 en Serifali, 2021 en Alanya y Bodrum y 2022. Hospitadent continúa creciendo con pasos seguros con muchas sucursales en 4 países diferentes.",
+      "text2": "Además del número de sucursales que crece rápidamente, la Academia Hospitadent fue fundada en 2008 para la educación continua de médicos expertos y personal técnico para el desarrollo profesional y las innovaciones tecnológicas.",
+      "text3": "Hospitadent es un nombre pionero que establece estándares en el sector de la salud con sus proyectos innovadores. El hospital, que comenzó el programa de lealtad Dent Guard en 2016, creó un sistema garantizado de tratamiento dental con tarjetas personalizadas y beneficios. En el departamento de Dental Design, fundado en 2017, se inició el diseño digital de sonrisas. Hospitadent, que ofrece una infraestructura tecnológica superior en cada una de sus sucursales, sirve a sus pacientes con un enfoque individual y duradero para el tratamiento dental."
     },
-    "team": {
-      "title": "Nuestro equipo",
-      "text1": "Nuestros dentistas experimentados y expertos reciben capacitación continua y aplican los métodos de tratamiento más actuales.",
-      "text2": "Con nuestro enfoque centrado en el paciente y nuestra comprensión del servicio confiable, continuamos brindándole el mejor servicio de salud dental."
+    "innovations": {
+      "title": "Hospitadent, Dirección de los Primeros",
+      "text": "Hospitadent, que fue el primero en Turquía en comenzar el turismo de salud dental en 2007, se convirtió en la dirección buscada para el tratamiento dental por pacientes de todo el mundo. Hospitadent, que alcanzó el primer lugar en el sector de la salud y fue el primero en Turquía en establecer el departamento de experiencia del paciente, da gran importancia a la experiencia y satisfacción del paciente. Con esta comprensión, el hospital, que creó un concepto especial llamado Dental Spa en 2016, busca poner fin al miedo a los dentistas con su concepto VIP que proporciona a los pacientes un ambiente relajante y apoyo psicológico."
     },
-    "facilities": {
-      "title": "Nuestras instalaciones",
-      "text1": "En nuestras clínicas modernas e higiénicas, proporcionamos a nuestros pacientes el entorno de tratamiento más cómodo.",
-      "text2": "Servimos con equipos de estándar de esterilización y protocolos de tratamiento seguros."
+    "awards": {
+      "title": "Historia de Éxito Coronada con Premios",
+      "text1": "La visión de clase mundial de Hospitadent, el personal experto, el trabajo innovador y orientado a la satisfacción del cliente han sido certificados con premios. Hospitadent, que demostró que era la elección del pueblo sirviendo a más de 1 millón de pacientes para 2010, ganó el Certificado de Calidad Internacional TEMOS en 2013.",
+      "text2": "En 2015, fue considerado digno del premio Institución de Salud del Año como resultado de la encuesta de la Revista Ekovitrin 14ª Estrella del Año.",
+      "text3": "Hospitadent se convirtió en el primer hospital en Turquía en ganar el premio Stevie, ganando el Premio al Servicio al Cliente Más Innovador del Año en los Premios Stevie, donde las empresas más exitosas del mundo son premiadas en 2018.",
+      "text4": "Hospitadent, que ocupó el primer lugar en la categoría de Servicios de Tratamiento Dental en la investigación de la Asamblea de Exportadores de Turquía 500 Exportadores de Servicios de Turquía en 2018, demostró una vez más su éxito y competencia en el sector de la salud.",
+      "text5": "Hospitadent, que calificó para ingresar al \"Programa de Apoyo a Marcas Turquality\", creado en 2020 con el objetivo de marcar productos turcos en el extranjero, establecer y apoyar la imagen de bienes turcos, que ha estado operando durante 16 años, continúa creando una imagen positiva dando un paso importante en el marcado. Ser el primer grupo de salud dental en participar en el programa de apoyo a marcas Turquality, en el que participan solo cinco hospitales en el campo de la salud, demuestra altos estándares, así como la creación de una imagen de calidad.",
+      "text6": "Hospitadent, que calificó para ser nombrado empresa \"Great Place To Work® Certified\" como resultado de la evaluación y análisis realizados por GPTW Turkey en el último período de 2021, experimenta el orgullo legítimo de ser el primer grupo dental en tener el certificado más alto de cultura corporativa."
     },
-    "quality": {
-      "title": "Nuestra política de calidad",
-      "text1": "Proporcionar servicio de acuerdo con los estándares internacionales de calidad es nuestro principio fundamental.",
-      "text2": "Con nuestro enfoque de mejora continua y centrado en la satisfacción del paciente, proporcionamos el servicio de salud dental de la más alta calidad."
-    },
-    "future": {
-      "title": "Nuestra visión futura",
-      "text1": "Continuaremos ofreciendo a nuestros pacientes los métodos de tratamiento más actuales siguiendo de cerca los desarrollos tecnológicos.",
-      "text2": "Nos movemos en el camino del desarrollo continuo y la innovación con nuestro objetivo de convertirnos en la organización de salud dental líder de Turquía y el mundo."
-    }
+    "conclusion": "Hospitadent, que sigue continuamente las tecnologías médicas en desarrollo y promueve continuamente los métodos de diagnóstico y tratamiento con las tecnologías más modernas, continúa proporcionando servicios de salud seguros y de calidad con su personal experto."
   },
   "appointment": {
     "title": "Cita en línea",
@@ -286,6 +294,53 @@
       "content": "La odontología digital ofrece tecnologías innovadoras que aceleran los procesos de tratamiento y aumentan el confort del paciente.",
       "author": "Dr. Zeynep Arslan"
     }
+  },
+  "staff": {
+    "title": "Personal administrativo",
+    "description": "Nuestro experimentado equipo administrativo que le sirve profesionalmente",
+    "keywords": "personal administrativo, equipo hospitadent, administración, servicio al cliente",
+    "ahmet_name": "Ahmet SELVİ",
+    "ahmet_title": "Director General",
+    "recep_name": "Recep ESKAR",
+    "recep_title": "Director de Operaciones",
+    "halit_name": "Halit Burak ALTINKAYA",
+    "halit_title": "Director Financiero",
+    "abdullah_name": "Abdullah KAYA",
+    "abdullah_title": "Jefe de Recursos Humanos",
+    "caner_name": "Caner ÇOBAN",
+    "caner_title": "Director de Ventas",
+    "bayram_name": "Bayram SAYMAN",
+    "bayram_title": "Director de Calidad",
+    "zeynep_name": "Zeynep YILMAZ",
+    "zeynep_title": "Gerente de PR",
+    "neslihan_name": "Neslihan DEMİR",
+    "neslihan_title": "Gerente de Marketing",
+    "tugba_name": "Tuğba KAYA",
+    "tugba_title": "Gerente de Ventas",
+    "veysel_name": "Veysel ÖZTÜRK",
+    "veysel_title": "Gerente Técnico",
+    "ercument_name": "Erçüment MERT",
+    "ercument_title": "Gerente de TI",
+    "nursah_name": "Nursah AKTAŞ",
+    "nursah_title": "Especialista en Atención al Cliente",
+    "kadriye_name": "Kadriye SOYSAL",
+    "kadriye_title": "Gerente Administrativo",
+    "sena_name": "Sena KELEŞ",
+    "sena_title": "Asistente Administrativo",
+    "berra_name": "Berra GÖRGÜLÜ",
+    "berra_title": "Asistente de Marketing",
+    "selin_name": "Selin HOŞÇEYLAN",
+    "selin_title": "Asistente de Ventas",
+    "iclal_name": "İclal HARMANCI",
+    "iclal_title": "Asistente de RRHH",
+    "mehmet_name": "Mehmet Ziya KÖK",
+    "mehmet_title": "Técnico de TI",
+    "muslum_name": "Müslüm YILDIZ",
+    "muslum_title": "Técnico de Mantenimiento",
+    "gaye_name": "Gaye MERÇAN",
+    "gaye_title": "Asistente de Calidad",
+    "ibrahim_name": "İbrahim ÇELİK",
+    "ibrahim_title": "Técnico de Red"
   },
   "common": {
     "loading": "Cargando...",

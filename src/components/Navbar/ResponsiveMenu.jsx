@@ -397,14 +397,29 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
                       className={`flex items-center w-full text-left px-4 py-3 text-base ${lang.code === currentLanguage.code ? 'bg-white text-[#0f4f78] font-bold cursor-default' : 'hover:bg-[#2bb3ea]'}`}
                       onClick={() => { 
                         if(lang.code !== currentLanguage.code) { 
+                          // Önce i18n dilini değiştir
                           i18n.changeLanguage(lang.code);
                           
-                          // Sayfayı tamamen yeniden yükle
-                          if(lang.code === 'tr') {
-                            window.location.href = '/';
+                          // Mevcut path'i al
+                          const currentPath = window.location.pathname;
+                          
+                          // Path'i dil koduna göre güncelle
+                          let newPath;
+                          if (lang.code === 'tr') {
+                            // Türkçe için /tr prefix'ini kaldır
+                            newPath = currentPath.replace(/^\/(en|fr|de|ru|es|ar)/, '');
+                            if (newPath === '') newPath = '/';
                           } else {
-                            window.location.href = '/' + lang.code;
+                            // Diğer diller için /dil prefix'ini ekle
+                            if (currentPath.startsWith('/')) {
+                              newPath = `/${lang.code}${currentPath}`;
+                            } else {
+                              newPath = `/${lang.code}/${currentPath}`;
+                            }
                           }
+                          
+                          // Sayfayı yönlendir
+                          window.location.href = newPath;
                         } 
                       }}
                       disabled={lang.code === currentLanguage.code}

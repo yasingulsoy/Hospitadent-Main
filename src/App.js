@@ -1,40 +1,64 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Navbar, Home, About, Services, Process, Clients, Contact, Footer } from './components';
 import GoogleAnalytics from './components/Analytics/GoogleAnalytics';
 import Breadcrumbs from './components/SEO/Breadcrumbs';
 
-// Lazy loading için sayfa bileşenleri
-const AboutPage = lazy(() => import('./pages/About'));
-const BranchPage = lazy(() => import('./pages/BranchPage'));
-const Branches = lazy(() => import('./pages/Branches'));
-const Staff = lazy(() => import('./pages/Staff'));
-const SearchResults = lazy(() => import('./pages/SearchResults'));
-const HastaMemnuniyetVideolari = lazy(() => import('./pages/HastaMemnuniyetVideolari'));
-const HastaYorumlari = lazy(() => import('./pages/HastaYorumlari'));
-const HospitadentSosyalSorumluluk = lazy(() => import('./pages/HospitadentSosyalSorumluluk'));
-const AnlasmaliKurumlar = lazy(() => import('./pages/AnlasmaliKurumlar'));
-const Academy = lazy(() => import('./pages/Academy'));
-const Awards = lazy(() => import('./pages/Awards'));
-const CorporateIdentity = lazy(() => import('./pages/CorporateIdentity'));
-const Blog = lazy(() => import('./pages/Blog'));
+// Tüm sayfaları doğrudan import et (hızlı yükleme için)
+import AboutPage from './pages/About';
+import BranchPage from './pages/BranchPage';
+import Branches from './pages/Branches';
+import Staff from './pages/Staff';
+import SearchResults from './pages/SearchResults';
+import HastaMemnuniyetVideolari from './pages/HastaMemnuniyetVideolari';
+import HastaYorumlari from './pages/HastaYorumlari';
+import HospitadentSosyalSorumluluk from './pages/HospitadentSosyalSorumluluk';
+import AnlasmaliKurumlar from './pages/AnlasmaliKurumlar';
+import Academy from './pages/Academy';
+import Awards from './pages/Awards';
+import CorporateIdentity from './pages/CorporateIdentity';
+import Blog from './pages/Blog';
 
-// Dil sayfaları için lazy loading
-const EnAbout = lazy(() => import('./pages/en/About'));
-const EnServices = lazy(() => import('./pages/en/Services'));
-const FrAbout = lazy(() => import('./pages/fr/About'));
-const FrServices = lazy(() => import('./pages/fr/Services'));
-const DeAbout = lazy(() => import('./pages/de/About'));
-const DeServices = lazy(() => import('./pages/de/Services'));
-const RuAbout = lazy(() => import('./pages/ru/About'));
-const RuServices = lazy(() => import('./pages/ru/Services'));
-const EsAbout = lazy(() => import('./pages/es/About'));
-const EsServices = lazy(() => import('./pages/es/Services'));
-const ArAbout = lazy(() => import('./pages/ar/About'));
-const ArServices = lazy(() => import('./pages/ar/Services'));
+// Dil sayfaları - İngilizce
+import EnAbout from './pages/en/About';
+import EnServices from './pages/en/Services';
+import EnStaff from './pages/en/Staff';
+import EnBranches from './pages/en/Branches';
+import EnBranchPage from './pages/en/BranchPage';
+import EnSearchResults from './pages/en/SearchResults';
+import EnHastaMemnuniyetVideolari from './pages/en/HastaMemnuniyetVideolari';
+import EnHastaYorumlari from './pages/en/HastaYorumlari';
+import EnAcademy from './pages/en/Academy';
+import EnBlog from './pages/en/Blog';
 
+// Dil sayfaları - Fransızca
+import FrAbout from './pages/fr/About';
+import FrServices from './pages/fr/Services';
+import FrStaff from './pages/fr/Staff';
+import FrBranches from './pages/fr/Branches';
+import FrBranchPage from './pages/fr/BranchPage';
+import FrSearchResults from './pages/fr/SearchResults';
+import FrHastaMemnuniyetVideolari from './pages/fr/HastaMemnuniyetVideolari';
+import FrHastaYorumlari from './pages/fr/HastaYorumlari';
+import FrAcademy from './pages/fr/Academy';
+import FrBlog from './pages/fr/Blog';
 
+// Dil sayfaları - Almanca
+import DeAbout from './pages/de/About';
+import DeServices from './pages/de/Services';
+
+// Dil sayfaları - Rusça
+import RuAbout from './pages/ru/About';
+import RuServices from './pages/ru/Services';
+
+// Dil sayfaları - İspanyolca
+import EsAbout from './pages/es/About';
+import EsServices from './pages/es/Services';
+
+// Dil sayfaları - Arapça
+import ArAbout from './pages/ar/About';
+import ArServices from './pages/ar/Services';
 
 function App() {
   return (
@@ -42,12 +66,8 @@ function App() {
       <GoogleAnalytics />
       <Navbar />
       <Breadcrumbs />
-      <Suspense fallback={
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#004876]"></div>
-        </div>
-      }>
-        <Routes>
+      <Routes>
+        {/* Ana Sayfa - Türkçe */}
         <Route path="/" element={
           <>
             <Home />
@@ -59,34 +79,20 @@ function App() {
             <Footer />
           </>
         } />
+        
+        {/* Türkçe Sayfalar */}
         <Route path="/hakkimizda" element={<AboutPage />} />
         <Route path="/idari-kadro" element={<Staff />} />
-        
-        {/* Şubeler Ana Sayfa */}
         <Route path="/subelerimiz" element={<Branches />} />
-        
-        {/* Şube Sayfaları */}
-        <Route path="/subelerimiz/mecidiyekoy" element={<BranchPage />} />
-        <Route path="/subelerimiz/bagcilar" element={<BranchPage />} />
-        <Route path="/subelerimiz/bakirkoy" element={<BranchPage />} />
-        <Route path="/subelerimiz/fatih" element={<BranchPage />} />
-        <Route path="/subelerimiz/camlica" element={<BranchPage />} />
-        <Route path="/subelerimiz/pendik" element={<BranchPage />} />
-        <Route path="/subelerimiz/serifali" element={<BranchPage />} />
-        <Route path="/subelerimiz/cevizlibag" element={<BranchPage />} />
-        <Route path="/subelerimiz/gokturk" element={<BranchPage />} />
-        <Route path="/subelerimiz/kayseri" element={<BranchPage />} />
-        <Route path="/subelerimiz/bodrum" element={<BranchPage />} />
-        <Route path="/subelerimiz/alanya" element={<BranchPage />} />
-        <Route path="/subelerimiz/antalya" element={<BranchPage />} />
-        <Route path="/subelerimiz/ankara" element={<BranchPage />} />
-        <Route path="/subelerimiz/denizli" element={<BranchPage />} />
-        <Route path="/subelerimiz/kocaeli" element={<BranchPage />} />
-        <Route path="/subelerimiz/bursa" element={<BranchPage />} />
-        <Route path="/subelerimiz/almanya" element={<BranchPage />} />
-        <Route path="/subelerimiz/hollanda" element={<BranchPage />} />
-        
-        {/* Arama Sonuçları Sayfası */}
+        <Route path="/subelerimiz/:branchId" element={<BranchPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/akademi" element={<Academy />} />
+        <Route path="/odullerimiz" element={<Awards />} />
+        <Route path="/kurumsal-kimlik" element={<CorporateIdentity />} />
+        <Route path="/hasta-memnuniyet-videolari" element={<HastaMemnuniyetVideolari />} />
+        <Route path="/hasta-yorumlari" element={<HastaYorumlari />} />
+        <Route path="/hospitadent-sosyal-sorumluluk" element={<HospitadentSosyalSorumluluk />} />
+        <Route path="/anlasmali-kurumlar" element={<AnlasmaliKurumlar />} />
         <Route path="/search" element={<SearchResults />} />
         
         {/* İngilizce Sayfalar */}
@@ -101,8 +107,20 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/en/about" element={<EnAbout />} />
+        <Route path="/en/about-us" element={<EnAbout />} />
         <Route path="/en/services" element={<EnServices />} />
+        <Route path="/en/administrative-staff" element={<EnStaff />} />
+        <Route path="/en/branches" element={<EnBranches />} />
+        <Route path="/en/branches/:branchId" element={<EnBranchPage />} />
+        <Route path="/en/blog" element={<EnBlog />} />
+        <Route path="/en/academy" element={<EnAcademy />} />
+        <Route path="/en/awards" element={<Awards />} />
+        <Route path="/en/corporate-identity" element={<CorporateIdentity />} />
+        <Route path="/en/patient-satisfaction-videos" element={<EnHastaMemnuniyetVideolari />} />
+        <Route path="/en/patient-reviews" element={<EnHastaYorumlari />} />
+        <Route path="/en/hospitadent-social-responsibility" element={<HospitadentSosyalSorumluluk />} />
+        <Route path="/en/partner-institutions" element={<AnlasmaliKurumlar />} />
+        <Route path="/en/search" element={<EnSearchResults />} />
         
         {/* Fransızca Sayfalar */}
         <Route path="/fr" element={
@@ -116,8 +134,20 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/fr/about" element={<FrAbout />} />
+        <Route path="/fr/a-propos" element={<FrAbout />} />
         <Route path="/fr/services" element={<FrServices />} />
+        <Route path="/fr/equipe-administrative" element={<FrStaff />} />
+        <Route path="/fr/succursales" element={<FrBranches />} />
+        <Route path="/fr/succursales/:branchId" element={<FrBranchPage />} />
+        <Route path="/fr/blog" element={<FrBlog />} />
+        <Route path="/fr/academie" element={<FrAcademy />} />
+        <Route path="/fr/recompenses" element={<Awards />} />
+        <Route path="/fr/identite-corporative" element={<CorporateIdentity />} />
+        <Route path="/fr/videos-satisfaction-patients" element={<FrHastaMemnuniyetVideolari />} />
+        <Route path="/fr/avis-patients" element={<FrHastaYorumlari />} />
+        <Route path="/fr/responsabilite-sociale-hospitadent" element={<HospitadentSosyalSorumluluk />} />
+        <Route path="/fr/institutions-partenaires" element={<AnlasmaliKurumlar />} />
+        <Route path="/fr/recherche" element={<FrSearchResults />} />
         
         {/* Almanca Sayfalar */}
         <Route path="/de" element={
@@ -131,8 +161,20 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/de/about" element={<DeAbout />} />
+        <Route path="/de/uber-uns" element={<DeAbout />} />
         <Route path="/de/services" element={<DeServices />} />
+        <Route path="/de/verwaltungsteam" element={<Staff />} />
+        <Route path="/de/filialen" element={<Branches />} />
+        <Route path="/de/filialen/:branchId" element={<BranchPage />} />
+        <Route path="/de/blog" element={<Blog />} />
+        <Route path="/de/akademie" element={<Academy />} />
+        <Route path="/de/auszeichnungen" element={<Awards />} />
+        <Route path="/de/corporate-identity" element={<CorporateIdentity />} />
+        <Route path="/de/patientenzufriedenheit-videos" element={<HastaMemnuniyetVideolari />} />
+        <Route path="/de/patientenbewertungen" element={<HastaYorumlari />} />
+        <Route path="/de/hospitadent-soziale-verantwortung" element={<HospitadentSosyalSorumluluk />} />
+        <Route path="/de/partnerinstitutionen" element={<AnlasmaliKurumlar />} />
+        <Route path="/de/suche" element={<SearchResults />} />
         
         {/* Rusça Sayfalar */}
         <Route path="/ru" element={
@@ -146,8 +188,20 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/ru/about" element={<RuAbout />} />
+        <Route path="/ru/o-nas" element={<RuAbout />} />
         <Route path="/ru/services" element={<RuServices />} />
+        <Route path="/ru/administrativnyj-personal" element={<Staff />} />
+        <Route path="/ru/filialy" element={<Branches />} />
+        <Route path="/ru/filialy/:branchId" element={<BranchPage />} />
+        <Route path="/ru/blog" element={<Blog />} />
+        <Route path="/ru/akademiya" element={<Academy />} />
+        <Route path="/ru/nagrady" element={<Awards />} />
+        <Route path="/ru/korporativnaya-identichnost" element={<CorporateIdentity />} />
+        <Route path="/ru/video-udovletvorennosti-patsientov" element={<HastaMemnuniyetVideolari />} />
+        <Route path="/ru/otzyvy-patsientov" element={<HastaYorumlari />} />
+        <Route path="/ru/sotsialnaya-otvetstvennost-hospitadent" element={<HospitadentSosyalSorumluluk />} />
+        <Route path="/ru/partnerstkie-uchrezhdeniya" element={<AnlasmaliKurumlar />} />
+        <Route path="/ru/poisk" element={<SearchResults />} />
         
         {/* İspanyolca Sayfalar */}
         <Route path="/es" element={
@@ -161,8 +215,20 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/es/about" element={<EsAbout />} />
+        <Route path="/es/sobre-nosotros" element={<EsAbout />} />
         <Route path="/es/services" element={<EsServices />} />
+        <Route path="/es/personal-administrativo" element={<Staff />} />
+        <Route path="/es/sucursales" element={<Branches />} />
+        <Route path="/es/sucursales/:branchId" element={<BranchPage />} />
+        <Route path="/es/blog" element={<Blog />} />
+        <Route path="/es/academia" element={<Academy />} />
+        <Route path="/es/premios" element={<Awards />} />
+        <Route path="/es/identidad-corporativa" element={<CorporateIdentity />} />
+        <Route path="/es/videos-satisfaccion-pacientes" element={<HastaMemnuniyetVideolari />} />
+        <Route path="/es/resenas-pacientes" element={<HastaYorumlari />} />
+        <Route path="/es/responsabilidad-social-hospitadent" element={<HospitadentSosyalSorumluluk />} />
+        <Route path="/es/instituciones-socias" element={<AnlasmaliKurumlar />} />
+        <Route path="/es/busqueda" element={<SearchResults />} />
         
         {/* Arapça Sayfalar */}
         <Route path="/ar" element={
@@ -176,18 +242,21 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/ar/about" element={<ArAbout />} />
+        <Route path="/ar/من-نحن" element={<ArAbout />} />
         <Route path="/ar/services" element={<ArServices />} />
-        <Route path="/hasta-memnuniyet-videolari" element={<HastaMemnuniyetVideolari />} />
-        <Route path="/hasta-yorumlari" element={<HastaYorumlari />} />
-        <Route path="/hospitadent-sosyal-sorumluluk" element={<HospitadentSosyalSorumluluk />} />
-        <Route path="/anlasmali-kurumlar" element={<AnlasmaliKurumlar />} />
-        <Route path="/akademi" element={<Academy />} />
-        <Route path="/odullerimiz" element={<Awards />} />
-        <Route path="/kurumsal-kimlik" element={<CorporateIdentity />} />
-        <Route path="/blog" element={<Blog />} />
-        </Routes>
-      </Suspense>
+        <Route path="/ar/al-muwazafun-al-idariyun" element={<Staff />} />
+        <Route path="/ar/al-furu" element={<Branches />} />
+        <Route path="/ar/al-furu/:branchId" element={<BranchPage />} />
+        <Route path="/ar/al-mudawwana" element={<Blog />} />
+        <Route path="/ar/al-akadimiyya" element={<Academy />} />
+        <Route path="/ar/al-jawaiz" element={<Awards />} />
+        <Route path="/ar/al-hawiyya-al-sharikiyya" element={<CorporateIdentity />} />
+        <Route path="/ar/fidiyu-ridha-al-mardha" element={<HastaMemnuniyetVideolari />} />
+        <Route path="/ar/ara-al-mardha" element={<HastaYorumlari />} />
+        <Route path="/ar/al-masuliyya-al-ijtimaiyya-hospitadent" element={<HospitadentSosyalSorumluluk />} />
+        <Route path="/ar/al-muassasat-al-sharika" element={<AnlasmaliKurumlar />} />
+        <Route path="/ar/al-bahth" element={<SearchResults />} />
+      </Routes>
     </HelmetProvider>
   );
 }

@@ -730,7 +730,7 @@ const HastaMemnuniyetVideolari = () => {
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 inline-block"
             >
-              Daha Fazla Video İzle
+              Daha Fazla Mutluluk Deneyimi
             </a>
           </div>
 

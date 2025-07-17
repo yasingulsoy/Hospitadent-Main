@@ -8,6 +8,7 @@ import { FaFacebookF, FaXTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from '
 import { FaBars } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { getUrlForLanguage } from '../../utils/urlMapping';
 
 const languages = [
   { code: 'tr', name: 'Türkçe', flag: 'TR' },
@@ -135,15 +136,23 @@ const Navbar = () => {
 
   // Dil değişince i18n dilini de değiştir
   const handleLangChange = (lang) => {
+    // Eğer aynı dil seçilmişse hiçbir şey yapma
+    if (lang.code === currentLanguage.code) {
+      setLangOpen(false);
+      return;
+    }
+
     // Önce i18n dilini değiştir
     i18n.changeLanguage(lang.code);
     
-    // Sonra sayfayı tamamen yeniden yükle
-    if(lang.code === 'tr') {
-      window.location.href = '/';
-    } else {
-      window.location.href = '/' + lang.code;
-    }
+    // Mevcut path'i al
+    const currentPath = window.location.pathname;
+    
+    // Yeni URL'yi oluştur
+    const newPath = getUrlForLanguage(currentPath, lang.code);
+    
+    // Sayfayı yönlendir
+    window.location.href = newPath;
   };
 
   // Typewriter yazısına tıklayınca arama inputuna focus

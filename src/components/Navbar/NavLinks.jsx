@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { getUrlForLanguage } from '../../utils/urlMapping';
 
 const NavLinks = ({ item, handleNav, depth = 0 }) => {
   const [dropdown, setDropdown] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // Eğer submenu varsa ve en az bir alt eleman varsa açılır menü göster
   if (item.submenu && Array.isArray(item.submenu) && item.submenu.length > 0) {
@@ -67,10 +68,14 @@ const NavLinks = ({ item, handleNav, depth = 0 }) => {
   }
 
   // Sayfa yönlendirmesi için RouterLink kullan
+  // Mevcut dile göre doğru URL'yi oluştur
+  const currentLanguage = i18n.language;
+  const correctPath = getUrlForLanguage(item.path, currentLanguage);
+  
   return (
     <li className="cursor-pointer text-blue text-lg font-bold tracking-wide hover:text-primary transition-colors duration-200">
       <RouterLink
-        to={item.path}
+        to={correctPath}
         onClick={handleNav}
         className="block px-4 py-3"
       >

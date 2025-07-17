@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Footer } from '../components';
+import { Footer } from '../../components';
 import { useTranslation } from 'react-i18next';
 
 const Staff = () => {
@@ -245,7 +245,7 @@ const Staff = () => {
               </div>
             </div>
 
-            {/* Card 9 - Tuğba KAVALCI */}
+            {/* Card 9 - Tuğba KAYA */}
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="p-6 text-center">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -272,7 +272,7 @@ const Staff = () => {
               </div>
             </div>
 
-            {/* Card 10 - Veysel YILMAZ */}
+            {/* Card 10 - Veysel KAYA */}
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="p-6 text-center">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -326,7 +326,7 @@ const Staff = () => {
               </div>
             </div>
 
-            {/* Card 12 - Nurşah IŞIK */}
+            {/* Card 12 - Nursah KAYA */}
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="p-6 text-center">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -407,7 +407,7 @@ const Staff = () => {
               </div>
             </div>
 
-            {/* Card 15 - Berra Sinanoğlu GÖRGÜLÜ */}
+            {/* Card 15 - Berra GÖRGÜLÜ */}
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="p-6 text-center">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -434,7 +434,7 @@ const Staff = () => {
               </div>
             </div>
 
-            {/* Card 16 - Selin HOŞCEYLAN */}
+            {/* Card 16 - Selin HOŞÇEYLAN */}
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="p-6 text-center">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -515,7 +515,7 @@ const Staff = () => {
               </div>
             </div>
 
-            {/* Card 19 - Müslüm YENİKAN */}
+            {/* Card 19 - Müslüm KAYA */}
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="p-6 text-center">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -569,7 +569,7 @@ const Staff = () => {
               </div>
             </div>
 
-            {/* Card 21 - İbrahim YÜCEL */}
+            {/* Card 21 - İbrahim KAYA */}
             <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="p-6 text-center">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
@@ -595,9 +595,11 @@ const Staff = () => {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
