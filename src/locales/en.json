@@ -209,21 +209,83 @@
   },
   "appointment": {
     "title": "Online Appointment",
-    "step1": "Select City",
-    "step2": "Select Branch",
-    "step3": "Select Doctor",
-    "step4": "Book Appointment",
-    "next": "Next",
-    "previous": "Previous",
-    "book": "Book Appointment",
+    "selectCity": "Select City",
+    "selectBranch": "Select Branch",
+    "selectDoctor": "Select Doctor",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time",
+    "dentalClinic": "Dental Clinic",
+    "contactInfo": "Contact Information",
+    "selectedAppointment": "Selected Appointment",
     "name": "Full Name",
     "phone": "Phone Number",
     "namePlaceholder": "Enter your full name",
     "phonePlaceholder": "Enter your phone number",
+    "phoneFormat": "Starting with 0, e.g.: 05XXXXXXXXX",
+    "appointmentInfo": "Your appointment request will be received and you will be called as soon as possible.",
+    "completeAppointment": "Complete Appointment",
+    "closed": "Closed",
+    "next": "Continue",
+    "previous": "Back",
+    "book": "Book Appointment",
     "submit": "Submit Appointment",
     "submitting": "Submitting...",
-    "success": "Appointment submitted successfully!",
+    "success": "Your appointment request has been successfully received!",
     "error": "An error occurred. Please try again."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Current information about dental health and treatment methods",
+    "pageTitle": "Blog - Hospitadent",
+    "pageDescription": "Dental health, treatment methods and current dentistry information. Tips and advice from our expert dentists.",
+    "pageKeywords": "dental health blog, dental treatment information, dentistry articles, oral health, dental care",
+    "by": "By:",
+    "readMore": "Read More",
+    "loadMore": "Load More",
+    "categories": {
+      "dentalHealth": "Dental Health",
+      "orthodontics": "Orthodontics",
+      "implant": "Implant",
+      "cosmetic": "Cosmetic Dentistry",
+      "pediatric": "Pediatric Dentistry",
+      "technology": "Technology"
+    },
+    "post1": {
+      "title": "Importance of Daily Dental Care",
+      "excerpt": "Learn how your daily care routine should be for healthy teeth.",
+      "content": "Daily dental care is the foundation of oral health. You can prevent dental problems with proper brushing techniques, flossing, and regular checkups.",
+      "author": "Dr. Ahmet Yılmaz"
+    },
+    "post2": {
+      "title": "Orthodontic Treatment Process",
+      "excerpt": "What happens during orthodontic treatment and what path is followed?",
+      "content": "Orthodontic treatment is a long-term process applied to properly align teeth. Patient compliance is very important in this process.",
+      "author": "Dr. Ayşe Demir"
+    },
+    "post3": {
+      "title": "What You Need to Know About Implant Treatment",
+      "excerpt": "How is implant treatment performed and who can it be applied to?",
+      "content": "Implant treatment is a modern treatment method that offers permanent solutions to replace missing teeth. Detailed information about the surgical process and aftermath.",
+      "author": "Dr. Mehmet Kaya"
+    },
+    "post4": {
+      "title": "Smile Design and Cosmetic Dentistry",
+      "excerpt": "Cosmetic dentistry solutions for perfect smile.",
+      "content": "Smile design is a comprehensive treatment plan that improves the aesthetic appearance of teeth according to the person's facial structure.",
+      "author": "Dr. Fatma Özkan"
+    },
+    "post5": {
+      "title": "Dental Health in Children",
+      "excerpt": "What parents need to know for their children's dental health.",
+      "content": "Dental health in children is ensured through regular care and checkups from an early age. The role of parents is very important.",
+      "author": "Dr. Ali Çelik"
+    },
+    "post6": {
+      "title": "Digital Dentistry Technologies",
+      "excerpt": "Digital technologies used in modern dentistry.",
+      "content": "Digital dentistry offers innovative technologies that speed up treatment processes and increase patient comfort.",
+      "author": "Dr. Zeynep Arslan"
+    }
   },
   "common": {
     "loading": "Loading...",

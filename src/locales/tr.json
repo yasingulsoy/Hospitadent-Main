@@ -209,21 +209,83 @@
   },
   "appointment": {
     "title": "Online Randevu",
-    "step1": "Şehir Seç",
-    "step2": "Şube Seç",
-    "step3": "Doktor Seç",
-    "step4": "Randevu Al",
-    "next": "İleri",
-    "previous": "Geri",
-    "book": "Randevu Al",
+    "selectCity": "Şehir Seçin",
+    "selectBranch": "Şube Seçin",
+    "selectDoctor": "Doktor Seçin",
+    "selectDate": "Tarih Seçin",
+    "selectTime": "Saat Seçin",
+    "dentalClinic": "Diş Kliniği",
+    "contactInfo": "İletişim Bilgileri",
+    "selectedAppointment": "Seçilen Randevu",
     "name": "Ad Soyad",
     "phone": "Telefon Numarası",
     "namePlaceholder": "Adınızı ve soyadınızı girin",
     "phonePlaceholder": "Telefon numaranızı girin",
+    "phoneFormat": "Başında 0 olacak şekilde, örn: 05XXXXXXXXX",
+    "appointmentInfo": "Randevu talebiniz alınacak, en kısa sürede aranacaksınız.",
+    "completeAppointment": "Randevuyu Tamamla",
+    "closed": "Kapalı",
+    "next": "Devam Et",
+    "previous": "Geri",
+    "book": "Randevu Al",
     "submit": "Randevu Gönder",
     "submitting": "Gönderiliyor...",
-    "success": "Randevu başarıyla gönderildi!",
+    "success": "Randevu talebiniz başarıyla alındı!",
     "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Diş sağlığı ve tedavi yöntemleri hakkında güncel bilgiler",
+    "pageTitle": "Blog - Hospitadent",
+    "pageDescription": "Diş sağlığı, tedavi yöntemleri ve güncel diş hekimliği bilgileri. Uzman diş hekimlerimizden öneriler ve ipuçları.",
+    "pageKeywords": "diş sağlığı blog, diş tedavisi bilgileri, diş hekimliği makaleleri, ağız sağlığı, diş bakımı",
+    "by": "Yazar:",
+    "readMore": "Devamını Oku",
+    "loadMore": "Daha Fazla Yükle",
+    "categories": {
+      "dentalHealth": "Diş Sağlığı",
+      "orthodontics": "Ortodonti",
+      "implant": "İmplant",
+      "cosmetic": "Estetik Diş Hekimliği",
+      "pediatric": "Çocuk Diş Hekimliği",
+      "technology": "Teknoloji"
+    },
+    "post1": {
+      "title": "Günlük Diş Bakımının Önemi",
+      "excerpt": "Sağlıklı dişler için günlük bakım rutininin nasıl olması gerektiğini öğrenin.",
+      "content": "Günlük diş bakımı, ağız sağlığının temelidir. Doğru fırçalama teknikleri, diş ipi kullanımı ve düzenli kontroller ile diş problemlerini önleyebilirsiniz.",
+      "author": "Dr. Ahmet Yılmaz"
+    },
+    "post2": {
+      "title": "Ortodontik Tedavi Süreci",
+      "excerpt": "Ortodontik tedavi sürecinde neler yaşanır ve nasıl bir yol izlenir?",
+      "content": "Ortodontik tedavi, dişlerin düzgün hizalanması için uygulanan uzun vadeli bir süreçtir. Bu süreçte hasta uyumu çok önemlidir.",
+      "author": "Dr. Ayşe Demir"
+    },
+    "post3": {
+      "title": "İmplant Tedavisi Hakkında Bilmeniz Gerekenler",
+      "excerpt": "İmplant tedavisi nasıl yapılır ve kimlere uygulanabilir?",
+      "content": "İmplant tedavisi, eksik dişlerin yerine kalıcı çözümler sunan modern bir tedavi yöntemidir. Cerrahi süreç ve sonrası hakkında detaylı bilgi.",
+      "author": "Dr. Mehmet Kaya"
+    },
+    "post4": {
+      "title": "Gülüş Tasarımı ve Estetik Diş Hekimliği",
+      "excerpt": "Mükemmel gülümseme için estetik diş hekimliği çözümleri.",
+      "content": "Gülüş tasarımı, kişinin yüz yapısına uygun olarak dişlerin estetik görünümünü iyileştiren kapsamlı bir tedavi planıdır.",
+      "author": "Dr. Fatma Özkan"
+    },
+    "post5": {
+      "title": "Çocuklarda Diş Sağlığı",
+      "excerpt": "Çocukların diş sağlığı için ebeveynlerin bilmesi gerekenler.",
+      "content": "Çocuklarda diş sağlığı, erken yaşlardan itibaren düzenli bakım ve kontroller ile sağlanır. Ebeveynlerin rolü çok önemlidir.",
+      "author": "Dr. Ali Çelik"
+    },
+    "post6": {
+      "title": "Dijital Diş Hekimliği Teknolojileri",
+      "excerpt": "Modern diş hekimliğinde kullanılan dijital teknolojiler.",
+      "content": "Dijital diş hekimliği, tedavi süreçlerini hızlandıran ve hasta konforunu artıran yenilikçi teknolojiler sunar.",
+      "author": "Dr. Zeynep Arslan"
+    }
   },
   "common": {
     "loading": "Yükleniyor...",

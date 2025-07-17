@@ -125,13 +125,12 @@ const days = [
   ] },
 ];
 
-// Kullanılmayan değişkenler kaldırıldı
-
 // Modern şehir seçici
 const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
+  const { t } = useTranslation();
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">Şehir Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">{t('appointment.selectCity')}</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-3 md:grid-cols-4 sm:gap-3 sm:overflow-x-visible">
         {cities.map((city, idx) => (
@@ -155,9 +154,10 @@ const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
 
 // Modern şube seçici
 const BranchSelector = ({ branches, selectedBranchIdx, onSelect }) => {
+  const { t } = useTranslation();
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">Şube Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">{t('appointment.selectBranch')}</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-3 md:grid-cols-4 sm:gap-3 sm:overflow-x-visible">
         {branches.map((branch, idx) => (
@@ -181,9 +181,10 @@ const BranchSelector = ({ branches, selectedBranchIdx, onSelect }) => {
 
 // Modern doktor seçici (yatay scroll)
 const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
+  const { t } = useTranslation();
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">{branchName} Diş Kliniği - Doktor Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">{branchName} {t('appointment.dentalClinic')} - {t('appointment.selectDoctor')}</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-4 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:overflow-x-visible">
         {doctors.map((doctor, idx) => (
@@ -209,9 +210,10 @@ const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
 
 // Modern tarih seçici
 const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
+  const { t } = useTranslation();
   return (
     <div className="mb-6">
-      <h3 className="text-xl font-bold text-[#004876] mb-4 text-center">Tarih Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-4 text-center">{t('appointment.selectDate')}</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-6 sm:gap-2 sm:overflow-x-visible">
         {days.map((day, idx) => (
@@ -236,9 +238,10 @@ const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
 
 // Modern saat seçici
 const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
+  const { t } = useTranslation();
   return (
     <div className="mb-6">
-      <h3 className="text-xl font-bold text-[#004876] mb-4 text-center">Saat Seçin</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-4 text-center">{t('appointment.selectTime')}</h3>
       {/* Mobilde yatay scroll, masaüstünde grid */}
       <div className="flex overflow-x-auto gap-3 pb-4 sm:grid sm:grid-cols-4 md:grid-cols-5 sm:gap-2 sm:overflow-x-visible">
         {slots.map((slot, idx) => (
@@ -255,7 +258,7 @@ const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
             }`}
             style={{ flex: '0 0 auto' }}
           >
-            {slot.status === 'closed' ? 'Kapalı' : slot.time}
+            {slot.status === 'closed' ? t('appointment.closed') : slot.time}
           </button>
         ))}
       </div>
@@ -265,37 +268,38 @@ const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
 
 // Modern iletişim formu
 const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, selectedDay, selectedSlot, onEdit }) => {
+  const { t } = useTranslation();
   return (
     <div className="max-w-md mx-auto">
-      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">İletişim Bilgileri</h3>
+      <h3 className="text-xl font-bold text-[#004876] mb-6 text-center">{t('appointment.contactInfo')}</h3>
       
       {/* Seçim özeti */}
       <div className="bg-gray-50 rounded-xl p-4 mb-6">
-        <div className="text-sm text-gray-600 mb-2">Seçilen Randevu:</div>
+        <div className="text-sm text-gray-600 mb-2">{t('appointment.selectedAppointment')}:</div>
         <div className="font-semibold text-[#004876]">{selectedDay?.date} ({selectedDay?.day}) - {selectedSlot}</div>
         <button
           onClick={onEdit}
           className="text-[#2bb3ea] text-sm font-medium mt-2 hover:underline"
         >
-          Düzenle
+          {t('common.edit')}
         </button>
       </div>
 
       <form onSubmit={e => { e.preventDefault(); onSubmit(); }} className="space-y-4">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Ad Soyad</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">{t('appointment.name')}</label>
           <input
             type="text"
             value={name}
             onChange={e => setName(e.target.value)}
             required
             className="w-full px-4 py-4 sm:py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all text-base"
-            placeholder="Adınızı ve soyadınızı girin"
+            placeholder={t('appointment.namePlaceholder')}
           />
         </div>
         
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Telefon Numarası</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">{t('appointment.phone')}</label>
           <input
             type="tel"
             value={phone}
@@ -305,7 +309,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
             className="w-full px-4 py-4 sm:py-3 rounded-lg border border-gray-300 focus:border-[#2bb3ea] focus:ring-2 focus:ring-[#2bb3ea] outline-none transition-all text-base"
             placeholder="05XXXXXXXXX"
           />
-          <div className="text-xs text-gray-500 mt-1">Başında 0 olacak şekilde, örn: 05XXXXXXXXX</div>
+          <div className="text-xs text-gray-500 mt-1">{t('appointment.phoneFormat')}</div>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-4 rounded-lg text-sm">
@@ -313,7 +317,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>Randevu talebiniz alınacak, en kısa sürede aranacaksınız.</span>
+            <span>{t('appointment.appointmentInfo')}</span>
           </div>
         </div>
 
@@ -322,7 +326,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
           disabled={submitting || !name || !/^05\d{9}$/.test(phone)}
           className="w-full bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-4 sm:py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all disabled:opacity-50 disabled:cursor-not-allowed text-base"
         >
-          {submitting ? 'Gönderiliyor...' : 'Randevuyu Tamamla'}
+          {submitting ? t('appointment.submitting') : t('appointment.completeAppointment')}
         </button>
       </form>
     </div>
@@ -390,7 +394,7 @@ const AppointmentWizard = () => {
                 onClick={() => setStep(2)}
                 className="bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all"
               >
-                Devam Et
+                {t('appointment.next')}
               </button>
             </div>
           </div>
@@ -410,13 +414,13 @@ const AppointmentWizard = () => {
                 onClick={() => setStep(1)}
                 className="flex-1 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-300 transition-all"
               >
-                Geri
+                {t('appointment.previous')}
               </button>
               <button
                 onClick={() => setStep(3)}
                 className="flex-1 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all"
               >
-                Devam Et
+                {t('appointment.next')}
               </button>
             </div>
           </div>
@@ -440,14 +444,14 @@ const AppointmentWizard = () => {
                 onClick={() => setStep(2)}
                 className="flex-1 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-300 transition-all"
               >
-                Geri
+                {t('appointment.previous')}
               </button>
               <button
                 onClick={() => selectedSlot && setStep(4)}
                 disabled={!selectedSlot}
                 className="flex-1 bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white font-bold py-3 rounded-lg shadow-lg hover:from-[#0f4f78] hover:to-[#2bb3ea] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Devam Et
+                {t('appointment.next')}
               </button>
             </div>
           </div>
@@ -469,7 +473,7 @@ const AppointmentWizard = () => {
                 setSubmitting(true);
                 setTimeout(() => {
                   setSubmitting(false);
-                  alert('Randevu talebiniz başarıyla alındı!');
+                  alert(t('appointment.success'));
                 }, 1500);
               }}
             />
@@ -478,7 +482,7 @@ const AppointmentWizard = () => {
                 onClick={() => setStep(3)}
                 className="bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 transition-all"
               >
-                Geri
+                {t('appointment.previous')}
               </button>
             </div>
           </div>

@@ -209,21 +209,83 @@
   },
   "appointment": {
     "title": "Rendez-vous en ligne",
-    "step1": "Sélectionner la ville",
-    "step2": "Sélectionner la succursale",
-    "step3": "Sélectionner le médecin",
-    "step4": "Prendre rendez-vous",
-    "next": "Suivant",
-    "previous": "Précédent",
-    "book": "Prendre rendez-vous",
+    "selectCity": "Sélectionner la ville",
+    "selectBranch": "Sélectionner la succursale",
+    "selectDoctor": "Sélectionner le médecin",
+    "selectDate": "Sélectionner la date",
+    "selectTime": "Sélectionner l'heure",
+    "dentalClinic": "Clinique dentaire",
+    "contactInfo": "Informations de contact",
+    "selectedAppointment": "Rendez-vous sélectionné",
     "name": "Nom complet",
     "phone": "Numéro de téléphone",
     "namePlaceholder": "Entrez votre nom complet",
     "phonePlaceholder": "Entrez votre numéro de téléphone",
+    "phoneFormat": "Commençant par 0, ex: 05XXXXXXXXX",
+    "appointmentInfo": "Votre demande de rendez-vous sera reçue et vous serez appelé dès que possible.",
+    "completeAppointment": "Compléter le rendez-vous",
+    "closed": "Fermé",
+    "next": "Continuer",
+    "previous": "Retour",
+    "book": "Prendre rendez-vous",
     "submit": "Soumettre le rendez-vous",
     "submitting": "Soumission...",
-    "success": "Rendez-vous soumis avec succès!",
+    "success": "Votre demande de rendez-vous a été reçue avec succès!",
     "error": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Informations actuelles sur la santé dentaire et les méthodes de traitement",
+    "pageTitle": "Blog - Hospitadent",
+    "pageDescription": "Santé dentaire, méthodes de traitement et informations actuelles sur la dentisterie. Conseils et recommandations de nos dentistes experts.",
+    "pageKeywords": "blog santé dentaire, informations traitement dentaire, articles dentisterie, santé bucco-dentaire, soins dentaires",
+    "by": "Par:",
+    "readMore": "Lire la suite",
+    "loadMore": "Charger plus",
+    "categories": {
+      "dentalHealth": "Santé dentaire",
+      "orthodontics": "Orthodontie",
+      "implant": "Implant",
+      "cosmetic": "Dentisterie esthétique",
+      "pediatric": "Dentisterie pédiatrique",
+      "technology": "Technologie"
+    },
+    "post1": {
+      "title": "Importance des soins dentaires quotidiens",
+      "excerpt": "Apprenez comment votre routine de soins quotidiens devrait être pour des dents saines.",
+      "content": "Les soins dentaires quotidiens sont la base de la santé bucco-dentaire. Vous pouvez prévenir les problèmes dentaires avec des techniques de brossage appropriées, l'utilisation de fil dentaire et des contrôles réguliers.",
+      "author": "Dr. Ahmet Yılmaz"
+    },
+    "post2": {
+      "title": "Processus de traitement orthodontique",
+      "excerpt": "Que se passe-t-il pendant le traitement orthodontique et quel chemin est suivi?",
+      "content": "Le traitement orthodontique est un processus à long terme appliqué pour aligner correctement les dents. La conformité du patient est très importante dans ce processus.",
+      "author": "Dr. Ayşe Demir"
+    },
+    "post3": {
+      "title": "Ce que vous devez savoir sur le traitement d'implant",
+      "excerpt": "Comment le traitement d'implant est-il effectué et à qui peut-il être appliqué?",
+      "content": "Le traitement d'implant est une méthode de traitement moderne qui offre des solutions permanentes pour remplacer les dents manquantes. Informations détaillées sur le processus chirurgical et ses conséquences.",
+      "author": "Dr. Mehmet Kaya"
+    },
+    "post4": {
+      "title": "Conception de sourire et dentisterie esthétique",
+      "excerpt": "Solutions de dentisterie esthétique pour un sourire parfait.",
+      "content": "La conception de sourire est un plan de traitement complet qui améliore l'apparence esthétique des dents selon la structure faciale de la personne.",
+      "author": "Dr. Fatma Özkan"
+    },
+    "post5": {
+      "title": "Santé dentaire chez les enfants",
+      "excerpt": "Ce que les parents doivent savoir pour la santé dentaire de leurs enfants.",
+      "content": "La santé dentaire chez les enfants est assurée par des soins réguliers et des contrôles dès le plus jeune âge. Le rôle des parents est très important.",
+      "author": "Dr. Ali Çelik"
+    },
+    "post6": {
+      "title": "Technologies de dentisterie numérique",
+      "excerpt": "Technologies numériques utilisées dans la dentisterie moderne.",
+      "content": "La dentisterie numérique offre des technologies innovantes qui accélèrent les processus de traitement et augmentent le confort du patient.",
+      "author": "Dr. Zeynep Arslan"
+    }
   },
   "common": {
     "loading": "Chargement...",

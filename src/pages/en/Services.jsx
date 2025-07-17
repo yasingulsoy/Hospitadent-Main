@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
 const Services = () => {
-  const { t } = useTranslation();
 
   const services = [
     {

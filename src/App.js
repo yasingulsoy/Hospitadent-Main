@@ -18,12 +18,23 @@ const AnlasmaliKurumlar = lazy(() => import('./pages/AnlasmaliKurumlar'));
 const Academy = lazy(() => import('./pages/Academy'));
 const Awards = lazy(() => import('./pages/Awards'));
 const CorporateIdentity = lazy(() => import('./pages/CorporateIdentity'));
+const Blog = lazy(() => import('./pages/Blog'));
 
-const Placeholder = ({ lang }) => (
-  <div className="min-h-[60vh] flex flex-col items-center justify-center text-3xl font-bold text-blue-700">
-    {lang} Sayfası (İçerik ve görseller buraya gelecek)
-  </div>
-);
+// Dil sayfaları için lazy loading
+const EnAbout = lazy(() => import('./pages/en/About'));
+const EnServices = lazy(() => import('./pages/en/Services'));
+const FrAbout = lazy(() => import('./pages/fr/About'));
+const FrServices = lazy(() => import('./pages/fr/Services'));
+const DeAbout = lazy(() => import('./pages/de/About'));
+const DeServices = lazy(() => import('./pages/de/Services'));
+const RuAbout = lazy(() => import('./pages/ru/About'));
+const RuServices = lazy(() => import('./pages/ru/Services'));
+const EsAbout = lazy(() => import('./pages/es/About'));
+const EsServices = lazy(() => import('./pages/es/Services'));
+const ArAbout = lazy(() => import('./pages/ar/About'));
+const ArServices = lazy(() => import('./pages/ar/Services'));
+
+
 
 function App() {
   return (
@@ -78,6 +89,7 @@ function App() {
         {/* Arama Sonuçları Sayfası */}
         <Route path="/search" element={<SearchResults />} />
         
+        {/* İngilizce Sayfalar */}
         <Route path="/en" element={
           <>
             <Home />
@@ -89,11 +101,83 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/fr" element={<Placeholder lang="Français" />} />
-        <Route path="/de" element={<Placeholder lang="Deutsch" />} />
-        <Route path="/ru" element={<Placeholder lang="Русский" />} />
-        <Route path="/es" element={<Placeholder lang="Español" />} />
-        <Route path="/sa" element={<Placeholder lang="العربية" />} />
+        <Route path="/en/about" element={<EnAbout />} />
+        <Route path="/en/services" element={<EnServices />} />
+        
+        {/* Fransızca Sayfalar */}
+        <Route path="/fr" element={
+          <>
+            <Home />
+            <About />
+            <Services />
+            <Process />
+            <Clients />
+            <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path="/fr/about" element={<FrAbout />} />
+        <Route path="/fr/services" element={<FrServices />} />
+        
+        {/* Almanca Sayfalar */}
+        <Route path="/de" element={
+          <>
+            <Home />
+            <About />
+            <Services />
+            <Process />
+            <Clients />
+            <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path="/de/about" element={<DeAbout />} />
+        <Route path="/de/services" element={<DeServices />} />
+        
+        {/* Rusça Sayfalar */}
+        <Route path="/ru" element={
+          <>
+            <Home />
+            <About />
+            <Services />
+            <Process />
+            <Clients />
+            <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path="/ru/about" element={<RuAbout />} />
+        <Route path="/ru/services" element={<RuServices />} />
+        
+        {/* İspanyolca Sayfalar */}
+        <Route path="/es" element={
+          <>
+            <Home />
+            <About />
+            <Services />
+            <Process />
+            <Clients />
+            <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path="/es/about" element={<EsAbout />} />
+        <Route path="/es/services" element={<EsServices />} />
+        
+        {/* Arapça Sayfalar */}
+        <Route path="/ar" element={
+          <>
+            <Home />
+            <About />
+            <Services />
+            <Process />
+            <Clients />
+            <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path="/ar/about" element={<ArAbout />} />
+        <Route path="/ar/services" element={<ArServices />} />
         <Route path="/hasta-memnuniyet-videolari" element={<HastaMemnuniyetVideolari />} />
         <Route path="/hasta-yorumlari" element={<HastaYorumlari />} />
         <Route path="/hospitadent-sosyal-sorumluluk" element={<HospitadentSosyalSorumluluk />} />
@@ -101,6 +185,7 @@ function App() {
         <Route path="/akademi" element={<Academy />} />
         <Route path="/odullerimiz" element={<Awards />} />
         <Route path="/kurumsal-kimlik" element={<CorporateIdentity />} />
+        <Route path="/blog" element={<Blog />} />
         </Routes>
       </Suspense>
     </HelmetProvider>

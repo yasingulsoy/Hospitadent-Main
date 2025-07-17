@@ -86,7 +86,7 @@ const Navbar = () => {
     } else {
       return languages.find(lang => lang.code === 'tr') || languages[0];
     }
-  }, [window.location.pathname]);
+  }, []);
   
   const [selectedLang, setSelectedLang] = useState(currentLanguage);
   

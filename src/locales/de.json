@@ -209,21 +209,83 @@
   },
   "appointment": {
     "title": "Online-Termin",
-    "step1": "Stadt auswählen",
-    "step2": "Filiale auswählen",
-    "step3": "Arzt auswählen",
-    "step4": "Termin vereinbaren",
-    "next": "Weiter",
-    "previous": "Zurück",
-    "book": "Termin vereinbaren",
+    "selectCity": "Stadt auswählen",
+    "selectBranch": "Filiale auswählen",
+    "selectDoctor": "Arzt auswählen",
+    "selectDate": "Datum auswählen",
+    "selectTime": "Zeit auswählen",
+    "dentalClinic": "Zahnklinik",
+    "contactInfo": "Kontaktinformationen",
+    "selectedAppointment": "Ausgewählter Termin",
     "name": "Vollständiger Name",
     "phone": "Telefonnummer",
     "namePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
     "phonePlaceholder": "Geben Sie Ihre Telefonnummer ein",
+    "phoneFormat": "Beginnend mit 0, z.B.: 05XXXXXXXXX",
+    "appointmentInfo": "Ihr Terminantrag wird entgegengenommen und Sie werden so schnell wie möglich angerufen.",
+    "completeAppointment": "Termin abschließen",
+    "closed": "Geschlossen",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "book": "Termin vereinbaren",
     "submit": "Termin einreichen",
     "submitting": "Wird eingereicht...",
-    "success": "Termin erfolgreich eingereicht!",
+    "success": "Ihr Terminantrag wurde erfolgreich entgegengenommen!",
     "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Aktuelle Informationen über Zahngesundheit und Behandlungsmethoden",
+    "pageTitle": "Blog - Hospitadent",
+    "pageDescription": "Zahngesundheit, Behandlungsmethoden und aktuelle Zahnmedizin-Informationen. Tipps und Ratschläge von unseren Experten-Zahnärzten.",
+    "pageKeywords": "Zahngesundheit Blog, Zahnbehandlung Informationen, Zahnmedizin Artikel, Mundgesundheit, Zahnpflege",
+    "by": "Von:",
+    "readMore": "Weiterlesen",
+    "loadMore": "Mehr laden",
+    "categories": {
+      "dentalHealth": "Zahngesundheit",
+      "orthodontics": "Kieferorthopädie",
+      "implant": "Implantat",
+      "cosmetic": "Ästhetische Zahnmedizin",
+      "pediatric": "Kinderzahnmedizin",
+      "technology": "Technologie"
+    },
+    "post1": {
+      "title": "Bedeutung der täglichen Zahnpflege",
+      "excerpt": "Erfahren Sie, wie Ihre tägliche Pflegeroutine für gesunde Zähne sein sollte.",
+      "content": "Tägliche Zahnpflege ist die Grundlage der Mundgesundheit. Sie können Zahnprobleme mit richtigen Putztechniken, Zahnseide und regelmäßigen Kontrollen vorbeugen.",
+      "author": "Dr. Ahmet Yılmaz"
+    },
+    "post2": {
+      "title": "Kieferorthopädischer Behandlungsprozess",
+      "excerpt": "Was passiert während der kieferorthopädischen Behandlung und welcher Weg wird verfolgt?",
+      "content": "Kieferorthopädische Behandlung ist ein langfristiger Prozess, der angewendet wird, um Zähne richtig auszurichten. Die Patientencompliance ist in diesem Prozess sehr wichtig.",
+      "author": "Dr. Ayşe Demir"
+    },
+    "post3": {
+      "title": "Was Sie über Implantatbehandlung wissen müssen",
+      "excerpt": "Wie wird die Implantatbehandlung durchgeführt und wem kann sie angewendet werden?",
+      "content": "Implantatbehandlung ist eine moderne Behandlungsmethode, die dauerhafte Lösungen zum Ersetzen fehlender Zähne bietet. Detaillierte Informationen über den chirurgischen Prozess und die Nachwirkungen.",
+      "author": "Dr. Mehmet Kaya"
+    },
+    "post4": {
+      "title": "Lächeldesign und ästhetische Zahnmedizin",
+      "excerpt": "Ästhetische Zahnmedizin-Lösungen für perfektes Lächeln.",
+      "content": "Lächeldesign ist ein umfassender Behandlungsplan, der das ästhetische Erscheinungsbild der Zähne entsprechend der Gesichtsstruktur der Person verbessert.",
+      "author": "Dr. Fatma Özkan"
+    },
+    "post5": {
+      "title": "Zahngesundheit bei Kindern",
+      "excerpt": "Was Eltern für die Zahngesundheit ihrer Kinder wissen müssen.",
+      "content": "Zahngesundheit bei Kindern wird durch regelmäßige Pflege und Kontrollen von frühem Alter an sichergestellt. Die Rolle der Eltern ist sehr wichtig.",
+      "author": "Dr. Ali Çelik"
+    },
+    "post6": {
+      "title": "Digitale Zahnmedizin-Technologien",
+      "excerpt": "Digitale Technologien, die in der modernen Zahnmedizin verwendet werden.",
+      "content": "Digitale Zahnmedizin bietet innovative Technologien, die Behandlungsprozesse beschleunigen und den Patientenkomfort erhöhen.",
+      "author": "Dr. Zeynep Arslan"
+    }
   },
   "common": {
     "loading": "Wird geladen...",

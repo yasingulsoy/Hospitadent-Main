@@ -422,6 +422,12 @@ const Hero = () => {
       {/* Arka Plan Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none z-0"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+          minHeight: '100%',
+          minWidth: '100%'
+        }}
         src={require('../assets/videos/firat_okur.mp4')}
         autoPlay
         loop

@@ -116,7 +116,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
     } else {
       return languages.find(lang => lang.code === 'tr') || languages[0];
     }
-  }, [window.location.pathname]);
+  }, []);
 
   // Typewriter animasyon verileri - dinamik çeviri ile
   const useTypewriterWords = () => {

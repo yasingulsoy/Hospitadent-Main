@@ -209,21 +209,83 @@
   },
   "appointment": {
     "title": "Cita en línea",
-    "step1": "Seleccionar ciudad",
-    "step2": "Seleccionar sucursal",
-    "step3": "Seleccionar médico",
-    "step4": "Reservar cita",
-    "next": "Siguiente",
-    "previous": "Anterior",
-    "book": "Reservar cita",
+    "selectCity": "Seleccionar ciudad",
+    "selectBranch": "Seleccionar sucursal",
+    "selectDoctor": "Seleccionar médico",
+    "selectDate": "Seleccionar fecha",
+    "selectTime": "Seleccionar hora",
+    "dentalClinic": "Clínica dental",
+    "contactInfo": "Información de contacto",
+    "selectedAppointment": "Cita seleccionada",
     "name": "Nombre completo",
     "phone": "Número de teléfono",
     "namePlaceholder": "Ingrese su nombre completo",
     "phonePlaceholder": "Ingrese su número de teléfono",
+    "phoneFormat": "Comenzando con 0, ej: 05XXXXXXXXX",
+    "appointmentInfo": "Su solicitud de cita será recibida y será contactado lo antes posible.",
+    "completeAppointment": "Completar cita",
+    "closed": "Cerrado",
+    "next": "Continuar",
+    "previous": "Atrás",
+    "book": "Reservar cita",
     "submit": "Enviar cita",
     "submitting": "Enviando...",
-    "success": "¡Cita enviada exitosamente!",
+    "success": "¡Su solicitud de cita ha sido recibida exitosamente!",
     "error": "Ocurrió un error. Por favor inténtelo de nuevo."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Información actual sobre salud dental y métodos de tratamiento",
+    "pageTitle": "Blog - Hospitadent",
+    "pageDescription": "Salud dental, métodos de tratamiento e información actual sobre odontología. Consejos y recomendaciones de nuestros dentistas expertos.",
+    "pageKeywords": "blog salud dental, información tratamiento dental, artículos odontología, salud bucal, cuidado dental",
+    "by": "Por:",
+    "readMore": "Leer más",
+    "loadMore": "Cargar más",
+    "categories": {
+      "dentalHealth": "Salud Dental",
+      "orthodontics": "Ortodoncia",
+      "implant": "Implante",
+      "cosmetic": "Odontología Estética",
+      "pediatric": "Odontología Pediátrica",
+      "technology": "Tecnología"
+    },
+    "post1": {
+      "title": "Importancia del cuidado dental diario",
+      "excerpt": "Aprenda cómo debe ser su rutina de cuidado diario para dientes saludables.",
+      "content": "El cuidado dental diario es la base de la salud bucal. Puede prevenir problemas dentales con técnicas de cepillado apropiadas, uso de hilo dental y controles regulares.",
+      "author": "Dr. Ahmet Yılmaz"
+    },
+    "post2": {
+      "title": "Proceso de tratamiento ortodóntico",
+      "excerpt": "¿Qué sucede durante el tratamiento ortodóntico y qué camino se sigue?",
+      "content": "El tratamiento ortodóntico es un proceso a largo plazo aplicado para alinear correctamente los dientes. La conformidad del paciente es muy importante en este proceso.",
+      "author": "Dr. Ayşe Demir"
+    },
+    "post3": {
+      "title": "Lo que necesita saber sobre el tratamiento de implantes",
+      "excerpt": "¿Cómo se realiza el tratamiento de implantes y a quién se puede aplicar?",
+      "content": "El tratamiento de implantes es un método de tratamiento moderno que ofrece soluciones permanentes para reemplazar dientes faltantes. Información detallada sobre el proceso quirúrgico y las consecuencias.",
+      "author": "Dr. Mehmet Kaya"
+    },
+    "post4": {
+      "title": "Diseño de sonrisa y odontología estética",
+      "excerpt": "Soluciones de odontología estética para una sonrisa perfecta.",
+      "content": "El diseño de sonrisa es un plan de tratamiento integral que mejora la apariencia estética de los dientes según la estructura facial de la persona.",
+      "author": "Dr. Fatma Özkan"
+    },
+    "post5": {
+      "title": "Salud dental en niños",
+      "excerpt": "Lo que los padres necesitan saber para la salud dental de sus hijos.",
+      "content": "La salud dental en niños se asegura a través del cuidado regular y controles desde una edad temprana. El papel de los padres es muy importante.",
+      "author": "Dr. Ali Çelik"
+    },
+    "post6": {
+      "title": "Tecnologías de odontología digital",
+      "excerpt": "Tecnologías digitales utilizadas en la odontología moderna.",
+      "content": "La odontología digital ofrece tecnologías innovadoras que aceleran los procesos de tratamiento y aumentan el confort del paciente.",
+      "author": "Dr. Zeynep Arslan"
+    }
   },
   "common": {
     "loading": "Cargando...",
