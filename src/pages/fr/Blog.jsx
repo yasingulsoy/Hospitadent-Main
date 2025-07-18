@@ -71,7 +71,7 @@ const Blog = () => {
       />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl font-bold text-[#004876] mb-4">
             {t('blog.title')}
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -92,7 +92,7 @@ const Blog = () => {
                   </span>
                 </div>
                 
-                <h2 className="text-xl font-semibold text-gray-800 mb-3">
+                <h2 className="text-xl font-semibold text-[#004876] mb-3">
                   {post.title}
                 </h2>
                 

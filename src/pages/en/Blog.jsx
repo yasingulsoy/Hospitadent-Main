@@ -131,7 +131,7 @@ const Blog = () => {
                         {new Date(post.date).toLocaleDateString()}
                       </span>
                     </div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                    <h2 className="text-xl font-bold text-[#004876] mb-3 line-clamp-2">
                       {post.title}
                     </h2>
                     <p className="text-gray-600 mb-4 line-clamp-3">

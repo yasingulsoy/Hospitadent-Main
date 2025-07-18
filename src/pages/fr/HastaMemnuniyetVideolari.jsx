@@ -38,7 +38,7 @@ const HastaMemnuniyetVideolari = () => {
       />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl font-bold text-[#004876] mb-4">
             {t('patientSatisfaction.title')}
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -60,7 +60,7 @@ const HastaMemnuniyetVideolari = () => {
                 </video>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <h3 className="text-xl font-semibold text-[#004876] mb-2">
                   {video.title}
                 </h3>
                 <p className="text-gray-600">
@@ -72,7 +72,7 @@ const HastaMemnuniyetVideolari = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          <h2 className="text-2xl font-bold text-[#004876] mb-6">
             {t('patientSatisfaction.whyChooseUs')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -82,7 +82,7 @@ const HastaMemnuniyetVideolari = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-[#004876] mb-2">
                 {t('patientSatisfaction.experience')}
               </h3>
               <p className="text-gray-600">
@@ -95,7 +95,7 @@ const HastaMemnuniyetVideolari = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-[#004876] mb-2">
                 {t('patientSatisfaction.quality')}
               </h3>
               <p className="text-gray-600">
@@ -108,7 +108,7 @@ const HastaMemnuniyetVideolari = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-[#004876] mb-2">
                 {t('patientSatisfaction.care')}
               </h3>
               <p className="text-gray-600">

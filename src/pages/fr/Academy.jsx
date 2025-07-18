@@ -14,7 +14,7 @@ const Academy = () => {
       />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl font-bold text-[#004876] mb-4">
             {t('academy.title')}
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -24,7 +24,7 @@ const Academy = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl font-bold text-[#004876] mb-4">
               {t('academy.education.title')}
             </h2>
             <p className="text-gray-600 mb-6">
@@ -53,7 +53,7 @@ const Academy = () => {
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl font-bold text-[#004876] mb-4">
               {t('academy.research.title')}
             </h2>
             <p className="text-gray-600 mb-6">
@@ -83,7 +83,7 @@ const Academy = () => {
         </div>
 
         <div className="bg-blue-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl font-bold text-[#004876] mb-4">
             {t('academy.joinUs.title')}
           </h2>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">

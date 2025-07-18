@@ -69,7 +69,7 @@ const SearchResults = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            <h1 className="text-3xl font-bold text-[#004876] mb-4">
               {t('searchResults.title')}
             </h1>
             {query && (
@@ -106,7 +106,7 @@ const SearchResults = () => {
                 <div key={result.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                      <h2 className="text-xl font-semibold text-[#004876] mb-2">
                         <a href={result.url} className="hover:text-blue-600 transition-colors">
                           {result.title}
                         </a>

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Footer } from '../components';
 import SEOHead from '../components/SEO/SEOHead';
 import { getAllReviews } from '../data/reviewsData';
 
 const HastaYorumlari = () => {
+  const { t } = useTranslation();
   const reviewsData = getAllReviews();
 
   return (
@@ -30,8 +32,8 @@ const HastaYorumlari = () => {
         {/* Header */}
         <div className="bg-white/80 backdrop-blur-sm py-12 border-b border-gray-200">
           <div className="container mx-auto px-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
-              Hasta Yorumları
+            <h1 className="text-4xl font-bold text-[#004876] mb-4">
+              {t('reviews.title')}
             </h1>
           </div>
         </div>
@@ -52,9 +54,7 @@ const HastaYorumlari = () => {
                         {review.initials}
                       </div>
                       <div>
-                        <h3 className="text-[#004876] font-semibold text-sm">
-                          {review.name}
-                        </h3>
+                        <p className="font-semibold text-[#004876]">{review.name}</p>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
                             <svg key={i} className="w-3 h-3 fill-[#004876]" viewBox="0 0 20 20">

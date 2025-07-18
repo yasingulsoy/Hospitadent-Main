@@ -72,7 +72,7 @@ const HastaYorumlari = () => {
       />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl font-bold text-[#004876] mb-4">
             {t('patientReviews.title')}
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -99,7 +99,7 @@ const HastaYorumlari = () => {
                   {review.name.charAt(0)}
                 </div>
                 <div className="ml-3">
-                  <p className="font-semibold text-gray-800">{review.name}</p>
+                  <p className="font-semibold text-[#004876]">{review.name}</p>
                   <p className="text-sm text-gray-500">{t('patientReviews.verifiedPatient')}</p>
                 </div>
               </div>
@@ -108,21 +108,21 @@ const HastaYorumlari = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          <h2 className="text-2xl font-bold text-[#004876] mb-6">
             {t('patientReviews.overallRating')}
           </h2>
           <div className="flex items-center justify-center mb-4">
             <div className="flex mr-3">
               {renderStars(5)}
             </div>
-            <span className="text-2xl font-bold text-gray-800">5.0</span>
+            <span className="text-2xl font-bold text-[#004876]">5.0</span>
           </div>
           <p className="text-gray-600 mb-8">
             {t('patientReviews.basedOnReviews')} {reviews.length} {t('patientReviews.reviews')}
           </p>
           
           <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            <h3 className="text-xl font-semibold text-[#004876] mb-4">
               {t('patientReviews.shareExperience')}
             </h3>
             <p className="text-gray-600 mb-6">

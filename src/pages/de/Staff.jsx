@@ -143,7 +143,7 @@ const Staff = () => {
       />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl font-bold text-[#004876] mb-4">
             {t('staff.title')}
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -165,7 +165,7 @@ const Staff = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-semibold text-[#004876] mb-2">
                   {member.name}
                 </h3>
                 <p className="text-gray-600 text-sm">

@@ -206,7 +206,7 @@ const Admin = () => {
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center gap-3">
                 <img src={logo} alt="Hospitadent Admin" className="h-10 w-auto" />
-                <h1 className="text-2xl font-bold text-gray-900">Hospitadent Admin</h1>
+                <h1 className="text-2xl font-bold text-[#004876]">Hospitadent Admin</h1>
               </div>
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600">Hoş geldiniz, Admin</span>
@@ -309,7 +309,7 @@ const Admin = () => {
                     </div>
                     <div className="ml-4">
                       <p className="text-sm font-medium text-gray-600">Toplam Kullanıcı</p>
-                      <p className="text-2xl font-semibold text-gray-900">{analytics.totalUsers.toLocaleString()}</p>
+                      <p className="text-2xl font-semibold text-[#004876]">{analytics.totalUsers.toLocaleString()}</p>
                     </div>
                   </div>
                 </div>
@@ -321,7 +321,7 @@ const Admin = () => {
                     </div>
                     <div className="ml-4">
                       <p className="text-sm font-medium text-gray-600">Toplam Sayfa</p>
-                      <p className="text-2xl font-semibold text-gray-900">{analytics.totalPages}</p>
+                      <p className="text-2xl font-semibold text-[#004876]">{analytics.totalPages}</p>
                     </div>
                   </div>
                 </div>
@@ -333,7 +333,7 @@ const Admin = () => {
                     </div>
                     <div className="ml-4">
                       <p className="text-sm font-medium text-gray-600">Aylık Ziyaretçi</p>
-                      <p className="text-2xl font-semibold text-gray-900">{analytics.monthlyVisitors.toLocaleString()}</p>
+                      <p className="text-2xl font-semibold text-[#004876]">{analytics.monthlyVisitors.toLocaleString()}</p>
                     </div>
                   </div>
                 </div>
@@ -345,7 +345,7 @@ const Admin = () => {
                     </div>
                     <div className="ml-4">
                       <p className="text-sm font-medium text-gray-600">Sayfa Görüntüleme</p>
-                      <p className="text-2xl font-semibold text-gray-900">{analytics.pageViews.toLocaleString()}</p>
+                      <p className="text-2xl font-semibold text-[#004876]">{analytics.pageViews.toLocaleString()}</p>
                     </div>
                   </div>
                 </div>
@@ -354,21 +354,21 @@ const Admin = () => {
               {/* Charts Section */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="bg-white rounded-lg shadow-sm p-6">
-                  <h3 className="text-lg font-medium text-gray-900 mb-4">Ziyaretçi İstatistikleri</h3>
+                  <h3 className="text-lg font-medium text-[#004876] mb-4">Ziyaretçi İstatistikleri</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Bounce Rate</span>
-                      <span className="text-sm font-medium text-gray-900">{analytics.bounceRate}%</span>
+                      <span className="text-sm font-medium text-[#004876]">{analytics.bounceRate}%</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Ortalama Oturum Süresi</span>
-                      <span className="text-sm font-medium text-gray-900">{analytics.avgSessionDuration}</span>
+                      <span className="text-sm font-medium text-[#004876]">{analytics.avgSessionDuration}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-white rounded-lg shadow-sm p-6">
-                  <h3 className="text-lg font-medium text-gray-900 mb-4">Son Aktiviteler</h3>
+                  <h3 className="text-lg font-medium text-[#004876] mb-4">Son Aktiviteler</h3>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -393,7 +393,7 @@ const Admin = () => {
             <div className="bg-white rounded-lg shadow-sm">
               <div className="p-6 border-b border-gray-200">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <h2 className="text-lg font-medium text-gray-900 mb-4 sm:mb-0">Kullanıcı Yönetimi</h2>
+                  <h2 className="text-lg font-medium text-[#004876] mb-4 sm:mb-0">Kullanıcı Yönetimi</h2>
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
                     <FaPlus className="mr-2" />
                     Yeni Kullanıcı
@@ -455,7 +455,7 @@ const Admin = () => {
                         <tr key={user.id} className="hover:bg-gray-50">
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div>
-                              <div className="text-sm font-medium text-gray-900">{user.name}</div>
+                              <div className="text-sm font-medium text-[#004876]">{user.name}</div>
                               <div className="text-sm text-gray-500">{user.email}</div>
                             </div>
                           </td>
@@ -463,7 +463,7 @@ const Admin = () => {
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                               user.role === 'Admin' ? 'bg-red-100 text-red-800' :
                               user.role === 'Editor' ? 'bg-blue-100 text-blue-800' :
-                              'bg-gray-100 text-gray-800'
+                              'bg-gray-100 text-[#004876]'
                             }`}>
                               {user.role}
                             </span>
@@ -505,7 +505,7 @@ const Admin = () => {
             <div className="bg-white rounded-lg shadow-sm">
               <div className="p-6 border-b border-gray-200">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <h2 className="text-lg font-medium text-gray-900 mb-4 sm:mb-0">İçerik Yönetimi</h2>
+                  <h2 className="text-lg font-medium text-[#004876] mb-4 sm:mb-0">İçerik Yönetimi</h2>
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
                     <FaPlus className="mr-2" />
                     Yeni İçerik
@@ -569,7 +569,7 @@ const Admin = () => {
                       {filteredContent.map((item) => (
                         <tr key={item.id} className="hover:bg-gray-50">
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm font-medium text-gray-900">{item.title}</div>
+                            <div className="text-sm font-medium text-[#004876]">{item.title}</div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
@@ -616,11 +616,11 @@ const Admin = () => {
           {/* Settings Tab */}
           {activeTab === 'settings' && (
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <h2 className="text-lg font-medium text-gray-900 mb-6">Sistem Ayarları</h2>
+              <h2 className="text-lg font-medium text-[#004876] mb-6">Sistem Ayarları</h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-md font-medium text-gray-900 mb-4">Genel Ayarlar</h3>
+                  <h3 className="text-md font-medium text-[#004876] mb-4">Genel Ayarlar</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -646,7 +646,7 @@ const Admin = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-md font-medium text-gray-900 mb-4">E-posta Ayarları</h3>
+                  <h3 className="text-md font-medium text-[#004876] mb-4">E-posta Ayarları</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -672,7 +672,7 @@ const Admin = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-md font-medium text-gray-900 mb-4">Güvenlik Ayarları</h3>
+                  <h3 className="text-md font-medium text-[#004876] mb-4">Güvenlik Ayarları</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <input
@@ -682,7 +682,7 @@ const Admin = () => {
                         onChange={(e) => setTwoFactorEnabled(e.target.checked)}
                         className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="twoFactor" className="ml-2 block text-sm text-gray-900">
+                      <label htmlFor="twoFactor" className="ml-2 block text-sm text-[#004876]">
                         <FaShieldAlt className="inline mr-1 text-yellow-600" /> İki Faktörlü Kimlik Doğrulama
                       </label>
                     </div>
@@ -693,7 +693,7 @@ const Admin = () => {
                         defaultChecked={false} // Demo amaçlı
                         className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="sessionTimeout" className="ml-2 block text-sm text-gray-900">
+                      <label htmlFor="sessionTimeout" className="ml-2 block text-sm text-[#004876]">
                         Oturum Zaman Aşımı
                       </label>
                     </div>
