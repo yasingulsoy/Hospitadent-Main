@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Footer } from '../components';
 import SEOHead from '../components/SEO/SEOHead';
+import { blogPosts } from '../data/blogData';
 
 const Blog = () => {
   const { t } = useTranslation();
@@ -14,69 +16,7 @@ const Blog = () => {
     }, 100);
   }, []);
 
-  // Blog yazıları verisi
-  const blogPosts = [
-    {
-      id: 1,
-      title: t('blog.post1.title'),
-      excerpt: t('blog.post1.excerpt'),
-      content: t('blog.post1.content'),
-      author: t('blog.post1.author'),
-      date: '2024-01-15',
-      category: t('blog.categories.dentalHealth'),
-      image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=250&fit=crop'
-    },
-    {
-      id: 2,
-      title: t('blog.post2.title'),
-      excerpt: t('blog.post2.excerpt'),
-      content: t('blog.post2.content'),
-      author: t('blog.post2.author'),
-      date: '2024-01-10',
-      category: t('blog.categories.orthodontics'),
-      image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400&h=250&fit=crop'
-    },
-    {
-      id: 3,
-      title: t('blog.post3.title'),
-      excerpt: t('blog.post3.excerpt'),
-      content: t('blog.post3.content'),
-      author: t('blog.post3.author'),
-      date: '2024-01-05',
-      category: t('blog.categories.implant'),
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop'
-    },
-    {
-      id: 4,
-      title: t('blog.post4.title'),
-      excerpt: t('blog.post4.excerpt'),
-      content: t('blog.post4.content'),
-      author: t('blog.post4.author'),
-      date: '2023-12-28',
-      category: t('blog.categories.cosmetic'),
-      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=250&fit=crop'
-    },
-    {
-      id: 5,
-      title: t('blog.post5.title'),
-      excerpt: t('blog.post5.excerpt'),
-      content: t('blog.post5.content'),
-      author: t('blog.post5.author'),
-      date: '2023-12-20',
-      category: t('blog.categories.pediatric'),
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop'
-    },
-    {
-      id: 6,
-      title: t('blog.post6.title'),
-      excerpt: t('blog.post6.excerpt'),
-      content: t('blog.post6.content'),
-      author: t('blog.post6.author'),
-      date: '2023-12-15',
-      category: t('blog.categories.technology'),
-      image: 'https://images.unsplash.com/photo-1581595219315-a187dd40c322?w=400&h=250&fit=crop'
-    }
-  ];
+  // Blog yazıları verisi artık blogData.js'den geliyor
 
   return (
     <>
@@ -141,9 +81,12 @@ const Blog = () => {
                       <span className="text-sm text-gray-500">
                         {t('blog.by')} {post.author}
                       </span>
-                      <button className="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                      <Link 
+                        to={`/blog/${post.slug}`}
+                        className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                      >
                         {t('blog.readMore')} →
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </article>

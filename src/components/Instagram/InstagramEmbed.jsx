@@ -15,13 +15,14 @@ const InstagramEmbed = () => {
           </h2>
         </div>
 
-        {/* Instagram Embed */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Instagram Embed - Yatay Kaydırılabilir */}
+        <div className="relative w-full">
+          {/* Kaydırılabilir Container */}
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide px-2 py-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {/* Instagram Post 1 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
-                src="https://www.instagram.com/p/C8XxXxXxXxX/embed"
+                src="https://www.instagram.com/hospitadent/p/DJq7-ufoa_J/embed"
                 className="w-full h-96"
                 frameBorder="0"
                 scrolling="no"
@@ -30,9 +31,9 @@ const InstagramEmbed = () => {
             </div>
 
             {/* Instagram Post 2 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
-                src="https://www.instagram.com/p/C8YyYyYyYyY/embed"
+                src="https://www.instagram.com/hospitadent/p/DJmJSfhI2gL/embed"
                 className="w-full h-96"
                 frameBorder="0"
                 scrolling="no"
@@ -41,9 +42,75 @@ const InstagramEmbed = () => {
             </div>
 
             {/* Instagram Post 3 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
-                src="https://www.instagram.com/p/C8ZzZzZzZzZ/embed"
+                src="https://www.instagram.com/hospitadent/reel/DIVsy97I3IC/embed"
+                className="w-full h-96"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+              />
+            </div>
+
+            {/* Instagram Post 4 */}
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.instagram.com/hospitadent/p/DEPkK5FtV26/embed"
+                className="w-full h-96"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+              />
+            </div>
+
+            {/* Instagram Post 5 */}
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.instagram.com/hospitadent/p/DC1C-n5t13X/embed"
+                className="w-full h-96"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+              />
+            </div>
+
+            {/* Instagram Post 6 */}
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.instagram.com/hospitadent/p/DCOlRCtNyvb/embed"
+                className="w-full h-96"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+              />
+            </div>
+
+            {/* Instagram Post 7 */}
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.instagram.com/hospitadent/p/C-uvPkwt4Cm/embed"
+                className="w-full h-96"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+              />
+            </div>
+
+            {/* Instagram Post 8 */}
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.instagram.com/hospitadent/reel/C7REZYetVvr/embed"
+                className="w-full h-96"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+              />
+            </div>
+
+            {/* Instagram Post 9 */}
+            <div className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden">
+              <iframe
+                src="https://www.instagram.com/hospitadent/p/DJq7-ufoa_J/embed"
                 className="w-full h-96"
                 frameBorder="0"
                 scrolling="no"

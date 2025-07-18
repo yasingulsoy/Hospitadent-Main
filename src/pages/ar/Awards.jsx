@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Footer } from '../components';
+import { Footer } from '../../components';
 import { useTranslation } from 'react-i18next';
 
-const Awards = () => {
+const ArAwards = () => {
   const { t } = useTranslation();
 
   // Sayfa yüklendiğinde scroll'u aktif hale getir
@@ -14,7 +14,7 @@ const Awards = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50" dir="rtl">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm py-12 border-b border-gray-200">
         <div className="container mx-auto px-4">
@@ -44,4 +44,4 @@ const Awards = () => {
   );
 };
 
-export default Awards; 
+export default ArAwards; 

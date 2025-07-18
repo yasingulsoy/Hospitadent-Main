@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Footer } from '../components';
+import { Footer } from '../../components';
 import { useTranslation } from 'react-i18next';
 
-const Awards = () => {
+const RuAwards = () => {
   const { t } = useTranslation();
 
   // Sayfa yüklendiğinde scroll'u aktif hale getir
@@ -44,4 +44,4 @@ const Awards = () => {
   );
 };
 
-export default Awards; 
+export default RuAwards; 

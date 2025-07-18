@@ -148,7 +148,9 @@ const InstagramPostCard = ({ post }) => {
       {/* Video İkonu */}
       {post.mediaType === 'VIDEO' && (
         <div className="absolute top-3 right-3 bg-black bg-opacity-50 rounded-full p-2">
-          <FaInstagram className="text-white text-sm" />
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 001.447.894l2-2a1 1 0 000-1.788l-2-2z" />
+          </svg>
         </div>
       )}
     </div>

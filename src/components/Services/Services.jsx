@@ -1,49 +1,101 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import Heading from '../Heading'
 import ServiceItems from './ServiceItems'
 import { servicesData } from '../../data/data'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/navigation'
 
 const Services = () => {
   const { t } = useTranslation();
+  const scrollContainerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section name='services' className="py-8 md:py-20 bg-white scroll-pt-24 ">
-      <div className="w-full max-w-none px-0 relative">
-        <Heading  title={t('services.title')}/>
-        {/* Swiper ile otomatik ve elle kaydırılabilen hizmetler */}
-        <Swiper
-          modules={[Autoplay, Navigation]}
-          spaceBetween={8}
-          slidesPerView={'auto'}
-          loop={true}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          grabCursor={true}
-          navigation={{
-            nextEl: '.services-next',
-            prevEl: '.services-prev',
-          }}
-          style={{paddingBottom: 16}}
-        >
-          {servicesData.map((item, index) => (
-            <SwiperSlide key={index} style={{minWidth: 200, maxWidth: 280, width: '100%', height: 280, display: 'flex', flexDirection: 'column'}}>
-              <ServiceItems item={item} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        {/* Modern Ok Butonları */}
-        <button className="services-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-blue-100 hover:bg-blue-50 hover:scale-110 transition-all duration-300 w-12 h-12 rounded-full flex items-center justify-center text-blue-700 text-2xl group" aria-label={t('services.prev')}>
-          <svg className="w-6 h-6 group-hover:text-[#2bb3ea] transition" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-        </button>
-        <button className="services-next absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg border border-blue-100 hover:bg-blue-50 hover:scale-110 transition-all duration-300 w-12 h-12 rounded-full flex items-center justify-center text-blue-700 text-2xl group" aria-label={t('services.next')}>
-          <svg className="w-6 h-6 group-hover:text-[#2bb3ea] transition" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-        </button>
+    <section name='services' className="py-16 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+      <div className="px-2">
+        {/* Başlık */}
+        <div className="text-center mb-12 px-4">
+          <h2 className="text-4xl font-bold text-center text-[#0f4f78]">
+            {t('services.title')}
+          </h2>
+        </div>
+
+        {/* Yatay Kaydırılabilir Hizmetler - Instagram Feed ile Aynı Tasarım */}
+        <div className="relative w-full">
+          {/* Sol Kaydırma Butonu */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+          >
+            <FaChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Sağ Kaydırma Butonu */}
+          <button
+            onClick={scrollRight}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+          >
+            <FaChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Kaydırılabilir Container - Instagram Feed ile Aynı Stil */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-3 overflow-x-auto scrollbar-hide px-2 py-2"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {servicesData.map((item, index) => (
+              <ServiceCard key={index} item={item} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
 }
+
+// Hizmet Kartı - Instagram Post ile Aynı Boyut ve Tasarım
+const ServiceCard = ({ item }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  return (
+    <div
+      className="group relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer bg-white"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* İkon Arka Planı */}
+      <div className="w-full h-full bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-8">
+        <img 
+          src={item.img} 
+          className="w-24 h-24 object-contain transition-transform duration-300 group-hover:scale-110" 
+          alt={item.title}
+          style={{filter: 'invert(19%) sepia(97%) saturate(1812%) hue-rotate(170deg) brightness(97%) contrast(101%)'}}
+        />
+      </div>
+      
+      {/* Hover Overlay */}
+      <div className={`absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center`}>
+        <div className={`transform transition-all duration-300 ${isHovered ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
+          <div className="text-center text-white">
+            <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+            <p className="text-sm px-4">{item.desc}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Services
