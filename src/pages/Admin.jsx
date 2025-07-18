@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaUsers, FaFileAlt, FaChartBar, FaCog, FaSignOutAlt, FaEye, FaEdit, FaTrash, FaPlus, FaSearch, FaFilter, FaMoon, FaSun, FaShieldAlt } from 'react-icons/fa';
+import { FaUsers, FaFileAlt, FaChartBar, FaCog, FaSignOutAlt, FaEye, FaEdit, FaTrash, FaPlus, FaSearch, FaFilter, FaShieldAlt } from 'react-icons/fa';
 import logo from '../assets/logo.webp';
 
 const SESSION_TIMEOUT_MINUTES = 30; // 30 dakika sonra otomatik çıkış
@@ -12,7 +12,6 @@ const Admin = () => {
   const [password, setPassword] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('adminDarkMode') === 'true');
   const [sessionWarning, setSessionWarning] = useState(false);
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(false); // Demo amaçlı
 
@@ -40,17 +39,6 @@ const Admin = () => {
     bounceRate: 32.5,
     avgSessionDuration: '2:45'
   });
-
-  // Dark mode toggle
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('adminDarkMode', 'true');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('adminDarkMode', 'false');
-    }
-  }, [darkMode]);
 
   // Oturum süresi kontrolü
   useEffect(() => {
@@ -112,38 +100,38 @@ const Admin = () => {
           <meta name="description" content="Hospitadent Admin Panel Girişi" />
         </Helmet>
         
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 w-full max-w-md">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
             <div className="text-center mb-8">
               <img src={logo} alt="Hospitadent Admin" className="h-12 mx-auto mb-2" />
-              <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">Admin Panel</h1>
-              <p className="text-gray-600 dark:text-gray-300">Hospitadent Yönetim Paneli</p>
+              <h1 className="text-3xl font-bold text-gray-800 mb-2">Admin Panel</h1>
+              <p className="text-gray-600">Hospitadent Yönetim Paneli</p>
             </div>
             
             <form onSubmit={handleLogin} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
                   Kullanıcı Adı
                 </label>
                 <input
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Kullanıcı adınızı girin"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
                   Şifre
                 </label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Şifrenizi girin"
                   required
                 />
@@ -157,7 +145,7 @@ const Admin = () => {
               </button>
             </form>
             
-            <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+            <div className="mt-6 text-center text-sm text-gray-500">
               <p>Demo Giriş Bilgileri:</p>
               <p>Kullanıcı: admin</p>
               <p>Şifre: admin123</p>
@@ -175,31 +163,23 @@ const Admin = () => {
         <meta name="description" content="Hospitadent Admin Panel" />
       </Helmet>
 
-      <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+      <div className="min-h-screen bg-gray-50">
         {/* Header */}
-        <header className="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700">
+        <header className="bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center gap-3">
                 <img src={logo} alt="Hospitadent Admin" className="h-10 w-auto" />
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Hospitadent Admin</h1>
+                <h1 className="text-2xl font-bold text-gray-900">Hospitadent Admin</h1>
               </div>
               <div className="flex items-center space-x-4">
-                <button
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="flex items-center px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition"
-                  title={darkMode ? 'Açık Mod' : 'Karanlık Mod'}
-                >
-                  {darkMode ? <FaSun className="mr-2" /> : <FaMoon className="mr-2" />}
-                  {darkMode ? 'Açık Mod' : 'Karanlık Mod'}
-                </button>
-                <span className="text-gray-600 dark:text-gray-300">Hoş geldiniz, Admin</span>
+                <span className="text-gray-600">Hoş geldiniz, Admin</span>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                  className="flex items-center space-x-2 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium text-base shadow-md"
                 >
-                  <FaSignOutAlt />
-                  <span>Çıkış</span>
+                  <FaSignOutAlt className="text-lg" />
+                  <span>Çıkış Yap</span>
                 </button>
               </div>
             </div>
@@ -208,7 +188,7 @@ const Admin = () => {
 
         {/* Oturum süresi/güvenlik uyarısı */}
         {sessionWarning && (
-          <div className="fixed top-0 left-0 w-full z-50 bg-yellow-400 text-yellow-900 text-center py-3 font-semibold shadow-lg animate-pulse">
+          <div className="fixed top-0 left-0 w-full z-50 bg-red-500 text-white text-center py-3 font-semibold shadow-lg animate-pulse">
             Oturumunuz sona ermek üzere! 10 saniye içinde otomatik çıkış yapılacak.
           </div>
         )}
@@ -216,14 +196,14 @@ const Admin = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* 2FA Uyarısı */}
           {!twoFactorEnabled && (
-            <div className="mb-6 flex items-center gap-3 bg-yellow-100 dark:bg-yellow-900 border-l-4 border-yellow-500 p-4 rounded shadow">
-              <FaShieldAlt className="text-yellow-600 dark:text-yellow-300 text-2xl" />
-              <span className="text-yellow-800 dark:text-yellow-100 font-medium">
+            <div className="mb-6 flex items-center gap-3 bg-blue-50 border-l-4 border-blue-500 p-4 rounded shadow">
+              <FaShieldAlt className="text-blue-600 text-2xl" />
+              <span className="text-blue-800 font-medium">
                 Güvenliğiniz için iki faktörlü kimlik doğrulamayı (2FA) etkinleştirmenizi öneririz.
               </span>
               <button
                 onClick={() => setTwoFactorEnabled(true)}
-                className="ml-auto bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded transition"
+                className="ml-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition"
               >
                 2FA'yı Etkinleştir
               </button>
@@ -231,14 +211,14 @@ const Admin = () => {
           )}
 
           {/* Navigation Tabs */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm mb-8">
+          <div className="bg-white rounded-lg shadow-sm mb-8">
             <nav className="flex space-x-8 px-6">
               <button
                 onClick={() => setActiveTab('dashboard')}
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'dashboard'
-                    ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
                 <FaChartBar className="inline mr-2" />
@@ -248,8 +228,8 @@ const Admin = () => {
                 onClick={() => setActiveTab('users')}
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'users'
-                    ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
                 <FaUsers className="inline mr-2" />
@@ -259,8 +239,8 @@ const Admin = () => {
                 onClick={() => setActiveTab('content')}
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'content'
-                    ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
                 <FaFileAlt className="inline mr-2" />
@@ -270,8 +250,8 @@ const Admin = () => {
                 onClick={() => setActiveTab('settings')}
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'settings'
-                    ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
                 <FaCog className="inline mr-2" />
@@ -285,50 +265,50 @@ const Admin = () => {
             <div className="space-y-6">
               {/* Stats Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <div className="bg-white rounded-lg shadow-sm p-6">
                   <div className="flex items-center">
                     <div className="p-3 rounded-full bg-blue-100 text-blue-600">
                       <FaUsers className="w-6 h-6" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-300">Toplam Kullanıcı</p>
-                      <p className="text-2xl font-semibold text-gray-900 dark:text-white">{analytics.totalUsers.toLocaleString()}</p>
+                      <p className="text-sm font-medium text-gray-600">Toplam Kullanıcı</p>
+                      <p className="text-2xl font-semibold text-gray-900">{analytics.totalUsers.toLocaleString()}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <div className="bg-white rounded-lg shadow-sm p-6">
                   <div className="flex items-center">
                     <div className="p-3 rounded-full bg-green-100 text-green-600">
                       <FaFileAlt className="w-6 h-6" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-300">Toplam Sayfa</p>
-                      <p className="text-2xl font-semibold text-gray-900 dark:text-white">{analytics.totalPages}</p>
+                      <p className="text-sm font-medium text-gray-600">Toplam Sayfa</p>
+                      <p className="text-2xl font-semibold text-gray-900">{analytics.totalPages}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <div className="bg-white rounded-lg shadow-sm p-6">
                   <div className="flex items-center">
                     <div className="p-3 rounded-full bg-purple-100 text-purple-600">
                       <FaChartBar className="w-6 h-6" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-300">Aylık Ziyaretçi</p>
-                      <p className="text-2xl font-semibold text-gray-900 dark:text-white">{analytics.monthlyVisitors.toLocaleString()}</p>
+                      <p className="text-sm font-medium text-gray-600">Aylık Ziyaretçi</p>
+                      <p className="text-2xl font-semibold text-gray-900">{analytics.monthlyVisitors.toLocaleString()}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                <div className="bg-white rounded-lg shadow-sm p-6">
                   <div className="flex items-center">
                     <div className="p-3 rounded-full bg-orange-100 text-orange-600">
                       <FaChartBar className="w-6 h-6" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-300">Sayfa Görüntüleme</p>
-                      <p className="text-2xl font-semibold text-gray-900 dark:text-white">{analytics.pageViews.toLocaleString()}</p>
+                      <p className="text-sm font-medium text-gray-600">Sayfa Görüntüleme</p>
+                      <p className="text-2xl font-semibold text-gray-900">{analytics.pageViews.toLocaleString()}</p>
                     </div>
                   </div>
                 </div>
@@ -336,34 +316,34 @@ const Admin = () => {
 
               {/* Charts Section */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Ziyaretçi İstatistikleri</h3>
+                <div className="bg-white rounded-lg shadow-sm p-6">
+                  <h3 className="text-lg font-medium text-gray-900 mb-4">Ziyaretçi İstatistikleri</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600 dark:text-gray-300">Bounce Rate</span>
-                      <span className="text-sm font-medium text-gray-900 dark:text-white">{analytics.bounceRate}%</span>
+                      <span className="text-sm text-gray-600">Bounce Rate</span>
+                      <span className="text-sm font-medium text-gray-900">{analytics.bounceRate}%</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600 dark:text-gray-300">Ortalama Oturum Süresi</span>
-                      <span className="text-sm font-medium text-gray-900 dark:text-white">{analytics.avgSessionDuration}</span>
+                      <span className="text-sm text-gray-600">Ortalama Oturum Süresi</span>
+                      <span className="text-sm font-medium text-gray-900">{analytics.avgSessionDuration}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Son Aktiviteler</h3>
+                <div className="bg-white rounded-lg shadow-sm p-6">
+                  <h3 className="text-lg font-medium text-gray-900 mb-4">Son Aktiviteler</h3>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-sm text-gray-600 dark:text-gray-300">Yeni blog yazısı eklendi</span>
+                      <span className="text-sm text-gray-600">Yeni blog yazısı eklendi</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span className="text-sm text-gray-600 dark:text-gray-300">Kullanıcı kaydı yapıldı</span>
+                      <span className="text-sm text-gray-600">Kullanıcı kaydı yapıldı</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      <span className="text-sm text-gray-600 dark:text-gray-300">Sayfa güncellendi</span>
+                      <span className="text-sm text-gray-600">Sayfa güncellendi</span>
                     </div>
                   </div>
                 </div>
@@ -373,10 +353,10 @@ const Admin = () => {
 
           {/* Users Tab */}
           {activeTab === 'users' && (
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+            <div className="bg-white rounded-lg shadow-sm">
+              <div className="p-6 border-b border-gray-200">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4 sm:mb-0">Kullanıcı Yönetimi</h2>
+                  <h2 className="text-lg font-medium text-gray-900 mb-4 sm:mb-0">Kullanıcı Yönetimi</h2>
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
                     <FaPlus className="mr-2" />
                     Yeni Kullanıcı
@@ -394,7 +374,7 @@ const Admin = () => {
                       placeholder="Kullanıcı ara..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                      className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
                   <div className="flex items-center space-x-2">
@@ -402,7 +382,7 @@ const Admin = () => {
                     <select
                       value={filterStatus}
                       onChange={(e) => setFilterStatus(e.target.value)}
-                      className="border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                      className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="all">Tüm Durumlar</option>
                       <option value="active">Aktif</option>
@@ -413,63 +393,63 @@ const Admin = () => {
 
                 {/* Users Table */}
                 <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead className="bg-gray-50 dark:bg-gray-800">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-100">
                       <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Kullanıcı
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Rol
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Durum
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Son Giriş
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           İşlemler
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tbody className="bg-white divide-y divide-gray-200">
                       {filteredUsers.map((user) => (
-                        <tr key={user.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <tr key={user.id} className="hover:bg-gray-50">
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div>
-                              <div className="text-sm font-medium text-gray-900 dark:text-white">{user.name}</div>
-                              <div className="text-sm text-gray-500 dark:text-gray-300">{user.email}</div>
+                              <div className="text-sm font-medium text-gray-900">{user.name}</div>
+                              <div className="text-sm text-gray-500">{user.email}</div>
                             </div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                              user.role === 'Admin' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' :
-                              user.role === 'Editor' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' :
-                              'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
+                              user.role === 'Admin' ? 'bg-red-100 text-red-800' :
+                              user.role === 'Editor' ? 'bg-blue-100 text-blue-800' :
+                              'bg-gray-100 text-gray-800'
                             }`}>
                               {user.role}
                             </span>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                              user.status === 'active' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
+                              user.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                             }`}>
                               {user.status === 'active' ? 'Aktif' : 'Pasif'}
                             </span>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {user.lastLogin}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <div className="flex space-x-2">
-                              <button className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
+                              <button className="text-blue-600 hover:text-blue-900">
                                 <FaEye />
                               </button>
-                              <button className="text-green-600 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300">
+                              <button className="text-green-600 hover:text-green-900">
                                 <FaEdit />
                               </button>
-                              <button className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">
+                              <button className="text-red-600 hover:text-red-900">
                                 <FaTrash />
                               </button>
                             </div>
@@ -485,10 +465,10 @@ const Admin = () => {
 
           {/* Content Tab */}
           {activeTab === 'content' && (
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+            <div className="bg-white rounded-lg shadow-sm">
+              <div className="p-6 border-b border-gray-200">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4 sm:mb-0">İçerik Yönetimi</h2>
+                  <h2 className="text-lg font-medium text-gray-900 mb-4 sm:mb-0">İçerik Yönetimi</h2>
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
                     <FaPlus className="mr-2" />
                     Yeni İçerik
@@ -506,7 +486,7 @@ const Admin = () => {
                       placeholder="İçerik ara..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                      className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
                   <div className="flex items-center space-x-2">
@@ -514,7 +494,7 @@ const Admin = () => {
                     <select
                       value={filterStatus}
                       onChange={(e) => setFilterStatus(e.target.value)}
-                      className="border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                      className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="all">Tüm Durumlar</option>
                       <option value="published">Yayınlanmış</option>
@@ -525,64 +505,64 @@ const Admin = () => {
 
                 {/* Content Table */}
                 <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead className="bg-gray-50 dark:bg-gray-800">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-100">
                       <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Başlık
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Tür
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Durum
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Yazar
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           Son Güncelleme
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                           İşlemler
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tbody className="bg-white divide-y divide-gray-200">
                       {filteredContent.map((item) => (
-                        <tr key={item.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <tr key={item.id} className="hover:bg-gray-50">
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">{item.title}</div>
+                            <div className="text-sm font-medium text-gray-900">{item.title}</div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                              item.type === 'page' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                              item.type === 'page' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
                             }`}>
                               {item.type === 'page' ? 'Sayfa' : 'Blog'}
                             </span>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                              item.status === 'published' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
+                              item.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
                             }`}>
                               {item.status === 'published' ? 'Yayınlanmış' : 'Taslak'}
                             </span>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {item.author}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {item.lastModified}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <div className="flex space-x-2">
-                              <button className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
+                              <button className="text-blue-600 hover:text-blue-900">
                                 <FaEye />
                               </button>
-                              <button className="text-green-600 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300">
+                              <button className="text-green-600 hover:text-green-900">
                                 <FaEdit />
                               </button>
-                              <button className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">
+                              <button className="text-red-600 hover:text-red-900">
                                 <FaTrash />
                               </button>
                             </div>
@@ -598,64 +578,64 @@ const Admin = () => {
 
           {/* Settings Tab */}
           {activeTab === 'settings' && (
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-              <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-6">Sistem Ayarları</h2>
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h2 className="text-lg font-medium text-gray-900 mb-6">Sistem Ayarları</h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-md font-medium text-gray-900 dark:text-white mb-4">Genel Ayarlar</h3>
+                  <h3 className="text-md font-medium text-gray-900 mb-4">Genel Ayarlar</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Site Başlığı
                       </label>
                       <input
                         type="text"
                         defaultValue="Hospitadent"
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Site Açıklaması
                       </label>
                       <input
                         type="text"
                         defaultValue="Hospitadent Diş Kliniği"
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-md font-medium text-gray-900 dark:text-white mb-4">E-posta Ayarları</h3>
+                  <h3 className="text-md font-medium text-gray-900 mb-4">E-posta Ayarları</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         SMTP Sunucu
                       </label>
                       <input
                         type="text"
                         defaultValue="smtp.hospitadent.com"
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         E-posta Adresi
                       </label>
                       <input
                         type="email"
                         defaultValue="info@hospitadent.com"
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-md font-medium text-gray-900 dark:text-white mb-4">Güvenlik Ayarları</h3>
+                  <h3 className="text-md font-medium text-gray-900 mb-4">Güvenlik Ayarları</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <input
@@ -663,10 +643,10 @@ const Admin = () => {
                         id="twoFactor"
                         defaultChecked={twoFactorEnabled}
                         onChange={(e) => setTwoFactorEnabled(e.target.checked)}
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded dark:bg-gray-800 dark:checked:bg-blue-600"
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="twoFactor" className="ml-2 block text-sm text-gray-900 dark:text-gray-200">
-                        <FaShieldAlt className="inline mr-1 text-yellow-600 dark:text-yellow-300" /> İki Faktörlü Kimlik Doğrulama
+                      <label htmlFor="twoFactor" className="ml-2 block text-sm text-gray-900">
+                        <FaShieldAlt className="inline mr-1 text-yellow-600" /> İki Faktörlü Kimlik Doğrulama
                       </label>
                     </div>
                     <div className="flex items-center">
@@ -674,9 +654,9 @@ const Admin = () => {
                         type="checkbox"
                         id="sessionTimeout"
                         defaultChecked={false} // Demo amaçlı
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded dark:bg-gray-800 dark:checked:bg-blue-600"
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="sessionTimeout" className="ml-2 block text-sm text-gray-900 dark:text-gray-200">
+                      <label htmlFor="sessionTimeout" className="ml-2 block text-sm text-gray-900">
                         Oturum Zaman Aşımı
                       </label>
                     </div>
