@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaInstagram, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { fetchInstagramPosts, formatInstagramPost } from '../../services/instagramService';
+import { instagramPosts, formatInstagramPost } from '../../data/instagramPosts';
 
 const InstagramFeed = () => {
   const { t } = useTranslation();
@@ -11,10 +11,9 @@ const InstagramFeed = () => {
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
-    const loadInstagramPosts = async () => {
+    const loadInstagramPosts = () => {
       try {
         setLoading(true);
-        const instagramPosts = await fetchInstagramPosts(12); // Daha fazla gönderi
         const formattedPosts = instagramPosts.map(formatInstagramPost);
         setPosts(formattedPosts);
       } catch (err) {
