@@ -210,7 +210,11 @@ const Navbar = () => {
         <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-2 sm:px-4 py-2 gap-2">
           {/* Sol: Logo */}
           <div className="flex items-center flex-shrink-0 w-auto h-[clamp(2.2rem,5vw,3.5rem)] -mt-7">
-            <a href="/" className="block select-none h-[clamp(2rem,4vw,3.2rem)]" style={{marginBottom: '0px'}}>
+            <a 
+              href={currentLanguage.code === 'tr' ? '/' : `/${currentLanguage.code}`} 
+              className="block select-none h-[clamp(2rem,4vw,3.2rem)]" 
+              style={{marginBottom: '0px'}}
+            >
               <img src={logo} alt="Logo" className="h-full w-auto mx-auto" />
             </a>
           </div>

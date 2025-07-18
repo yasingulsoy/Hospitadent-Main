@@ -248,7 +248,11 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       
       {/* Logo ve başlık */}
       <div className="w-full flex flex-col items-center pt-8 pb-4 px-6 bg-white/10 backdrop-blur-sm">
-        <a href="/" className="flex flex-col items-center" onClick={handleNav}>
+        <a 
+          href={currentLanguage.code === 'tr' ? '/' : `/${currentLanguage.code}`} 
+          className="flex flex-col items-center" 
+          onClick={handleNav}
+        >
           <img src={logo} alt="Hospitadent Logo" className="h-12 w-auto mb-3" />
           <h1 className="text-white text-lg font-bold">Hospitadent</h1>
         </a>
@@ -258,7 +262,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       <div className="w-full flex-1 flex flex-col items-center gap-2 pt-4 pb-3 px-6 overflow-y-auto">
         {/* Anasayfa seçeneği */}
         <RouterLink
-          to="/"
+          to={currentLanguage.code === 'tr' ? '/' : `/${currentLanguage.code}`}
           className="block w-full px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-xl text-left"
           onClick={handleNav}
         >

@@ -19,6 +19,7 @@ import Academy from './pages/Academy';
 import Awards from './pages/Awards';
 import CorporateIdentity from './pages/CorporateIdentity';
 import Blog from './pages/Blog';
+import Admin from './pages/Admin';
 
 // Dil sayfaları - İngilizce
 import EnAbout from './pages/en/About';
@@ -95,6 +96,9 @@ function App() {
         <Route path="/anlasmali-kurumlar" element={<AnlasmaliKurumlar />} />
         <Route path="/search" element={<SearchResults />} />
         
+        {/* Admin Panel */}
+        <Route path="/admin" element={<Admin />} />
+        
         {/* İngilizce Sayfalar */}
         <Route path="/en" element={
           <>
@@ -163,7 +167,7 @@ function App() {
         } />
         <Route path="/de/uber-uns" element={<DeAbout />} />
         <Route path="/de/services" element={<DeServices />} />
-        <Route path="/de/verwaltungsteam" element={<Staff />} />
+        <Route path="/de/verwaltungspersonal" element={<Staff />} />
         <Route path="/de/filialen" element={<Branches />} />
         <Route path="/de/filialen/:branchId" element={<BranchPage />} />
         <Route path="/de/blog" element={<Blog />} />
