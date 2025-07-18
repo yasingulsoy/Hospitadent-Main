@@ -14,6 +14,12 @@ const Admin = () => {
   const [filterStatus, setFilterStatus] = useState('all');
   const [sessionWarning, setSessionWarning] = useState(false);
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(false); // Demo amaçlı
+  
+  // Güvenlik sorusu için state'ler
+  const [securityAnswer, setSecurityAnswer] = useState('');
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [correctAnswer, setCorrectAnswer] = useState(0);
 
   // Mock data
   const [users] = useState([
@@ -63,14 +69,29 @@ const Admin = () => {
     }
   }, []);
 
+  // Güvenlik sorusu için rastgele sayılar oluştur
+  const generateSecurityQuestion = () => {
+    const number1 = Math.floor(Math.random() * 50) + 1;
+    const number2 = Math.floor(Math.random() * 50) + 1;
+    setNum1(number1);
+    setNum2(number2);
+    setCorrectAnswer(number1 + number2);
+  };
+
+  useEffect(() => {
+    generateSecurityQuestion();
+  }, []);
+
   const handleLogin = (e) => {
     e.preventDefault();
     // Simple authentication (in real app, this would be API call)
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'admin' && password === 'admin123' && parseInt(securityAnswer) === correctAnswer) {
       setIsAuthenticated(true);
       localStorage.setItem('adminToken', 'mock-token');
     } else {
-      alert('Hatalı kullanıcı adı veya şifre!');
+      alert('Hatalı kullanıcı adı, şifre veya güvenlik sorusu!');
+      generateSecurityQuestion(); // Yeni soru oluştur
+      setSecurityAnswer(''); // Cevabı temizle
     }
   };
 
@@ -137,11 +158,26 @@ const Admin = () => {
                 />
               </div>
               
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Güvenlik Sorusu: {num1} + {num2} = ?
+                </label>
+                <input
+                  type="number"
+                  value={securityAnswer}
+                  onChange={(e) => setSecurityAnswer(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Toplamı girin"
+                  required
+                />
+              </div>
+              
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+                className="w-full bg-black text-white py-4 px-6 rounded-lg border-4 border-gray-800 shadow-xl hover:bg-gray-800 hover:border-gray-600 transition-all duration-200 font-bold text-xl mt-6 mb-4"
+                style={{backgroundColor: '#000000', color: '#ffffff', borderColor: '#374151'}}
               >
-                Giriş Yap
+                GİRİŞ YAP
               </button>
             </form>
             
@@ -149,6 +185,7 @@ const Admin = () => {
               <p>Demo Giriş Bilgileri:</p>
               <p>Kullanıcı: admin</p>
               <p>Şifre: admin123</p>
+              <p>Güvenlik: Yukarıdaki sayıların toplamını girin</p>
             </div>
           </div>
         </div>
@@ -176,10 +213,11 @@ const Admin = () => {
                 <span className="text-gray-600">Hoş geldiniz, Admin</span>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-2 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium text-base shadow-md"
+                  className="flex items-center space-x-3 bg-black text-white px-8 py-4 rounded-lg border-4 border-gray-800 shadow-xl hover:bg-gray-800 hover:border-gray-600 transition-all duration-200 font-bold text-lg"
+                  style={{backgroundColor: '#000000', color: '#ffffff', borderColor: '#374151'}}
                 >
-                  <FaSignOutAlt className="text-lg" />
-                  <span>Çıkış Yap</span>
+                  <FaSignOutAlt className="text-xl" />
+                  <span>ÇIKIŞ YAP</span>
                 </button>
               </div>
             </div>
