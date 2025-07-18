@@ -141,6 +141,14 @@
   "footer": {
     "copyright": "Alle Rechte vorbehalten."
   },
+  "instagram": {
+    "title": "Unsere Sozialen Inhalte",
+    "subtitle": "Verfolgen Sie unsere neuesten Behandlungen, Patientenzufriedenheit und Klinikleben auf Instagram!",
+    "loading": "Instagram-Beiträge werden geladen...",
+    "error": "Beim Laden der Instagram-Beiträge ist ein Fehler aufgetreten.",
+    "followUs": "Folgen Sie uns",
+    "viewPost": "Beitrag anzeigen"
+  },
   "about": {
     "title": "Über uns",
     "subtitle": "Mit über 20 Jahren Erfahrung dienen wir als eine der führenden zahnmedizinischen Gesundheitsorganisationen der Türkei.",

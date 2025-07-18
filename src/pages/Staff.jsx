@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Footer } from '../components';
 import { useTranslation } from 'react-i18next';
 
 const Staff = () => {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
     setTimeout(() => {
       document.body.style.overflow = 'auto';
       document.documentElement.style.overflow = 'auto';
-      setImagesLoaded(true);
     }, 100);
   }, []);
 

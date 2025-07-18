@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import CountryFlag from "react-country-flag";
 import { Link as RouterLink } from "react-router-dom";
-import logo from '../../assets/logo.webp';
+import logo from '../../assets/images/logo.webp';
 
 const MobileNavLinks = ({ item, handleNav }) => {
   const [open, setOpen] = useState(false);

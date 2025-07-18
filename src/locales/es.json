@@ -141,6 +141,14 @@
   "footer": {
     "copyright": "Todos los derechos reservados."
   },
+  "instagram": {
+    "title": "Nuestro Contenido Social",
+    "subtitle": "¡Sigue nuestros últimos tratamientos, satisfacción del paciente y vida de la clínica en Instagram!",
+    "loading": "Cargando publicaciones de Instagram...",
+    "error": "Ocurrió un error al cargar las publicaciones de Instagram.",
+    "followUs": "Síguenos",
+    "viewPost": "Ver publicación"
+  },
   "about": {
     "title": "Acerca de nosotros",
     "subtitle": "Con más de 20 años de experiencia, servimos como una de las principales organizaciones de salud dental de Turquía.",

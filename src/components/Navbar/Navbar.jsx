@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import NavLinks from "./NavLinks";
 import { navLinksData } from "../../data/data";
 import ResponsiveMenu from "./ResponsiveMenu";
-import logo from '../../assets/logo.webp';
+import logo from '../../assets/images/logo.webp';
 import CountryFlag from 'react-country-flag';
 import { FaFacebookF, FaXTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
 import { FaBars } from 'react-icons/fa6';

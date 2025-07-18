@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaUsers, FaFileAlt, FaChartBar, FaCog, FaSignOutAlt, FaEye, FaEdit, FaTrash, FaPlus, FaSearch, FaFilter, FaShieldAlt } from 'react-icons/fa';
-import logo from '../assets/logo.webp';
+import logo from '../assets/images/logo.webp';
 
 const SESSION_TIMEOUT_MINUTES = 30; // 30 dakika sonra otomatik çıkış
 

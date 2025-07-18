@@ -1,9 +1,9 @@
 import React from "react";
 import { FaHandshake, FaAward, FaGlobe, FaChild } from "react-icons/fa";
-import kurumlar from "../../assets/about-img.jpg";
-import oduller from "../../assets/pic-1.png";
-import sosyal from "../../assets/pic-2.png";
-import kids from "../../assets/pic-3.png";
+import kurumlar from "../../assets/images/about-img.jpg";
+import oduller from "../../assets/images/pic-1.png";
+import sosyal from "../../assets/images/pic-2.png";
+import kids from "../../assets/images/pic-3.png";
 
 const gridData = [
   {

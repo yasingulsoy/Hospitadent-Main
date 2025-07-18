@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/images/logo.webp";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter, FaYoutube, FaWhatsapp } from 'react-icons/fa6';
 
 const Footer = () => {

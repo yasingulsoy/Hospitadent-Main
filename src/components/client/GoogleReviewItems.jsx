@@ -10,16 +10,6 @@ const GoogleReviewItems = ({ review }) => {
     ));
   };
 
-  // Tarihi formatlamak için fonksiyon
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('tr-TR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#004876]/20 h-full">
       <div className="p-6">

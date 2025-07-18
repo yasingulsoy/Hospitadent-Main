@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaAward, FaSmile, FaUsers, FaBuilding, FaGlobe, FaUserMd, FaWhatsapp, FaEnvelope, FaPhone, FaRobot } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ico from "../assets/ico.png";
-import logo from "../assets/logo.webp";
+import ico from "../assets/images/ico.png";
+import logo from "../assets/images/logo.webp";
 import SEOHead from "./SEO/SEOHead";
 
 

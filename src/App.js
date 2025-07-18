@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { Navbar, Home, About, Services, Process, Contact, Footer } from './components';
+import { Navbar, Home, About, Services, Process, Contact, Footer, InstagramFeed } from './components';
 import GoogleReviews from './components/client/GoogleReviews';
 import GoogleAnalytics from './components/Analytics/GoogleAnalytics';
 import Breadcrumbs from './components/SEO/Breadcrumbs';
@@ -78,6 +78,7 @@ function App() {
             <About />
             <Services />
             <Process />
+            <InstagramFeed />
             <GoogleReviews />
             <Contact />
             <Footer />
@@ -109,6 +110,7 @@ function App() {
             <About />
             <Services />
             <Process />
+            <InstagramFeed />
             <GoogleReviews />
             <Contact />
             <Footer />
@@ -136,6 +138,7 @@ function App() {
             <About />
             <Services />
             <Process />
+            <InstagramFeed />
             <GoogleReviews />
             <Contact />
             <Footer />
@@ -163,6 +166,7 @@ function App() {
             <About />
             <Services />
             <Process />
+            <InstagramFeed />
             <GoogleReviews />
             <Contact />
             <Footer />
@@ -190,6 +194,7 @@ function App() {
             <About />
             <Services />
             <Process />
+            <InstagramFeed />
             <GoogleReviews />
             <Contact />
             <Footer />

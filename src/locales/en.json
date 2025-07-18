@@ -141,6 +141,14 @@
   "footer": {
     "copyright": "All rights reserved."
   },
+  "instagram": {
+    "title": "Our Social Content",
+    "subtitle": "Follow our latest treatments, patient satisfaction and clinic life on Instagram!",
+    "loading": "Loading Instagram posts...",
+    "error": "An error occurred while loading Instagram posts.",
+    "followUs": "Follow Us",
+    "viewPost": "View Post"
+  },
   "about": {
     "title": "About Us",
     "subtitle": "With over 20 years of experience, we serve as one of Turkey's leading dental health organizations.",

@@ -141,6 +141,14 @@
   "footer": {
     "copyright": "Tüm hakları saklıdır."
   },
+  "instagram": {
+    "title": "Sosyal İçeriklerimiz",
+    "subtitle": "Güncel tedavilerimizi, hasta memnuniyetlerini ve klinik hayatımızdan kareleri Instagram'da takip edin!",
+    "loading": "Instagram gönderileri yükleniyor...",
+    "error": "Instagram gönderileri yüklenirken bir hata oluştu.",
+    "followUs": "Bizi Takip Edin",
+    "viewPost": "Gönderiyi Görüntüle"
+  },
   "about": {
     "title": "Hakkımızda",
     "subtitle": "20 yılı aşkın deneyimimizle, Türkiye'nin önde gelen diş sağlığı kuruluşlarından biri olarak hizmet veriyoruz.",
@@ -206,15 +214,15 @@
       "text1": "Teknolojik gelişmeleri yakından takip ederek, hastalarımıza en güncel tedavi yöntemlerini sunmaya devam edeceğiz.",
       "text2": "Türkiye'nin ve dünyanın önde gelen diş sağlığı kuruluşu olma hedefimizle, sürekli gelişim ve yenilikçilik yolunda ilerliyoruz."
     },
-    "vision": {
+    "visionExtended": {
       "title": "VİZYONUMUZ",
       "text": "Dünyanın hastasına en yakın ve en yenilikçi ağız ve diş sağlığı markası olmak."
     },
-    "mission": {
+    "missionExtended": {
       "title": "MİSYONUMUZ",
       "text": "Yüksek hizmet kalitesiyle insanlara, topluma ve çevreye değer katmak; etik, samimi ve empatik bir şekilde her hastamıza kendi yakınımız gibi davranarak güven vermek, dengeli bir fiziksel büyümeyle daha fazla insana ulaşmak, teknolojik ve bilimsel gelişmeleri takip ederek öncül şekilde uygulamak, gülüş mimarları ile estetik gülüşler tasarlayarak insanları mutlu etmek."
     },
-    "values": {
+    "valuesExtended": {
       "title": "DEĞERLERİMİZ",
       "value1": {
         "title": "Değer Veririz:",

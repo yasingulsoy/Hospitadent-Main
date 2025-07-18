@@ -1,13 +1,13 @@
-import ImgOne from '../assets/icon-1.svg'
-import ImgTwo from '../assets/icon-2.svg'
-import ImgThree from '../assets/icon-3.svg'
-import ImgFour from '../assets/icon-4.svg'
-import ImgFive from '../assets/icon-5.svg'
-import ImgSix from '../assets/icon-6.svg'
+import ImgOne from '../assets/icons/icon-1.svg'
+import ImgTwo from '../assets/icons/icon-2.svg'
+import ImgThree from '../assets/icons/icon-3.svg'
+import ImgFour from '../assets/icons/icon-4.svg'
+import ImgFive from '../assets/icons/icon-5.svg'
+import ImgSix from '../assets/icons/icon-6.svg'
 // ProcessData
-import process1 from '../assets/process-1.png'
-import process2 from '../assets/process-2.png'
-import process3 from '../assets/process-2.png'
+import process1 from '../assets/images/process-1.png'
+import process2 from '../assets/images/process-2.png'
+import process3 from '../assets/images/process-3.png'
 // Footer Icons
 import {
   faPhone,
