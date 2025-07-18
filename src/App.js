@@ -62,11 +62,13 @@ import ArAbout from './pages/ar/About';
 import ArServices from './pages/ar/Services';
 
 function App() {
+  // Admin route'unda mıyız kontrolü
+  const isAdminRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/admin');
   return (
     <HelmetProvider>
-      <GoogleAnalytics />
-      <Navbar />
-      <Breadcrumbs />
+      {!isAdminRoute && <GoogleAnalytics />}
+      {!isAdminRoute && <Navbar />}
+      {!isAdminRoute && <Breadcrumbs />}
       <Routes>
         {/* Ana Sayfa - Türkçe */}
         <Route path="/" element={
