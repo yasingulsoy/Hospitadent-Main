@@ -49,7 +49,6 @@ const Admin = () => {
   // Oturum süresi kontrolü
   useEffect(() => {
     if (!isAuthenticated) return;
-    const start = Date.now();
     const timeout = setTimeout(() => {
       setSessionWarning(true);
       setTimeout(() => {
@@ -125,7 +124,7 @@ const Admin = () => {
           <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
             <div className="text-center mb-8">
               <img src={logo} alt="Hospitadent Admin" className="h-12 mx-auto mb-2" />
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">Admin Panel</h1>
+              <h1 className="text-3xl font-bold text-[#004876] mb-2">Admin Panel</h1>
               <p className="text-gray-600">Hospitadent Yönetim Paneli</p>
             </div>
             
@@ -174,8 +173,8 @@ const Admin = () => {
               
               <button
                 type="submit"
-                className="w-full bg-black text-white py-4 px-6 rounded-lg border-4 border-gray-800 shadow-xl hover:bg-gray-800 hover:border-gray-600 transition-all duration-200 font-bold text-xl mt-6 mb-4"
-                style={{backgroundColor: '#000000', color: '#ffffff', borderColor: '#374151'}}
+                className="w-full bg-[#004876] text-white py-4 px-6 rounded-lg border-4 border-[#004876] shadow-xl hover:bg-[#003d5f] hover:border-[#003d5f] transition-all duration-200 font-bold text-xl mt-6 mb-4"
+                style={{backgroundColor: '#004876', color: '#ffffff', borderColor: '#004876'}}
               >
                 GİRİŞ YAP
               </button>
@@ -213,8 +212,8 @@ const Admin = () => {
                 <span className="text-gray-600">Hoş geldiniz, Admin</span>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-3 bg-black text-white px-8 py-4 rounded-lg border-4 border-gray-800 shadow-xl hover:bg-gray-800 hover:border-gray-600 transition-all duration-200 font-bold text-lg"
-                  style={{backgroundColor: '#000000', color: '#ffffff', borderColor: '#374151'}}
+                  className="flex items-center space-x-3 bg-[#004876] text-white px-8 py-4 rounded-lg border-4 border-[#004876] shadow-xl hover:bg-[#003d5f] hover:border-[#003d5f] transition-all duration-200 font-bold text-lg"
+                  style={{backgroundColor: '#004876', color: '#ffffff', borderColor: '#004876'}}
                 >
                   <FaSignOutAlt className="text-xl" />
                   <span>ÇIKIŞ YAP</span>

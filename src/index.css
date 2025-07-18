@@ -18,6 +18,13 @@
   overflow: hidden;
 }
 
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 body, html, * {
   font-family: 'Montserrat', Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
   font-feature-settings: "liga", "kern", "calt", "ss01";
