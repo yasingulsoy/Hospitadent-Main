@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Footer } from '../../components';
 import SEOHead from '../../components/SEO/SEOHead';
 
-const Treatments = () => {
+const EnTreatments = () => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -199,15 +199,15 @@ const Treatments = () => {
     // Implant
     {
       id: 'single-tooth-implant',
-      title: 'Single Tooth Implant Treatment',
+      title: 'Single Tooth Implant',
       category: 'Implant',
-      description: 'Implant treatment for single tooth loss.',
+      description: 'Implant treatment for a single tooth.',
       image: '/api/placeholder/300/200',
       slug: 'single-tooth-implant'
     },
     {
       id: 'full-mouth-implant',
-      title: 'Full Mouth Implant Treatment',
+      title: 'Full Mouth Implant',
       category: 'Implant',
       description: 'Implant treatment for entire mouth.',
       image: '/api/placeholder/300/200',
@@ -215,17 +215,17 @@ const Treatments = () => {
     },
     {
       id: 'multiple-tooth-implant',
-      title: 'Multiple Tooth Implant Treatment',
+      title: 'Multiple Tooth Implant',
       category: 'Implant',
-      description: 'Implant treatment for multiple tooth loss.',
+      description: 'Implant treatment for multiple teeth.',
       image: '/api/placeholder/300/200',
       slug: 'multiple-tooth-implant'
     },
     {
       id: 'one-day-implant',
-      title: 'One-Day Implant',
+      title: 'One Day Implant',
       category: 'Implant',
-      description: 'Fast implant treatment - completed in 1 day.',
+      description: 'Implant treatment in one day.',
       image: '/api/placeholder/300/200',
       slug: 'one-day-implant'
     },
@@ -233,7 +233,7 @@ const Treatments = () => {
       id: 'all-on-four',
       title: 'All on Four',
       category: 'Implant',
-      description: 'Full mouth rehabilitation with 4 implants.',
+      description: 'All on Four implant technique.',
       image: '/api/placeholder/300/200',
       slug: 'all-on-four'
     },
@@ -241,7 +241,7 @@ const Treatments = () => {
       id: 'all-on-six',
       title: 'All on Six',
       category: 'Implant',
-      description: 'Full mouth rehabilitation with 6 implants.',
+      description: 'All on Six implant technique.',
       image: '/api/placeholder/300/200',
       slug: 'all-on-six'
     },
@@ -249,7 +249,7 @@ const Treatments = () => {
       id: 'box-technique',
       title: 'Box Technique',
       category: 'Implant',
-      description: 'Special implant placement technique.',
+      description: 'Box implant technique.',
       image: '/api/placeholder/300/200',
       slug: 'box-technique'
     },
@@ -259,7 +259,7 @@ const Treatments = () => {
       id: 'dental-examination',
       title: 'Dental Examination',
       category: 'General Dental Treatments',
-      description: 'Comprehensive dental and oral health examination.',
+      description: 'Comprehensive dental examination.',
       image: '/api/placeholder/300/200',
       slug: 'dental-examination'
     },
@@ -267,7 +267,7 @@ const Treatments = () => {
       id: 'crown-veneer',
       title: 'Crown Veneer',
       category: 'General Dental Treatments',
-      description: 'Dental crown veneer treatment.',
+      description: 'What is crown veneer and how is it made.',
       image: '/api/placeholder/300/200',
       slug: 'crown-veneer'
     },
@@ -275,7 +275,7 @@ const Treatments = () => {
       id: 'dental-filling',
       title: 'Dental Filling',
       category: 'General Dental Treatments',
-      description: 'Aesthetic and durable dental filling solutions.',
+      description: 'How dental filling is done and what are its types.',
       image: '/api/placeholder/300/200',
       slug: 'dental-filling'
     },
@@ -283,7 +283,7 @@ const Treatments = () => {
       id: 'root-canal-treatment',
       title: 'Root Canal Treatment',
       category: 'General Dental Treatments',
-      description: 'Save your teeth with painless and fast root canal treatment.',
+      description: 'How root canal treatment is done and does it hurt.',
       image: '/api/placeholder/300/200',
       slug: 'root-canal-treatment'
     },
@@ -291,7 +291,7 @@ const Treatments = () => {
       id: 'tooth-extraction',
       title: 'Tooth Extraction',
       category: 'General Dental Treatments',
-      description: 'Painless tooth extraction with surgical and classical methods.',
+      description: 'What is tooth extraction and how is it done.',
       image: '/api/placeholder/300/200',
       slug: 'tooth-extraction'
     },
@@ -299,7 +299,7 @@ const Treatments = () => {
       id: 'impacted-tooth-extraction',
       title: 'Impacted Tooth Extraction',
       category: 'General Dental Treatments',
-      description: 'Surgical extraction of impacted teeth.',
+      description: 'What is impacted tooth extraction.',
       image: '/api/placeholder/300/200',
       slug: 'impacted-tooth-extraction'
     },
@@ -307,7 +307,7 @@ const Treatments = () => {
       id: 'wisdom-tooth-extraction',
       title: 'Wisdom Tooth Extraction',
       category: 'General Dental Treatments',
-      description: 'Wisdom tooth extraction procedure.',
+      description: 'Wisdom tooth extraction.',
       image: '/api/placeholder/300/200',
       slug: 'wisdom-tooth-extraction'
     },
@@ -315,41 +315,41 @@ const Treatments = () => {
       id: 'broken-tooth-treatment',
       title: 'Broken Tooth Treatment',
       category: 'General Dental Treatments',
-      description: 'Treatment and restoration of broken teeth.',
+      description: 'What is broken tooth treatment.',
       image: '/api/placeholder/300/200',
       slug: 'broken-tooth-treatment'
     },
 
     // Preventive Dental Treatments
     {
-      id: 'bad-breath-treatment',
-      title: 'Bad Breath Treatment',
+      id: 'bad-breath',
+      title: 'Bad Breath',
       category: 'Preventive Dental Treatments',
-      description: 'Detection and treatment of bad breath causes.',
+      description: 'What is bad breath and how is it treated.',
       image: '/api/placeholder/300/200',
-      slug: 'bad-breath-treatment'
+      slug: 'bad-breath'
     },
     {
-      id: 'tooth-sensitivity-treatment',
-      title: 'Tooth Sensitivity Treatment',
+      id: 'tooth-sensitivity',
+      title: 'Tooth Sensitivity',
       category: 'Preventive Dental Treatments',
-      description: 'Preventive treatments for tooth sensitivity.',
+      description: 'What is tooth sensitivity and how is it treated.',
       image: '/api/placeholder/300/200',
-      slug: 'tooth-sensitivity-treatment'
+      slug: 'tooth-sensitivity'
     },
     {
-      id: 'bruxism-treatment',
-      title: 'Teeth Grinding (Bruxism) Treatment',
+      id: 'teeth-grinding',
+      title: 'Teeth Grinding',
       category: 'Preventive Dental Treatments',
-      description: 'Night guard and treatment for bruxism (teeth grinding).',
+      description: 'What is teeth grinding and how is it treated.',
       image: '/api/placeholder/300/200',
-      slug: 'bruxism-treatment'
+      slug: 'teeth-grinding'
     },
     {
       id: 'teeth-grinding-treatment',
       title: 'Teeth Grinding Treatment',
       category: 'Preventive Dental Treatments',
-      description: 'Preventive treatments for teeth grinding.',
+      description: 'What is teeth grinding treatment and how is it done.',
       image: '/api/placeholder/300/200',
       slug: 'teeth-grinding-treatment'
     },
@@ -357,7 +357,7 @@ const Treatments = () => {
       id: 'snoring-treatment',
       title: 'Snoring Treatment',
       category: 'Preventive Dental Treatments',
-      description: 'Dental treatments for snoring.',
+      description: 'What is snoring treatment and how is it applied.',
       image: '/api/placeholder/300/200',
       slug: 'snoring-treatment'
     },
@@ -367,7 +367,7 @@ const Treatments = () => {
       id: 'braces-treatment',
       title: 'Braces Treatment',
       category: 'Orthodontics',
-      description: 'Classic braces treatments for children and adults.',
+      description: 'What is braces treatment and how is it applied.',
       image: '/api/placeholder/300/200',
       slug: 'braces-treatment'
     },
@@ -375,15 +375,15 @@ const Treatments = () => {
       id: 'clear-bracket-treatment',
       title: 'Clear Bracket Treatment',
       category: 'Orthodontics',
-      description: 'Orthodontic treatment with invisible brackets.',
+      description: 'Clear bracket orthodontic treatment.',
       image: '/api/placeholder/300/200',
       slug: 'clear-bracket-treatment'
     },
     {
       id: 'invisalign-treatment',
-      title: 'Invisalign (Clear Aligner) Treatment',
+      title: 'Invisalign Treatment',
       category: 'Orthodontics',
-      description: 'Orthodontic treatment with removable clear aligners.',
+      description: 'Invisalign treatment with clear aligners.',
       image: '/api/placeholder/300/200',
       slug: 'invisalign-treatment'
     },
@@ -391,49 +391,49 @@ const Treatments = () => {
       id: 'invisible-braces-treatment',
       title: 'Invisible Braces Treatment',
       category: 'Orthodontics',
-      description: 'Invisible treatment with lingual (tongue-side) brackets.',
+      description: 'Invisible orthodontic treatment.',
       image: '/api/placeholder/300/200',
       slug: 'invisible-braces-treatment'
     },
 
-    // Pedodontics
+    // Pediatric Dentistry
     {
       id: 'fluoride-application',
       title: 'Fluoride Application',
-      category: 'Pedodontics / Pediatric Dentistry',
-      description: 'Preventive fluoride application for children.',
+      category: 'Pediatric Dentistry',
+      description: 'Fluoride application to protect teeth.',
       image: '/api/placeholder/300/200',
       slug: 'fluoride-application'
     },
     {
       id: 'fissure-sealant',
       title: 'Fissure Sealant',
-      category: 'Pedodontics / Pediatric Dentistry',
-      description: 'Fissure sealant to prevent tooth decay.',
+      category: 'Pediatric Dentistry',
+      description: 'Protection of tooth fissures.',
       image: '/api/placeholder/300/200',
       slug: 'fissure-sealant'
     },
     {
       id: 'pediatric-orthodontic-treatment',
       title: 'Pediatric Orthodontic Treatment',
-      category: 'Pedodontics / Pediatric Dentistry',
-      description: 'Early orthodontic treatment for children.',
+      category: 'Pediatric Dentistry',
+      description: 'What is pediatric orthodontic treatment.',
       image: '/api/placeholder/300/200',
       slug: 'pediatric-orthodontic-treatment'
     },
     {
       id: 'baby-bottle-tooth-decay',
-      title: 'Baby Bottle Tooth Decay Treatment',
-      category: 'Pedodontics / Pediatric Dentistry',
-      description: 'Treatment and prevention methods for baby bottle tooth decay.',
+      title: 'Baby Bottle Tooth Decay',
+      category: 'Pediatric Dentistry',
+      description: 'What is baby bottle tooth decay.',
       image: '/api/placeholder/300/200',
       slug: 'baby-bottle-tooth-decay'
     },
     {
       id: 'space-maintainer-treatment',
       title: 'Space Maintainer Treatment',
-      category: 'Pedodontics / Pediatric Dentistry',
-      description: 'Space maintainer application after early tooth loss.',
+      category: 'Pediatric Dentistry',
+      description: 'What is space maintainer treatment.',
       image: '/api/placeholder/300/200',
       slug: 'space-maintainer-treatment'
     },
@@ -443,7 +443,7 @@ const Treatments = () => {
       id: 'gum-treatment',
       title: 'Gum Treatment',
       category: 'Periodontology',
-      description: 'Expert approach in diagnosis and treatment of gum diseases.',
+      description: 'Treatment of gum diseases.',
       image: '/api/placeholder/300/200',
       slug: 'gum-treatment'
     },
@@ -451,7 +451,7 @@ const Treatments = () => {
       id: 'curettage-treatment',
       title: 'Curettage Treatment',
       category: 'Periodontology',
-      description: 'Gum curettage procedure.',
+      description: 'What is curettage treatment.',
       image: '/api/placeholder/300/200',
       slug: 'curettage-treatment'
     },
@@ -459,15 +459,15 @@ const Treatments = () => {
       id: 'flap-treatment',
       title: 'Flap Treatment',
       category: 'Periodontology',
-      description: 'Gum flap surgical treatment.',
+      description: 'Surgical treatment for gums.',
       image: '/api/placeholder/300/200',
       slug: 'flap-treatment'
     },
     {
       id: 'gingivitis',
-      title: 'Gum Inflammation | Gingivitis',
+      title: 'Gingivitis',
       category: 'Periodontology',
-      description: 'Treatment of gum inflammation.',
+      description: 'Gum inflammation and gingivitis.',
       image: '/api/placeholder/300/200',
       slug: 'gingivitis'
     },
@@ -475,7 +475,7 @@ const Treatments = () => {
       id: 'dental-calculus-cleaning',
       title: 'Dental Calculus Cleaning',
       category: 'Periodontology',
-      description: 'Healthy gums with dental calculus and plaque cleaning.',
+      description: 'What is dental calculus cleaning and how is it done.',
       image: '/api/placeholder/300/200',
       slug: 'dental-calculus-cleaning'
     },
@@ -483,33 +483,33 @@ const Treatments = () => {
     // Special Dental Treatments
     {
       id: 'digital-dentistry',
-      title: 'Digital Dentistry and Dental Design',
+      title: 'Digital Dentistry',
       category: 'Special Dental Treatments',
-      description: 'Dental design with modern digital technology.',
+      description: 'Digital dentistry and dental design.',
       image: '/api/placeholder/300/200',
       slug: 'digital-dentistry'
     },
     {
       id: 'needle-free-anesthesia',
-      title: 'Needle-Free Anesthesia Application',
+      title: 'Needle-Free Anesthesia',
       category: 'Special Dental Treatments',
-      description: 'Painless needle-free anesthesia application.',
+      description: 'Needle-free anesthesia application.',
       image: '/api/placeholder/300/200',
       slug: 'needle-free-anesthesia'
     },
     {
-      id: 'sedation-anesthesia',
+      id: 'sedation-and-general-anesthesia',
       title: 'Sedation and General Anesthesia',
       category: 'Special Dental Treatments',
-      description: 'Treatment with sedation and general anesthesia.',
+      description: 'Sedation and general anesthesia for treatments.',
       image: '/api/placeholder/300/200',
-      slug: 'sedation-anesthesia'
+      slug: 'sedation-and-general-anesthesia'
     },
     {
       id: 'rubber-dam-application',
       title: 'Rubber Dam Application',
       category: 'Special Dental Treatments',
-      description: 'Isolated treatment with rubber dam.',
+      description: 'Rubber dam application for isolation.',
       image: '/api/placeholder/300/200',
       slug: 'rubber-dam-application'
     },
@@ -525,7 +525,7 @@ const Treatments = () => {
       id: 'jaw-fracture-treatment',
       title: 'Jaw Fracture Treatment',
       category: 'Special Dental Treatments',
-      description: 'Surgical treatment of jaw fracture.',
+      description: 'Surgical treatment for jaw fractures.',
       image: '/api/placeholder/300/200',
       slug: 'jaw-fracture-treatment'
     },
@@ -560,18 +560,15 @@ const Treatments = () => {
         title="Our Treatments - Hospitadent"
         description="All dental treatments and services offered by Hospitadent. Cosmetic dentistry, implants, orthodontics and more."
         keywords="dental treatments, cosmetic dentistry, implants, orthodontics, pedodontics, periodontology, hospitadent"
-        url="https://hospitadent.com/en/tedavilerimiz"
+        url="https://hospitadent.com/en/treatments"
       />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+      <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 treatments-page">
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur-sm py-12 border-b border-gray-200">
+        <div className="bg-white/80 backdrop-blur-sm py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
               Our Treatments
             </h1>
-            <p className="text-xl text-gray-600 text-center mt-4 max-w-3xl mx-auto">
-              Comprehensive dental treatments with modern technology and expert staff
-            </p>
           </div>
         </div>
 
@@ -581,19 +578,21 @@ const Treatments = () => {
             
             {/* Search Section */}
             <div className="mb-12">
-              <div className="max-w-2xl mx-auto">
-                <div className="flex items-center bg-white rounded-full shadow-lg border border-gray-200 overflow-hidden">
+              <div className="max-w-lg mx-auto">
+                <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden">
                   <div className="flex-1 px-6 py-4">
                     <input
                       type="text"
                       placeholder="Search"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full text-lg text-gray-700 placeholder-gray-500 focus:outline-none"
+                      className="w-full text-lg text-gray-800 placeholder-gray-500 focus:outline-none"
                     />
                   </div>
-                  <button className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white px-8 py-4 font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    SEARCH
+                  <button className="text-[#0f4f78] px-6 py-4 hover:text-[#2bb3ea] transition-all duration-200">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -603,9 +602,9 @@ const Treatments = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               
               {filteredTreatments.map((treatment) => (
-                <div key={treatment.id} className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-[#004876]/20 group">
+                <div key={treatment.id} className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-[#004876]/20 group flex flex-col h-full">
                   {/* Image */}
-                  <div className="h-48 bg-gradient-to-br from-blue-100 to-cyan-100 relative overflow-hidden">
+                  <div className="h-48 bg-gradient-to-br from-blue-100 to-cyan-100 relative overflow-hidden flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#0f4f78]/20 to-[#2bb3ea]/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-6xl text-[#004876]/30">
@@ -615,28 +614,28 @@ const Treatments = () => {
                   </div>
                   
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     {/* Category */}
-                    <div className="mb-2">
-                      <span className="inline-block bg-blue-100 text-[#004876] text-xs font-semibold px-3 py-1 rounded-full">
+                    <div className="mb-2 -mt-1">
+                      <span className="inline-block bg-blue-100 text-[#004876] text-xs font-semibold px-0.5 py-0 rounded-full">
                         {treatment.category}
                       </span>
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-[#004876] mb-3 group-hover:text-[#2bb3ea] transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-[#0f4f78] mb-3 group-hover:text-[#2bb3ea] transition-colors duration-300 line-clamp-2">
                       {treatment.title}
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-[#0f4f78]/70 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
                       {treatment.description}
                     </p>
                     
                     {/* Detail Button */}
                     <a 
                       href={`/en/treatment/${treatment.slug}`}
-                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group"
+                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group mt-auto"
                     >
                       View Details
                       <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -709,4 +708,4 @@ const Treatments = () => {
   );
 };
 
-export default Treatments; 
+export default EnTreatments; 

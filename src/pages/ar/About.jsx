@@ -18,10 +18,10 @@ const About = () => {
   return (
     <>
       <SEOHead 
-        title="من نحن"
-        description="معلومات مفصلة عن Hospitadent. أكثر من 20 عامًا من الخبرة والرؤية والرسالة والقيم. أكبر منظمة للصحة السنية في تركيا."
-        keywords="عن hospitadent، تاريخ العيادة السنية، الرؤية الرسالة، القيم، الخبرة"
-        url="https://hospitadent.com/ar/من-نحن"
+        title="من نحن - Hospitadent"
+        description="تعرف على Hospitadent، عيادة الأسنان الرائدة في تركيا. خبرة 20 عاماً في طب الأسنان التجميلي والزراعة."
+        keywords="Hospitadent، عيادة الأسنان، طب الأسنان التجميلي، زراعة الأسنان، تركيا، اسطنبول"
+        url="https://hospitadent.com/ar/men-nahnu"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Organization",

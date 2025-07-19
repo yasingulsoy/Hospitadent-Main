@@ -542,6 +542,82 @@ export const urlMapping = {
     ar: '/ar/ara-al-mardha'
   },
   
+  // Tedavilerimiz
+  '/tedavilerimiz': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  '/treatments': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  '/traitements': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  '/unsere-behandlungen': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  '/наши-процедуры': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  '/nuestros-tratamientos': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  '/elajatuna': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  
+  // Rusça tedaviler sayfası için özel mapping
+  '/ru/наши-процедуры': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  
   // Hospitadent Sosyal Sorumluluk
   '/hospitadent-sosyal-sorumluluk': {
     tr: '/hospitadent-sosyal-sorumluluk',
@@ -759,19 +835,75 @@ export const getCurrentLanguageFromPath = (pathname) => {
   return 'tr'; // Varsayılan Türkçe
 };
 
+// Rusça URL'ler için özel mapping sistemi
+const russianUrlMapping = {
+  '/ru/наши-процедуры': {
+    tr: '/tedavilerimiz',
+    en: '/en/treatments',
+    fr: '/fr/traitements',
+    de: '/de/unsere-behandlungen',
+    ru: '/ru/наши-процедуры',
+    es: '/es/nuestros-tratamientos',
+    ar: '/ar/elajatuna'
+  },
+  '/ru/o-nas': {
+    tr: '/hakkimizda',
+    en: '/en/about-us',
+    fr: '/fr/a-propos',
+    de: '/de/uber-uns',
+    ru: '/ru/o-nas',
+    es: '/es/sobre-nosotros',
+    ar: '/ar/من-نحن'
+  },
+  '/ru/administrativnyj-personal': {
+    tr: '/idari-kadro',
+    en: '/en/administrative-staff',
+    fr: '/fr/equipe-administrative',
+    de: '/de/verwaltungspersonal',
+    ru: '/ru/administrativnyj-personal',
+    es: '/es/personal-administrativo',
+    ar: '/ar/al-muwazafun-al-idariyun'
+  },
+  '/ru/filialy': {
+    tr: '/subelerimiz',
+    en: '/en/branches',
+    fr: '/fr/succursales',
+    de: '/de/filialen',
+    ru: '/ru/filialy',
+    es: '/es/sucursales',
+    ar: '/ar/al-furu'
+  }
+};
+
 // Yeni dil için URL oluştur
 export const getUrlForLanguage = (currentPathname, targetLanguage) => {
+  // URL'yi decode et (Rusça karakterler için)
+  const decodedPath = decodeURIComponent(currentPathname);
+  
   // Path'i normalize et (başında / olsun)
-  const normalizedPath = currentPathname.startsWith('/') ? currentPathname : `/${currentPathname}`;
+  const normalizedPath = decodedPath.startsWith('/') ? decodedPath : `/${decodedPath}`;
   
   // Önce mevcut dil kodunu çıkar
   const pathWithoutLang = getCurrentPathWithoutLanguage(normalizedPath);
   
-
-  
   // URL mapping'de bu path var mı kontrol et
   if (urlMapping[pathWithoutLang]) {
     return urlMapping[pathWithoutLang][targetLanguage];
+  }
+  
+  // Eğer mapping'de yoksa, mevcut path'i direkt kontrol et
+  if (urlMapping[normalizedPath]) {
+    return urlMapping[normalizedPath][targetLanguage];
+  }
+  
+  // Rusça URL'ler için özel kontrol
+  if (russianUrlMapping[normalizedPath]) {
+    return russianUrlMapping[normalizedPath][targetLanguage];
+  }
+  
+  // Rusça URL'ler için encoded versiyon kontrolü
+  if (currentPathname.includes('%D0%BD%D0%B0%D1%88%D0%B8') || currentPathname.includes('наши-процедуры')) {
+    return russianUrlMapping['/ru/наши-процедуры'][targetLanguage];
   }
   
   // Eğer mapping'de yoksa, basit prefix ekleme yap

@@ -143,7 +143,7 @@ function App() {
         <Route path="/en/corporate-identity" element={<CorporateIdentity />} />
         <Route path="/en/patient-satisfaction-videos" element={<EnHastaMemnuniyetVideolari />} />
         <Route path="/en/patient-reviews" element={<EnHastaYorumlari />} />
-        <Route path="/en/tedavilerimiz" element={<EnTreatments />} />
+        <Route path="/en/treatments" element={<EnTreatments />} />
         <Route path="/en/hospitadent-social-responsibility" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/en/partner-institutions" element={<AnlasmaliKurumlar />} />
         <Route path="/en/search" element={<EnSearchResults />} />
@@ -279,7 +279,7 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path="/ar/من-نحن" element={<ArAbout />} />
+        <Route path="/ar/men-nahnu" element={<ArAbout />} />
         <Route path="/ar/services" element={<ArServices />} />
         <Route path="/ar/al-muwazafun-al-idariyun" element={<Staff />} />
         <Route path="/ar/al-furu" element={<Branches />} />
@@ -291,7 +291,7 @@ function App() {
         <Route path="/ar/al-hawiyya-al-sharikiyya" element={<CorporateIdentity />} />
         <Route path="/ar/fidiyu-ridha-al-mardha" element={<HastaMemnuniyetVideolari />} />
         <Route path="/ar/ara-al-mardha" element={<HastaYorumlari />} />
-        <Route path="/ar/علاجاتنا" element={<ArTreatments />} />
+        <Route path="/ar/elajatuna" element={<ArTreatments />} />
         <Route path="/ar/al-masuliyya-al-ijtimaiyya-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/ar/al-muassasat-al-sharika" element={<AnlasmaliKurumlar />} />
         <Route path="/ar/al-bahth" element={<SearchResults />} />

@@ -560,7 +560,7 @@ const Treatments = () => {
         title="علاجاتنا - Hospitadent"
         description="جميع علاجات الأسنان والخدمات المقدمة من Hospitadent. طب الأسنان التجميلي، الزراعة، تقويم الأسنان والمزيد."
         keywords="علاجات الأسنان، طب الأسنان التجميلي، الزراعة، تقويم الأسنان، طب أسنان الأطفال، أمراض اللثة، hospitadent"
-        url="https://hospitadent.com/ar/علاجاتنا"
+        url="https://hospitadent.com/ar/elajatuna"
       />
       <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 treatments-page" dir="rtl">
         {/* Header */}

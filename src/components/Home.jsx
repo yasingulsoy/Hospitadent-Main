@@ -447,6 +447,8 @@ const Hero = () => {
           left: 0,
           right: 0,
           bottom: 0,
+          margin: 0,
+          padding: 0,
         }}
         src={require('../assets/videos/firat_okur.mp4')}
         autoPlay
@@ -457,7 +459,7 @@ const Hero = () => {
       {/* Hafif karartma efekti istersen: */}
       {/* <div className="absolute inset-0 bg-black/20 z-0"></div> */}
       {/* Ana içerik - ortalanmış */}
-      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full">
+      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full px-4">
         {/* Logo - sadece mobilde görünür */}
         <div className="mb-4 md:hidden">
           <img src={logo} alt="Hospitadent Logo" className="w-64 h-32 object-contain" />

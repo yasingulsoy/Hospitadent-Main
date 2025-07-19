@@ -198,512 +198,381 @@ const Treatments = () => {
 
     // Имплантат
     {
-      id: 'single-tooth-implant',
-      title: 'Имплантат одного зуба',
+      id: 'dental-implant',
+      title: 'Зубной имплантат',
       category: 'Имплантат',
-      description: 'Лечение имплантатом для одного зуба.',
+      description: 'Современные процедуры зубных имплантатов с высоким процентом успеха.',
       image: '/api/placeholder/300/200',
-      slug: 'implantat-odnogo-zuba'
+      slug: 'zubnoy-implantat'
     },
     {
-      id: 'full-mouth-implant',
-      title: 'Имплантат всей полости рта',
+      id: 'all-on-4',
+      title: 'All-on-4',
       category: 'Имплантат',
-      description: 'Лечение имплантатом для всей полости рта.',
+      description: 'Полное лечение зубов всего с 4 имплантатами.',
       image: '/api/placeholder/300/200',
-      slug: 'implantat-vsey-polosti-rta'
+      slug: 'all-on-4'
     },
     {
-      id: 'multiple-tooth-implant',
-      title: 'Имплантат нескольких зубов',
+      id: 'all-on-6',
+      title: 'All-on-6',
       category: 'Имплантат',
-      description: 'Лечение имплантатом для нескольких зубов.',
+      description: 'Полное лечение зубов с 6 имплантатами.',
       image: '/api/placeholder/300/200',
-      slug: 'implantat-neskolkikh-zubov'
+      slug: 'all-on-6'
     },
     {
-      id: 'one-day-implant',
-      title: 'Имплантат за 1 день',
+      id: 'zygomatic-implant',
+      title: 'Скуловой имплантат',
       category: 'Имплантат',
-      description: 'Лечение имплантатом за один день.',
+      description: 'Процедуры скуловых имплантатов для сложных случаев.',
       image: '/api/placeholder/300/200',
-      slug: 'implantat-za-1-den'
+      slug: 'skulovoy-implantat'
     },
     {
-      id: 'all-on-four',
-      title: 'All on Four',
+      id: 'basal-implant',
+      title: 'Базальный имплантат',
       category: 'Имплантат',
-      description: 'Техника имплантата All on Four.',
+      description: 'Процедуры базальных имплантатов для немедленной нагрузки.',
       image: '/api/placeholder/300/200',
-      slug: 'all-on-four'
+      slug: 'bazalnyy-implantat'
     },
     {
-      id: 'all-on-six',
-      title: 'All on Six',
+      id: 'implant-supported-denture',
+      title: 'Протез на имплантатах',
       category: 'Имплантат',
-      description: 'Техника имплантата All on Six.',
+      description: 'Решения зубных протезов на имплантатах.',
       image: '/api/placeholder/300/200',
-      slug: 'all-on-six'
-    },
-    {
-      id: 'box-technique',
-      title: 'Техника Box',
-      category: 'Имплантат',
-      description: 'Техника имплантата Box.',
-      image: '/api/placeholder/300/200',
-      slug: 'tekhnika-box'
-    },
-
-    // Общие стоматологические процедуры
-    {
-      id: 'dental-examination',
-      title: 'Стоматологический осмотр',
-      category: 'Общие стоматологические процедуры',
-      description: 'Комплексный стоматологический осмотр.',
-      image: '/api/placeholder/300/200',
-      slug: 'stomatologicheskiy-osmotr'
-    },
-    {
-      id: 'crown-veneer',
-      title: 'Зубная коронка',
-      category: 'Общие стоматологические процедуры',
-      description: 'Что такое зубная коронка и как она изготавливается.',
-      image: '/api/placeholder/300/200',
-      slug: 'zubnaya-koronka'
-    },
-    {
-      id: 'dental-filling',
-      title: 'Зубная пломба',
-      category: 'Общие стоматологические процедуры',
-      description: 'Как делается зубная пломба и какие у нее типы.',
-      image: '/api/placeholder/300/200',
-      slug: 'zubnaya-plomba'
-    },
-    {
-      id: 'root-canal-treatment',
-      title: 'Лечение корневого канала',
-      category: 'Общие стоматологические процедуры',
-      description: 'Как делается лечение корневого канала и больно ли это.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-kornevogo-kanala'
-    },
-    {
-      id: 'tooth-extraction',
-      title: 'Удаление зуба',
-      category: 'Общие стоматологические процедуры',
-      description: 'Что такое удаление зуба и как это делается.',
-      image: '/api/placeholder/300/200',
-      slug: 'udalenie-zuba'
-    },
-    {
-      id: 'impacted-tooth-extraction',
-      title: 'Удаление ретинированного зуба',
-      category: 'Общие стоматологические процедуры',
-      description: 'Что такое удаление ретинированного зуба.',
-      image: '/api/placeholder/300/200',
-      slug: 'udalenie-retinirovannogo-zuba'
-    },
-    {
-      id: 'wisdom-tooth-extraction',
-      title: 'Удаление зуба мудрости',
-      category: 'Общие стоматологические процедуры',
-      description: 'Удаление зубов мудрости.',
-      image: '/api/placeholder/300/200',
-      slug: 'udalenie-zuba-mudrosti'
-    },
-    {
-      id: 'broken-tooth-treatment',
-      title: 'Лечение сломанного зуба',
-      category: 'Общие стоматологические процедуры',
-      description: 'Что такое лечение сломанного зуба.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-slomannogo-zuba'
-    },
-
-    // Профилактические стоматологические процедуры
-    {
-      id: 'bad-breath',
-      title: 'Неприятный запах изо рта',
-      category: 'Профилактические стоматологические процедуры',
-      description: 'Что такое неприятный запах изо рта и как это лечится.',
-      image: '/api/placeholder/300/200',
-      slug: 'nepriyatnyy-zapakh-izo-rta'
-    },
-    {
-      id: 'tooth-sensitivity',
-      title: 'Чувствительность зубов',
-      category: 'Профилактические стоматологические процедуры',
-      description: 'Что такое чувствительность зубов и как это лечится.',
-      image: '/api/placeholder/300/200',
-      slug: 'chuvstvitelnost-zubov'
-    },
-    {
-      id: 'teeth-grinding',
-      title: 'Скрежетание зубами',
-      category: 'Профилактические стоматологические процедуры',
-      description: 'Что такое скрежетание зубами и как это лечится.',
-      image: '/api/placeholder/300/200',
-      slug: 'skrezhetanie-zubami'
-    },
-    {
-      id: 'teeth-grinding-treatment',
-      title: 'Лечение скрежетания',
-      category: 'Профилактические стоматологические процедуры',
-      description: 'Что такое лечение скрежетания и как это делается.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-skrezhetaniya'
-    },
-    {
-      id: 'snoring-treatment',
-      title: 'Лечение храпа',
-      category: 'Профилактические стоматологические процедуры',
-      description: 'Что такое лечение храпа и как это применяется.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-khrapa'
+      slug: 'protez-na-implantatakh'
     },
 
     // Ортодонтия
     {
-      id: 'braces-treatment',
-      title: 'Лечение брекетами',
+      id: 'orthodontics',
+      title: 'Ортодонтия',
       category: 'Ортодонтия',
-      description: 'Что такое лечение брекетами и как это применяется.',
+      description: 'Комплексные ортодонтические процедуры.',
       image: '/api/placeholder/300/200',
-      slug: 'lechenie-breketami'
+      slug: 'ortodontiya'
     },
     {
-      id: 'clear-bracket-treatment',
-      title: 'Лечение прозрачными брекетами',
+      id: 'invisible-braces',
+      title: 'Невидимые брекеты',
       category: 'Ортодонтия',
-      description: 'Ортодонтическое лечение с прозрачными брекетами.',
+      description: 'Современные процедуры невидимых брекетов.',
       image: '/api/placeholder/300/200',
-      slug: 'lechenie-prozrachnymi-breketami'
+      slug: 'nevidimye-brekety'
     },
     {
-      id: 'invisalign-treatment',
-      title: 'Лечение Invisalign',
+      id: 'ceramic-braces',
+      title: 'Керамические брекеты',
       category: 'Ортодонтия',
-      description: 'Лечение Invisalign с прозрачными капами.',
+      description: 'Эстетичные керамические брекеты.',
       image: '/api/placeholder/300/200',
-      slug: 'lechenie-invisalign'
+      slug: 'keramicheskie-brekety'
     },
     {
-      id: 'invisible-braces-treatment',
-      title: 'Лечение невидимыми брекетами',
+      id: 'lingual-braces',
+      title: 'Лингвальные брекеты',
       category: 'Ортодонтия',
-      description: 'Невидимое ортодонтическое лечение.',
+      description: 'Внутренние брекеты для максимальной эстетики.',
       image: '/api/placeholder/300/200',
-      slug: 'lechenie-nevidimymi-breketami'
+      slug: 'lingvalnye-brekety'
+    },
+    {
+      id: 'clear-aligners',
+      title: 'Прозрачные каппы',
+      category: 'Ортодонтия',
+      description: 'Современное лечение прозрачными каппами.',
+      image: '/api/placeholder/300/200',
+      slug: 'prozrachnye-kappy'
+    },
+
+    // Хирургия
+    {
+      id: 'wisdom-tooth-extraction',
+      title: 'Удаление зуба мудрости',
+      category: 'Хирургия',
+      description: 'Безопасное удаление зубов мудрости.',
+      image: '/api/placeholder/300/200',
+      slug: 'udalenie-zuba-mudrosti'
+    },
+    {
+      id: 'tooth-extraction',
+      title: 'Удаление зуба',
+      category: 'Хирургия',
+      description: 'Безболезненное удаление зубов.',
+      image: '/api/placeholder/300/200',
+      slug: 'udalenie-zuba'
+    },
+    {
+      id: 'sinus-lift',
+      title: 'Синус-лифтинг',
+      category: 'Хирургия',
+      description: 'Операции синус-лифтинга для имплантационного лечения.',
+      image: '/api/placeholder/300/200',
+      slug: 'sinus-lifting'
+    },
+    {
+      id: 'bone-grafting',
+      title: 'Костная пластика',
+      category: 'Хирургия',
+      description: 'Процедуры костной пластики для имплантационного лечения.',
+      image: '/api/placeholder/300/200',
+      slug: 'kostnaya-plastika'
+    },
+    {
+      id: 'gum-surgery',
+      title: 'Хирургия десен',
+      category: 'Хирургия',
+      description: 'Хирургия десен для здоровой улыбки.',
+      image: '/api/placeholder/300/200',
+      slug: 'khirurgiya-desen'
+    },
+
+    // Эндодонтия
+    {
+      id: 'root-canal-treatment',
+      title: 'Лечение корневых каналов',
+      category: 'Эндодонтия',
+      description: 'Современное лечение корневых каналов.',
+      image: '/api/placeholder/300/200',
+      slug: 'lechenie-kornevykh-kanalov'
+    },
+    {
+      id: 'endodontic-retreatment',
+      title: 'Повторное эндодонтическое лечение',
+      category: 'Эндодонтия',
+      description: 'Повторное эндодонтическое лечение для сложных случаев.',
+      image: '/api/placeholder/300/200',
+      slug: 'povtornoe-endodonticheskoe-lechenie'
+    },
+    {
+      id: 'apicoectomy',
+      title: 'Резекция верхушки корня',
+      category: 'Эндодонтия',
+      description: 'Резекция верхушки корня при хронических воспалениях.',
+      image: '/api/placeholder/300/200',
+      slug: 'rezektsiya-verkhushki-kornya'
+    },
+
+    // Пародонтология
+    {
+      id: 'periodontal-treatment',
+      title: 'Лечение пародонтита',
+      category: 'Пародонтология',
+      description: 'Комплексное лечение пародонтита.',
+      image: '/api/placeholder/300/200',
+      slug: 'lechenie-parodontita'
+    },
+    {
+      id: 'gum-disease-treatment',
+      title: 'Лечение заболеваний десен',
+      category: 'Пародонтология',
+      description: 'Лечение заболеваний десен.',
+      image: '/api/placeholder/300/200',
+      slug: 'lechenie-zabolevaniy-desen'
+    },
+    {
+      id: 'scaling-root-planing',
+      title: 'Удаление зубного камня',
+      category: 'Пародонтология',
+      description: 'Профессиональное удаление зубного камня и сглаживание корней.',
+      image: '/api/placeholder/300/200',
+      slug: 'udalenie-zubnogo-kamnya'
     },
 
     // Детская стоматология
     {
-      id: 'fluoride-application',
-      title: 'Применение фтора',
+      id: 'pediatric-dentistry',
+      title: 'Детская стоматология',
       category: 'Детская стоматология',
-      description: 'Применение фтора для защиты зубов.',
+      description: 'Специальное стоматологическое лечение для детей.',
       image: '/api/placeholder/300/200',
-      slug: 'primenenie-ftora'
+      slug: 'detskaya-stomatologiya'
     },
     {
       id: 'fissure-sealant',
       title: 'Герметизация фиссур',
       category: 'Детская стоматология',
-      description: 'Защита зубных фиссур.',
+      description: 'Герметизация фиссур для профилактики кариеса.',
       image: '/api/placeholder/300/200',
       slug: 'germetizatsiya-fissur'
     },
     {
-      id: 'pediatric-orthodontic-treatment',
-      title: 'Детское ортодонтическое лечение',
+      id: 'fluoride-treatment',
+      title: 'Фтор-терапия',
       category: 'Детская стоматология',
-      description: 'Что такое детское ортодонтическое лечение.',
+      description: 'Фтор-терапия для крепких зубов.',
       image: '/api/placeholder/300/200',
-      slug: 'detskoe-ortodonticheskoe-lechenie'
-    },
-    {
-      id: 'baby-bottle-tooth-decay',
-      title: 'Бутылочный кариес',
-      category: 'Детская стоматология',
-      description: 'Что такое бутылочный кариес.',
-      image: '/api/placeholder/300/200',
-      slug: 'butylochnyy-karies'
-    },
-    {
-      id: 'space-maintainer-treatment',
-      title: 'Лечение удерживателем пространства',
-      category: 'Детская стоматология',
-      description: 'Что такое лечение удерживателем пространства.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-uderzhivatelem-prostranstva'
-    },
-
-    // Пародонтология
-    {
-      id: 'gum-treatment',
-      title: 'Лечение десен',
-      category: 'Пародонтология',
-      description: 'Лечение заболеваний десен.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-desen'
-    },
-    {
-      id: 'curettage-treatment',
-      title: 'Лечение кюретажем',
-      category: 'Пародонтология',
-      description: 'Что такое лечение кюретажем.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-kyuretazhem'
-    },
-    {
-      id: 'flap-treatment',
-      title: 'Лечение лоскутом',
-      category: 'Пародонтология',
-      description: 'Хирургическое лечение десен.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-loskuтом'
-    },
-    {
-      id: 'gingivitis',
-      title: 'Гингивит',
-      category: 'Пародонтология',
-      description: 'Воспаление десен и гингивит.',
-      image: '/api/placeholder/300/200',
-      slug: 'gingivit'
-    },
-    {
-      id: 'dental-calculus-cleaning',
-      title: 'Чистка зубного камня',
-      category: 'Пародонтология',
-      description: 'Что такое чистка зубного камня и как это делается.',
-      image: '/api/placeholder/300/200',
-      slug: 'chistka-zubnogo-kamnya'
-    },
-
-    // Специальные стоматологические процедуры
-    {
-      id: 'digital-dentistry',
-      title: 'Цифровая стоматология',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Цифровая стоматология и дизайн зубов.',
-      image: '/api/placeholder/300/200',
-      slug: 'tsifrovaya-stomatologiya'
-    },
-    {
-      id: 'needle-free-anesthesia',
-      title: 'Анестезия без иглы',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Применение анестезии без иглы.',
-      image: '/api/placeholder/300/200',
-      slug: 'anesteziya-bez-igly'
-    },
-    {
-      id: 'sedation-and-general-anesthesia',
-      title: 'Седация и общая анестезия',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Седация и общая анестезия для процедур.',
-      image: '/api/placeholder/300/200',
-      slug: 'sedatsiya-i-obshchaya-anesteziya'
-    },
-    {
-      id: 'rubber-dam-application',
-      title: 'Применение коффердама',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Применение коффердама для изоляции.',
-      image: '/api/placeholder/300/200',
-      slug: 'primenenie-kofferdama'
-    },
-    {
-      id: 'jaw-tumor',
-      title: 'Опухоль челюсти',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Лечение опухолей челюсти.',
-      image: '/api/placeholder/300/200',
-      slug: 'opukhol-chelyusti'
-    },
-    {
-      id: 'jaw-fracture-treatment',
-      title: 'Лечение перелома челюсти',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Хирургическое лечение переломов челюсти.',
-      image: '/api/placeholder/300/200',
-      slug: 'lechenie-pereloma-chelyusti'
-    },
-    {
-      id: 'dental-spa',
-      title: 'Стоматологический спа',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Расслабляющие услуги стоматологического спа.',
-      image: '/api/placeholder/300/200',
-      slug: 'stomatologicheskiy-spa'
-    },
-    {
-      id: '10x10-examination',
-      title: 'Обследование 10 X 10',
-      category: 'Специальные стоматологические процедуры',
-      description: 'Комплексное стоматологическое обследование 10x10.',
-      image: '/api/placeholder/300/200',
-      slug: 'obsledovanie-10x10'
+      slug: 'ftor-terapiya'
     }
   ];
 
-  // Arama filtreleme
+  // Функция поиска
   const filteredTreatments = allTreatments.filter(treatment =>
     treatment.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     treatment.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
     treatment.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Получить категории
+  const categories = [...new Set(allTreatments.map(treatment => treatment.category))];
+
   return (
     <>
       <SEOHead 
-        title="Наши Процедуры - Hospitadent"
-        description="Все стоматологические процедуры и услуги, предлагаемые Hospitadent. Эстетическая стоматология, имплантаты, ортодонтия и многое другое."
-        keywords="стоматологические процедуры, эстетическая стоматология, имплантаты, ортодонтия, детская стоматология, пародонтология, hospitadent"
-        url="https://hospitadent.com/ru/наши-процедуры"
+        title="Наши процедуры - Hospitadent"
+        description="Откройте для себя наши комплексные стоматологические процедуры: эстетическая стоматология, имплантаты, ортодонтия, хирургия и многое другое. Современные методы лечения для вашей идеальной улыбки."
+        keywords="стоматологические процедуры, имплантаты, ортодонтия, эстетическая стоматология, стоматологическая хирургия, Hospitadent Россия"
+        url="https://hospitadent.com/ru/nashi-protsedury"
       />
-      <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 treatments-page">
-        {/* Header */}
-        <div className="bg-white/80 backdrop-blur-sm py-12">
-          <div className="container mx-auto px-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
-              Наши Процедуры
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-20 md:py-32">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-600/10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Наши <span className="text-blue-600">процедуры</span>
             </h1>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="container mx-auto px-4 py-16 pb-32">
-          <div className="max-w-7xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12">
+              Откройте для себя наши комплексные стоматологические процедуры с новейшими технологиями и опытными специалистами
+            </p>
             
-            {/* Arama Bölümü */}
-            <div className="mb-12">
-              <div className="max-w-lg mx-auto">
-                <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden">
-                  <div className="flex-1 px-6 py-4">
-                    <input
-                      type="text"
-                      placeholder="Поиск"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full text-lg text-gray-800 placeholder-gray-500 focus:outline-none"
-                    />
-                  </div>
-                  <button className="text-[#0f4f78] px-6 py-4 hover:text-[#2bb3ea] transition-all duration-200">
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </button>
-                </div>
+            {/* Поисковая коробка */}
+            <div className="max-w-2xl mx-auto mb-16">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Поиск процедуры или категории..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-full focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-200 transition-all duration-300"
+                />
+                <svg className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
             </div>
-
-            {/* Tedavi Kartları Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              
-              {filteredTreatments.map((treatment) => (
-                <div key={treatment.id} className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-[#004876]/20 group flex flex-col h-full">
-                  {/* Resim */}
-                  <div className="h-48 bg-gradient-to-br from-blue-100 to-cyan-100 relative overflow-hidden flex-shrink-0">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#0f4f78]/20 to-[#2bb3ea]/20"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-6xl text-[#004876]/30">
-                        🦷
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* İçerik */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    {/* Kategori */}
-                    <div className="mb-2 -mt-1">
-                      <span className="inline-block bg-blue-100 text-[#004876] text-xs font-semibold px-0.5 py-0 rounded-full">
-                        {treatment.category}
-                      </span>
-                    </div>
-                    
-                    {/* Başlık */}
-                    <h3 className="text-xl font-bold text-[#0f4f78] mb-3 group-hover:text-[#2bb3ea] transition-colors duration-300 line-clamp-2">
-                      {treatment.title}
-                    </h3>
-                    
-                    {/* Açıklama */}
-                    <p className="text-[#0f4f78]/70 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
-                      {treatment.description}
-                    </p>
-                    
-                    {/* Detay Butonu */}
-                    <a 
-                      href={`/protsedura/${treatment.slug}`}
-                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group mt-auto"
-                    >
-                      Посмотреть Детали
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              ))}
-              
-            </div>
-
-            {/* Sonuç Bulunamadı */}
-            {filteredTreatments.length === 0 && searchTerm && (
-              <div className="text-center py-16">
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-bold text-[#004876] mb-2">
-                  Результаты Не Найдены
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Результаты для "{searchTerm}" не найдены. Вы можете попробовать разные ключевые слова.
-                </p>
-                <button 
-                  onClick={() => setSearchTerm('')}
-                  className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-                >
-                  Показать Все Процедуры
-                </button>
-              </div>
-            )}
-
-            {/* Call to Action */}
-            <div className="text-center mt-16">
-              <div className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] rounded-2xl p-8 text-white">
-                <h2 className="text-3xl font-bold mb-4">
-                  Давайте Определим Лучшую Процедуру для Вас
-                </h2>
-                <p className="text-xl mb-6 opacity-90">
-                  Запишитесь на бесплатную консультацию с нашими стоматологами-экспертами
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
-                    href="tel:4449922"
-                    className="bg-white text-[#0f4f78] px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 inline-flex items-center justify-center"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    444 99 22
-                  </a>
-                  <a 
-                    href="/contact"
-                    className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0f4f78] transition-all duration-300 hover:scale-105 inline-flex items-center justify-center"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                    Связаться с Нами
-                  </a>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Сетка процедур */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {searchTerm && (
+            <div className="mb-8 text-center">
+              <p className="text-lg text-gray-600">
+                Найдено <span className="font-semibold">{filteredTreatments.length}</span> процедур для "{searchTerm}"
+              </p>
+            </div>
+          )}
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredTreatments.map((treatment, index) => (
+              <div
+                key={treatment.id}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden group"
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animation: 'fadeInUp 0.6s ease-out forwards'
+                }}
+              >
+                <div className="relative overflow-hidden">
+                  <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
+                    <div className="text-6xl text-blue-400 opacity-60 group-hover:scale-110 transition-transform duration-500">
+                      🦷
+                    </div>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full">
+                      {treatment.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                    {treatment.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {treatment.description}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-500">
+                      ID: {treatment.slug}
+                    </span>
+                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-medium">
+                      Показать детали
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {filteredTreatments.length === 0 && searchTerm && (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Процедуры не найдены</h3>
+              <p className="text-gray-600 mb-6">
+                Попробуйте другие поисковые запросы или просмотрите все наши процедуры.
+              </p>
+              <button
+                onClick={() => setSearchTerm('')}
+                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+              >
+                Показать все процедуры
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-cyan-600 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            Готовы к идеальной улыбке?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Запишитесь на прием сегодня и получите консультацию от наших экспертов
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://tk.emsal.com.tr/hospitadent/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-bold rounded-full hover:bg-gray-100 transition-colors duration-300 text-lg"
+            >
+              📞 Записаться на прием
+            </a>
+            <a
+              href="tel:4449922"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border-2 border-white font-bold rounded-full hover:bg-white hover:text-blue-600 transition-colors duration-300 text-lg"
+            >
+              ☎️ Позвонить
+            </a>
+          </div>
+        </div>
+      </section>
 
       <Footer />
+      
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </>
   );
 };

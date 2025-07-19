@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Footer } from '../../components';
 import SEOHead from '../../components/SEO/SEOHead';
 
-const Treatments = () => {
+const FrTreatments = () => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -13,25 +13,25 @@ const Treatments = () => {
       id: 'hollywood-smile',
       title: 'Hollywood Smile',
       category: 'Dentisterie Esthétique',
-      description: 'Obtenez le sourire de vos rêves avec une conception parfaite du sourire.',
+      description: 'Obtenez votre sourire de rêve avec un design parfait.',
       image: '/api/placeholder/300/200',
       slug: 'hollywood-smile'
     },
     {
       id: 'smile-design',
-      title: 'Conception du Sourire',
+      title: 'Design du Sourire',
       category: 'Dentisterie Esthétique',
-      description: 'Conception esthétique du sourire personnalisée avec planification numérique.',
+      description: 'Design de sourire esthétique personnalisé avec planification numérique.',
       image: '/api/placeholder/300/200',
-      slug: 'conception-du-sourire'
+      slug: 'smile-design'
     },
     {
       id: 'teeth-whitening',
       title: 'Blanchiment des Dents',
       category: 'Dentisterie Esthétique',
-      description: 'Applications de blanchiment des dents rapides et sûres avec des méthodes modernes.',
+      description: 'Applications de blanchiment rapides et sûres avec des méthodes modernes.',
       image: '/api/placeholder/300/200',
-      slug: 'blanchiment-des-dents'
+      slug: 'teeth-whitening'
     },
     {
       id: 'pink-aesthetics',
@@ -39,47 +39,47 @@ const Treatments = () => {
       category: 'Dentisterie Esthétique',
       description: 'Sourire parfait avec l\'esthétique des gencives.',
       image: '/api/placeholder/300/200',
-      slug: 'esthetique-rose'
+      slug: 'pink-aesthetics'
     },
     {
       id: 'laminate-veneer',
-      title: 'Facettes Laminées',
+      title: 'Facette Laminate',
       category: 'Dentisterie Esthétique',
       description: 'Facettes en porcelaine esthétiques et fines.',
       image: '/api/placeholder/300/200',
-      slug: 'facettes-laminees'
+      slug: 'laminate-veneer'
     },
     {
       id: 'zirconium-crown',
-      title: 'Couronnes en Zircone',
+      title: 'Couronne Zircone',
       category: 'Dentisterie Esthétique',
-      description: 'Solutions de couronnes dentaires naturelles, durables et esthétiques.',
+      description: 'Solutions de couronne dentaire naturelles, durables et esthétiques.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-zircone'
+      slug: 'zirconium-crown'
     },
     {
       id: 'porcelain-crown',
-      title: 'Couronnes en Porcelaine',
+      title: 'Couronne Porcelaine',
       category: 'Dentisterie Esthétique',
       description: 'Couronnes dentaires en porcelaine durables et naturelles.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-porcelaine'
+      slug: 'porcelain-crown'
     },
     {
       id: 'lumineers-veneer',
-      title: 'Facettes Lumineers',
+      title: 'Facette Lumineers',
       category: 'Dentisterie Esthétique',
-      description: 'Système de facettes en porcelaine mince et transparent.',
+      description: 'Système de facette en porcelaine fine et transparente.',
       image: '/api/placeholder/300/200',
-      slug: 'facettes-lumineers'
+      slug: 'lumineers-veneer'
     },
     {
       id: 'emax-crown',
-      title: 'Couronnes Emax',
+      title: 'Couronne Emax',
       category: 'Dentisterie Esthétique',
-      description: 'Couronnes dentaires Emax avec esthétique et durabilité élevées.',
+      description: 'Couronnes dentaires Emax avec haute esthétique et durabilité.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-emax'
+      slug: 'emax-crown'
     },
     {
       id: 'aesthetic-filling',
@@ -87,7 +87,7 @@ const Treatments = () => {
       category: 'Dentisterie Esthétique',
       description: 'Obturations dentaires esthétiques naturelles.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-esthetique'
+      slug: 'aesthetic-filling'
     },
     {
       id: 'bisectomy',
@@ -95,15 +95,15 @@ const Treatments = () => {
       category: 'Dentisterie Esthétique',
       description: 'Procédure chirurgicale pour l\'esthétique des gencives.',
       image: '/api/placeholder/300/200',
-      slug: 'bisectomie'
+      slug: 'bisectomy'
     },
     {
       id: 'laser-dental-treatment',
-      title: 'Traitement Dentaire au Laser',
+      title: 'Traitement Dentaire Laser',
       category: 'Dentisterie Esthétique',
       description: 'Traitements dentaires avec technologie laser moderne.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-laser'
+      slug: 'laser-dental-treatment'
     },
     {
       id: 'inlay-filling',
@@ -111,7 +111,7 @@ const Treatments = () => {
       category: 'Dentisterie Esthétique',
       description: 'Technique d\'obturation précise et esthétique.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-inlay'
+      slug: 'inlay-filling'
     },
     {
       id: 'onlay-filling',
@@ -119,15 +119,15 @@ const Treatments = () => {
       category: 'Dentisterie Esthétique',
       description: 'Restauration d\'obturation complète.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-onlay'
+      slug: 'onlay-filling'
     },
     {
       id: 'dental-diamond',
       title: 'Diamant Dentaire',
       category: 'Dentisterie Esthétique',
-      description: 'Procédure de pose de diamant sur les dents.',
+      description: 'Application de diamant sur les dents.',
       image: '/api/placeholder/300/200',
-      slug: 'diamant-dentaire'
+      slug: 'dental-diamond'
     },
     {
       id: 'dental-tattoo',
@@ -135,15 +135,15 @@ const Treatments = () => {
       category: 'Dentisterie Esthétique',
       description: 'Application de tatouage décoratif sur les dents.',
       image: '/api/placeholder/300/200',
-      slug: 'tatouage-dentaire'
+      slug: 'dental-tattoo'
     },
     {
       id: 'dental-jewelry',
-      title: 'Bijoux Dentaires',
+      title: 'Bijou Dentaire',
       category: 'Dentisterie Esthétique',
-      description: 'Procédure de pose de bijoux sur les dents.',
+      description: 'Application de bijoux sur les dents.',
       image: '/api/placeholder/300/200',
-      slug: 'bijoux-dentaires'
+      slug: 'dental-jewelry'
     },
     {
       id: 'bonding-treatment',
@@ -151,7 +151,7 @@ const Treatments = () => {
       category: 'Dentisterie Esthétique',
       description: 'Applications de bonding esthétiques pour les petits défauts dentaires.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-bonding'
+      slug: 'bonding-treatment'
     },
 
     // Dents Manquantes
@@ -159,25 +159,25 @@ const Treatments = () => {
       id: 'dental-bridge',
       title: 'Bridge Dentaire',
       category: 'Dents Manquantes',
-      description: 'Bridge fixe pour les dents manquantes.',
+      description: 'Prothèse bridge fixe pour les dents manquantes.',
       image: '/api/placeholder/300/200',
-      slug: 'bridge-dentaire'
+      slug: 'dental-bridge'
     },
     {
       id: 'denture',
       title: 'Prothèse Dentaire',
       category: 'Dents Manquantes',
-      description: 'Solutions de prothèses dentaires amovibles.',
+      description: 'Solutions de prothèse dentaire amovible.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-dentaire'
+      slug: 'denture'
     },
     {
       id: 'fixed-prosthesis',
       title: 'Prothèse Fixe',
       category: 'Dents Manquantes',
-      description: 'Applications de prothèses dentaires fixes.',
+      description: 'Applications de prothèse dentaire fixe.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-fixe'
+      slug: 'fixed-prosthesis'
     },
     {
       id: 'snap-on-denture',
@@ -185,15 +185,15 @@ const Treatments = () => {
       category: 'Dents Manquantes',
       description: 'Système de prothèse dentaire à clip.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-clip'
+      slug: 'snap-on-denture'
     },
     {
       id: 'full-mouth-treatment',
-      title: 'Traitement Complet de la Bouche',
+      title: 'Traitement Dentaire Complet',
       category: 'Dents Manquantes',
       description: 'Traitement dentaire complet pour toute la bouche.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-complet-bouche'
+      slug: 'full-mouth-treatment'
     },
 
     // Implant
@@ -201,9 +201,9 @@ const Treatments = () => {
       id: 'single-tooth-implant',
       title: 'Implant Dent Unique',
       category: 'Implant',
-      description: 'Traitement d\'implant pour une seule dent.',
+      description: 'Traitement d\'implant pour une dent unique.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-dent-unique'
+      slug: 'single-tooth-implant'
     },
     {
       id: 'full-mouth-implant',
@@ -211,23 +211,23 @@ const Treatments = () => {
       category: 'Implant',
       description: 'Traitement d\'implant pour toute la bouche.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-bouche-complete'
+      slug: 'full-mouth-implant'
     },
     {
       id: 'multiple-tooth-implant',
-      title: 'Implant Multiples Dents',
+      title: 'Implant Dents Multiples',
       category: 'Implant',
       description: 'Traitement d\'implant pour plusieurs dents.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-multiples-dents'
+      slug: 'multiple-tooth-implant'
     },
     {
       id: 'one-day-implant',
-      title: 'Implant en 1 Jour',
+      title: 'Implant en Un Jour',
       category: 'Implant',
-      description: 'Traitement d\'implant en une seule journée.',
+      description: 'Traitement d\'implant en un jour.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-1-jour'
+      slug: 'one-day-implant'
     },
     {
       id: 'all-on-four',
@@ -251,7 +251,7 @@ const Treatments = () => {
       category: 'Implant',
       description: 'Technique d\'implant Box.',
       image: '/api/placeholder/300/200',
-      slug: 'technique-box'
+      slug: 'box-technique'
     },
 
     // Traitements Dentaires Généraux
@@ -261,63 +261,63 @@ const Treatments = () => {
       category: 'Traitements Dentaires Généraux',
       description: 'Examen dentaire complet.',
       image: '/api/placeholder/300/200',
-      slug: 'examen-dentaire'
+      slug: 'dental-examination'
     },
     {
       id: 'crown-veneer',
-      title: 'Couronne Dentaire',
+      title: 'Facette Couronne',
       category: 'Traitements Dentaires Généraux',
-      description: 'Couronne dentaire et comment elle est faite.',
+      description: 'Qu\'est-ce qu\'une facette couronne et comment est-elle fabriquée.',
       image: '/api/placeholder/300/200',
-      slug: 'couronne-dentaire'
+      slug: 'crown-veneer'
     },
     {
       id: 'dental-filling',
       title: 'Obturation Dentaire',
       category: 'Traitements Dentaires Généraux',
-      description: 'Comment faire une obturation dentaire et ses types.',
+      description: 'Comment l\'obturation dentaire est-elle effectuée et quels sont ses types.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-dentaire'
+      slug: 'dental-filling'
     },
     {
       id: 'root-canal-treatment',
-      title: 'Traitement de Canal',
+      title: 'Traitement Canal Radiculaire',
       category: 'Traitements Dentaires Généraux',
-      description: 'Comment faire un traitement de canal et est-ce que ça fait mal.',
+      description: 'Comment le traitement canal radiculaire est-il effectué et fait-il mal.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-canal'
+      slug: 'root-canal-treatment'
     },
     {
       id: 'tooth-extraction',
       title: 'Extraction Dentaire',
       category: 'Traitements Dentaires Généraux',
-      description: 'Qu\'est-ce que l\'extraction dentaire et comment elle est faite.',
+      description: 'Qu\'est-ce que l\'extraction dentaire et comment est-elle effectuée.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dentaire'
+      slug: 'tooth-extraction'
     },
     {
       id: 'impacted-tooth-extraction',
-      title: 'Extraction de Dent Incluse',
+      title: 'Extraction Dent Incluse',
       category: 'Traitements Dentaires Généraux',
       description: 'Qu\'est-ce que l\'extraction de dent incluse.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dent-incluse'
+      slug: 'impacted-tooth-extraction'
     },
     {
       id: 'wisdom-tooth-extraction',
-      title: 'Extraction de Dent de Sagesse',
+      title: 'Extraction Dent de Sagesse',
       category: 'Traitements Dentaires Généraux',
       description: 'Extraction des dents de sagesse.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dent-sagesse'
+      slug: 'wisdom-tooth-extraction'
     },
     {
       id: 'broken-tooth-treatment',
-      title: 'Traitement de Dent Cassée',
+      title: 'Traitement Dent Cassée',
       category: 'Traitements Dentaires Généraux',
       description: 'Qu\'est-ce que le traitement de dent cassée.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-dent-cassee'
+      slug: 'broken-tooth-treatment'
     },
 
     // Traitements Dentaires Préventifs
@@ -325,93 +325,93 @@ const Treatments = () => {
       id: 'bad-breath',
       title: 'Mauvaise Haleine',
       category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que la mauvaise haleine et comment elle est traitée.',
+      description: 'Qu\'est-ce que la mauvaise haleine et comment est-elle traitée.',
       image: '/api/placeholder/300/200',
-      slug: 'mauvaise-haleine'
+      slug: 'bad-breath'
     },
     {
       id: 'tooth-sensitivity',
       title: 'Sensibilité Dentaire',
       category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que la sensibilité dentaire et comment elle est traitée.',
+      description: 'Qu\'est-ce que la sensibilité dentaire et comment est-elle traitée.',
       image: '/api/placeholder/300/200',
-      slug: 'sensibilite-dentaire'
+      slug: 'tooth-sensitivity'
     },
     {
       id: 'teeth-grinding',
       title: 'Grincement des Dents',
       category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le grincement des dents et comment il est traité.',
+      description: 'Qu\'est-ce que le grincement des dents et comment est-il traité.',
       image: '/api/placeholder/300/200',
-      slug: 'grincement-dents'
+      slug: 'teeth-grinding'
     },
     {
       id: 'teeth-grinding-treatment',
-      title: 'Traitement du Grincement',
+      title: 'Traitement Grincement des Dents',
       category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le traitement du grincement et comment il est fait.',
+      description: 'Qu\'est-ce que le traitement du grincement des dents et comment est-il effectué.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-grincement'
+      slug: 'teeth-grinding-treatment'
     },
     {
       id: 'snoring-treatment',
-      title: 'Traitement du Ronflement',
+      title: 'Traitement Ronflement',
       category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le traitement du ronflement et comment il est appliqué.',
+      description: 'Qu\'est-ce que le traitement du ronflement et comment est-il appliqué.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-ronflement'
+      slug: 'snoring-treatment'
     },
 
     // Orthodontie
     {
       id: 'braces-treatment',
-      title: 'Traitement d\'Appareil',
+      title: 'Traitement Appareil Dentaire',
       category: 'Orthodontie',
-      description: 'Qu\'est-ce que le traitement d\'appareil et comment il est appliqué.',
+      description: 'Qu\'est-ce que le traitement d\'appareil dentaire et comment est-il appliqué.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-appareil'
+      slug: 'braces-treatment'
     },
     {
       id: 'clear-bracket-treatment',
-      title: 'Traitement à Brackets Transparents',
+      title: 'Traitement Bracket Transparent',
       category: 'Orthodontie',
-      description: 'Traitement orthodontique avec brackets transparents.',
+      description: 'Traitement orthodontique avec bracket transparent.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-brackets-transparents'
+      slug: 'clear-bracket-treatment'
     },
     {
       id: 'invisalign-treatment',
       title: 'Traitement Invisalign',
       category: 'Orthodontie',
-      description: 'Traitement Invisalign avec gouttières transparentes.',
+      description: 'Traitement Invisalign avec aligneurs transparents.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-invisalign'
+      slug: 'invisalign-treatment'
     },
     {
       id: 'invisible-braces-treatment',
-      title: 'Traitement d\'Appareil Invisible',
+      title: 'Traitement Appareil Invisible',
       category: 'Orthodontie',
       description: 'Traitement orthodontique invisible.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-appareil-invisible'
+      slug: 'invisible-braces-treatment'
     },
 
     // Pédodontie
     {
       id: 'fluoride-application',
-      title: 'Application de Fluor',
+      title: 'Application Fluor',
       category: 'Pédodontie',
-      description: 'Application de fluor pour la protection dentaire.',
+      description: 'Application de fluor pour protéger les dents.',
       image: '/api/placeholder/300/200',
-      slug: 'application-fluor'
+      slug: 'fluoride-application'
     },
     {
       id: 'fissure-sealant',
-      title: 'Scellement de Fissures',
+      title: 'Scellement Fissure',
       category: 'Pédodontie',
       description: 'Protection des fissures dentaires.',
       image: '/api/placeholder/300/200',
-      slug: 'scellement-fissures'
+      slug: 'fissure-sealant'
     },
     {
       id: 'pediatric-orthodontic-treatment',
@@ -419,49 +419,49 @@ const Treatments = () => {
       category: 'Pédodontie',
       description: 'Qu\'est-ce que le traitement orthodontique pédiatrique.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-orthodontique-pediatrique'
+      slug: 'pediatric-orthodontic-treatment'
     },
     {
       id: 'baby-bottle-tooth-decay',
-      title: 'Carie du Biberon',
+      title: 'Carie Biberon',
       category: 'Pédodontie',
       description: 'Qu\'est-ce que la carie du biberon.',
       image: '/api/placeholder/300/200',
-      slug: 'carie-biberon'
+      slug: 'baby-bottle-tooth-decay'
     },
     {
       id: 'space-maintainer-treatment',
-      title: 'Traitement de Mainteneur d\'Espace',
+      title: 'Traitement Mainteneur d\'Espace',
       category: 'Pédodontie',
-      description: 'Qu\'est-ce que le traitement de mainteneur d\'espace.',
+      description: 'Qu\'est-ce que le traitement mainteneur d\'espace.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-mainteneur-espace'
+      slug: 'space-maintainer-treatment'
     },
 
     // Parodontologie
     {
       id: 'gum-treatment',
-      title: 'Traitement des Gencives',
+      title: 'Traitement Gencive',
       category: 'Parodontologie',
       description: 'Traitement des maladies des gencives.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-gencives'
+      slug: 'gum-treatment'
     },
     {
       id: 'curettage-treatment',
-      title: 'Traitement de Curetage',
+      title: 'Traitement Curettage',
       category: 'Parodontologie',
-      description: 'Qu\'est-ce que le traitement de curetage.',
+      description: 'Qu\'est-ce que le traitement de curettage.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-curetage'
+      slug: 'curettage-treatment'
     },
     {
       id: 'flap-treatment',
-      title: 'Traitement de Lambeau',
+      title: 'Traitement Lambeau',
       category: 'Parodontologie',
-      description: 'Traitement chirurgical des gencives.',
+      description: 'Traitement chirurgical pour les gencives.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-lambeau'
+      slug: 'flap-treatment'
     },
     {
       id: 'gingivitis',
@@ -469,15 +469,15 @@ const Treatments = () => {
       category: 'Parodontologie',
       description: 'Inflammation des gencives et gingivite.',
       image: '/api/placeholder/300/200',
-      slug: 'gingivite'
+      slug: 'gingivitis'
     },
     {
       id: 'dental-calculus-cleaning',
-      title: 'Nettoyage du Tartre',
+      title: 'Nettoyage Tartre',
       category: 'Parodontologie',
-      description: 'Qu\'est-ce que le nettoyage du tartre et comment il est fait.',
+      description: 'Qu\'est-ce que le nettoyage du tartre et comment est-il effectué.',
       image: '/api/placeholder/300/200',
-      slug: 'nettoyage-tartre'
+      slug: 'dental-calculus-cleaning'
     },
 
     // Traitements Dentaires Spéciaux
@@ -485,9 +485,9 @@ const Treatments = () => {
       id: 'digital-dentistry',
       title: 'Dentisterie Numérique',
       category: 'Traitements Dentaires Spéciaux',
-      description: 'Dentisterie numérique et conception dentaire.',
+      description: 'Dentisterie numérique et design dentaire.',
       image: '/api/placeholder/300/200',
-      slug: 'dentisterie-numerique'
+      slug: 'digital-dentistry'
     },
     {
       id: 'needle-free-anesthesia',
@@ -495,7 +495,7 @@ const Treatments = () => {
       category: 'Traitements Dentaires Spéciaux',
       description: 'Application d\'anesthésie sans aiguille.',
       image: '/api/placeholder/300/200',
-      slug: 'anesthesie-sans-aiguille'
+      slug: 'needle-free-anesthesia'
     },
     {
       id: 'sedation-and-general-anesthesia',
@@ -503,31 +503,31 @@ const Treatments = () => {
       category: 'Traitements Dentaires Spéciaux',
       description: 'Sédation et anesthésie générale pour les traitements.',
       image: '/api/placeholder/300/200',
-      slug: 'sedation-anesthesie-generale'
+      slug: 'sedation-and-general-anesthesia'
     },
     {
       id: 'rubber-dam-application',
-      title: 'Application de Digue',
+      title: 'Application Digue',
       category: 'Traitements Dentaires Spéciaux',
       description: 'Application de digue pour l\'isolation.',
       image: '/api/placeholder/300/200',
-      slug: 'application-digue'
+      slug: 'rubber-dam-application'
     },
     {
       id: 'jaw-tumor',
-      title: 'Tumeur de la Mâchoire',
+      title: 'Tumeur Mâchoire',
       category: 'Traitements Dentaires Spéciaux',
-      description: 'Traitement des tumeurs de la mâchoire.',
+      description: 'Traitement de tumeur de la mâchoire.',
       image: '/api/placeholder/300/200',
-      slug: 'tumeur-machoire'
+      slug: 'jaw-tumor'
     },
     {
       id: 'jaw-fracture-treatment',
-      title: 'Traitement de Fracture de Mâchoire',
+      title: 'Traitement Fracture Mâchoire',
       category: 'Traitements Dentaires Spéciaux',
-      description: 'Traitement chirurgical des fractures de mâchoire.',
+      description: 'Traitement chirurgical pour les fractures de la mâchoire.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-fracture-machoire'
+      slug: 'jaw-fracture-treatment'
     },
     {
       id: 'dental-spa',
@@ -535,7 +535,7 @@ const Treatments = () => {
       category: 'Traitements Dentaires Spéciaux',
       description: 'Services de spa dentaire relaxants.',
       image: '/api/placeholder/300/200',
-      slug: 'spa-dentaire'
+      slug: 'dental-spa'
     },
     {
       id: '10x10-examination',
@@ -543,11 +543,11 @@ const Treatments = () => {
       category: 'Traitements Dentaires Spéciaux',
       description: 'Examen dentaire complet 10x10.',
       image: '/api/placeholder/300/200',
-      slug: 'examen-10x10'
+      slug: '10x10-examination'
     }
   ];
 
-  // Arama filtreleme
+  // Filtrage de recherche
   const filteredTreatments = allTreatments.filter(treatment =>
     treatment.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     treatment.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -576,7 +576,7 @@ const Treatments = () => {
         <div className="container mx-auto px-4 py-16 pb-32">
           <div className="max-w-7xl mx-auto">
             
-            {/* Arama Bölümü */}
+            {/* Section de Recherche */}
             <div className="mb-12">
               <div className="max-w-lg mx-auto">
                 <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden">
@@ -598,12 +598,12 @@ const Treatments = () => {
               </div>
             </div>
 
-            {/* Tedavi Kartları Grid */}
+            {/* Grille des Cartes de Traitement */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               
               {filteredTreatments.map((treatment) => (
                 <div key={treatment.id} className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-[#004876]/20 group flex flex-col h-full">
-                  {/* Resim */}
+                  {/* Image */}
                   <div className="h-48 bg-gradient-to-br from-blue-100 to-cyan-100 relative overflow-hidden flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#0f4f78]/20 to-[#2bb3ea]/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -613,28 +613,28 @@ const Treatments = () => {
                     </div>
                   </div>
                   
-                  {/* İçerik */}
+                  {/* Contenu */}
                   <div className="p-6 flex flex-col flex-grow">
-                    {/* Kategori */}
+                    {/* Catégorie */}
                     <div className="mb-2 -mt-1">
                       <span className="inline-block bg-blue-100 text-[#004876] text-xs font-semibold px-0.5 py-0 rounded-full">
                         {treatment.category}
                       </span>
                     </div>
                     
-                    {/* Başlık */}
+                    {/* Titre */}
                     <h3 className="text-xl font-bold text-[#0f4f78] mb-3 group-hover:text-[#2bb3ea] transition-colors duration-300 line-clamp-2">
                       {treatment.title}
                     </h3>
                     
-                    {/* Açıklama */}
+                    {/* Description */}
                     <p className="text-[#0f4f78]/70 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
                       {treatment.description}
                     </p>
                     
-                    {/* Detay Butonu */}
+                    {/* Bouton Détail */}
                     <a 
-                      href={`/traitement/${treatment.slug}`}
+                      href={`/fr/traitement/${treatment.slug}`}
                       className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group mt-auto"
                     >
                       Voir les Détails
@@ -648,12 +648,12 @@ const Treatments = () => {
               
             </div>
 
-            {/* Sonuç Bulunamadı */}
+            {/* Aucun Résultat Trouvé */}
             {filteredTreatments.length === 0 && searchTerm && (
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">🔍</div>
                 <h3 className="text-2xl font-bold text-[#004876] mb-2">
-                  Aucun Résultat Trouvé
+                  Aucun Résultat de Recherche Trouvé
                 </h3>
                 <p className="text-gray-600 mb-6">
                   Aucun résultat trouvé pour "{searchTerm}". Vous pouvez essayer différents mots-clés.
@@ -662,7 +662,7 @@ const Treatments = () => {
                   onClick={() => setSearchTerm('')}
                   className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                 >
-                  Voir Tous les Traitements
+                  Afficher Tous les Traitements
                 </button>
               </div>
             )}
@@ -687,7 +687,7 @@ const Treatments = () => {
                     444 99 22
                   </a>
                   <a 
-                    href="/contact"
+                    href="/fr/contact"
                     className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0f4f78] transition-all duration-300 hover:scale-105 inline-flex items-center justify-center"
                   >
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -708,4 +708,4 @@ const Treatments = () => {
   );
 };
 
-export default Treatments; 
+export default FrTreatments; 

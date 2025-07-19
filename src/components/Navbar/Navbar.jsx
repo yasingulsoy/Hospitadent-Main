@@ -187,7 +187,7 @@ const Navbar = () => {
       </button>
 
       {/* Mobilde üst beyaz bar */}
-              <div className="w-full bg-white md:hidden pt-4">
+      <div className="w-full bg-white md:hidden">
         <div className="flex items-center justify-between px-4 py-2">
           {/* Sol: Boş alan (hamburger menü butonu için) */}
           <div className="w-12"></div>
