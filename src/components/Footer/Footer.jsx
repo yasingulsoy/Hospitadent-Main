@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter, FaYoutube, FaWhatsa
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-[#fafbfc] border-t border-gray-100 pt-10 pb-4 px-2 md:px-0">
+    <footer className="bg-[#fafbfc] pt-10 pb-4 px-1 md:px-0">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-8">
         {/* 4 Sütun */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1">
@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Alt Bilgi */}
-      <div className="max-w-7xl mx-auto mt-8 border-t border-gray-200 pt-4 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
+              <div className="max-w-7xl mx-auto mt-8 pt-4 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
         <span>© {currentYear} Hospitadent. Tüm hakları saklıdır.</span>
         <span>Developer: Yasin Gülsoy</span>
       </div>

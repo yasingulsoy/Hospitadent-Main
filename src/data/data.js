@@ -68,7 +68,7 @@ export const navLinksData = [
   },
   {
     name: 'navbar.ourTreatments',
-    path: '',
+    path: 'tedavilerimiz',
     submenu: [
       {
         name: 'navbar.cosmeticDentistry',
@@ -94,13 +94,101 @@ export const navLinksData = [
           { name: 'navbar.bondingTreatment', path: 'bonding' },
         ]
       },
-      { name: 'navbar.missingTeeth', path: 'eksik-dis' },
-      { name: 'navbar.implant', path: 'implant' },
-      { name: 'navbar.generalDentalTreatments', path: 'genel-tedaviler' },
-      { name: 'navbar.orthodontics', path: 'ortodonti' },
-      { name: 'navbar.pedodontics', path: 'pedodonti' },
-      { name: 'navbar.periodontology', path: 'periodontoloji' },
-      { name: 'navbar.specialDentalTreatments', path: 'ozel-tedaviler' },
+      {
+        name: 'navbar.missingTeeth',
+        path: '',
+        submenu: [
+          { name: 'navbar.dentalBridge', path: 'kopru-dis' },
+          { name: 'navbar.denture', path: 'takma-dis' },
+          { name: 'navbar.fixedProsthesis', path: 'sabit-protez' },
+          { name: 'navbar.snapOnDenture', path: 'citcitli-protez' },
+          { name: 'navbar.fullMouthTreatment', path: 'full-agiz-tedavisi' },
+        ]
+      },
+      {
+        name: 'navbar.implant',
+        path: '',
+        submenu: [
+          { name: 'navbar.singleToothImplant', path: 'tek-dis-implant' },
+          { name: 'navbar.fullMouthImplant', path: 'full-agiz-implant' },
+          { name: 'navbar.multipleToothImplant', path: 'coklu-dis-implant' },
+          { name: 'navbar.oneDayImplant', path: '1-gunde-implant' },
+          { name: 'navbar.allOnFour', path: 'all-on-four' },
+          { name: 'navbar.allOnSix', path: 'all-on-six' },
+          { name: 'navbar.boxTechnique', path: 'box-teknik' },
+        ]
+      },
+      {
+        name: 'navbar.generalDentalTreatments',
+        path: '',
+        submenu: [
+          { name: 'navbar.dentalExamination', path: 'dis-muayenesi' },
+          { name: 'navbar.crownVeneer', path: 'kuron-kaplama' },
+          { name: 'navbar.dentalFilling', path: 'dis-dolgusu' },
+          { name: 'navbar.rootCanalTreatment', path: 'kanal-tedavisi' },
+          { name: 'navbar.toothExtraction', path: 'dis-cekimi' },
+          { name: 'navbar.impactedToothExtraction', path: 'gomulu-dis-cekimi' },
+          { name: 'navbar.wisdomToothExtraction', path: '20lik-dis-cekimi' },
+          { name: 'navbar.brokenToothTreatment', path: 'kirik-dis-tedavisi' },
+        ]
+      },
+      {
+        name: 'navbar.preventiveDentalTreatments',
+        path: '',
+        submenu: [
+          { name: 'navbar.badBreath', path: 'agiz-kokusu' },
+          { name: 'navbar.toothSensitivity', path: 'dis-hassasiyeti' },
+          { name: 'navbar.teethGrinding', path: 'dis-sikma' },
+          { name: 'navbar.teethGrindingTreatment', path: 'dis-gicirdatma-tedavisi' },
+          { name: 'navbar.snoringTreatment', path: 'horlama-tedavisi' },
+        ]
+      },
+      {
+        name: 'navbar.orthodontics',
+        path: '',
+        submenu: [
+          { name: 'navbar.bracesTreatment', path: 'dis-teli-tedavisi' },
+          { name: 'navbar.clearBracketTreatment', path: 'seffaf-braketli-tedavi' },
+          { name: 'navbar.invisalignTreatment', path: 'invisalign-tedavisi' },
+          { name: 'navbar.invisibleBracesTreatment', path: 'gorunmez-tel-tedavisi' },
+        ]
+      },
+      {
+        name: 'navbar.pedodontics',
+        path: '',
+        submenu: [
+          { name: 'navbar.fluorideApplication', path: 'fluorid-uygulamasi' },
+          { name: 'navbar.fissureSealant', path: 'fissur-ortucu' },
+          { name: 'navbar.pediatricOrthodonticTreatment', path: 'cocuk-ortodonti-tedavisi' },
+          { name: 'navbar.babyBottleToothDecay', path: 'biberon-curugu' },
+          { name: 'navbar.spaceMaintainerTreatment', path: 'yer-tutucu-tedavisi' },
+        ]
+      },
+      {
+        name: 'navbar.periodontology',
+        path: '',
+        submenu: [
+          { name: 'navbar.gumTreatment', path: 'dis-eti-tedavisi' },
+          { name: 'navbar.curettageTreatment', path: 'kuretaj-tedavisi' },
+          { name: 'navbar.flapTreatment', path: 'flap-tedavisi' },
+          { name: 'navbar.gingivitis', path: 'dis-eti-iltihabi' },
+          { name: 'navbar.dentalCalculusCleaning', path: 'dis-tasi-temizligi' },
+        ]
+      },
+      {
+        name: 'navbar.specialDentalTreatments',
+        path: '',
+        submenu: [
+          { name: 'navbar.digitalDentistry', path: 'dijital-dis-hekimligi' },
+          { name: 'navbar.needleFreeAnesthesia', path: 'ignesiz-anestezi' },
+          { name: 'navbar.sedationAndGeneralAnesthesia', path: 'sedasyon-ve-genel-anestezi' },
+          { name: 'navbar.rubberDamApplication', path: 'rubber-dam-uygulamasi' },
+          { name: 'navbar.jawTumor', path: 'cene-tumoru' },
+          { name: 'navbar.jawFractureTreatment', path: 'cene-kirigi-tedavisi' },
+          { name: 'navbar.dentalSpa', path: 'dental-spa' },
+          { name: 'navbar.tenByTenExamination', path: '10x10-muayene' },
+        ]
+      },
     ]
   },
   { name: 'navbar.ourDoctors', path: 'doctors' },

@@ -44,7 +44,7 @@ const Contact = () => {
                   placeholder="Adı/Soyadı"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700"
+                  className="w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-700"
                   required
                 />
               </div>
@@ -55,7 +55,7 @@ const Contact = () => {
                   placeholder="Telefon Numarası"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700"
+                  className="w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-700"
                 />
               </div>
             </div>
@@ -69,7 +69,7 @@ const Contact = () => {
                   placeholder="Mail Adresi"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700"
+                  className="w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-700"
                   required
                 />
               </div>
@@ -80,7 +80,7 @@ const Contact = () => {
                   placeholder="Mesajınız"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700"
+                  className="w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-700"
                   required
                 />
               </div>

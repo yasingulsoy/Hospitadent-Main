@@ -54,10 +54,10 @@ const Services = () => {
             ref={scrollContainerRef}
             className="flex gap-3 overflow-x-auto scrollbar-hide px-2 py-2"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {servicesData.map((item, index) => (
+        >
+          {servicesData.map((item, index) => (
               <ServiceCard key={index} item={item} />
-            ))}
+          ))}
           </div>
         </div>
       </div>

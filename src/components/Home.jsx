@@ -117,7 +117,7 @@ const ContactFabButton = ({ delay = 800 }) => {
       <button
         type="button"
         className={`group font-bold shadow-xl hover:shadow-2xl transition-all duration-500 flex items-center justify-center text-base md:text-lg outline-none focus:ring-2 focus:ring-blue-300 px-7 py-3 md:px-7 md:py-3 w-auto h-auto
-          ${open ? 'rounded-full w-14 h-14 px-0 bg-white text-[#0f4f78] border-2 border-[#2bb3ea]' : 'bg-white hover:bg-gray-50 border-2 border-[#2bb3ea] text-[#2bb3ea] hover:text-[#0f4f78] rounded-full'}
+          ${open ? 'rounded-full w-14 h-14 px-0 bg-white text-[#0f4f78]' : 'bg-white hover:bg-gray-50 text-[#2bb3ea] hover:text-[#0f4f78] rounded-full'}
         `}
         style={{zIndex: 10, minWidth: open ? 56 : 120, minHeight: open ? 56 : 48, padding: open ? 0 : undefined, transition: 'all 0.4s cubic-bezier(.4,2,.6,1)'}}
         onClick={() => setOpen(o => !o)}
@@ -226,7 +226,7 @@ const BizMiniCard = ({ number, label, icon, sublabel, delay = 0 }) => {
   };
 
   return (
-    <div className={`relative flex flex-col items-center justify-center rounded-xl shadow-md p-2 md:p-4 min-w-[80px] md:min-w-[110px] min-h-[70px] md:min-h-[90px] transition-all duration-700 border bg-white border-blue-100/60 text-[#0f4f78] group hover:shadow-2xl hover:z-20 hover:-rotate-2 hover:scale-105 ${
+    <div className={`relative flex flex-col items-center justify-center rounded-xl shadow-md p-2 md:p-4 min-w-[80px] md:min-w-[110px] min-h-[70px] md:min-h-[90px] transition-all duration-700 bg-white text-[#0f4f78] group hover:shadow-2xl hover:z-20 hover:-rotate-2 hover:scale-105 ${
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
     }`}
       style={{ transitionDelay: `${delay}ms` }}>
@@ -297,7 +297,7 @@ const RandevuFabButton = ({ children, delay = 600 }) => {
           type="button"
           onClick={() => setOpen(o => !o)}
           className={`font-bold shadow-xl hover:shadow-2xl transition-all duration-500 flex items-center justify-center text-base md:text-lg outline-none focus:ring-2 focus:ring-blue-300 px-7 py-3 md:px-7 md:py-3 w-auto h-auto
-            ${open ? 'rounded-full w-14 h-14 px-0 bg-white text-[#0f4f78] border-2 border-[#2bb3ea]' : 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white rounded-full'}
+            ${open ? 'rounded-full w-14 h-14 px-0 bg-white text-[#0f4f78]' : 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white rounded-full'}
           `}
           style={{zIndex: 20, minWidth: open ? 56 : 120, minHeight: open ? 56 : 48, padding: open ? 0 : undefined, transition: 'all 0.4s cubic-bezier(.4,2,.6,1)'}}
         >

@@ -22,6 +22,7 @@ import CorporateIdentity from './pages/CorporateIdentity';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Admin from './pages/Admin';
+import Treatments from './pages/Treatments';
 
 // Dil sayfaları - İngilizce
 import EnAbout from './pages/en/About';
@@ -32,6 +33,7 @@ import EnBranchPage from './pages/en/BranchPage';
 import EnSearchResults from './pages/en/SearchResults';
 import EnHastaMemnuniyetVideolari from './pages/en/HastaMemnuniyetVideolari';
 import EnHastaYorumlari from './pages/en/HastaYorumlari';
+import EnTreatments from './pages/en/Treatments';
 import EnAcademy from './pages/en/Academy';
 import EnBlog from './pages/en/Blog';
 import EnAwards from './pages/en/Awards';
@@ -45,6 +47,7 @@ import FrBranchPage from './pages/fr/BranchPage';
 import FrSearchResults from './pages/fr/SearchResults';
 import FrHastaMemnuniyetVideolari from './pages/fr/HastaMemnuniyetVideolari';
 import FrHastaYorumlari from './pages/fr/HastaYorumlari';
+import FrTreatments from './pages/fr/Treatments';
 import FrAcademy from './pages/fr/Academy';
 import FrBlog from './pages/fr/Blog';
 
@@ -103,6 +106,7 @@ function App() {
         <Route path="/kurumsal-kimlik" element={<CorporateIdentity />} />
         <Route path="/hasta-memnuniyet-videolari" element={<HastaMemnuniyetVideolari />} />
         <Route path="/hasta-yorumlari" element={<HastaYorumlari />} />
+        <Route path="/tedavilerimiz" element={<Treatments />} />
         <Route path="/hospitadent-sosyal-sorumluluk" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/anlasmali-kurumlar" element={<AnlasmaliKurumlar />} />
         <Route path="/search" element={<SearchResults />} />
@@ -135,6 +139,7 @@ function App() {
         <Route path="/en/corporate-identity" element={<CorporateIdentity />} />
         <Route path="/en/patient-satisfaction-videos" element={<EnHastaMemnuniyetVideolari />} />
         <Route path="/en/patient-reviews" element={<EnHastaYorumlari />} />
+        <Route path="/en/treatments" element={<EnTreatments />} />
         <Route path="/en/hospitadent-social-responsibility" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/en/partner-institutions" element={<AnlasmaliKurumlar />} />
         <Route path="/en/search" element={<EnSearchResults />} />
@@ -164,6 +169,7 @@ function App() {
         <Route path="/fr/identite-corporative" element={<CorporateIdentity />} />
         <Route path="/fr/videos-satisfaction-patients" element={<FrHastaMemnuniyetVideolari />} />
         <Route path="/fr/avis-patients" element={<FrHastaYorumlari />} />
+        <Route path="/fr/traitements" element={<FrTreatments />} />
         <Route path="/fr/responsabilite-sociale-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/fr/institutions-partenaires" element={<AnlasmaliKurumlar />} />
         <Route path="/fr/recherche" element={<FrSearchResults />} />

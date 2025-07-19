@@ -46,11 +46,44 @@ html {
 }
 
 html, body, #root {
-  height: 100%;
-  min-height: 100vh;
   background: #f0f9ff;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-y: auto !important;
+  scrollbar-width: auto;
+  -ms-overflow-style: auto;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  display: block;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Treatments sayfası için özel scroll ayarları */
+.treatments-page {
+  overflow-y: auto !important;
+  min-height: 100vh;
+}
+
+.treatments-page * {
+  overflow-x: visible;
 }
 
 h1, h2, h3, h4, h5, h6 {

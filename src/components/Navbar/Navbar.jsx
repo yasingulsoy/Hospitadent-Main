@@ -187,7 +187,7 @@ const Navbar = () => {
       </button>
 
       {/* Mobilde üst beyaz bar */}
-      <div className="w-full bg-white border-b border-gray-200 md:hidden pt-4">
+              <div className="w-full bg-white md:hidden pt-4">
         <div className="flex items-center justify-between px-4 py-2">
           {/* Sol: Boş alan (hamburger menü butonu için) */}
           <div className="w-12"></div>
@@ -245,11 +245,11 @@ const Navbar = () => {
                       value={searchValue}
                       onChange={e => setSearchValue(e.target.value)}
                       onKeyDown={handleSearchKey}
-                      className="px-3 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px]"
+                      className="px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px]"
                       placeholder={t('navbar.searchPlaceholder')}
                     />
                     {searchResults.length > 0 && (
-                      <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
+                      <ul className="absolute left-0 top-full mt-1 bg-white rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
                         {searchResults.map((res, i) => (
                           <li key={res.path}>
                             <a
@@ -261,7 +261,7 @@ const Navbar = () => {
                             </a>
                           </li>
                         ))}
-                        <li className="border-t border-gray-200">
+                                                    <li>
                           <button
                             onClick={() => {
                               navigate(`/search?q=${encodeURIComponent(searchValue.trim())}`);
