@@ -558,9 +558,9 @@ const Treatments = () => {
     <>
       <SEOHead 
         title="Our Treatments - Hospitadent"
-        description="All dental treatments and services offered at Hospitadent. Cosmetic dentistry, implants, orthodontics and more."
+        description="All dental treatments and services offered by Hospitadent. Cosmetic dentistry, implants, orthodontics and more."
         keywords="dental treatments, cosmetic dentistry, implants, orthodontics, pedodontics, periodontology, hospitadent"
-        url="https://hospitadent.com/en/treatments"
+        url="https://hospitadent.com/en/tedavilerimiz"
       />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
         {/* Header */}

@@ -8,540 +8,540 @@ const Treatments = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const allTreatments = [
-    // Dentisterie Esthétique
+    // Odontología Estética
     {
       id: 'hollywood-smile',
-      title: 'Hollywood Smile',
-      category: 'Dentisterie Esthétique',
-      description: 'Obtenez le sourire de vos rêves avec une conception parfaite du sourire.',
+      title: 'Sonrisa de Hollywood',
+      category: 'Odontología Estética',
+      description: 'Obtén la sonrisa de tus sueños con un diseño perfecto de sonrisa.',
       image: '/api/placeholder/300/200',
-      slug: 'hollywood-smile'
+      slug: 'sonrisa-hollywood'
     },
     {
       id: 'smile-design',
-      title: 'Conception du Sourire',
-      category: 'Dentisterie Esthétique',
-      description: 'Conception esthétique du sourire personnalisée avec planification numérique.',
+      title: 'Diseño de Sonrisa',
+      category: 'Odontología Estética',
+      description: 'Diseño estético de sonrisa personalizado con planificación digital.',
       image: '/api/placeholder/300/200',
-      slug: 'conception-du-sourire'
+      slug: 'diseno-sonrisa'
     },
     {
       id: 'teeth-whitening',
-      title: 'Blanchiment des Dents',
-      category: 'Dentisterie Esthétique',
-      description: 'Applications de blanchiment des dents rapides et sûres avec des méthodes modernes.',
+      title: 'Blanqueamiento Dental',
+      category: 'Odontología Estética',
+      description: 'Aplicaciones de blanqueamiento dental rápidas y seguras con métodos modernos.',
       image: '/api/placeholder/300/200',
-      slug: 'blanchiment-des-dents'
+      slug: 'blanqueamiento-dental'
     },
     {
       id: 'pink-aesthetics',
-      title: 'Esthétique Rose',
-      category: 'Dentisterie Esthétique',
-      description: 'Sourire parfait avec l\'esthétique des gencives.',
+      title: 'Estética Rosa',
+      category: 'Odontología Estética',
+      description: 'Sonrisa perfecta con estética de encías.',
       image: '/api/placeholder/300/200',
-      slug: 'esthetique-rose'
+      slug: 'estetica-rosa'
     },
     {
       id: 'laminate-veneer',
-      title: 'Facettes Laminées',
-      category: 'Dentisterie Esthétique',
-      description: 'Facettes en porcelaine esthétiques et fines.',
+      title: 'Carillas Laminadas',
+      category: 'Odontología Estética',
+      description: 'Carillas de porcelana estéticas y finas.',
       image: '/api/placeholder/300/200',
-      slug: 'facettes-laminees'
+      slug: 'carillas-laminadas'
     },
     {
       id: 'zirconium-crown',
-      title: 'Couronnes en Zircone',
-      category: 'Dentisterie Esthétique',
-      description: 'Solutions de couronnes dentaires naturelles, durables et esthétiques.',
+      title: 'Coronas de Circonio',
+      category: 'Odontología Estética',
+      description: 'Soluciones de coronas dentales naturales, duraderas y estéticas.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-zircone'
+      slug: 'coronas-circonio'
     },
     {
       id: 'porcelain-crown',
-      title: 'Couronnes en Porcelaine',
-      category: 'Dentisterie Esthétique',
-      description: 'Couronnes dentaires en porcelaine durables et naturelles.',
+      title: 'Coronas de Porcelana',
+      category: 'Odontología Estética',
+      description: 'Coronas dentales de porcelana duraderas y naturales.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-porcelaine'
+      slug: 'coronas-porcelana'
     },
     {
       id: 'lumineers-veneer',
-      title: 'Facettes Lumineers',
-      category: 'Dentisterie Esthétique',
-      description: 'Système de facettes en porcelaine mince et transparent.',
+      title: 'Carillas Lumineers',
+      category: 'Odontología Estética',
+      description: 'Sistema de carillas de porcelana finas y transparentes.',
       image: '/api/placeholder/300/200',
-      slug: 'facettes-lumineers'
+      slug: 'carillas-lumineers'
     },
     {
       id: 'emax-crown',
-      title: 'Couronnes Emax',
-      category: 'Dentisterie Esthétique',
-      description: 'Couronnes dentaires Emax avec esthétique et durabilité élevées.',
+      title: 'Coronas Emax',
+      category: 'Odontología Estética',
+      description: 'Coronas dentales Emax con alta estética y durabilidad.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-emax'
+      slug: 'coronas-emax'
     },
     {
       id: 'aesthetic-filling',
-      title: 'Obturation Esthétique',
-      category: 'Dentisterie Esthétique',
-      description: 'Obturations dentaires esthétiques naturelles.',
+      title: 'Empaste Estético',
+      category: 'Odontología Estética',
+      description: 'Empastes dentales estéticos de aspecto natural.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-esthetique'
+      slug: 'empaste-estetico'
     },
     {
       id: 'bisectomy',
-      title: 'Bisectomie',
-      category: 'Dentisterie Esthétique',
-      description: 'Procédure chirurgicale pour l\'esthétique des gencives.',
+      title: 'Bisectomía',
+      category: 'Odontología Estética',
+      description: 'Procedimiento quirúrgico para estética de encías.',
       image: '/api/placeholder/300/200',
-      slug: 'bisectomie'
+      slug: 'bisectomia'
     },
     {
       id: 'laser-dental-treatment',
-      title: 'Traitement Dentaire au Laser',
-      category: 'Dentisterie Esthétique',
-      description: 'Traitements dentaires avec technologie laser moderne.',
+      title: 'Tratamiento Dental con Láser',
+      category: 'Odontología Estética',
+      description: 'Tratamientos dentales con tecnología láser moderna.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-laser'
+      slug: 'tratamiento-laser'
     },
     {
       id: 'inlay-filling',
-      title: 'Obturation Inlay',
-      category: 'Dentisterie Esthétique',
-      description: 'Technique d\'obturation précise et esthétique.',
+      title: 'Empaste Inlay',
+      category: 'Odontología Estética',
+      description: 'Técnica de empaste precisa y estética.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-inlay'
+      slug: 'empaste-inlay'
     },
     {
       id: 'onlay-filling',
-      title: 'Obturation Onlay',
-      category: 'Dentisterie Esthétique',
-      description: 'Restauration d\'obturation complète.',
+      title: 'Empaste Onlay',
+      category: 'Odontología Estética',
+      description: 'Restauración de empaste completa.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-onlay'
+      slug: 'empaste-onlay'
     },
     {
       id: 'dental-diamond',
-      title: 'Diamant Dentaire',
-      category: 'Dentisterie Esthétique',
-      description: 'Procédure de pose de diamant sur les dents.',
+      title: 'Diamante Dental',
+      category: 'Odontología Estética',
+      description: 'Procedimiento de colocación de diamantes en dientes.',
       image: '/api/placeholder/300/200',
-      slug: 'diamant-dentaire'
+      slug: 'diamante-dental'
     },
     {
       id: 'dental-tattoo',
-      title: 'Tatouage Dentaire',
-      category: 'Dentisterie Esthétique',
-      description: 'Application de tatouage décoratif sur les dents.',
+      title: 'Tatuaje Dental',
+      category: 'Odontología Estética',
+      description: 'Aplicación de tatuaje decorativo en dientes.',
       image: '/api/placeholder/300/200',
-      slug: 'tatouage-dentaire'
+      slug: 'tatuaje-dental'
     },
     {
       id: 'dental-jewelry',
-      title: 'Bijoux Dentaires',
-      category: 'Dentisterie Esthétique',
-      description: 'Procédure de pose de bijoux sur les dents.',
+      title: 'Joyería Dental',
+      category: 'Odontología Estética',
+      description: 'Procedimiento de colocación de joyas en dientes.',
       image: '/api/placeholder/300/200',
-      slug: 'bijoux-dentaires'
+      slug: 'joyeria-dental'
     },
     {
       id: 'bonding-treatment',
-      title: 'Traitement Bonding',
-      category: 'Dentisterie Esthétique',
-      description: 'Applications de bonding esthétiques pour les petits défauts dentaires.',
+      title: 'Tratamiento de Bonding',
+      category: 'Odontología Estética',
+      description: 'Aplicaciones estéticas de bonding para pequeños defectos dentales.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-bonding'
+      slug: 'tratamiento-bonding'
     },
 
-    // Dents Manquantes
+    // Dientes Faltantes
     {
       id: 'dental-bridge',
-      title: 'Bridge Dentaire',
-      category: 'Dents Manquantes',
-      description: 'Bridge fixe pour les dents manquantes.',
+      title: 'Puente Dental',
+      category: 'Dientes Faltantes',
+      description: 'Puente fijo para dientes faltantes.',
       image: '/api/placeholder/300/200',
-      slug: 'bridge-dentaire'
+      slug: 'puente-dental'
     },
     {
       id: 'denture',
-      title: 'Prothèse Dentaire',
-      category: 'Dents Manquantes',
-      description: 'Solutions de prothèses dentaires amovibles.',
+      title: 'Prótesis Dental',
+      category: 'Dientes Faltantes',
+      description: 'Soluciones de prótesis dentales removibles.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-dentaire'
+      slug: 'protesis-dental'
     },
     {
       id: 'fixed-prosthesis',
-      title: 'Prothèse Fixe',
-      category: 'Dents Manquantes',
-      description: 'Applications de prothèses dentaires fixes.',
+      title: 'Prótesis Fija',
+      category: 'Dientes Faltantes',
+      description: 'Aplicaciones de prótesis dentales fijas.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-fixe'
+      slug: 'protesis-fija'
     },
     {
       id: 'snap-on-denture',
-      title: 'Prothèse à Clip',
-      category: 'Dents Manquantes',
-      description: 'Système de prothèse dentaire à clip.',
+      title: 'Prótesis de Clip',
+      category: 'Dientes Faltantes',
+      description: 'Sistema de prótesis dental de clip.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-clip'
+      slug: 'protesis-clip'
     },
     {
       id: 'full-mouth-treatment',
-      title: 'Traitement Complet de la Bouche',
-      category: 'Dents Manquantes',
-      description: 'Traitement dentaire complet pour toute la bouche.',
+      title: 'Tratamiento Completo de Boca',
+      category: 'Dientes Faltantes',
+      description: 'Tratamiento dental completo para toda la boca.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-complet-bouche'
+      slug: 'tratamiento-completo-boca'
     },
 
-    // Implant
+    // Implante
     {
       id: 'single-tooth-implant',
-      title: 'Implant Dent Unique',
-      category: 'Implant',
-      description: 'Traitement d\'implant pour une seule dent.',
+      title: 'Implante de Diente Único',
+      category: 'Implante',
+      description: 'Tratamiento de implante para un solo diente.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-dent-unique'
+      slug: 'implante-diente-unico'
     },
     {
       id: 'full-mouth-implant',
-      title: 'Implant Bouche Complète',
-      category: 'Implant',
-      description: 'Traitement d\'implant pour toute la bouche.',
+      title: 'Implante de Boca Completa',
+      category: 'Implante',
+      description: 'Tratamiento de implante para toda la boca.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-bouche-complete'
+      slug: 'implante-boca-completa'
     },
     {
       id: 'multiple-tooth-implant',
-      title: 'Implant Multiples Dents',
-      category: 'Implant',
-      description: 'Traitement d\'implant pour plusieurs dents.',
+      title: 'Implante de Dientes Múltiples',
+      category: 'Implante',
+      description: 'Tratamiento de implante para varios dientes.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-multiples-dents'
+      slug: 'implante-dientes-multiples'
     },
     {
       id: 'one-day-implant',
-      title: 'Implant en 1 Jour',
-      category: 'Implant',
-      description: 'Traitement d\'implant en une seule journée.',
+      title: 'Implante en 1 Día',
+      category: 'Implante',
+      description: 'Tratamiento de implante en un solo día.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-1-jour'
+      slug: 'implante-1-dia'
     },
     {
       id: 'all-on-four',
       title: 'All on Four',
-      category: 'Implant',
-      description: 'Technique d\'implant All on Four.',
+      category: 'Implante',
+      description: 'Técnica de implante All on Four.',
       image: '/api/placeholder/300/200',
       slug: 'all-on-four'
     },
     {
       id: 'all-on-six',
       title: 'All on Six',
-      category: 'Implant',
-      description: 'Technique d\'implant All on Six.',
+      category: 'Implante',
+      description: 'Técnica de implante All on Six.',
       image: '/api/placeholder/300/200',
       slug: 'all-on-six'
     },
     {
       id: 'box-technique',
-      title: 'Technique Box',
-      category: 'Implant',
-      description: 'Technique d\'implant Box.',
+      title: 'Técnica Box',
+      category: 'Implante',
+      description: 'Técnica de implante Box.',
       image: '/api/placeholder/300/200',
-      slug: 'technique-box'
+      slug: 'tecnica-box'
     },
 
-    // Traitements Dentaires Généraux
+    // Tratamientos Dentales Generales
     {
       id: 'dental-examination',
-      title: 'Examen Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Examen dentaire complet.',
+      title: 'Examen Dental',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Examen dental completo.',
       image: '/api/placeholder/300/200',
-      slug: 'examen-dentaire'
+      slug: 'examen-dental'
     },
     {
       id: 'crown-veneer',
-      title: 'Couronne Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Couronne dentaire et comment elle est faite.',
+      title: 'Corona Dental',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Qué es una corona dental y cómo se hace.',
       image: '/api/placeholder/300/200',
-      slug: 'couronne-dentaire'
+      slug: 'corona-dental'
     },
     {
       id: 'dental-filling',
-      title: 'Obturation Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Comment faire une obturation dentaire et ses types.',
+      title: 'Empaste Dental',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Cómo se hace un empaste dental y cuáles son sus tipos.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-dentaire'
+      slug: 'empaste-dental'
     },
     {
       id: 'root-canal-treatment',
-      title: 'Traitement de Canal',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Comment faire un traitement de canal et est-ce que ça fait mal.',
+      title: 'Tratamiento de Conducto',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Cómo se hace el tratamiento de conducto y si duele.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-canal'
+      slug: 'tratamiento-conducto'
     },
     {
       id: 'tooth-extraction',
-      title: 'Extraction Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Qu\'est-ce que l\'extraction dentaire et comment elle est faite.',
+      title: 'Extracción Dental',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Qué es la extracción dental y cómo se hace.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dentaire'
+      slug: 'extraccion-dental'
     },
     {
       id: 'impacted-tooth-extraction',
-      title: 'Extraction de Dent Incluse',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Qu\'est-ce que l\'extraction de dent incluse.',
+      title: 'Extracción de Diente Impactado',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Qué es la extracción de dientes impactados.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dent-incluse'
+      slug: 'extraccion-diente-impactado'
     },
     {
       id: 'wisdom-tooth-extraction',
-      title: 'Extraction de Dent de Sagesse',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Extraction des dents de sagesse.',
+      title: 'Extracción de Muela del Juicio',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Extracción de muelas del juicio.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dent-sagesse'
+      slug: 'extraccion-muela-juicio'
     },
     {
       id: 'broken-tooth-treatment',
-      title: 'Traitement de Dent Cassée',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Qu\'est-ce que le traitement de dent cassée.',
+      title: 'Tratamiento de Diente Roto',
+      category: 'Tratamientos Dentales Generales',
+      description: 'Qué es el tratamiento de diente roto.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-dent-cassee'
+      slug: 'tratamiento-diente-roto'
     },
 
-    // Traitements Dentaires Préventifs
+    // Tratamientos Dentales Preventivos
     {
       id: 'bad-breath',
-      title: 'Mauvaise Haleine',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que la mauvaise haleine et comment elle est traitée.',
+      title: 'Mal Aliento',
+      category: 'Tratamientos Dentales Preventivos',
+      description: 'Qué es el mal aliento y cómo se trata.',
       image: '/api/placeholder/300/200',
-      slug: 'mauvaise-haleine'
+      slug: 'mal-aliento'
     },
     {
       id: 'tooth-sensitivity',
-      title: 'Sensibilité Dentaire',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que la sensibilité dentaire et comment elle est traitée.',
+      title: 'Sensibilidad Dental',
+      category: 'Tratamientos Dentales Preventivos',
+      description: 'Qué es la sensibilidad dental y cómo se trata.',
       image: '/api/placeholder/300/200',
-      slug: 'sensibilite-dentaire'
+      slug: 'sensibilidad-dental'
     },
     {
       id: 'teeth-grinding',
-      title: 'Grincement des Dents',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le grincement des dents et comment il est traité.',
+      title: 'Rechinar de Dientes',
+      category: 'Tratamientos Dentales Preventivos',
+      description: 'Qué es el rechinar de dientes y cómo se trata.',
       image: '/api/placeholder/300/200',
-      slug: 'grincement-dents'
+      slug: 'rechinar-dientes'
     },
     {
       id: 'teeth-grinding-treatment',
-      title: 'Traitement du Grincement',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le traitement du grincement et comment il est fait.',
+      title: 'Tratamiento de Rechinar',
+      category: 'Tratamientos Dentales Preventivos',
+      description: 'Qué es el tratamiento de rechinar y cómo se hace.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-grincement'
+      slug: 'tratamiento-rechinar'
     },
     {
       id: 'snoring-treatment',
-      title: 'Traitement du Ronflement',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le traitement du ronflement et comment il est appliqué.',
+      title: 'Tratamiento de Ronquidos',
+      category: 'Tratamientos Dentales Preventivos',
+      description: 'Qué es el tratamiento de ronquidos y cómo se aplica.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-ronflement'
+      slug: 'tratamiento-ronquidos'
     },
 
-    // Orthodontie
+    // Ortodoncia
     {
       id: 'braces-treatment',
-      title: 'Traitement d\'Appareil',
-      category: 'Orthodontie',
-      description: 'Qu\'est-ce que le traitement d\'appareil et comment il est appliqué.',
+      title: 'Tratamiento de Brackets',
+      category: 'Ortodoncia',
+      description: 'Qué es el tratamiento de brackets y cómo se aplica.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-appareil'
+      slug: 'tratamiento-brackets'
     },
     {
       id: 'clear-bracket-treatment',
-      title: 'Traitement à Brackets Transparents',
-      category: 'Orthodontie',
-      description: 'Traitement orthodontique avec brackets transparents.',
+      title: 'Tratamiento de Brackets Transparentes',
+      category: 'Ortodoncia',
+      description: 'Tratamiento ortodóntico con brackets transparentes.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-brackets-transparents'
+      slug: 'tratamiento-brackets-transparentes'
     },
     {
       id: 'invisalign-treatment',
-      title: 'Traitement Invisalign',
-      category: 'Orthodontie',
-      description: 'Traitement Invisalign avec gouttières transparentes.',
+      title: 'Tratamiento Invisalign',
+      category: 'Ortodoncia',
+      description: 'Tratamiento Invisalign con alineadores transparentes.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-invisalign'
+      slug: 'tratamiento-invisalign'
     },
     {
       id: 'invisible-braces-treatment',
-      title: 'Traitement d\'Appareil Invisible',
-      category: 'Orthodontie',
-      description: 'Traitement orthodontique invisible.',
+      title: 'Tratamiento de Brackets Invisibles',
+      category: 'Ortodoncia',
+      description: 'Tratamiento ortodóntico invisible.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-appareil-invisible'
+      slug: 'tratamiento-brackets-invisibles'
     },
 
-    // Pédodontie
+    // Odontopediatría
     {
       id: 'fluoride-application',
-      title: 'Application de Fluor',
-      category: 'Pédodontie',
-      description: 'Application de fluor pour la protection dentaire.',
+      title: 'Aplicación de Flúor',
+      category: 'Odontopediatría',
+      description: 'Aplicación de flúor para protección dental.',
       image: '/api/placeholder/300/200',
-      slug: 'application-fluor'
+      slug: 'aplicacion-fluor'
     },
     {
       id: 'fissure-sealant',
-      title: 'Scellement de Fissures',
-      category: 'Pédodontie',
-      description: 'Protection des fissures dentaires.',
+      title: 'Sellador de Fisuras',
+      category: 'Odontopediatría',
+      description: 'Protección de fisuras dentales.',
       image: '/api/placeholder/300/200',
-      slug: 'scellement-fissures'
+      slug: 'sellador-fisuras'
     },
     {
       id: 'pediatric-orthodontic-treatment',
-      title: 'Traitement Orthodontique Pédiatrique',
-      category: 'Pédodontie',
-      description: 'Qu\'est-ce que le traitement orthodontique pédiatrique.',
+      title: 'Tratamiento Ortodóntico Pediátrico',
+      category: 'Odontopediatría',
+      description: 'Qué es el tratamiento ortodóntico pediátrico.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-orthodontique-pediatrique'
+      slug: 'tratamiento-ortodontico-pediatrico'
     },
     {
       id: 'baby-bottle-tooth-decay',
-      title: 'Carie du Biberon',
-      category: 'Pédodontie',
-      description: 'Qu\'est-ce que la carie du biberon.',
+      title: 'Caries del Biberón',
+      category: 'Odontopediatría',
+      description: 'Qué es la caries del biberón.',
       image: '/api/placeholder/300/200',
-      slug: 'carie-biberon'
+      slug: 'caries-biberon'
     },
     {
       id: 'space-maintainer-treatment',
-      title: 'Traitement de Mainteneur d\'Espace',
-      category: 'Pédodontie',
-      description: 'Qu\'est-ce que le traitement de mainteneur d\'espace.',
+      title: 'Tratamiento de Mantenedor de Espacio',
+      category: 'Odontopediatría',
+      description: 'Qué es el tratamiento de mantenedor de espacio.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-mainteneur-espace'
+      slug: 'tratamiento-mantenedor-espacio'
     },
 
-    // Parodontologie
+    // Periodontología
     {
       id: 'gum-treatment',
-      title: 'Traitement des Gencives',
-      category: 'Parodontologie',
-      description: 'Traitement des maladies des gencives.',
+      title: 'Tratamiento de Encías',
+      category: 'Periodontología',
+      description: 'Tratamiento de enfermedades de las encías.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-gencives'
+      slug: 'tratamiento-encias'
     },
     {
       id: 'curettage-treatment',
-      title: 'Traitement de Curetage',
-      category: 'Parodontologie',
-      description: 'Qu\'est-ce que le traitement de curetage.',
+      title: 'Tratamiento de Curetaje',
+      category: 'Periodontología',
+      description: 'Qué es el tratamiento de curetaje.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-curetage'
+      slug: 'tratamiento-curetaje'
     },
     {
       id: 'flap-treatment',
-      title: 'Traitement de Lambeau',
-      category: 'Parodontologie',
-      description: 'Traitement chirurgical des gencives.',
+      title: 'Tratamiento de Colgajo',
+      category: 'Periodontología',
+      description: 'Tratamiento quirúrgico de encías.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-lambeau'
+      slug: 'tratamiento-colgajo'
     },
     {
       id: 'gingivitis',
-      title: 'Gingivite',
-      category: 'Parodontologie',
-      description: 'Inflammation des gencives et gingivite.',
+      title: 'Gingivitis',
+      category: 'Periodontología',
+      description: 'Inflamación de encías y gingivitis.',
       image: '/api/placeholder/300/200',
-      slug: 'gingivite'
+      slug: 'gingivitis'
     },
     {
       id: 'dental-calculus-cleaning',
-      title: 'Nettoyage du Tartre',
-      category: 'Parodontologie',
-      description: 'Qu\'est-ce que le nettoyage du tartre et comment il est fait.',
+      title: 'Limpieza de Sarro',
+      category: 'Periodontología',
+      description: 'Qué es la limpieza de sarro y cómo se hace.',
       image: '/api/placeholder/300/200',
-      slug: 'nettoyage-tartre'
+      slug: 'limpieza-sarro'
     },
 
-    // Traitements Dentaires Spéciaux
+    // Tratamientos Dentales Especiales
     {
       id: 'digital-dentistry',
-      title: 'Dentisterie Numérique',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Dentisterie numérique et conception dentaire.',
+      title: 'Odontología Digital',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Odontología digital y diseño dental.',
       image: '/api/placeholder/300/200',
-      slug: 'dentisterie-numerique'
+      slug: 'odontologia-digital'
     },
     {
       id: 'needle-free-anesthesia',
-      title: 'Anesthésie Sans Aiguille',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Application d\'anesthésie sans aiguille.',
+      title: 'Anestesia Sin Aguja',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Aplicación de anestesia sin aguja.',
       image: '/api/placeholder/300/200',
-      slug: 'anesthesie-sans-aiguille'
+      slug: 'anestesia-sin-aguja'
     },
     {
       id: 'sedation-and-general-anesthesia',
-      title: 'Sédation et Anesthésie Générale',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Sédation et anesthésie générale pour les traitements.',
+      title: 'Sedación y Anestesia General',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Sedación y anestesia general para tratamientos.',
       image: '/api/placeholder/300/200',
-      slug: 'sedation-anesthesie-generale'
+      slug: 'sedacion-anestesia-general'
     },
     {
       id: 'rubber-dam-application',
-      title: 'Application de Digue',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Application de digue pour l\'isolation.',
+      title: 'Aplicación de Dique',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Aplicación de dique para aislamiento.',
       image: '/api/placeholder/300/200',
-      slug: 'application-digue'
+      slug: 'aplicacion-dique'
     },
     {
       id: 'jaw-tumor',
-      title: 'Tumeur de la Mâchoire',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Traitement des tumeurs de la mâchoire.',
+      title: 'Tumor de Mandíbula',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Tratamiento de tumores de mandíbula.',
       image: '/api/placeholder/300/200',
-      slug: 'tumeur-machoire'
+      slug: 'tumor-mandibula'
     },
     {
       id: 'jaw-fracture-treatment',
-      title: 'Traitement de Fracture de Mâchoire',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Traitement chirurgical des fractures de mâchoire.',
+      title: 'Tratamiento de Fractura de Mandíbula',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Tratamiento quirúrgico de fracturas de mandíbula.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-fracture-machoire'
+      slug: 'tratamiento-fractura-mandibula'
     },
     {
       id: 'dental-spa',
-      title: 'Spa Dentaire',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Services de spa dentaire relaxants.',
+      title: 'Spa Dental',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Servicios relajantes de spa dental.',
       image: '/api/placeholder/300/200',
-      slug: 'spa-dentaire'
+      slug: 'spa-dental'
     },
     {
       id: '10x10-examination',
       title: 'Examen 10 X 10',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Examen dentaire complet 10x10.',
+      category: 'Tratamientos Dentales Especiales',
+      description: 'Examen dental completo 10x10.',
       image: '/api/placeholder/300/200',
       slug: 'examen-10x10'
     }
@@ -557,17 +557,17 @@ const Treatments = () => {
   return (
     <>
       <SEOHead 
-        title="Nos Traitements - Hospitadent"
-        description="Tous les traitements dentaires et services offerts par Hospitadent. Dentisterie esthétique, implants, orthodontie et plus encore."
-        keywords="traitements dentaires, dentisterie esthétique, implants, orthodontie, pédodontie, parodontologie, hospitadent"
-        url="https://hospitadent.com/fr/traitements"
+        title="Nuestros Tratamientos - Hospitadent"
+        description="Todos los tratamientos dentales y servicios ofrecidos por Hospitadent. Odontología estética, implantes, ortodoncia y más."
+        keywords="tratamientos dentales, odontología estética, implantes, ortodoncia, odontopediatría, periodontología, hospitadent"
+        url="https://hospitadent.com/es/nuestros-tratamientos"
       />
       <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 treatments-page">
         {/* Header */}
         <div className="bg-white/80 backdrop-blur-sm py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
-              Nos Traitements
+              Nuestros Tratamientos
             </h1>
           </div>
         </div>
@@ -583,7 +583,7 @@ const Treatments = () => {
                   <div className="flex-1 px-6 py-4">
                     <input
                       type="text"
-                      placeholder="Recherche"
+                      placeholder="Buscar"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="w-full text-lg text-gray-800 placeholder-gray-500 focus:outline-none"
@@ -634,10 +634,10 @@ const Treatments = () => {
                     
                     {/* Detay Butonu */}
                     <a 
-                      href={`/traitement/${treatment.slug}`}
+                      href={`/tratamiento/${treatment.slug}`}
                       className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group mt-auto"
                     >
-                      Voir les Détails
+                      Ver Detalles
                       <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -653,16 +653,16 @@ const Treatments = () => {
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">🔍</div>
                 <h3 className="text-2xl font-bold text-[#004876] mb-2">
-                  Aucun Résultat Trouvé
+                  No Se Encontraron Resultados
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Aucun résultat trouvé pour "{searchTerm}". Vous pouvez essayer différents mots-clés.
+                  No se encontraron resultados para "{searchTerm}". Puedes intentar diferentes palabras clave.
                 </p>
                 <button 
                   onClick={() => setSearchTerm('')}
                   className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                 >
-                  Voir Tous les Traitements
+                  Ver Todos los Tratamientos
                 </button>
               </div>
             )}
@@ -671,10 +671,10 @@ const Treatments = () => {
             <div className="text-center mt-16">
               <div className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] rounded-2xl p-8 text-white">
                 <h2 className="text-3xl font-bold mb-4">
-                  Déterminons le Traitement le Plus Adapté pour Vous
+                  Determinemos el Mejor Tratamiento para Ti
                 </h2>
                 <p className="text-xl mb-6 opacity-90">
-                  Prenez rendez-vous pour une consultation gratuite avec nos dentistes experts
+                  Agenda una consulta gratuita con nuestros dentistas expertos
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
@@ -693,7 +693,7 @@ const Treatments = () => {
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
-                    Nous Contacter
+                    Contáctanos
                   </a>
                 </div>
               </div>

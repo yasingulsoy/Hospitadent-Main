@@ -8,542 +8,542 @@ const Treatments = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const allTreatments = [
-    // Dentisterie Esthétique
+    // Ästhetische Zahnheilkunde
     {
       id: 'hollywood-smile',
       title: 'Hollywood Smile',
-      category: 'Dentisterie Esthétique',
-      description: 'Obtenez le sourire de vos rêves avec une conception parfaite du sourire.',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Erreichen Sie Ihr Traumlächeln mit perfektem Lächeldesign.',
       image: '/api/placeholder/300/200',
       slug: 'hollywood-smile'
     },
     {
       id: 'smile-design',
-      title: 'Conception du Sourire',
-      category: 'Dentisterie Esthétique',
-      description: 'Conception esthétique du sourire personnalisée avec planification numérique.',
+      title: 'Lächeldesign',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Personalisierte ästhetische Lächeldesign mit digitaler Planung.',
       image: '/api/placeholder/300/200',
-      slug: 'conception-du-sourire'
+      slug: 'laecheldesign'
     },
     {
       id: 'teeth-whitening',
-      title: 'Blanchiment des Dents',
-      category: 'Dentisterie Esthétique',
-      description: 'Applications de blanchiment des dents rapides et sûres avec des méthodes modernes.',
+      title: 'Zahnaufhellung',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Schnelle und sichere Zahnaufhellungsanwendungen mit modernen Methoden.',
       image: '/api/placeholder/300/200',
-      slug: 'blanchiment-des-dents'
+      slug: 'zahnaufhellung'
     },
     {
       id: 'pink-aesthetics',
-      title: 'Esthétique Rose',
-      category: 'Dentisterie Esthétique',
-      description: 'Sourire parfait avec l\'esthétique des gencives.',
+      title: 'Pink-Ästhetik',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Perfektes Lächeln mit Zahnfleischästhetik.',
       image: '/api/placeholder/300/200',
-      slug: 'esthetique-rose'
+      slug: 'pink-aesthetik'
     },
     {
       id: 'laminate-veneer',
-      title: 'Facettes Laminées',
-      category: 'Dentisterie Esthétique',
-      description: 'Facettes en porcelaine esthétiques et fines.',
+      title: 'Laminat-Veneers',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Ästhetische und dünne Porzellan-Veneers.',
       image: '/api/placeholder/300/200',
-      slug: 'facettes-laminees'
+      slug: 'laminat-veneers'
     },
     {
       id: 'zirconium-crown',
-      title: 'Couronnes en Zircone',
-      category: 'Dentisterie Esthétique',
-      description: 'Solutions de couronnes dentaires naturelles, durables et esthétiques.',
+      title: 'Zirkon-Kronen',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Natürlich aussehende, langlebige und ästhetische Zahnkronenlösungen.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-zircone'
+      slug: 'zirkon-kronen'
     },
     {
       id: 'porcelain-crown',
-      title: 'Couronnes en Porcelaine',
-      category: 'Dentisterie Esthétique',
-      description: 'Couronnes dentaires en porcelaine durables et naturelles.',
+      title: 'Porzellan-Kronen',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Langlebige und natürlich aussehende Porzellanzahnkronen.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-porcelaine'
+      slug: 'porzellan-kronen'
     },
     {
       id: 'lumineers-veneer',
-      title: 'Facettes Lumineers',
-      category: 'Dentisterie Esthétique',
-      description: 'Système de facettes en porcelaine mince et transparent.',
+      title: 'Lumineers-Veneers',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Dünnes und transparentes Porzellan-Veneer-System.',
       image: '/api/placeholder/300/200',
-      slug: 'facettes-lumineers'
+      slug: 'lumineers-veneers'
     },
     {
       id: 'emax-crown',
-      title: 'Couronnes Emax',
-      category: 'Dentisterie Esthétique',
-      description: 'Couronnes dentaires Emax avec esthétique et durabilité élevées.',
+      title: 'Emax-Kronen',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Emax-Zahnkronen mit hoher Ästhetik und Langlebigkeit.',
       image: '/api/placeholder/300/200',
-      slug: 'couronnes-emax'
+      slug: 'emax-kronen'
     },
     {
       id: 'aesthetic-filling',
-      title: 'Obturation Esthétique',
-      category: 'Dentisterie Esthétique',
-      description: 'Obturations dentaires esthétiques naturelles.',
+      title: 'Ästhetische Füllung',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Natürlich aussehende ästhetische Zahnfüllungen.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-esthetique'
+      slug: 'aesthetische-fuellung'
     },
     {
       id: 'bisectomy',
-      title: 'Bisectomie',
-      category: 'Dentisterie Esthétique',
-      description: 'Procédure chirurgicale pour l\'esthétique des gencives.',
+      title: 'Bisektomie',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Chirurgischer Eingriff für Zahnfleischästhetik.',
       image: '/api/placeholder/300/200',
-      slug: 'bisectomie'
+      slug: 'bisektomie'
     },
     {
       id: 'laser-dental-treatment',
-      title: 'Traitement Dentaire au Laser',
-      category: 'Dentisterie Esthétique',
-      description: 'Traitements dentaires avec technologie laser moderne.',
+      title: 'Laser-Zahnbehandlung',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Zahnbehandlungen mit moderner Lasertechnologie.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-laser'
+      slug: 'laser-zahnbehandlung'
     },
     {
       id: 'inlay-filling',
-      title: 'Obturation Inlay',
-      category: 'Dentisterie Esthétique',
-      description: 'Technique d\'obturation précise et esthétique.',
+      title: 'Inlay-Füllung',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Präzise und ästhetische Füllungstechnik.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-inlay'
+      slug: 'inlay-fuellung'
     },
     {
       id: 'onlay-filling',
-      title: 'Obturation Onlay',
-      category: 'Dentisterie Esthétique',
-      description: 'Restauration d\'obturation complète.',
+      title: 'Onlay-Füllung',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Umfassende Füllungsrestauration.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-onlay'
+      slug: 'onlay-fuellung'
     },
     {
       id: 'dental-diamond',
-      title: 'Diamant Dentaire',
-      category: 'Dentisterie Esthétique',
-      description: 'Procédure de pose de diamant sur les dents.',
+      title: 'Zahndiamant',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Verfahren zum Einsetzen von Diamanten auf Zähnen.',
       image: '/api/placeholder/300/200',
-      slug: 'diamant-dentaire'
+      slug: 'zahndiamant'
     },
     {
       id: 'dental-tattoo',
-      title: 'Tatouage Dentaire',
-      category: 'Dentisterie Esthétique',
-      description: 'Application de tatouage décoratif sur les dents.',
+      title: 'Zahntattoo',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Dekorative Tattoo-Anwendung auf Zähnen.',
       image: '/api/placeholder/300/200',
-      slug: 'tatouage-dentaire'
+      slug: 'zahntattoo'
     },
     {
       id: 'dental-jewelry',
-      title: 'Bijoux Dentaires',
-      category: 'Dentisterie Esthétique',
-      description: 'Procédure de pose de bijoux sur les dents.',
+      title: 'Zahnschmuck',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Verfahren zum Einsetzen von Schmuck auf Zähnen.',
       image: '/api/placeholder/300/200',
-      slug: 'bijoux-dentaires'
+      slug: 'zahnschmuck'
     },
     {
       id: 'bonding-treatment',
-      title: 'Traitement Bonding',
-      category: 'Dentisterie Esthétique',
-      description: 'Applications de bonding esthétiques pour les petits défauts dentaires.',
+      title: 'Bonding-Behandlung',
+      category: 'Ästhetische Zahnheilkunde',
+      description: 'Ästhetische Bonding-Anwendungen für kleine Zahndefekte.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-bonding'
+      slug: 'bonding-behandlung'
     },
 
-    // Dents Manquantes
+    // Fehlende Zähne
     {
       id: 'dental-bridge',
-      title: 'Bridge Dentaire',
-      category: 'Dents Manquantes',
-      description: 'Bridge fixe pour les dents manquantes.',
+      title: 'Zahnbrücke',
+      category: 'Fehlende Zähne',
+      description: 'Feste Brücke für fehlende Zähne.',
       image: '/api/placeholder/300/200',
-      slug: 'bridge-dentaire'
+      slug: 'zahnbruecke'
     },
     {
       id: 'denture',
-      title: 'Prothèse Dentaire',
-      category: 'Dents Manquantes',
-      description: 'Solutions de prothèses dentaires amovibles.',
+      title: 'Zahnprothese',
+      category: 'Fehlende Zähne',
+      description: 'Lösungen für herausnehmbare Zahnprothesen.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-dentaire'
+      slug: 'zahnprothese'
     },
     {
       id: 'fixed-prosthesis',
-      title: 'Prothèse Fixe',
-      category: 'Dents Manquantes',
-      description: 'Applications de prothèses dentaires fixes.',
+      title: 'Feste Prothese',
+      category: 'Fehlende Zähne',
+      description: 'Anwendungen für feste Zahnprothesen.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-fixe'
+      slug: 'feste-prothese'
     },
     {
       id: 'snap-on-denture',
-      title: 'Prothèse à Clip',
-      category: 'Dents Manquantes',
-      description: 'Système de prothèse dentaire à clip.',
+      title: 'Klick-Prothese',
+      category: 'Fehlende Zähne',
+      description: 'Klick-Zahnprothesensystem.',
       image: '/api/placeholder/300/200',
-      slug: 'prothese-clip'
+      slug: 'klick-prothese'
     },
     {
       id: 'full-mouth-treatment',
-      title: 'Traitement Complet de la Bouche',
-      category: 'Dents Manquantes',
-      description: 'Traitement dentaire complet pour toute la bouche.',
+      title: 'Vollmund-Zahnbehandlung',
+      category: 'Fehlende Zähne',
+      description: 'Umfassende Zahnbehandlung für den gesamten Mund.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-complet-bouche'
+      slug: 'vollmund-zahnbehandlung'
     },
 
-    // Implant
+    // Implantat
     {
       id: 'single-tooth-implant',
-      title: 'Implant Dent Unique',
-      category: 'Implant',
-      description: 'Traitement d\'implant pour une seule dent.',
+      title: 'Einzelzahn-Implantat',
+      category: 'Implantat',
+      description: 'Implantatbehandlung für einen einzelnen Zahn.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-dent-unique'
+      slug: 'einzelzahn-implantat'
     },
     {
       id: 'full-mouth-implant',
-      title: 'Implant Bouche Complète',
-      category: 'Implant',
-      description: 'Traitement d\'implant pour toute la bouche.',
+      title: 'Vollmund-Implantat',
+      category: 'Implantat',
+      description: 'Implantatbehandlung für den gesamten Mund.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-bouche-complete'
+      slug: 'vollmund-implantat'
     },
     {
       id: 'multiple-tooth-implant',
-      title: 'Implant Multiples Dents',
-      category: 'Implant',
-      description: 'Traitement d\'implant pour plusieurs dents.',
+      title: 'Mehrfachzahn-Implantat',
+      category: 'Implantat',
+      description: 'Implantatbehandlung für mehrere Zähne.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-multiples-dents'
+      slug: 'mehrfachzahn-implantat'
     },
     {
       id: 'one-day-implant',
-      title: 'Implant en 1 Jour',
-      category: 'Implant',
-      description: 'Traitement d\'implant en une seule journée.',
+      title: '1-Tag-Implantat',
+      category: 'Implantat',
+      description: 'Implantatbehandlung an einem Tag.',
       image: '/api/placeholder/300/200',
-      slug: 'implant-1-jour'
+      slug: '1-tag-implantat'
     },
     {
       id: 'all-on-four',
       title: 'All on Four',
-      category: 'Implant',
-      description: 'Technique d\'implant All on Four.',
+      category: 'Implantat',
+      description: 'All on Four Implantattechnik.',
       image: '/api/placeholder/300/200',
       slug: 'all-on-four'
     },
     {
       id: 'all-on-six',
       title: 'All on Six',
-      category: 'Implant',
-      description: 'Technique d\'implant All on Six.',
+      category: 'Implantat',
+      description: 'All on Six Implantattechnik.',
       image: '/api/placeholder/300/200',
       slug: 'all-on-six'
     },
     {
       id: 'box-technique',
-      title: 'Technique Box',
-      category: 'Implant',
-      description: 'Technique d\'implant Box.',
+      title: 'Box-Technik',
+      category: 'Implantat',
+      description: 'Box-Implantattechnik.',
       image: '/api/placeholder/300/200',
-      slug: 'technique-box'
+      slug: 'box-technik'
     },
 
-    // Traitements Dentaires Généraux
+    // Allgemeine Zahnbehandlungen
     {
       id: 'dental-examination',
-      title: 'Examen Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Examen dentaire complet.',
+      title: 'Zahnuntersuchung',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Umfassende Zahnuntersuchung.',
       image: '/api/placeholder/300/200',
-      slug: 'examen-dentaire'
+      slug: 'zahnuntersuchung'
     },
     {
       id: 'crown-veneer',
-      title: 'Couronne Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Couronne dentaire et comment elle est faite.',
+      title: 'Zahnkrone',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Was ist eine Zahnkrone und wie wird sie hergestellt.',
       image: '/api/placeholder/300/200',
-      slug: 'couronne-dentaire'
+      slug: 'zahnkrone'
     },
     {
       id: 'dental-filling',
-      title: 'Obturation Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Comment faire une obturation dentaire et ses types.',
+      title: 'Zahnfüllung',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Wie wird eine Zahnfüllung gemacht und welche Arten gibt es.',
       image: '/api/placeholder/300/200',
-      slug: 'obturation-dentaire'
+      slug: 'zahnfuellung'
     },
     {
       id: 'root-canal-treatment',
-      title: 'Traitement de Canal',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Comment faire un traitement de canal et est-ce que ça fait mal.',
+      title: 'Wurzelkanalbehandlung',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Wie wird eine Wurzelkanalbehandlung gemacht und tut es weh.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-canal'
+      slug: 'wurzelkanalbehandlung'
     },
     {
       id: 'tooth-extraction',
-      title: 'Extraction Dentaire',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Qu\'est-ce que l\'extraction dentaire et comment elle est faite.',
+      title: 'Zahnextraktion',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Was ist Zahnextraktion und wie wird sie gemacht.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dentaire'
+      slug: 'zahnextraktion'
     },
     {
       id: 'impacted-tooth-extraction',
-      title: 'Extraction de Dent Incluse',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Qu\'est-ce que l\'extraction de dent incluse.',
+      title: 'Entfernung von Impaktierter Zahn',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Was ist die Entfernung von impaktierten Zähnen.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dent-incluse'
+      slug: 'entfernung-impaktierter-zahn'
     },
     {
       id: 'wisdom-tooth-extraction',
-      title: 'Extraction de Dent de Sagesse',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Extraction des dents de sagesse.',
+      title: 'Weisheitszahn-Entfernung',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Entfernung von Weisheitszähnen.',
       image: '/api/placeholder/300/200',
-      slug: 'extraction-dent-sagesse'
+      slug: 'weisheitszahn-entfernung'
     },
     {
       id: 'broken-tooth-treatment',
-      title: 'Traitement de Dent Cassée',
-      category: 'Traitements Dentaires Généraux',
-      description: 'Qu\'est-ce que le traitement de dent cassée.',
+      title: 'Behandlung von Gebrochenem Zahn',
+      category: 'Allgemeine Zahnbehandlungen',
+      description: 'Was ist die Behandlung von gebrochenen Zähnen.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-dent-cassee'
+      slug: 'behandlung-gebrochener-zahn'
     },
 
-    // Traitements Dentaires Préventifs
+    // Präventive Zahnbehandlungen
     {
       id: 'bad-breath',
-      title: 'Mauvaise Haleine',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que la mauvaise haleine et comment elle est traitée.',
+      title: 'Mundgeruch',
+      category: 'Präventive Zahnbehandlungen',
+      description: 'Was ist Mundgeruch und wie wird er behandelt.',
       image: '/api/placeholder/300/200',
-      slug: 'mauvaise-haleine'
+      slug: 'mundgeruch'
     },
     {
       id: 'tooth-sensitivity',
-      title: 'Sensibilité Dentaire',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que la sensibilité dentaire et comment elle est traitée.',
+      title: 'Zahnempfindlichkeit',
+      category: 'Präventive Zahnbehandlungen',
+      description: 'Was ist Zahnempfindlichkeit und wie wird sie behandelt.',
       image: '/api/placeholder/300/200',
-      slug: 'sensibilite-dentaire'
+      slug: 'zahnempfindlichkeit'
     },
     {
       id: 'teeth-grinding',
-      title: 'Grincement des Dents',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le grincement des dents et comment il est traité.',
+      title: 'Zähneknirschen',
+      category: 'Präventive Zahnbehandlungen',
+      description: 'Was ist Zähneknirschen und wie wird es behandelt.',
       image: '/api/placeholder/300/200',
-      slug: 'grincement-dents'
+      slug: 'zaehneknirschen'
     },
     {
       id: 'teeth-grinding-treatment',
-      title: 'Traitement du Grincement',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le traitement du grincement et comment il est fait.',
+      title: 'Zähneknirschen-Behandlung',
+      category: 'Präventive Zahnbehandlungen',
+      description: 'Was ist die Zähneknirschen-Behandlung und wie wird sie gemacht.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-grincement'
+      slug: 'zaehneknirschen-behandlung'
     },
     {
       id: 'snoring-treatment',
-      title: 'Traitement du Ronflement',
-      category: 'Traitements Dentaires Préventifs',
-      description: 'Qu\'est-ce que le traitement du ronflement et comment il est appliqué.',
+      title: 'Schnarch-Behandlung',
+      category: 'Präventive Zahnbehandlungen',
+      description: 'Was ist die Schnarch-Behandlung und wie wird sie angewendet.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-ronflement'
+      slug: 'schnarch-behandlung'
     },
 
-    // Orthodontie
+    // Kieferorthopädie
     {
       id: 'braces-treatment',
-      title: 'Traitement d\'Appareil',
-      category: 'Orthodontie',
-      description: 'Qu\'est-ce que le traitement d\'appareil et comment il est appliqué.',
+      title: 'Zahnspangen-Behandlung',
+      category: 'Kieferorthopädie',
+      description: 'Was ist eine Zahnspangen-Behandlung und wie wird sie angewendet.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-appareil'
+      slug: 'zahnspangen-behandlung'
     },
     {
       id: 'clear-bracket-treatment',
-      title: 'Traitement à Brackets Transparents',
-      category: 'Orthodontie',
-      description: 'Traitement orthodontique avec brackets transparents.',
+      title: 'Transparente Brackets-Behandlung',
+      category: 'Kieferorthopädie',
+      description: 'Kieferorthopädische Behandlung mit transparenten Brackets.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-brackets-transparents'
+      slug: 'transparente-brackets-behandlung'
     },
     {
       id: 'invisalign-treatment',
-      title: 'Traitement Invisalign',
-      category: 'Orthodontie',
-      description: 'Traitement Invisalign avec gouttières transparentes.',
+      title: 'Invisalign-Behandlung',
+      category: 'Kieferorthopädie',
+      description: 'Invisalign-Behandlung mit transparenten Schienen.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-invisalign'
+      slug: 'invisalign-behandlung'
     },
     {
       id: 'invisible-braces-treatment',
-      title: 'Traitement d\'Appareil Invisible',
-      category: 'Orthodontie',
-      description: 'Traitement orthodontique invisible.',
+      title: 'Unsichtbare Zahnspangen-Behandlung',
+      category: 'Kieferorthopädie',
+      description: 'Unsichtbare kieferorthopädische Behandlung.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-appareil-invisible'
+      slug: 'unsichtbare-zahnspangen-behandlung'
     },
 
-    // Pédodontie
+    // Kinderzahnheilkunde
     {
       id: 'fluoride-application',
-      title: 'Application de Fluor',
-      category: 'Pédodontie',
-      description: 'Application de fluor pour la protection dentaire.',
+      title: 'Fluorid-Anwendung',
+      category: 'Kinderzahnheilkunde',
+      description: 'Fluorid-Anwendung für Zahnschutz.',
       image: '/api/placeholder/300/200',
-      slug: 'application-fluor'
+      slug: 'fluorid-anwendung'
     },
     {
       id: 'fissure-sealant',
-      title: 'Scellement de Fissures',
-      category: 'Pédodontie',
-      description: 'Protection des fissures dentaires.',
+      title: 'Fissurenversiegelung',
+      category: 'Kinderzahnheilkunde',
+      description: 'Schutz der Zahnfissuren.',
       image: '/api/placeholder/300/200',
-      slug: 'scellement-fissures'
+      slug: 'fissurenversiegelung'
     },
     {
       id: 'pediatric-orthodontic-treatment',
-      title: 'Traitement Orthodontique Pédiatrique',
-      category: 'Pédodontie',
-      description: 'Qu\'est-ce que le traitement orthodontique pédiatrique.',
+      title: 'Kinder-Kieferorthopädische Behandlung',
+      category: 'Kinderzahnheilkunde',
+      description: 'Was ist eine kinder-kieferorthopädische Behandlung.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-orthodontique-pediatrique'
+      slug: 'kinder-kieferorthopaedische-behandlung'
     },
     {
       id: 'baby-bottle-tooth-decay',
-      title: 'Carie du Biberon',
-      category: 'Pédodontie',
-      description: 'Qu\'est-ce que la carie du biberon.',
+      title: 'Flaschenkaries',
+      category: 'Kinderzahnheilkunde',
+      description: 'Was ist Flaschenkaries.',
       image: '/api/placeholder/300/200',
-      slug: 'carie-biberon'
+      slug: 'flaschenkaries'
     },
     {
       id: 'space-maintainer-treatment',
-      title: 'Traitement de Mainteneur d\'Espace',
-      category: 'Pédodontie',
-      description: 'Qu\'est-ce que le traitement de mainteneur d\'espace.',
+      title: 'Lückenhalter-Behandlung',
+      category: 'Kinderzahnheilkunde',
+      description: 'Was ist eine Lückenhalter-Behandlung.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-mainteneur-espace'
+      slug: 'lueckenhalter-behandlung'
     },
 
     // Parodontologie
     {
       id: 'gum-treatment',
-      title: 'Traitement des Gencives',
+      title: 'Zahnfleisch-Behandlung',
       category: 'Parodontologie',
-      description: 'Traitement des maladies des gencives.',
+      description: 'Behandlung von Zahnfleischerkrankungen.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-gencives'
+      slug: 'zahnfleisch-behandlung'
     },
     {
       id: 'curettage-treatment',
-      title: 'Traitement de Curetage',
+      title: 'Kürettage-Behandlung',
       category: 'Parodontologie',
-      description: 'Qu\'est-ce que le traitement de curetage.',
+      description: 'Was ist eine Kürettage-Behandlung.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-curetage'
+      slug: 'kuerettage-behandlung'
     },
     {
       id: 'flap-treatment',
-      title: 'Traitement de Lambeau',
+      title: 'Lappen-Behandlung',
       category: 'Parodontologie',
-      description: 'Traitement chirurgical des gencives.',
+      description: 'Chirurgische Zahnfleischbehandlung.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-lambeau'
+      slug: 'lappen-behandlung'
     },
     {
       id: 'gingivitis',
-      title: 'Gingivite',
+      title: 'Gingivitis',
       category: 'Parodontologie',
-      description: 'Inflammation des gencives et gingivite.',
+      description: 'Zahnfleischentzündung und Gingivitis.',
       image: '/api/placeholder/300/200',
-      slug: 'gingivite'
+      slug: 'gingivitis'
     },
     {
       id: 'dental-calculus-cleaning',
-      title: 'Nettoyage du Tartre',
+      title: 'Zahnstein-Reinigung',
       category: 'Parodontologie',
-      description: 'Qu\'est-ce que le nettoyage du tartre et comment il est fait.',
+      description: 'Was ist Zahnstein-Reinigung und wie wird sie gemacht.',
       image: '/api/placeholder/300/200',
-      slug: 'nettoyage-tartre'
+      slug: 'zahnstein-reinigung'
     },
 
-    // Traitements Dentaires Spéciaux
+    // Spezielle Zahnbehandlungen
     {
       id: 'digital-dentistry',
-      title: 'Dentisterie Numérique',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Dentisterie numérique et conception dentaire.',
+      title: 'Digitale Zahnheilkunde',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Digitale Zahnheilkunde und Zahndesign.',
       image: '/api/placeholder/300/200',
-      slug: 'dentisterie-numerique'
+      slug: 'digitale-zahnheilkunde'
     },
     {
       id: 'needle-free-anesthesia',
-      title: 'Anesthésie Sans Aiguille',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Application d\'anesthésie sans aiguille.',
+      title: 'Nadellose Anästhesie',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Nadellose Anästhesie-Anwendung.',
       image: '/api/placeholder/300/200',
-      slug: 'anesthesie-sans-aiguille'
+      slug: 'nadellose-anaesthesie'
     },
     {
       id: 'sedation-and-general-anesthesia',
-      title: 'Sédation et Anesthésie Générale',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Sédation et anesthésie générale pour les traitements.',
+      title: 'Sedierung und Vollnarkose',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Sedierung und Vollnarkose für Behandlungen.',
       image: '/api/placeholder/300/200',
-      slug: 'sedation-anesthesie-generale'
+      slug: 'sedierung-vollnarkose'
     },
     {
       id: 'rubber-dam-application',
-      title: 'Application de Digue',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Application de digue pour l\'isolation.',
+      title: 'Kofferdam-Anwendung',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Kofferdam-Anwendung für Isolation.',
       image: '/api/placeholder/300/200',
-      slug: 'application-digue'
+      slug: 'kofferdam-anwendung'
     },
     {
       id: 'jaw-tumor',
-      title: 'Tumeur de la Mâchoire',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Traitement des tumeurs de la mâchoire.',
+      title: 'Kiefertumor',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Behandlung von Kiefertumoren.',
       image: '/api/placeholder/300/200',
-      slug: 'tumeur-machoire'
+      slug: 'kiefertumor'
     },
     {
       id: 'jaw-fracture-treatment',
-      title: 'Traitement de Fracture de Mâchoire',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Traitement chirurgical des fractures de mâchoire.',
+      title: 'Kieferbruch-Behandlung',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Chirurgische Behandlung von Kieferbrüchen.',
       image: '/api/placeholder/300/200',
-      slug: 'traitement-fracture-machoire'
+      slug: 'kieferbruch-behandlung'
     },
     {
       id: 'dental-spa',
-      title: 'Spa Dentaire',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Services de spa dentaire relaxants.',
+      title: 'Zahn-Spa',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Entspannende Zahn-Spa-Dienste.',
       image: '/api/placeholder/300/200',
-      slug: 'spa-dentaire'
+      slug: 'zahn-spa'
     },
     {
       id: '10x10-examination',
-      title: 'Examen 10 X 10',
-      category: 'Traitements Dentaires Spéciaux',
-      description: 'Examen dentaire complet 10x10.',
+      title: '10 X 10 Untersuchung',
+      category: 'Spezielle Zahnbehandlungen',
+      description: 'Umfassende 10x10 Zahnuntersuchung.',
       image: '/api/placeholder/300/200',
-      slug: 'examen-10x10'
+      slug: '10x10-untersuchung'
     }
   ];
 
@@ -557,17 +557,17 @@ const Treatments = () => {
   return (
     <>
       <SEOHead 
-        title="Nos Traitements - Hospitadent"
-        description="Tous les traitements dentaires et services offerts par Hospitadent. Dentisterie esthétique, implants, orthodontie et plus encore."
-        keywords="traitements dentaires, dentisterie esthétique, implants, orthodontie, pédodontie, parodontologie, hospitadent"
-        url="https://hospitadent.com/fr/traitements"
+        title="Unsere Behandlungen - Hospitadent"
+        description="Alle Zahnbehandlungen und Dienstleistungen von Hospitadent. Ästhetische Zahnheilkunde, Implantate, Kieferorthopädie und mehr."
+        keywords="Zahnbehandlungen, ästhetische Zahnheilkunde, Implantate, Kieferorthopädie, Kinderzahnheilkunde, Parodontologie, hospitadent"
+        url="https://hospitadent.com/de/behandlungen"
       />
       <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 treatments-page">
         {/* Header */}
         <div className="bg-white/80 backdrop-blur-sm py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
-              Nos Traitements
+              Unsere Behandlungen
             </h1>
           </div>
         </div>
@@ -583,7 +583,7 @@ const Treatments = () => {
                   <div className="flex-1 px-6 py-4">
                     <input
                       type="text"
-                      placeholder="Recherche"
+                      placeholder="Suche"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="w-full text-lg text-gray-800 placeholder-gray-500 focus:outline-none"
@@ -634,10 +634,10 @@ const Treatments = () => {
                     
                     {/* Detay Butonu */}
                     <a 
-                      href={`/traitement/${treatment.slug}`}
+                      href={`/behandlung/${treatment.slug}`}
                       className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group mt-auto"
                     >
-                      Voir les Détails
+                      Details Anzeigen
                       <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -653,16 +653,16 @@ const Treatments = () => {
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">🔍</div>
                 <h3 className="text-2xl font-bold text-[#004876] mb-2">
-                  Aucun Résultat Trouvé
+                  Keine Ergebnisse Gefunden
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Aucun résultat trouvé pour "{searchTerm}". Vous pouvez essayer différents mots-clés.
+                  Keine Ergebnisse für "{searchTerm}" gefunden. Sie können verschiedene Schlüsselwörter versuchen.
                 </p>
                 <button 
                   onClick={() => setSearchTerm('')}
                   className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                 >
-                  Voir Tous les Traitements
+                  Alle Behandlungen Anzeigen
                 </button>
               </div>
             )}
@@ -671,10 +671,10 @@ const Treatments = () => {
             <div className="text-center mt-16">
               <div className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] rounded-2xl p-8 text-white">
                 <h2 className="text-3xl font-bold mb-4">
-                  Déterminons le Traitement le Plus Adapté pour Vous
+                  Lassen Sie uns die Beste Behandlung für Sie Bestimmen
                 </h2>
                 <p className="text-xl mb-6 opacity-90">
-                  Prenez rendez-vous pour une consultation gratuite avec nos dentistes experts
+                  Vereinbaren Sie einen Termin für eine kostenlose Beratung mit unseren Zahnärzten
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
@@ -693,7 +693,7 @@ const Treatments = () => {
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
-                    Nous Contacter
+                    Kontakt
                   </a>
                 </div>
               </div>

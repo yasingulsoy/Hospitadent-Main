@@ -55,21 +55,25 @@ import FrBlog from './pages/fr/Blog';
 import DeAbout from './pages/de/About';
 import DeServices from './pages/de/Services';
 import DeAwards from './pages/de/Awards';
+import DeTreatments from './pages/de/Treatments';
 
 // Dil sayfaları - Rusça
 import RuAbout from './pages/ru/About';
 import RuServices from './pages/ru/Services';
 import RuAwards from './pages/ru/Awards';
+import RuTreatments from './pages/ru/Treatments';
 
 // Dil sayfaları - İspanyolca
 import EsAbout from './pages/es/About';
 import EsServices from './pages/es/Services';
 import EsAwards from './pages/es/Awards';
+import EsTreatments from './pages/es/Treatments';
 
 // Dil sayfaları - Arapça
 import ArAbout from './pages/ar/About';
 import ArServices from './pages/ar/Services';
 import ArAwards from './pages/ar/Awards';
+import ArTreatments from './pages/ar/Treatments';
 
 function App() {
   // Admin route'unda mıyız kontrolü
@@ -139,7 +143,7 @@ function App() {
         <Route path="/en/corporate-identity" element={<CorporateIdentity />} />
         <Route path="/en/patient-satisfaction-videos" element={<EnHastaMemnuniyetVideolari />} />
         <Route path="/en/patient-reviews" element={<EnHastaYorumlari />} />
-        <Route path="/en/treatments" element={<EnTreatments />} />
+        <Route path="/en/tedavilerimiz" element={<EnTreatments />} />
         <Route path="/en/hospitadent-social-responsibility" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/en/partner-institutions" element={<AnlasmaliKurumlar />} />
         <Route path="/en/search" element={<EnSearchResults />} />
@@ -199,6 +203,7 @@ function App() {
         <Route path="/de/corporate-identity" element={<CorporateIdentity />} />
         <Route path="/de/patientenzufriedenheit-videos" element={<HastaMemnuniyetVideolari />} />
         <Route path="/de/patientenbewertungen" element={<HastaYorumlari />} />
+        <Route path="/de/unsere-behandlungen" element={<DeTreatments />} />
         <Route path="/de/hospitadent-soziale-verantwortung" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/de/partnerinstitutionen" element={<AnlasmaliKurumlar />} />
         <Route path="/de/suche" element={<SearchResults />} />
@@ -228,6 +233,7 @@ function App() {
         <Route path="/ru/korporativnaya-identichnost" element={<CorporateIdentity />} />
         <Route path="/ru/video-udovletvorennosti-patsientov" element={<HastaMemnuniyetVideolari />} />
         <Route path="/ru/otzyvy-patsientov" element={<HastaYorumlari />} />
+        <Route path="/ru/наши-процедуры" element={<RuTreatments />} />
         <Route path="/ru/sotsialnaya-otvetstvennost-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/ru/partnerstkie-uchrezhdeniya" element={<AnlasmaliKurumlar />} />
         <Route path="/ru/poisk" element={<SearchResults />} />
@@ -256,6 +262,7 @@ function App() {
         <Route path="/es/identidad-corporativa" element={<CorporateIdentity />} />
         <Route path="/es/videos-satisfaccion-pacientes" element={<HastaMemnuniyetVideolari />} />
         <Route path="/es/resenas-pacientes" element={<HastaYorumlari />} />
+        <Route path="/es/nuestros-tratamientos" element={<EsTreatments />} />
         <Route path="/es/responsabilidad-social-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/es/instituciones-socias" element={<AnlasmaliKurumlar />} />
         <Route path="/es/busqueda" element={<SearchResults />} />
@@ -284,6 +291,7 @@ function App() {
         <Route path="/ar/al-hawiyya-al-sharikiyya" element={<CorporateIdentity />} />
         <Route path="/ar/fidiyu-ridha-al-mardha" element={<HastaMemnuniyetVideolari />} />
         <Route path="/ar/ara-al-mardha" element={<HastaYorumlari />} />
+        <Route path="/ar/علاجاتنا" element={<ArTreatments />} />
         <Route path="/ar/al-masuliyya-al-ijtimaiyya-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/ar/al-muassasat-al-sharika" element={<AnlasmaliKurumlar />} />
         <Route path="/ar/al-bahth" element={<SearchResults />} />
