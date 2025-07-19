@@ -254,34 +254,26 @@ const useBizData = () => {
 
 // Kolaytik açma fonksiyonu
 const openKolaytik = () => {
-  console.log('Kolaytik ikonu aranıyor...');
-  
   // Kolaytik'in kendi ikonunu bul ve tıkla
   const kolaytikIcon = document.querySelector('[data-kolaytik], .kolaytik-icon, #kolaytik-icon, [class*="kolaytik"], [id*="kolaytik"]');
   
   if (kolaytikIcon) {
-    console.log('Kolaytik ikonu bulundu, tıklanıyor...');
     kolaytikIcon.click();
   } else {
-    console.log('Kolaytik ikonu bulunamadı, tüm butonları kontrol ediliyor...');
-    
     // Tüm butonları kontrol et
     const allButtons = document.querySelectorAll('button, [role="button"], .btn, [class*="button"]');
-    let found = false;
     
-    allButtons.forEach(button => {
-      if (button.textContent.toLowerCase().includes('kolaytik') || 
-          button.innerHTML.toLowerCase().includes('kolaytik') ||
-          button.getAttribute('aria-label')?.toLowerCase().includes('kolaytik')) {
-        console.log('Kolaytik butonu bulundu:', button);
+    for (const button of allButtons) {
+      const buttonText = button.textContent?.toLowerCase() || '';
+      const buttonTitle = button.title?.toLowerCase() || '';
+      const buttonAriaLabel = button.getAttribute('aria-label')?.toLowerCase() || '';
+      
+      if (buttonText.includes('kolaytik') || 
+          buttonTitle.includes('kolaytik') || 
+          buttonAriaLabel.includes('kolaytik')) {
         button.click();
-        found = true;
+        break;
       }
-    });
-    
-    if (!found) {
-      console.log('Kolaytik ikonu bulunamadı!');
-      alert('Kolaytik chatbot bulunamadı! Lütfen sayfayı yenileyin.');
     }
   }
 };

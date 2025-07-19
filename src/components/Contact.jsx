@@ -17,8 +17,8 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form gönderme işlemi burada yapılacak
-    console.log('Form gönderildi:', formData);
+    // Form gönderildiğinde yapılacak işlemler
+    // Burada form verilerini işleyebilir veya API'ye gönderebilirsiniz
     alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
     setFormData({ name: '', phone: '', email: '', message: '' });
   };

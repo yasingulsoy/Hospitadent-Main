@@ -198,512 +198,381 @@ const Treatments = () => {
 
     // Implante
     {
-      id: 'single-tooth-implant',
-      title: 'Implante de Diente Único',
+      id: 'dental-implant',
+      title: 'Implante Dental',
       category: 'Implante',
-      description: 'Tratamiento de implante para un solo diente.',
+      description: 'Aplicaciones modernas de implantes dentales con alta tasa de éxito.',
       image: '/api/placeholder/300/200',
-      slug: 'implante-diente-unico'
+      slug: 'implante-dental'
     },
     {
-      id: 'full-mouth-implant',
-      title: 'Implante de Boca Completa',
+      id: 'all-on-4',
+      title: 'All-on-4',
       category: 'Implante',
-      description: 'Tratamiento de implante para toda la boca.',
+      description: 'Tratamiento dental completo con solo 4 implantes.',
       image: '/api/placeholder/300/200',
-      slug: 'implante-boca-completa'
+      slug: 'all-on-4'
     },
     {
-      id: 'multiple-tooth-implant',
-      title: 'Implante de Dientes Múltiples',
+      id: 'all-on-6',
+      title: 'All-on-6',
       category: 'Implante',
-      description: 'Tratamiento de implante para varios dientes.',
+      description: 'Tratamiento dental completo con 6 implantes.',
       image: '/api/placeholder/300/200',
-      slug: 'implante-dientes-multiples'
+      slug: 'all-on-6'
     },
     {
-      id: 'one-day-implant',
-      title: 'Implante en 1 Día',
+      id: 'zygomatic-implant',
+      title: 'Implante Cigomático',
       category: 'Implante',
-      description: 'Tratamiento de implante en un solo día.',
+      description: 'Aplicaciones de implantes cigomáticos para casos difíciles.',
       image: '/api/placeholder/300/200',
-      slug: 'implante-1-dia'
+      slug: 'implante-cigomatico'
     },
     {
-      id: 'all-on-four',
-      title: 'All on Four',
+      id: 'basal-implant',
+      title: 'Implante Basal',
       category: 'Implante',
-      description: 'Técnica de implante All on Four.',
+      description: 'Aplicaciones de implantes basales para carga inmediata.',
       image: '/api/placeholder/300/200',
-      slug: 'all-on-four'
+      slug: 'implante-basal'
     },
     {
-      id: 'all-on-six',
-      title: 'All on Six',
+      id: 'implant-supported-denture',
+      title: 'Prótesis Sobre Implantes',
       category: 'Implante',
-      description: 'Técnica de implante All on Six.',
+      description: 'Soluciones de prótesis dentales sobre implantes.',
       image: '/api/placeholder/300/200',
-      slug: 'all-on-six'
-    },
-    {
-      id: 'box-technique',
-      title: 'Técnica Box',
-      category: 'Implante',
-      description: 'Técnica de implante Box.',
-      image: '/api/placeholder/300/200',
-      slug: 'tecnica-box'
-    },
-
-    // Tratamientos Dentales Generales
-    {
-      id: 'dental-examination',
-      title: 'Examen Dental',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Examen dental completo.',
-      image: '/api/placeholder/300/200',
-      slug: 'examen-dental'
-    },
-    {
-      id: 'crown-veneer',
-      title: 'Corona Dental',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Qué es una corona dental y cómo se hace.',
-      image: '/api/placeholder/300/200',
-      slug: 'corona-dental'
-    },
-    {
-      id: 'dental-filling',
-      title: 'Empaste Dental',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Cómo se hace un empaste dental y cuáles son sus tipos.',
-      image: '/api/placeholder/300/200',
-      slug: 'empaste-dental'
-    },
-    {
-      id: 'root-canal-treatment',
-      title: 'Tratamiento de Conducto',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Cómo se hace el tratamiento de conducto y si duele.',
-      image: '/api/placeholder/300/200',
-      slug: 'tratamiento-conducto'
-    },
-    {
-      id: 'tooth-extraction',
-      title: 'Extracción Dental',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Qué es la extracción dental y cómo se hace.',
-      image: '/api/placeholder/300/200',
-      slug: 'extraccion-dental'
-    },
-    {
-      id: 'impacted-tooth-extraction',
-      title: 'Extracción de Diente Impactado',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Qué es la extracción de dientes impactados.',
-      image: '/api/placeholder/300/200',
-      slug: 'extraccion-diente-impactado'
-    },
-    {
-      id: 'wisdom-tooth-extraction',
-      title: 'Extracción de Muela del Juicio',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Extracción de muelas del juicio.',
-      image: '/api/placeholder/300/200',
-      slug: 'extraccion-muela-juicio'
-    },
-    {
-      id: 'broken-tooth-treatment',
-      title: 'Tratamiento de Diente Roto',
-      category: 'Tratamientos Dentales Generales',
-      description: 'Qué es el tratamiento de diente roto.',
-      image: '/api/placeholder/300/200',
-      slug: 'tratamiento-diente-roto'
-    },
-
-    // Tratamientos Dentales Preventivos
-    {
-      id: 'bad-breath',
-      title: 'Mal Aliento',
-      category: 'Tratamientos Dentales Preventivos',
-      description: 'Qué es el mal aliento y cómo se trata.',
-      image: '/api/placeholder/300/200',
-      slug: 'mal-aliento'
-    },
-    {
-      id: 'tooth-sensitivity',
-      title: 'Sensibilidad Dental',
-      category: 'Tratamientos Dentales Preventivos',
-      description: 'Qué es la sensibilidad dental y cómo se trata.',
-      image: '/api/placeholder/300/200',
-      slug: 'sensibilidad-dental'
-    },
-    {
-      id: 'teeth-grinding',
-      title: 'Rechinar de Dientes',
-      category: 'Tratamientos Dentales Preventivos',
-      description: 'Qué es el rechinar de dientes y cómo se trata.',
-      image: '/api/placeholder/300/200',
-      slug: 'rechinar-dientes'
-    },
-    {
-      id: 'teeth-grinding-treatment',
-      title: 'Tratamiento de Rechinar',
-      category: 'Tratamientos Dentales Preventivos',
-      description: 'Qué es el tratamiento de rechinar y cómo se hace.',
-      image: '/api/placeholder/300/200',
-      slug: 'tratamiento-rechinar'
-    },
-    {
-      id: 'snoring-treatment',
-      title: 'Tratamiento de Ronquidos',
-      category: 'Tratamientos Dentales Preventivos',
-      description: 'Qué es el tratamiento de ronquidos y cómo se aplica.',
-      image: '/api/placeholder/300/200',
-      slug: 'tratamiento-ronquidos'
+      slug: 'protesis-sobre-implantes'
     },
 
     // Ortodoncia
     {
-      id: 'braces-treatment',
-      title: 'Tratamiento de Brackets',
+      id: 'orthodontics',
+      title: 'Ortodoncia',
       category: 'Ortodoncia',
-      description: 'Qué es el tratamiento de brackets y cómo se aplica.',
+      description: 'Tratamientos ortodónticos completos.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-brackets'
+      slug: 'ortodoncia'
     },
     {
-      id: 'clear-bracket-treatment',
-      title: 'Tratamiento de Brackets Transparentes',
+      id: 'invisible-braces',
+      title: 'Brackets Invisibles',
       category: 'Ortodoncia',
-      description: 'Tratamiento ortodóntico con brackets transparentes.',
+      description: 'Tratamientos modernos de brackets invisibles.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-brackets-transparentes'
+      slug: 'brackets-invisibles'
     },
     {
-      id: 'invisalign-treatment',
-      title: 'Tratamiento Invisalign',
+      id: 'ceramic-braces',
+      title: 'Brackets de Cerámica',
       category: 'Ortodoncia',
-      description: 'Tratamiento Invisalign con alineadores transparentes.',
+      description: 'Brackets de cerámica estéticos.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-invisalign'
+      slug: 'brackets-ceramica'
     },
     {
-      id: 'invisible-braces-treatment',
-      title: 'Tratamiento de Brackets Invisibles',
+      id: 'lingual-braces',
+      title: 'Brackets Linguales',
       category: 'Ortodoncia',
-      description: 'Tratamiento ortodóntico invisible.',
+      description: 'Brackets internos para máxima estética.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-brackets-invisibles'
+      slug: 'brackets-linguales'
+    },
+    {
+      id: 'clear-aligners',
+      title: 'Alineadores Transparentes',
+      category: 'Ortodoncia',
+      description: 'Tratamiento moderno con alineadores transparentes.',
+      image: '/api/placeholder/300/200',
+      slug: 'alineadores-transparentes'
     },
 
-    // Odontopediatría
+    // Cirugía
     {
-      id: 'fluoride-application',
-      title: 'Aplicación de Flúor',
-      category: 'Odontopediatría',
-      description: 'Aplicación de flúor para protección dental.',
+      id: 'wisdom-tooth-extraction',
+      title: 'Extracción de Muela del Juicio',
+      category: 'Cirugía',
+      description: 'Extracción segura de muelas del juicio.',
       image: '/api/placeholder/300/200',
-      slug: 'aplicacion-fluor'
+      slug: 'extraccion-muela-juicio'
     },
     {
-      id: 'fissure-sealant',
-      title: 'Sellador de Fisuras',
-      category: 'Odontopediatría',
-      description: 'Protección de fisuras dentales.',
+      id: 'tooth-extraction',
+      title: 'Extracción Dental',
+      category: 'Cirugía',
+      description: 'Extracción dental sin dolor.',
       image: '/api/placeholder/300/200',
-      slug: 'sellador-fisuras'
+      slug: 'extraccion-dental'
     },
     {
-      id: 'pediatric-orthodontic-treatment',
-      title: 'Tratamiento Ortodóntico Pediátrico',
-      category: 'Odontopediatría',
-      description: 'Qué es el tratamiento ortodóntico pediátrico.',
+      id: 'sinus-lift',
+      title: 'Elevación de Seno',
+      category: 'Cirugía',
+      description: 'Cirugías de elevación de seno para tratamiento de implantes.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-ortodontico-pediatrico'
+      slug: 'elevacion-seno'
     },
     {
-      id: 'baby-bottle-tooth-decay',
-      title: 'Caries del Biberón',
-      category: 'Odontopediatría',
-      description: 'Qué es la caries del biberón.',
+      id: 'bone-grafting',
+      title: 'Injerto Óseo',
+      category: 'Cirugía',
+      description: 'Procedimientos de injerto óseo para tratamiento de implantes.',
       image: '/api/placeholder/300/200',
-      slug: 'caries-biberon'
+      slug: 'injerto-oseo'
     },
     {
-      id: 'space-maintainer-treatment',
-      title: 'Tratamiento de Mantenedor de Espacio',
-      category: 'Odontopediatría',
-      description: 'Qué es el tratamiento de mantenedor de espacio.',
+      id: 'gum-surgery',
+      title: 'Cirugía de Encías',
+      category: 'Cirugía',
+      description: 'Cirugía de encías para una sonrisa saludable.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-mantenedor-espacio'
+      slug: 'cirugia-encias'
     },
 
-    // Periodontología
+    // Endodoncia
     {
-      id: 'gum-treatment',
-      title: 'Tratamiento de Encías',
-      category: 'Periodontología',
-      description: 'Tratamiento de enfermedades de las encías.',
+      id: 'root-canal-treatment',
+      title: 'Tratamiento de Conducto',
+      category: 'Endodoncia',
+      description: 'Tratamiento moderno de conducto radicular.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-encias'
+      slug: 'tratamiento-conducto'
     },
     {
-      id: 'curettage-treatment',
-      title: 'Tratamiento de Curetaje',
-      category: 'Periodontología',
-      description: 'Qué es el tratamiento de curetaje.',
+      id: 'endodontic-retreatment',
+      title: 'Re-tratamiento Endodóntico',
+      category: 'Endodoncia',
+      description: 'Re-tratamiento endodóntico para casos difíciles.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-curetaje'
+      slug: 're-tratamiento-endodontico'
     },
     {
-      id: 'flap-treatment',
-      title: 'Tratamiento de Colgajo',
-      category: 'Periodontología',
-      description: 'Tratamiento quirúrgico de encías.',
+      id: 'apicoectomy',
+      title: 'Apicectomía',
+      category: 'Endodoncia',
+      description: 'Apicectomía para inflamaciones crónicas.',
       image: '/api/placeholder/300/200',
-      slug: 'tratamiento-colgajo'
+      slug: 'apicectomia'
+    },
+
+    // Periodoncia
+    {
+      id: 'periodontal-treatment',
+      title: 'Tratamiento Periodontal',
+      category: 'Periodoncia',
+      description: 'Tratamiento completo de periodontitis.',
+      image: '/api/placeholder/300/200',
+      slug: 'tratamiento-periodontal'
     },
     {
-      id: 'gingivitis',
-      title: 'Gingivitis',
-      category: 'Periodontología',
-      description: 'Inflamación de encías y gingivitis.',
+      id: 'gum-disease-treatment',
+      title: 'Tratamiento de Enfermedad de Encías',
+      category: 'Periodoncia',
+      description: 'Tratamiento de enfermedades de encías.',
       image: '/api/placeholder/300/200',
-      slug: 'gingivitis'
+      slug: 'tratamiento-enfermedad-encias'
     },
     {
-      id: 'dental-calculus-cleaning',
+      id: 'scaling-root-planing',
       title: 'Limpieza de Sarro',
-      category: 'Periodontología',
-      description: 'Qué es la limpieza de sarro y cómo se hace.',
+      category: 'Periodoncia',
+      description: 'Limpieza profesional de sarro y alisado radicular.',
       image: '/api/placeholder/300/200',
       slug: 'limpieza-sarro'
     },
 
-    // Tratamientos Dentales Especiales
+    // Odontología Pediátrica
     {
-      id: 'digital-dentistry',
-      title: 'Odontología Digital',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Odontología digital y diseño dental.',
+      id: 'pediatric-dentistry',
+      title: 'Odontología Pediátrica',
+      category: 'Odontología Pediátrica',
+      description: 'Tratamiento dental especializado para niños.',
       image: '/api/placeholder/300/200',
-      slug: 'odontologia-digital'
+      slug: 'odontologia-pediatrica'
     },
     {
-      id: 'needle-free-anesthesia',
-      title: 'Anestesia Sin Aguja',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Aplicación de anestesia sin aguja.',
+      id: 'fissure-sealant',
+      title: 'Sellado de Fosas y Fisuras',
+      category: 'Odontología Pediátrica',
+      description: 'Sellado de fosas y fisuras para prevención de caries.',
       image: '/api/placeholder/300/200',
-      slug: 'anestesia-sin-aguja'
+      slug: 'sellado-fosas-fisuras'
     },
     {
-      id: 'sedation-and-general-anesthesia',
-      title: 'Sedación y Anestesia General',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Sedación y anestesia general para tratamientos.',
+      id: 'fluoride-treatment',
+      title: 'Tratamiento con Flúor',
+      category: 'Odontología Pediátrica',
+      description: 'Tratamiento con flúor para dientes fuertes.',
       image: '/api/placeholder/300/200',
-      slug: 'sedacion-anestesia-general'
-    },
-    {
-      id: 'rubber-dam-application',
-      title: 'Aplicación de Dique',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Aplicación de dique para aislamiento.',
-      image: '/api/placeholder/300/200',
-      slug: 'aplicacion-dique'
-    },
-    {
-      id: 'jaw-tumor',
-      title: 'Tumor de Mandíbula',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Tratamiento de tumores de mandíbula.',
-      image: '/api/placeholder/300/200',
-      slug: 'tumor-mandibula'
-    },
-    {
-      id: 'jaw-fracture-treatment',
-      title: 'Tratamiento de Fractura de Mandíbula',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Tratamiento quirúrgico de fracturas de mandíbula.',
-      image: '/api/placeholder/300/200',
-      slug: 'tratamiento-fractura-mandibula'
-    },
-    {
-      id: 'dental-spa',
-      title: 'Spa Dental',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Servicios relajantes de spa dental.',
-      image: '/api/placeholder/300/200',
-      slug: 'spa-dental'
-    },
-    {
-      id: '10x10-examination',
-      title: 'Examen 10 X 10',
-      category: 'Tratamientos Dentales Especiales',
-      description: 'Examen dental completo 10x10.',
-      image: '/api/placeholder/300/200',
-      slug: 'examen-10x10'
+      slug: 'tratamiento-fluor'
     }
   ];
 
-  // Arama filtreleme
+  // Función de búsqueda
   const filteredTreatments = allTreatments.filter(treatment =>
     treatment.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     treatment.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
     treatment.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Obtener categorías
+  const categories = [...new Set(allTreatments.map(treatment => treatment.category))];
+
   return (
     <>
       <SEOHead 
         title="Nuestros Tratamientos - Hospitadent"
-        description="Todos los tratamientos dentales y servicios ofrecidos por Hospitadent. Odontología estética, implantes, ortodoncia y más."
-        keywords="tratamientos dentales, odontología estética, implantes, ortodoncia, odontopediatría, periodontología, hospitadent"
+        description="Descubre nuestros tratamientos dentales integrales: odontología estética, implantes, ortodoncia, cirugía y más. Métodos de tratamiento modernos para tu sonrisa perfecta."
+        keywords="tratamientos dentales, implantes, ortodoncia, odontología estética, cirugía dental, Hospitadent España"
         url="https://hospitadent.com/es/nuestros-tratamientos"
       />
-      <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 treatments-page">
-        {/* Header */}
-        <div className="bg-white/80 backdrop-blur-sm py-12">
-          <div className="container mx-auto px-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
-              Nuestros Tratamientos
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-20 md:py-32">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-600/10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Nuestros <span className="text-blue-600">tratamientos</span>
             </h1>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="container mx-auto px-4 py-16 pb-32">
-          <div className="max-w-7xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12">
+              Descubre nuestros tratamientos dentales integrales con tecnología de vanguardia y especialistas experimentados
+            </p>
             
-            {/* Arama Bölümü */}
-            <div className="mb-12">
-              <div className="max-w-lg mx-auto">
-                <div className="flex items-center bg-white rounded-full shadow-md overflow-hidden">
-                  <div className="flex-1 px-6 py-4">
-                    <input
-                      type="text"
-                      placeholder="Buscar"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full text-lg text-gray-800 placeholder-gray-500 focus:outline-none"
-                    />
-                  </div>
-                  <button className="text-[#0f4f78] px-6 py-4 hover:text-[#2bb3ea] transition-all duration-200">
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </button>
-                </div>
+            {/* Caja de búsqueda */}
+            <div className="max-w-2xl mx-auto mb-16">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Buscar tratamiento o categoría..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-full focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-200 transition-all duration-300"
+                />
+                <svg className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
             </div>
-
-            {/* Tedavi Kartları Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              
-              {filteredTreatments.map((treatment) => (
-                <div key={treatment.id} className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-[#004876]/20 group flex flex-col h-full">
-                  {/* Resim */}
-                  <div className="h-48 bg-gradient-to-br from-blue-100 to-cyan-100 relative overflow-hidden flex-shrink-0">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#0f4f78]/20 to-[#2bb3ea]/20"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-6xl text-[#004876]/30">
-                        🦷
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* İçerik */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    {/* Kategori */}
-                    <div className="mb-2 -mt-1">
-                      <span className="inline-block bg-blue-100 text-[#004876] text-xs font-semibold px-0.5 py-0 rounded-full">
-                        {treatment.category}
-                      </span>
-                    </div>
-                    
-                    {/* Başlık */}
-                    <h3 className="text-xl font-bold text-[#0f4f78] mb-3 group-hover:text-[#2bb3ea] transition-colors duration-300 line-clamp-2">
-                      {treatment.title}
-                    </h3>
-                    
-                    {/* Açıklama */}
-                    <p className="text-[#0f4f78]/70 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
-                      {treatment.description}
-                    </p>
-                    
-                    {/* Detay Butonu */}
-                    <a 
-                      href={`/tratamiento/${treatment.slug}`}
-                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group mt-auto"
-                    >
-                      Ver Detalles
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              ))}
-              
-            </div>
-
-            {/* Sonuç Bulunamadı */}
-            {filteredTreatments.length === 0 && searchTerm && (
-              <div className="text-center py-16">
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-bold text-[#004876] mb-2">
-                  No Se Encontraron Resultados
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  No se encontraron resultados para "{searchTerm}". Puedes intentar diferentes palabras clave.
-                </p>
-                <button 
-                  onClick={() => setSearchTerm('')}
-                  className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-                >
-                  Ver Todos los Tratamientos
-                </button>
-              </div>
-            )}
-
-            {/* Call to Action */}
-            <div className="text-center mt-16">
-              <div className="bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] rounded-2xl p-8 text-white">
-                <h2 className="text-3xl font-bold mb-4">
-                  Determinemos el Mejor Tratamiento para Ti
-                </h2>
-                <p className="text-xl mb-6 opacity-90">
-                  Agenda una consulta gratuita con nuestros dentistas expertos
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
-                    href="tel:4449922"
-                    className="bg-white text-[#0f4f78] px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 inline-flex items-center justify-center"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    444 99 22
-                  </a>
-                  <a 
-                    href="/contact"
-                    className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0f4f78] transition-all duration-300 hover:scale-105 inline-flex items-center justify-center"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                    Contáctanos
-                  </a>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Grid de Tratamientos */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {searchTerm && (
+            <div className="mb-8 text-center">
+              <p className="text-lg text-gray-600">
+                <span className="font-semibold">{filteredTreatments.length}</span> tratamiento{filteredTreatments.length !== 1 ? 's' : ''} encontrado{filteredTreatments.length !== 1 ? 's' : ''} para "{searchTerm}"
+              </p>
+            </div>
+          )}
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredTreatments.map((treatment, index) => (
+              <div
+                key={treatment.id}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden group"
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animation: 'fadeInUp 0.6s ease-out forwards'
+                }}
+              >
+                <div className="relative overflow-hidden">
+                  <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
+                    <div className="text-6xl text-blue-400 opacity-60 group-hover:scale-110 transition-transform duration-500">
+                      🦷
+                    </div>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full">
+                      {treatment.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                    {treatment.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {treatment.description}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-500">
+                      ID: {treatment.slug}
+                    </span>
+                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-medium">
+                      Ver detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {filteredTreatments.length === 0 && searchTerm && (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No se encontraron tratamientos</h3>
+              <p className="text-gray-600 mb-6">
+                Intenta con otros términos de búsqueda o revisa todos nuestros tratamientos.
+              </p>
+              <button
+                onClick={() => setSearchTerm('')}
+                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+              >
+                Ver todos los tratamientos
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-cyan-600 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            ¿Listo para tu sonrisa perfecta?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Agenda una cita hoy y recibe asesoramiento de nuestros expertos
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://tk.emsal.com.tr/hospitadent/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-bold rounded-full hover:bg-gray-100 transition-colors duration-300 text-lg"
+            >
+              📞 Agendar cita
+            </a>
+            <a
+              href="tel:4449922"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border-2 border-white font-bold rounded-full hover:bg-white hover:text-blue-600 transition-colors duration-300 text-lg"
+            >
+              ☎️ Llamar
+            </a>
+          </div>
+        </div>
+      </section>
 
       <Footer />
+      
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </>
   );
 };
