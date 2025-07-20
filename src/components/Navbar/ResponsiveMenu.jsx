@@ -254,7 +254,6 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
           onClick={handleNav}
         >
           <img src={logo} alt="Hospitadent Logo" className="h-12 w-auto mb-3" />
-          <h1 className="text-white text-lg font-bold">Hospitadent</h1>
         </a>
       </div>
       
