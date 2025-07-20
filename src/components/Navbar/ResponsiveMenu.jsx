@@ -13,14 +13,14 @@ const MobileNavLinks = ({ item, handleNav }) => {
     return (
       <li className="w-full">
         <button
-          className="flex justify-between items-center w-full px-4 py-4 text-left text-white hover:text-blue-300 focus:outline-none border-b border-white/10"
+          className="flex justify-between items-center w-full px-3 py-3 text-left text-white hover:text-blue-300 focus:outline-none border-b border-white/10"
           onClick={() => setOpen(!open)}
         >
-          <span className="font-bold text-lg">{t(item.name)}</span>
+          <span className="font-bold text-base">{t(item.name)}</span>
           <svg className={`ml-2 w-5 h-5 transform transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
         {open && (
-          <ul className="pl-4 border-l border-white/20 bg-white/5">
+          <ul className="pl-3 border-l border-white/20 bg-white/5">
             {item.submenu.map((sub, idx) => (
               <MobileNavLinks item={sub} key={idx} handleNav={handleNav} />
             ))}
@@ -37,7 +37,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
           href={item.path}
           target="_blank"
           rel="noopener noreferrer"
-          className="block px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg"
+          className="block px-3 py-3 text-white hover:text-blue-300 border-b border-white/10 font-bold text-base"
           onClick={handleNav}
         >
           {t(item.name)}
@@ -52,7 +52,7 @@ const MobileNavLinks = ({ item, handleNav }) => {
       <li className="w-full">
         <a
           href={`#${item.path || 'home'}`}
-          className="block px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg"
+          className="block px-3 py-3 text-white hover:text-blue-300 border-b border-white/10 font-bold text-base"
           onClick={handleNav}
         >
           {t(item.name)}
@@ -64,11 +64,11 @@ const MobileNavLinks = ({ item, handleNav }) => {
   // Sayfa yönlendirmesi için RouterLink kullan
   return (
     <li className="w-full">
-      <RouterLink
-        to={item.path}
-        className="block px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg"
-        onClick={handleNav}
-      >
+              <RouterLink
+          to={item.path}
+          className="block px-3 py-3 text-white hover:text-blue-300 border-b border-white/10 font-bold text-base"
+          onClick={handleNav}
+        >
         {t(item.name)}
       </RouterLink>
     </li>
@@ -240,41 +240,36 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
       {/* Kapatma butonu */}
       <button 
         onClick={handleNav} 
-        className="fixed top-4 right-4 text-white text-3xl hover:text-blue-300 transition-colors z-50 bg-[#0f4f78] w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
+        className="fixed top-2 right-2 text-white text-2xl hover:text-blue-300 transition-colors z-50 bg-[#0f4f78] w-8 h-8 rounded-full flex items-center justify-center shadow-lg"
         aria-label="Menüyü kapat"
       >
         &times;
       </button>
       
       {/* Logo ve başlık */}
-      <div className="w-full flex flex-col items-center pt-8 pb-4 px-6 bg-white/10 backdrop-blur-sm">
+      <div className="w-full flex flex-col items-center pt-6 pb-3 px-4 bg-white/10 backdrop-blur-sm">
         <a 
           href={currentLanguage.code === 'tr' ? '/' : `/${currentLanguage.code}`} 
           className="flex flex-col items-center" 
           onClick={handleNav}
         >
-          <img src={logo} alt="Hospitadent Logo" className="h-12 w-auto mb-3" />
+          <img src={logo} alt="Hospitadent Logo" className="h-10 w-auto mb-2" />
         </a>
       </div>
       
       {/* Menü içeriği */}
-      <div className="w-full flex-1 flex flex-col items-center gap-2 pt-4 pb-3 px-6 overflow-y-auto">
+      <div className="w-full flex-1 flex flex-col items-center gap-1 pt-2 pb-3 px-4 overflow-y-auto">
         {/* Anasayfa seçeneği */}
         <RouterLink
           to={currentLanguage.code === 'tr' ? '/' : `/${currentLanguage.code}`}
-          className="block w-full px-4 py-4 text-white hover:text-blue-300 border-b border-white/10 font-bold text-xl text-left"
+          className="block w-full px-3 py-3 text-white hover:text-blue-300 border-b border-white/10 font-bold text-lg text-left"
           onClick={handleNav}
         >
           {t('navbar.home')}
         </RouterLink>
         
-        {/* Logo */}
-        <div className="w-full flex justify-center py-4">
-          <img src={logo} alt="Hospitadent Logo" className="h-16 w-auto" />
-        </div>
-        
-        {/* İletişim İkonları */}
-        <div className="w-full flex justify-center gap-4 py-4 border-b border-white/10">
+        {/* İletişim İkonları ve Arama - Yukarı taşındı */}
+        <div className="w-full flex justify-center gap-3 py-3 border-b border-white/10">
           <a href="tel:4449922" className="flex items-center gap-2 text-white hover:text-blue-300 transition">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" />
@@ -287,74 +282,72 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
             </svg>
             <span>Mail</span>
           </a>
+          <button
+            className="rounded bg-white/20 text-white hover:bg-white/30 transition p-2"
+            onClick={() => setSearchOpen((v) => !v)}
+            tabIndex={0}
+            aria-label="Arama"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          </button>
         </div>
         
-        {/* Arama ve typewriter mobilde üstte */}
-        <div className="w-full flex flex-col items-center gap-2 pb-4">
-          <div className="flex items-center w-full justify-center">
-            <button
-              className="rounded bg-white/20 text-white hover:bg-white/30 transition p-2 text-xl"
-              onClick={() => setSearchOpen((v) => !v)}
-              tabIndex={0}
-              aria-label="Arama"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-            </button>
-            {searchOpen ? (
-              <div className="relative w-full">
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={searchValue}
-                  onChange={e => setSearchValue(e.target.value)}
-                  onKeyDown={handleSearchKey}
-                  className="ml-2 px-2 py-1 rounded border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-300 text-white bg-white/10 placeholder-white/70 text-base min-w-[120px] w-full"
-                  placeholder={t('navbar.searchPlaceholder')}
-                />
-                {searchResults.length > 0 && (
-                  <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
-                    {searchResults.map((res, i) => (
-                      <li key={res.path}>
-                        <a
-                          href={`/${res.path}`}
-                          className="block px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm"
-                          onClick={() => { setSearchOpen(false); setSearchValue(""); handleNav(); }}
-                        >
-                          {t(res.name)}
-                        </a>
-                      </li>
-                    ))}
-                    <li className="border-t border-gray-200">
-                      <button
-                        onClick={() => {
-                          window.location.href = `/search?q=${encodeURIComponent(searchValue.trim())}`;
-                          setSearchOpen(false);
-                          setSearchValue("");
-                          handleNav();
-                        }}
-                        className="block w-full px-2 py-1 hover:bg-primary hover:text-white text-blue text-sm text-left"
+        {/* Arama input'u */}
+        {searchOpen && (
+          <div className="w-full px-3 pb-3">
+            <div className="relative w-full">
+              <input
+                ref={inputRef}
+                type="text"
+                value={searchValue}
+                onChange={e => setSearchValue(e.target.value)}
+                onKeyDown={handleSearchKey}
+                className="w-full px-3 py-2 rounded border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-300 text-white bg-white/10 placeholder-white/70 text-base"
+                placeholder={t('navbar.searchPlaceholder')}
+              />
+              {searchResults.length > 0 && (
+                <ul className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
+                  {searchResults.map((res, i) => (
+                    <li key={res.path}>
+                      <a
+                        href={`/${res.path}`}
+                        className="block px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm"
+                        onClick={() => { setSearchOpen(false); setSearchValue(""); handleNav(); }}
                       >
-                        {t('navbar.viewAllResults')} ({searchResults.length})
-                      </button>
+                        {t(res.name)}
+                      </a>
                     </li>
-                  </ul>
-                )}
-              </div>
-            ) : (
-              <span className="ml-2 min-w-[100px] text-white font-medium text-base transition-all duration-300 select-none" style={{letterSpacing:'0.01em'}}>{typewriterText}</span>
-            )}
+                  ))}
+                  <li className="border-t border-gray-200">
+                    <button
+                      onClick={() => {
+                        window.location.href = `/search?q=${encodeURIComponent(searchValue.trim())}`;
+                        setSearchOpen(false);
+                        setSearchValue("");
+                        handleNav();
+                      }}
+                      className="block w-full px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm text-left"
+                    >
+                      {t('navbar.viewAllResults')} ({searchResults.length})
+                    </button>
+                  </li>
+                </ul>
+              )}
+            </div>
           </div>
-        </div>
+        )}
+        
+
         
         {/* Menü linkleri */}
-        <ul className="w-full flex-1 flex flex-col gap-1 overflow-y-auto pb-8">
+        <ul className="w-full flex-1 flex flex-col gap-0 overflow-y-auto pb-6">
           {navLinksData.map((item, idx) => (
             <MobileNavLinks item={item} key={idx} handleNav={handleNav} />
           ))}
         </ul>
         
         {/* Sosyal medya ve iletişim */}
-        <div className="flex flex-col items-center gap-4 mt-4 mb-4">
+        <div className="flex flex-col items-center gap-3 mt-3 mb-3">
           <div className="flex gap-3">
             <a href="https://www.facebook.com/hospitadent" target="_blank" rel="noopener noreferrer" className="bg-[#2bb3ea] rounded-full flex items-center justify-center text-white hover:bg-[#0f4f78] transition w-9 h-9 hover:scale-110">
               <FaFacebookF />

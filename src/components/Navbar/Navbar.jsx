@@ -182,18 +182,18 @@ const Navbar = () => {
   return (
     <>
       {/* Mobilde hamburger menü butonu */}
-      <button className="md:hidden flex items-center justify-center text-white text-2xl fixed top-4 left-4 z-[60] bg-[#0f4f78] w-12 h-12 rounded-full shadow-lg hover:bg-[#2bb3ea] transition-colors duration-300" onClick={handleNav}>
+      <button className="md:hidden flex items-center justify-center text-white text-2xl fixed top-2 left-2 z-[60] bg-[#0f4f78] w-10 h-10 rounded-full shadow-lg hover:bg-[#2bb3ea] transition-colors duration-300" onClick={handleNav}>
         <FaBars />
       </button>
 
       {/* Mobilde üst beyaz bar */}
-      <div className="w-full bg-white md:hidden">
-        <div className="flex items-center justify-between px-4 py-2">
+      <div className="w-full bg-white md:hidden pt-2">
+        <div className="flex items-center justify-between px-3 py-1">
           {/* Sol: Boş alan (hamburger menü butonu için) */}
-          <div className="w-12"></div>
+          <div className="w-10"></div>
           
           {/* Orta: Telefon, Mail ve Arama */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a href="tel:4449922" className="flex items-center gap-2 text-[#0f4f78] hover:text-[#2bb3ea] transition text-sm font-medium">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1.06l1.1 2.2a2 2 0 01-.45 2.45l-.9.9a16.06 16.06 0 006.36 6.36l.9-.9a2 2 0 012.45-.45l2.2 1.1A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.82 23 1 16.18 1 8V7a2 2 0 012-2z" />
@@ -220,7 +220,7 @@ const Navbar = () => {
                   value={searchValue}
                   onChange={e => setSearchValue(e.target.value)}
                   onKeyDown={handleSearchKey}
-                  className="px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-primary text-[#0f4f78] text-sm min-w-[150px]"
+                  className="px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-[#0f4f78] text-sm min-w-[200px]"
                   placeholder={t('navbar.searchPlaceholder')}
                 />
                 {searchResults.length > 0 && (
@@ -255,7 +255,7 @@ const Navbar = () => {
           </div>
           
           {/* Sağ: Boş alan (denge için) */}
-          <div className="w-12"></div>
+          <div className="w-10"></div>
         </div>
       </div>
 
@@ -332,10 +332,7 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              {/* Typewriter animasyon */}
-              <div className="min-w-[180px] text-blue font-medium text-sm cursor-pointer select-none" onClick={handleTypewriterClick} title={t('navbar.search')}>
-                {typewriterText}
-              </div>
+
             </div>
           </div>
           {/* Sağ: Dil seçici ve sosyal medya */}
