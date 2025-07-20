@@ -440,15 +440,15 @@ const Hero = () => {
           }
         }}
       />
-      <section className="full-mobile-screen flex flex-col items-center justify-center bg-transparent">
+      <section className="full-mobile-screen flex flex-col items-center justify-center bg-transparent" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
         {/* Arka Plan Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none z-0"
           style={{
             objectFit: 'cover',
-            objectPosition: 'center',
+            objectPosition: 'center top',
             width: '100vw',
-            height: '100vh',
+            height: 'calc(var(--vh, 1vh) * 100)',
             position: 'absolute',
             top: 0,
             left: 0,

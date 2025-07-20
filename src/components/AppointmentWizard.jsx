@@ -139,7 +139,7 @@ const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
             className={`p-3 rounded-lg border-2 transition-all duration-200 font-medium text-sm ${
               selectedCityIdx === idx
                 ? 'bg-[#2bb3ea] text-white border-[#2bb3ea] shadow-md'
-                : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                : 'bg-white text-[#004876] border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
             }`}
           >
             {city}
@@ -164,7 +164,7 @@ const BranchSelector = ({ branches, selectedBranchIdx, onSelect }) => {
             className={`p-3 rounded-lg border-2 transition-all duration-200 font-medium text-sm ${
               selectedBranchIdx === idx
                 ? 'bg-[#2bb3ea] text-white border-[#2bb3ea] shadow-md'
-                : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                : 'bg-white text-[#004876] border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
             }`}
           >
             {branch}
@@ -189,7 +189,7 @@ const DoctorSelector = ({ doctors, selectedIdx, onSelect, branchName }) => {
             className={`p-4 rounded-lg border-2 transition-all duration-200 text-left flex items-center gap-3 shadow-sm ${
               selectedIdx === idx 
                 ? 'bg-[#2bb3ea] text-white border-[#2bb3ea] shadow-md' 
-                : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                : 'bg-white text-[#004876] border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
             }`}
           >
             <img
@@ -226,7 +226,7 @@ const DateSelector = ({ days, selectedDayIdx, onSelect }) => {
                 ? 'bg-[#2bb3ea] text-white border-[#2bb3ea] shadow-md'
                 : day.slots[0]?.status === 'closed'
                 ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
-                : 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                : 'bg-white text-[#004876] border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
             }`}
           >
             <div className="text-xs font-medium">{day.day}</div>
@@ -254,7 +254,7 @@ const TimeSelector = ({ slots, selectedSlot, onSelect }) => {
               selectedSlot === slot.time
                 ? 'bg-[#2bb3ea] text-white border-[#2bb3ea] shadow-md'
                 : slot.status === 'available'
-                ? 'bg-white text-gray-700 border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                ? 'bg-white text-[#004876] border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
                 : 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
             }`}
           >
@@ -286,7 +286,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
 
       <form onSubmit={onSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">{t('appointment.name')}</label>
+          <label className="block text-sm font-semibold text-[#004876] mb-2">{t('appointment.name')}</label>
           <input
             type="text"
             value={name}
@@ -298,7 +298,7 @@ const ContactForm = ({ name, setName, phone, setPhone, onSubmit, submitting, sel
         </div>
         
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">{t('appointment.phone')}</label>
+          <label className="block text-sm font-semibold text-[#004876] mb-2">{t('appointment.phone')}</label>
           <input
             type="tel"
             value={phone}
@@ -342,11 +342,11 @@ const AppointmentWizard = () => {
   const selectedBranch = currentBranches[selectedBranchIdx];
 
   return (
-    <section id="randevu" className="py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
+    <section id="randevu" className="py-12 bg-white">
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#004876] mb-2">🦷 Online Randevu</h2>
-          <p className="text-gray-600">Hızlı ve kolay randevu alma sistemi</p>
+          <p className="text-[#004876]">Hızlı ve kolay randevu alma sistemi</p>
         </div>
         
         {/* Kompakt adım göstergesi */}
