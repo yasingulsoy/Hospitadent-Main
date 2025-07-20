@@ -1,118 +1,134 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({ customBreadcrumbs = null }) => {
+  const { t } = useTranslation();
   const location = useLocation();
-  const pathnames = location.pathname.split('/').filter((x) => x);
-
-  const breadcrumbMap = {
-    'hakkimizda': 'Hakkımızda',
-    'idari-kadro': 'İdari Kadro',
-    'subelerimiz': 'Şubelerimiz',
-    'hasta-memnuniyet-videolari': 'Hasta Memnuniyet Videoları',
-    'hasta-yorumlari': 'Hasta Yorumları',
-    'hospitadent-sosyal-sorumluluk': 'Sosyal Sorumluluk',
-    'anlasmali-kurumlar': 'Anlaşmalı Kurumlar',
-    'akademi': 'Akademi',
-    'odullerimiz': 'Ödüllerimiz',
-    'kurumsal-kimlik': 'Kurumsal Kimlik',
-    'search': 'Arama Sonuçları',
-    // Şubeler
-    'mecidiyekoy': 'Mecidiyeköy',
-    'bagcilar': 'Bağcılar',
-    'bakirkoy': 'Bakırköy',
-    'fatih': 'Fatih',
-    'camlica': 'Çamlıca',
-    'pendik': 'Pendik',
-    'serifali': 'Şerifali',
-    'cevizlibag': 'Cevizlibağ',
-    'gokturk': 'Göktürk',
-    'kayseri': 'Kayseri',
-    'bodrum': 'Bodrum',
-    'alanya': 'Alanya',
-    'antalya': 'Antalya',
-    'ankara': 'Ankara',
-    'denizli': 'Denizli',
-    'kocaeli': 'Kocaeli',
-    'bursa': 'Bursa',
-    'almanya': 'Almanya',
-    'hollanda': 'Hollanda'
-  };
-
-  const generateBreadcrumbData = () => {
+  
+  // Generate breadcrumbs from URL path
+  const generateBreadcrumbs = () => {
+    const pathSegments = location.pathname.split('/').filter(segment => segment);
     const breadcrumbs = [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Ana Sayfa",
-        "item": "https://hospitadent.com"
-      }
+      { name: t('breadcrumbs.home'), path: '/', current: pathSegments.length === 0 }
     ];
 
     let currentPath = '';
-    pathnames.forEach((name, index) => {
-      currentPath += `/${name}`;
-      const displayName = breadcrumbMap[name] || name;
+    pathSegments.forEach((segment, index) => {
+      currentPath += `/${segment}`;
+      
+      // Map URL segments to readable names
+      const segmentName = getSegmentName(segment, t);
       
       breadcrumbs.push({
-        "@type": "ListItem",
-        "position": index + 2,
-        "name": displayName,
-        "item": `https://hospitadent.com${currentPath}`
+        name: segmentName,
+        path: currentPath,
+        current: index === pathSegments.length - 1
       });
     });
 
     return breadcrumbs;
   };
 
-  if (pathnames.length === 0) return null;
+  // Map URL segments to readable names
+  const getSegmentName = (segment, t) => {
+    const segmentMap = {
+      'hakkimizda': t('breadcrumbs.about'),
+      'about': t('breadcrumbs.about'),
+      'tedaviler': t('breadcrumbs.treatments'),
+      'treatments': t('breadcrumbs.treatments'),
+      'subelerimiz': t('breadcrumbs.branches'),
+      'branches': t('breadcrumbs.branches'),
+      'idari-kadro': t('breadcrumbs.staff'),
+      'staff': t('breadcrumbs.staff'),
+      'hasta-memnuniyet-videolari': t('breadcrumbs.patientVideos'),
+      'patient-satisfaction-videos': t('breadcrumbs.patientVideos'),
+      'hasta-yorumlari': t('breadcrumbs.patientReviews'),
+      'patient-reviews': t('breadcrumbs.patientReviews'),
+      'blog': t('breadcrumbs.blog'),
+      'iletisim': t('breadcrumbs.contact'),
+      'contact': t('breadcrumbs.contact'),
+      'akademi': t('breadcrumbs.academy'),
+      'academy': t('breadcrumbs.academy'),
+      'anlasmali-kurumlar': t('breadcrumbs.partnerInstitutions'),
+      'partner-institutions': t('breadcrumbs.partnerInstitutions'),
+      'odullerimiz': t('breadcrumbs.awards'),
+      'awards': t('breadcrumbs.awards'),
+      'kurumsal-kimlik': t('breadcrumbs.corporateIdentity'),
+      'corporate-identity': t('breadcrumbs.corporateIdentity'),
+      'hospitadent-sosyal-sorumluluk': t('breadcrumbs.socialResponsibility'),
+      'social-responsibility': t('breadcrumbs.socialResponsibility'),
+      'arama': t('breadcrumbs.search'),
+      'search': t('breadcrumbs.search'),
+      'en': 'English',
+      'fr': 'Français',
+      'de': 'Deutsch',
+      'ru': 'Русский',
+      'es': 'Español',
+      'sa': 'العربية'
+    };
+
+    return segmentMap[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
+  };
+
+  const breadcrumbs = customBreadcrumbs || generateBreadcrumbs();
+
+  // Generate structured data for breadcrumbs
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((breadcrumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": breadcrumb.name,
+      "item": `https://hospitadent.com${breadcrumb.path}`
+    }))
+  };
 
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": generateBreadcrumbData()
-          })}
-        </script>
-      </Helmet>
-      
-      <nav className="bg-gray-50 border-b border-gray-200 py-3">
-        <div className="container mx-auto px-4">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link 
-                to="/" 
-                className="text-[#004876] hover:text-[#2bb3ea] transition-colors"
-              >
-                Ana Sayfa
-              </Link>
-            </li>
-            
-            {pathnames.map((name, index) => {
-              const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
-              const isLast = index === pathnames.length - 1;
-              const displayName = breadcrumbMap[name] || name;
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
 
-              return (
-                <li key={name} className="flex items-center">
-                  <span className="text-gray-400 mx-2">/</span>
-                  {isLast ? (
-                    <span className="text-gray-600 font-medium">{displayName}</span>
-                  ) : (
-                    <Link 
-                      to={routeTo}
-                      className="text-[#004876] hover:text-[#2bb3ea] transition-colors"
-                    >
-                      {displayName}
-                    </Link>
-                  )}
-                </li>
-              );
-            })}
+      {/* Visual Breadcrumbs */}
+      <nav className="bg-gray-50 border-b border-gray-200 py-3" aria-label="Breadcrumb">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ol className="flex items-center space-x-2 text-sm">
+            {breadcrumbs.map((breadcrumb, index) => (
+              <li key={index} className="flex items-center">
+                {index > 0 && (
+                  <svg 
+                    className="flex-shrink-0 h-4 w-4 text-gray-400 mx-2" 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path 
+                      fillRule="evenodd" 
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" 
+                      clipRule="evenodd" 
+                    />
+                  </svg>
+                )}
+                
+                {breadcrumb.current ? (
+                  <span 
+                    className="text-[#004876] font-medium"
+                    aria-current="page"
+                  >
+                    {breadcrumb.name}
+                  </span>
+                ) : (
+                  <Link
+                    to={breadcrumb.path}
+                    className="text-gray-600 hover:text-[#2bb3ea] transition-colors duration-200"
+                  >
+                    {breadcrumb.name}
+                  </Link>
+                )}
+              </li>
+            ))}
           </ol>
         </div>
       </nav>

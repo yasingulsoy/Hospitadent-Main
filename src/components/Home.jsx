@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import ico from "../assets/images/ico.png";
 import logo from "../assets/images/logo.webp";
 import SEOHead from "./SEO/SEOHead";
+import Breadcrumbs from "./SEO/Breadcrumbs";
 
 
 
@@ -415,66 +416,84 @@ const Hero = () => {
 
   return (
     <>
-              <SEOHead 
+      <SEOHead 
         title={t('home.title')}
         description={t('home.subtitle')}
-        keywords="hospitadent ana sayfa, diş hekimi randevu, implant tedavisi, ortodonti, diş beyazlatma, zirkonyum kaplama"
+        keywords="hospitadent ana sayfa, diş hekimi randevu, implant tedavisi, ortodonti, diş beyazlatma, zirkonyum kaplama, diş kliniği, diş hastanesi"
         url="https://hospitadent.com/"
-      />
-      <section className="relative w-screen h-screen full-mobile-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] overflow-hidden">
-      {/* Arka Plan Video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none z-0"
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
-          width: '100%',
-          height: '100%',
-          minHeight: '100vh',
-          minWidth: '100vw',
-          maxWidth: '100vw',
-          maxHeight: '100vh',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          margin: 0,
-          padding: 0,
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Hospitadent Ana Sayfa",
+          "description": t('home.subtitle'),
+          "url": "https://hospitadent.com/",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Hospitadent",
+            "url": "https://hospitadent.com",
+            "logo": "https://hospitadent.com/logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+90-444-99-22",
+              "contactType": "customer service",
+              "availableLanguage": ["Turkish", "English", "German", "Russian", "Arabic"]
+            }
+          }
         }}
-        src={require('../assets/videos/firat_okur.mp4')}
-        autoPlay
-        loop
-        muted
-        playsInline
       />
-      {/* Hafif karartma efekti istersen: */}
-      {/* <div className="absolute inset-0 bg-black/20 z-0"></div> */}
-      {/* Ana içerik - ortalanmış */}
-      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full px-4">
-        {/* Logo - sadece mobilde görünür */}
-        <div className="mb-4 md:hidden">
-          <img src={logo} alt="Hospitadent Logo" className="w-64 h-32 object-contain" />
+      <Breadcrumbs />
+      <section className="relative w-screen h-screen full-mobile-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] overflow-hidden">
+        {/* Arka Plan Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none z-0"
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+            width: '100%',
+            height: '100%',
+            minHeight: '100vh',
+            minWidth: '100vw',
+            maxWidth: '100vw',
+            maxHeight: '100vh',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            margin: 0,
+            padding: 0,
+          }}
+          src={require('../assets/videos/firat_okur.mp4')}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        {/* Ana içerik - ortalanmış */}
+        <div className="flex flex-col items-center justify-center max-w-6xl mx-auto z-10 relative text-center w-full px-4">
+          {/* Logo - sadece mobilde görünür */}
+          <div className="mb-4 md:hidden">
+            <img src={logo} alt="Hospitadent Logo" className="w-64 h-32 object-contain" />
+          </div>
+          <SpotlightTitle delay={200}>
+            {displayTitle}
+          </SpotlightTitle>
+          <AnimatedSubtitle delay={400}>
+            {displaySubtitle}
+          </AnimatedSubtitle>
+          {/* Butonlar */}
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8 sm:mb-10 md:mb-12 items-center justify-center">
+            <RandevuFabButton delay={600}>{t('home.button')}</RandevuFabButton>
+            <ContactFabButton delay={800} />
+          </div>
+          {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
+          <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-4 md:mt-6 mb-8 md:mb-12">
+            {useBizData().map((item, i) => (
+              <BizMiniCard key={i} {...item} delay={i * 120} />
+            ))}
+          </div>
         </div>
-        <SpotlightTitle delay={200}>
-          {displayTitle}
-        </SpotlightTitle>
-        <AnimatedSubtitle delay={400}>
-          {displaySubtitle}
-        </AnimatedSubtitle>
-        {/* Butonlar */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8 sm:mb-10 md:mb-12 items-center justify-center">
-          <RandevuFabButton delay={600}>{t('home.button')}</RandevuFabButton>
-          <ContactFabButton delay={800} />
-        </div>
-        {/* Biz kısmı - görseldeki gibi grid ve küçük kartlar, animasyonlu */}
-        <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mt-4 md:mt-6 mb-8 md:mb-12">
-          {useBizData().map((item, i) => (
-            <BizMiniCard key={i} {...item} delay={i * 120} />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

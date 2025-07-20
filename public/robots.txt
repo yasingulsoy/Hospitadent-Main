@@ -1,55 +1,82 @@
 User-agent: *
 Allow: /
 
-# Ana sayfa
-Allow: /
-
-# Türkçe sayfalar
-Allow: /hakkimizda
-Allow: /idari-kadro
-Allow: /subelerimiz
-Allow: /hasta-memnuniyet-videolari
-Allow: /hasta-yorumlari
-Allow: /hospitadent-sosyal-sorumluluk
-Allow: /anlasmali-kurumlar
-Allow: /akademi
-Allow: /odullerimiz
-Allow: /kurumsal-kimlik
-
-# Şube sayfaları
-Allow: /subelerimiz/mecidiyekoy
-Allow: /subelerimiz/bagcilar
-Allow: /subelerimiz/bakirkoy
-Allow: /subelerimiz/fatih
-Allow: /subelerimiz/camlica
-Allow: /subelerimiz/pendik
-Allow: /subelerimiz/serifali
-Allow: /subelerimiz/cevizlibag
-Allow: /subelerimiz/gokturk
-Allow: /subelerimiz/kayseri
-Allow: /subelerimiz/bodrum
-Allow: /subelerimiz/alanya
-Allow: /subelerimiz/antalya
-Allow: /subelerimiz/ankara
-Allow: /subelerimiz/denizli
-Allow: /subelerimiz/kocaeli
-Allow: /subelerimiz/bursa
-Allow: /subelerimiz/almanya
-Allow: /subelerimiz/hollanda
-
-# Arama sayfası
-Allow: /search
-
-# Yabancı dil sayfaları
-Allow: /en
-Allow: /fr
-Allow: /de
-Allow: /ru
-Allow: /es
-Allow: /sa
-
 # Sitemap
 Sitemap: https://hospitadent.com/sitemap.xml
 
-# Crawl-delay (isteğe bağlı - sunucu yükünü azaltmak için)
-Crawl-delay: 1 
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important pages
+Allow: /hakkimizda
+Allow: /tedaviler
+Allow: /subelerimiz
+Allow: /idari-kadro
+Allow: /hasta-memnuniyet-videolari
+Allow: /hasta-yorumlari
+Allow: /blog
+Allow: /iletisim
+Allow: /akademi
+Allow: /anlasmali-kurumlar
+Allow: /odullerimiz
+Allow: /kurumsal-kimlik
+
+# Allow language versions
+Allow: /en/
+Allow: /fr/
+Allow: /de/
+Allow: /ru/
+Allow: /es/
+Allow: /sa/
+
+# Allow assets
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+Allow: /*.pdf
+
+# Disallow temporary and cache files
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /tmp/
+Disallow: /*.tmp
+Disallow: /*.cache
+
+# Host directive
+Host: https://hospitadent.com 
