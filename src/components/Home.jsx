@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import ico from "../assets/images/ico.png";
 import logo from "../assets/images/logo.webp";
 import SEOHead from "./SEO/SEOHead";
-import Breadcrumbs from "./SEO/Breadcrumbs";
 
 
 
@@ -441,7 +440,6 @@ const Hero = () => {
           }
         }}
       />
-      <Breadcrumbs />
       <section className="relative w-screen h-screen full-mobile-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] overflow-hidden">
         {/* Arka Plan Video */}
         <video

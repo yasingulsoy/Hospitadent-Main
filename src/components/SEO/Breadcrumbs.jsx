@@ -93,7 +93,7 @@ const Breadcrumbs = ({ customBreadcrumbs = null }) => {
       </script>
 
       {/* Visual Breadcrumbs */}
-      <nav className="bg-gray-50 border-b border-gray-200 py-3" aria-label="Breadcrumb">
+      <nav className="py-3" aria-label="Breadcrumb">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ol className="flex items-center space-x-2 text-sm">
             {breadcrumbs.map((breadcrumb, index) => (

@@ -377,6 +377,23 @@
     "followUs": "Follow Us",
     "contactInfo": "Contact Information"
   },
+  "breadcrumbs": {
+    "home": "Home",
+    "about": "About Us",
+    "treatments": "Treatments",
+    "branches": "Branches",
+    "staff": "Administrative Staff",
+    "patientVideos": "Patient Satisfaction Videos",
+    "patientReviews": "Patient Reviews",
+    "blog": "Blog",
+    "contact": "Contact",
+    "academy": "Academy",
+    "partnerInstitutions": "Partner Institutions",
+    "awards": "Awards",
+    "corporateIdentity": "Corporate Identity",
+    "socialResponsibility": "Social Responsibility",
+    "search": "Search"
+  },
   "staff": {
     "title": "Administrative Staff",
     "ahmet_name": "Dentist Ahmet SELVİ",

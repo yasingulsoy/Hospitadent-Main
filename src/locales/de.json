@@ -276,6 +276,23 @@
     },
     "conclusion": "Hospitadent, das kontinuierlich sich entwickelnde medizinische Technologien verfolgt und kontinuierlich Diagnose- und Behandlungsmethoden mit den aktuellsten Technologien vorantreibt, setzt fort, sichere und qualitativ hochwertige Gesundheitsdienstleistungen mit seinem Fachpersonal zu erbringen."
   },
+  "breadcrumbs": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "treatments": "Behandlungen",
+    "branches": "Filialen",
+    "staff": "Verwaltungspersonal",
+    "patientVideos": "Patientenzufriedenheit Videos",
+    "patientReviews": "Patientenbewertungen",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "academy": "Akademie",
+    "partnerInstitutions": "Partnerinstitutionen",
+    "awards": "Auszeichnungen",
+    "corporateIdentity": "Unternehmensidentität",
+    "socialResponsibility": "Soziale Verantwortung",
+    "search": "Suche"
+  },
   "staff": {
     "title": "Verwaltungspersonal",
     "ahmet_name": "Zahnarzt Ahmet SELVİ",

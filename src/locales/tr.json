@@ -434,6 +434,23 @@
     "followUs": "Bizi Takip Edin",
     "contactInfo": "İletişim Bilgileri"
   },
+  "breadcrumbs": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "treatments": "Tedavilerimiz",
+    "branches": "Şubelerimiz",
+    "staff": "İdari Kadro",
+    "patientVideos": "Hasta Memnuniyet Videoları",
+    "patientReviews": "Hasta Yorumları",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "academy": "Akademi",
+    "partnerInstitutions": "Anlaşmalı Kurumlar",
+    "awards": "Ödüllerimiz",
+    "corporateIdentity": "Kurumsal Kimlik",
+    "socialResponsibility": "Sosyal Sorumluluk",
+    "search": "Arama"
+  },
   "staff": {
     "title": "İdari Kadro",
     "ahmet_name": "Diş Hekimi Ahmet SELVİ",

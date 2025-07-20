@@ -303,6 +303,23 @@
       "author": "Dr. Zeynep Arslan"
     }
   },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "treatments": "Tratamientos",
+    "branches": "Sucursales",
+    "staff": "Personal administrativo",
+    "patientVideos": "Videos de satisfacción del paciente",
+    "patientReviews": "Reseñas de pacientes",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "academy": "Academia",
+    "partnerInstitutions": "Instituciones asociadas",
+    "awards": "Premios",
+    "corporateIdentity": "Identidad corporativa",
+    "socialResponsibility": "Responsabilidad social",
+    "search": "Búsqueda"
+  },
   "staff": {
     "title": "Personal administrativo",
     "ahmet_name": "Dentista Ahmet SELVİ",
