@@ -440,19 +440,15 @@ const Hero = () => {
           }
         }}
       />
-      <section className="relative w-screen h-screen full-mobile-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-white to-[#f0f9ff] overflow-hidden">
+      <section className="full-mobile-screen flex flex-col items-center justify-center bg-transparent">
         {/* Arka Plan Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none z-0"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none z-0"
           style={{
             objectFit: 'cover',
             objectPosition: 'center',
-            width: '100%',
-            height: '100%',
-            minHeight: '100vh',
-            minWidth: '100vw',
-            maxWidth: '100vw',
-            maxHeight: '100vh',
+            width: '100vw',
+            height: '100vh',
             position: 'absolute',
             top: 0,
             left: 0,
@@ -460,6 +456,7 @@ const Hero = () => {
             bottom: 0,
             margin: 0,
             padding: 0,
+            zIndex: 0,
           }}
           src={require('../assets/videos/firat_okur.mp4')}
           autoPlay
