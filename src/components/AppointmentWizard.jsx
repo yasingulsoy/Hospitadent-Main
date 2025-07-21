@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const branchGroups = [
-  { city: 'İstanbul', branches: ['Mecidiyeköy', 'Bağcılar', 'Bakırköy', 'Fatih', 'Çamlıca', 'Pendik', 'Şerifali', 'Cevizlibağ', 'Ataşehir', 'Göktürk'] },
+  { city: 'İstanbul', branches: ['Mecidiyeköy', 'Bağcılar', 'Bakırköy', 'Fatih', 'Çamlıca', 'Pendik', 'Şerifali', 'Cevizlibağ', 'Göktürk'] },
   { city: 'Kayseri', branches: ['Kayseri'] },
   { city: 'Muğla', branches: ['Bodrum'] },
   { city: 'Antalya', branches: ['Antalya', 'Alanya'] },
   { city: 'Ankara', branches: ['Çayyolu'] },
   { city: 'Kocaeli', branches: ['Kocaeli'] },
   { city: 'Bursa', branches: ['Nilüfer'] },
-  { city: 'Denizli', branches: ['Denizli'] }
+  { city: 'Almanya', branches: ['Frankfurt'] },
+  { city: 'Hollanda', branches: ['Deen-Hag'] }
 ];
 
 // Doktor verileri
@@ -124,6 +125,28 @@ const days = [
     { time: '13:30', status: 'full' },
   ] },
 ];
+
+// Şube görselleri eşleşmesi
+export const branchImages = {
+  'Mecidiyeköy': '/assets/sube_resimleri/mecidiyekoy.png',
+  'Bağcılar': '/assets/sube_resimleri/bagcilar.png',
+  'Bakırköy': '/assets/sube_resimleri/bakirkoy.png',
+  'Fatih': '/assets/sube_resimleri/fatih.png',
+  'Çamlıca': '/assets/sube_resimleri/camlica.png',
+  'Pendik': '/assets/sube_resimleri/pendik.png',
+  'Şerifali': '/assets/sube_resimleri/serifali.png',
+  'Cevizlibağ': '/assets/sube_resimleri/cevizlibag.png',
+  'Göktürk': '/assets/sube_resimleri/gokturk.webp',
+  'Kayseri': '/assets/sube_resimleri/kayseri.png',
+  'Bodrum': '/assets/sube_resimleri/bodrum.png',
+  'Antalya': '/assets/sube_resimleri/antalya.png',
+  'Alanya': '/assets/sube_resimleri/alanya.png',
+  'Çayyolu': '/assets/sube_resimleri/cayyolu.png',
+  'Kocaeli': '/assets/sube_resimleri/kocaeli.jpg',
+  'Nilüfer': '/assets/sube_resimleri/nilufer.webp',
+  'Frankfurt': '/assets/sube_resimleri/frankfurt.webp',
+  'Deen-Hag': '/assets/sube_resimleri/deen-hag.png'
+};
 
 // Kompakt şehir seçici
 const CitySelector = ({ cities, selectedCityIdx, onSelect }) => {
@@ -343,143 +366,187 @@ const AppointmentWizard = () => {
 
   return (
     <section id="randevu" className="py-4 bg-white">
-      <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#004876] mb-2">🦷 Online Randevu</h2>
-          <p className="text-[#004876]">Hızlı ve kolay randevu alma sistemi</p>
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-2 sm:p-4 flex flex-col md:flex-row items-stretch gap-0 md:gap-8 min-h-[340px]">
+        {/* Sol: Başlık ve adım göstergesi */}
+        <div className="md:w-1/3 flex flex-col items-center justify-center py-4 md:py-0 border-b md:border-b-0 md:border-r border-gray-100">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#004876] mb-2 text-center">🦷 Online Randevu</h2>
+          <p className="text-[#004876] text-center text-sm mb-4">Hızlı ve kolay randevu</p>
+          <div className="flex items-center justify-center gap-1 mb-0 md:mb-8">
+            {[1,2,3,4,5].map((n) => (
+              <React.Fragment key={n}>
+                <div className={`w-6 h-6 flex items-center justify-center rounded-full font-bold text-xs border-2 transition-all duration-300 ${
+                  step >= n 
+                    ? 'bg-[#2bb3ea] text-white border-[#2bb3ea]' 
+                    : 'bg-blue-50 text-[#2bb3ea] border-[#2bb3ea]'
+                }`}>
+                  {n}
+                </div>
+                {n !== 5 && (
+                  <div className={`w-4 h-1 rounded transition-all duration-300 ${
+                    step > n ? 'bg-[#2bb3ea]' : 'bg-blue-100'
+                  }`}></div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
-        
-        {/* Kompakt adım göstergesi */}
-        <div className="flex items-center justify-center gap-1 mb-8">
-          {[1,2,3,4].map((n) => (
-            <React.Fragment key={n}>
-              <div className={`w-6 h-6 flex items-center justify-center rounded-full font-bold text-xs border-2 transition-all duration-300 ${
-                step >= n 
-                  ? 'bg-[#2bb3ea] text-white border-[#2bb3ea]' 
-                  : 'bg-blue-50 text-[#2bb3ea] border-[#2bb3ea]'
-              }`}>
-                {n}
+
+        {/* Sağ: İçerik */}
+        <div className="flex-1 flex flex-col justify-center px-2 sm:px-6 py-4 min-w-0">
+          {/* 1. Adım: İl (şehir) seçimi */}
+          {step === 1 && (
+            <div className="space-y-4">
+              <CitySelector
+                cities={cities}
+                selectedCityIdx={selectedCityIdx}
+                onSelect={setSelectedCityIdx}
+              />
+              <div className="flex justify-center pt-2">
+                <button
+                  onClick={() => setStep(2)}
+                  className="bg-[#2bb3ea] text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
+                >
+                  {t('appointment.next')} →
+                </button>
               </div>
-              {n !== 4 && (
-                <div className={`w-4 h-1 rounded transition-all duration-300 ${
-                  step > n ? 'bg-[#2bb3ea]' : 'bg-blue-100'
-                }`}></div>
-              )}
-            </React.Fragment>
-          ))}
+            </div>
+          )}
+
+          {/* 2. Adım: Şube seçimi (yatay kaydırmalı) */}
+          {step === 2 && (
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-[#004876] mb-4">{t('appointment.selectBranch')}</h3>
+              <div className="relative w-full min-w-0 overflow-hidden">
+                <div className="flex gap-4 overflow-x-auto w-full max-w-full pb-2 scroll-smooth scroll-snap-x snap-mandatory">
+                  {currentBranches.map((branch, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSelectedBranchIdx(idx)}
+                      className={`
+                        flex-shrink-0 snap-center transition-all duration-300
+                        rounded-xl px-4 py-2 min-w-[140px] shadow-md flex flex-col items-center
+                        ${selectedBranchIdx === idx
+                          ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white scale-105 ring-2 ring-[#2bb3ea]'
+                          : 'bg-white text-[#004876] hover:bg-blue-50 hover:scale-105'}
+                      `}
+                      style={{ boxShadow: selectedBranchIdx === idx ? '0 4px 24px 0 #2bb3ea33' : undefined }}
+                    >
+                      <img
+                        src={branchImages[branch] || '/assets/sube_resimleri/default.png'}
+                        alt={branch}
+                        className="w-16 h-16 object-cover rounded-full mb-2 border-2 border-white shadow"
+                        onError={e => e.target.src = '/assets/sube_resimleri/default.png'}
+                      />
+                      <span className="font-semibold text-base text-center whitespace-nowrap">{branch}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="flex justify-between gap-4 pt-2">
+                <button
+                  onClick={() => setStep(1)}
+                  className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
+                >
+                  ← {t('appointment.previous')}
+                </button>
+                <button
+                  onClick={() => setStep(3)}
+                  className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
+                >
+                  {t('appointment.next')} →
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* 3. Adım: Doktor seçimi */}
+          {step === 3 && (
+            <div>
+              <DoctorSelector
+                doctors={doctors}
+                selectedIdx={selectedDoctorIdx}
+                onSelect={setSelectedDoctorIdx}
+                branchName={selectedBranch}
+              />
+              <div className="flex justify-between gap-4 pt-2">
+                <button
+                  onClick={() => setStep(2)}
+                  className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
+                >
+                  ← {t('appointment.previous')}
+                </button>
+                <button
+                  onClick={() => setStep(4)}
+                  className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
+                >
+                  {t('appointment.next')} →
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* 4. Adım: Tarih ve Saat Seçimi */}
+          {step === 4 && (
+            <div>
+              <DateSelector
+                days={days}
+                selectedDayIdx={selectedDayIdx}
+                onSelect={setSelectedDayIdx}
+              />
+              <TimeSelector
+                slots={days[selectedDayIdx].slots}
+                selectedSlot={selectedSlot}
+                onSelect={setSelectedSlot}
+              />
+              <div className="flex justify-between gap-4 pt-2">
+                <button
+                  onClick={() => setStep(3)}
+                  className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
+                >
+                  ← {t('appointment.previous')}
+                </button>
+                <button
+                  onClick={() => selectedSlot && setStep(5)}
+                  disabled={!selectedSlot}
+                  className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {t('appointment.next')} →
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* 5. Adım: İletişim Bilgileri */}
+          {step === 5 && (
+            <div>
+              <ContactForm
+                name={name}
+                setName={setName}
+                phone={phone}
+                setPhone={setPhone}
+                submitting={submitting}
+                selectedDay={days[selectedDayIdx]}
+                selectedSlot={selectedSlot}
+                onEdit={() => setStep(4)}
+                onSubmit={() => {
+                  setSubmitting(true);
+                  setTimeout(() => {
+                    setSubmitting(false);
+                    alert(t('appointment.success'));
+                  }, 1500);
+                }}
+              />
+              <div className="flex justify-center mt-4">
+                <button
+                  onClick={() => setStep(4)}
+                  className="bg-gray-200 text-gray-700 font-bold py-2 px-6 rounded-lg hover:bg-gray-300 transition-all"
+                >
+                  ← {t('appointment.previous')}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-
-        {/* 1. Adım: Şehir ve Şube Seçimi */}
-        {step === 1 && (
-          <div className="space-y-6">
-            <CitySelector
-              cities={cities}
-              selectedCityIdx={selectedCityIdx}
-              onSelect={setSelectedCityIdx}
-            />
-            <BranchSelector
-              branches={currentBranches}
-              selectedBranchIdx={selectedBranchIdx}
-              onSelect={setSelectedBranchIdx}
-            />
-            <div className="flex justify-center pt-4">
-              <button
-                onClick={() => setStep(2)}
-                className="bg-[#2bb3ea] text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
-              >
-                {t('appointment.next')} →
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* 2. Adım: Doktor Seçimi */}
-        {step === 2 && (
-          <div>
-            <DoctorSelector
-              doctors={doctors}
-              selectedIdx={selectedDoctorIdx}
-              onSelect={setSelectedDoctorIdx}
-              branchName={selectedBranch}
-            />
-            <div className="flex justify-between gap-4 pt-4">
-              <button
-                onClick={() => setStep(1)}
-                className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-3 rounded-lg hover:bg-blue-100 transition-all"
-              >
-                ← {t('appointment.previous')}
-              </button>
-              <button
-                onClick={() => setStep(3)}
-                className="flex-1 bg-[#2bb3ea] text-white font-bold py-3 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
-              >
-                {t('appointment.next')} →
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* 3. Adım: Tarih ve Saat Seçimi */}
-        {step === 3 && (
-          <div>
-            <DateSelector
-              days={days}
-              selectedDayIdx={selectedDayIdx}
-              onSelect={setSelectedDayIdx}
-            />
-            <TimeSelector
-              slots={days[selectedDayIdx].slots}
-              selectedSlot={selectedSlot}
-              onSelect={setSelectedSlot}
-            />
-            <div className="flex justify-between gap-4 pt-4">
-              <button
-                onClick={() => setStep(2)}
-                className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-3 rounded-lg hover:bg-blue-100 transition-all"
-              >
-                ← {t('appointment.previous')}
-              </button>
-              <button
-                onClick={() => selectedSlot && setStep(4)}
-                disabled={!selectedSlot}
-                className="flex-1 bg-[#2bb3ea] text-white font-bold py-3 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {t('appointment.next')} →
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* 4. Adım: İletişim Bilgileri */}
-        {step === 4 && (
-          <div>
-            <ContactForm
-              name={name}
-              setName={setName}
-              phone={phone}
-              setPhone={setPhone}
-              submitting={submitting}
-              selectedDay={days[selectedDayIdx]}
-              selectedSlot={selectedSlot}
-              onEdit={() => setStep(3)}
-              onSubmit={() => {
-                setSubmitting(true);
-                setTimeout(() => {
-                  setSubmitting(false);
-                  alert(t('appointment.success'));
-                }, 1500);
-              }}
-            />
-            <div className="flex justify-center mt-6">
-              <button
-                onClick={() => setStep(3)}
-                className="bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 transition-all"
-              >
-                ← {t('appointment.previous')}
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
