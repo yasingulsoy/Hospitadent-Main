@@ -404,32 +404,32 @@ const AppointmentWizard = () => {
                 `}
               />
             ))}
-          </div>
+              </div>
         </div>
 
         {/* Sağ: İçerik */}
         <div className="flex-1 flex flex-col justify-center px-2 sm:px-6 py-4 min-w-0">
           {/* 1. Adım: İl (şehir) seçimi */}
-          {step === 1 && (
+        {step === 1 && (
             <div className="space-y-4">
-              <CitySelector
-                cities={cities}
-                selectedCityIdx={selectedCityIdx}
-                onSelect={setSelectedCityIdx}
-              />
+            <CitySelector
+              cities={cities}
+              selectedCityIdx={selectedCityIdx}
+              onSelect={setSelectedCityIdx}
+            />
               <div className="flex justify-center pt-2">
-                <button
-                  onClick={() => setStep(2)}
+              <button
+                onClick={() => setStep(2)}
                   className="bg-[#2bb3ea] text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
-                >
-                  {t('appointment.next')} →
-                </button>
-              </div>
+              >
+                {t('appointment.next')} →
+              </button>
             </div>
-          )}
+          </div>
+        )}
 
           {/* 2. Adım: Şube seçimi */}
-          {step === 2 && (
+        {step === 2 && (
             isDesktop ? (
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-[#004876] mb-4">{t('appointment.selectBranch')}</h3>
@@ -545,91 +545,91 @@ const AppointmentWizard = () => {
 
           {/* 3. Adım: Doktor seçimi */}
           {step === 3 && (
-            <div>
-              <DoctorSelector
-                doctors={doctors}
-                selectedIdx={selectedDoctorIdx}
-                onSelect={setSelectedDoctorIdx}
-                branchName={selectedBranch}
-              />
+          <div>
+            <DoctorSelector
+              doctors={doctors}
+              selectedIdx={selectedDoctorIdx}
+              onSelect={setSelectedDoctorIdx}
+              branchName={selectedBranch}
+            />
               <div className="flex justify-between gap-4 pt-2">
-                <button
+              <button
                   onClick={() => setStep(2)}
                   className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
-                >
-                  ← {t('appointment.previous')}
-                </button>
-                <button
+              >
+                ← {t('appointment.previous')}
+              </button>
+              <button
                   onClick={() => setStep(4)}
                   className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
-                >
-                  {t('appointment.next')} →
-                </button>
-              </div>
+              >
+                {t('appointment.next')} →
+              </button>
             </div>
-          )}
+          </div>
+        )}
 
           {/* 4. Adım: Tarih ve Saat Seçimi */}
           {step === 4 && (
-            <div>
-              <DateSelector
-                days={days}
-                selectedDayIdx={selectedDayIdx}
-                onSelect={setSelectedDayIdx}
-              />
-              <TimeSelector
-                slots={days[selectedDayIdx].slots}
-                selectedSlot={selectedSlot}
-                onSelect={setSelectedSlot}
-              />
+          <div>
+            <DateSelector
+              days={days}
+              selectedDayIdx={selectedDayIdx}
+              onSelect={setSelectedDayIdx}
+            />
+            <TimeSelector
+              slots={days[selectedDayIdx].slots}
+              selectedSlot={selectedSlot}
+              onSelect={setSelectedSlot}
+            />
               <div className="flex justify-between gap-4 pt-2">
-                <button
+              <button
                   onClick={() => setStep(3)}
                   className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
-                >
-                  ← {t('appointment.previous')}
-                </button>
-                <button
+              >
+                ← {t('appointment.previous')}
+              </button>
+              <button
                   onClick={() => selectedSlot && setStep(5)}
-                  disabled={!selectedSlot}
+                disabled={!selectedSlot}
                   className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {t('appointment.next')} →
-                </button>
-              </div>
+              >
+                {t('appointment.next')} →
+              </button>
             </div>
-          )}
+          </div>
+        )}
 
           {/* 5. Adım: İletişim Bilgileri */}
           {step === 5 && (
-            <div>
-              <ContactForm
-                name={name}
-                setName={setName}
-                phone={phone}
-                setPhone={setPhone}
-                submitting={submitting}
-                selectedDay={days[selectedDayIdx]}
-                selectedSlot={selectedSlot}
+          <div>
+            <ContactForm
+              name={name}
+              setName={setName}
+              phone={phone}
+              setPhone={setPhone}
+              submitting={submitting}
+              selectedDay={days[selectedDayIdx]}
+              selectedSlot={selectedSlot}
                 onEdit={() => setStep(4)}
-                onSubmit={() => {
-                  setSubmitting(true);
-                  setTimeout(() => {
-                    setSubmitting(false);
-                    alert(t('appointment.success'));
-                  }, 1500);
-                }}
-              />
+              onSubmit={() => {
+                setSubmitting(true);
+                setTimeout(() => {
+                  setSubmitting(false);
+                  alert(t('appointment.success'));
+                }, 1500);
+              }}
+            />
               <div className="flex justify-center mt-4">
-                <button
+              <button
                   onClick={() => setStep(4)}
                   className="bg-gray-200 text-gray-700 font-bold py-2 px-6 rounded-lg hover:bg-gray-300 transition-all"
-                >
-                  ← {t('appointment.previous')}
-                </button>
-              </div>
+              >
+                ← {t('appointment.previous')}
+              </button>
             </div>
-          )}
+          </div>
+        )}
         </div>
       </div>
     </section>

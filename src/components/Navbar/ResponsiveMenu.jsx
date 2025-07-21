@@ -153,7 +153,7 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   //   
   //   return `${words[index].substring(0, subIndex)}${blink ? "|" : " "}`;
   // }
-  
+
   // navLinksData'dan düz başlık listesi çıkar
   function flattenLinks(links) {
     let arr = [];

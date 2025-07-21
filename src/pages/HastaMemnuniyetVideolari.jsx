@@ -5,7 +5,7 @@ const HastaMemnuniyetVideolari = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm py-12 border-b border-gray-200">
+      <div className="bg-white/80 backdrop-blur-sm py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent">
             Hasta Memnuniyet Videoları

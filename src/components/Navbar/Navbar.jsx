@@ -295,17 +295,17 @@ const Navbar = () => {
                 </button>
                 {/* Typewriter sadece webde (md ve üstü) */}
                 <div className="hidden md:flex items-center relative">
-                  <input
-                    ref={inputRef}
-                    type="text"
-                    value={searchValue}
-                    onChange={e => setSearchValue(e.target.value)}
-                    onKeyDown={handleSearchKey}
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      value={searchValue}
+                      onChange={e => setSearchValue(e.target.value)}
+                      onKeyDown={handleSearchKey}
                     className="px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px] shadow-md focus:shadow-lg transition-shadow duration-200"
                     placeholder={searchValue ? '' : typewriterText}
                     style={{paddingLeft: '0.5rem', border: 'none', boxShadow: '0 2px 8px 0 rgba(15,79,120,0.07)'}}
                   />
-                </div>
+                  </div>
                 {/* Eski typewriter ve input yapısı kaldırıldı */}
               </div>
 
