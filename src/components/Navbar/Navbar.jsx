@@ -22,8 +22,8 @@ const languages = [
 
 // Typewriter animasyon verileri - dinamik çeviri ile
 const useTypewriterWords = () => {
-  const { t } = useTranslation();
-  return t('home.typewriterWords', { returnObjects: true });
+  const { t, i18n } = useTranslation();
+  return React.useMemo(() => t('home.typewriterWords', { returnObjects: true }), [i18n.language, t]);
 };
 
 function useTypewriter(words, speed = 60, pause = 800) {
@@ -97,7 +97,9 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  const typewriterText = useTypewriter(useTypewriterWords());
+  // Typewriter animasyon verileri - dinamik çeviri ile
+  const typewriterWords = useTypewriterWords();
+  const typewriterText = useTypewriter(typewriterWords);
 
   // navLinksData'dan düz başlık listesi çıkar
   function flattenLinks(links) {
@@ -291,46 +293,20 @@ const Navbar = () => {
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
                 </button>
-                {searchOpen && (
-                  <div className="relative">
-                    <input
-                      ref={inputRef}
-                      type="text"
-                      value={searchValue}
-                      onChange={e => setSearchValue(e.target.value)}
-                      onKeyDown={handleSearchKey}
-                      className="px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px]"
-                      placeholder={t('navbar.searchPlaceholder')}
-                    />
-                    {searchResults.length > 0 && (
-                      <ul className="absolute left-0 top-full mt-1 bg-white rounded shadow-lg z-50 w-full max-h-40 overflow-auto">
-                        {searchResults.map((res, i) => (
-                          <li key={res.path}>
-                            <a
-                              href={`/${res.path}`}
-                              className="block px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm"
-                              onClick={() => { setSearchOpen(false); setSearchValue(""); }}
-                            >
-                              {t(res.name)}
-                            </a>
-                          </li>
-                        ))}
-                                                    <li>
-                          <button
-                            onClick={() => {
-                              navigate(`/search?q=${encodeURIComponent(searchValue.trim())}`);
-                              setSearchOpen(false);
-                              setSearchValue("");
-                            }}
-                            className="block w-full px-3 py-2 hover:bg-primary hover:text-white text-blue text-sm text-left"
-                          >
-                            {t('navbar.viewAllResults')} ({searchResults.length})
-                          </button>
-                        </li>
-                      </ul>
-                    )}
-                  </div>
-                )}
+                {/* Typewriter sadece webde (md ve üstü) */}
+                <div className="hidden md:flex items-center relative">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={searchValue}
+                    onChange={e => setSearchValue(e.target.value)}
+                    onKeyDown={handleSearchKey}
+                    className="px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-primary text-blue text-sm min-w-[200px] shadow-md focus:shadow-lg transition-shadow duration-200"
+                    placeholder={searchValue ? '' : typewriterText}
+                    style={{paddingLeft: '0.5rem', border: 'none', boxShadow: '0 2px 8px 0 rgba(15,79,120,0.07)'}}
+                  />
+                </div>
+                {/* Eski typewriter ve input yapısı kaldırıldı */}
               </div>
 
             </div>

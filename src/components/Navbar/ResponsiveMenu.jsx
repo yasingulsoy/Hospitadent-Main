@@ -119,43 +119,41 @@ const ResponsiveMenu = ({ navLinksData, nav, handleNav, selectedLang, setSelecte
   }, [languages]);
 
   // Typewriter animasyon verileri - dinamik çeviri ile
-  const useTypewriterWords = () => {
-    const { t } = useTranslation();
-    return t('home.typewriterWords', { returnObjects: true }).slice(0, 5);
-  };
+  // const useTypewriterWords = () => {
+  //   const { t } = useTranslation();
+  //   return t('home.typewriterWords', { returnObjects: true }).slice(0, 5);
+  // };
   
-  function useTypewriter(words, speed = 90, pause = 1200) {
-    const [index, setIndex] = useState(0);
-    const [subIndex, setSubIndex] = useState(0);
-    const [deleting, setDeleting] = useState(false);
-    const [blink, setBlink] = useState(true);
-    
-    useEffect(() => {
-      if (subIndex === words[index].length + 1 && !deleting) {
-        setTimeout(() => setDeleting(true), pause);
-        return;
-      }
-      if (subIndex === 0 && deleting) {
-        setDeleting(false);
-        setIndex((prev) => (prev + 1) % words.length);
-        return;
-      }
-      const timeout = setTimeout(() => {
-        setSubIndex((prev) => prev + (deleting ? -1 : 1));
-      }, deleting ? speed / 2 : speed);
-      return () => clearTimeout(timeout);
-    }, [subIndex, index, deleting, words, speed, pause]);
-    
-    useEffect(() => {
-      const blinkInterval = setInterval(() => setBlink((v) => !v), 500);
-      return () => clearInterval(blinkInterval);
-    }, []);
-    
-    return `${words[index].substring(0, subIndex)}${blink ? "|" : " "}`;
-  }
+  // function useTypewriter(words, speed = 90, pause = 1200) {
+  //   const [index, setIndex] = useState(0);
+  //   const [subIndex, setSubIndex] = useState(0);
+  //   const [deleting, setDeleting] = useState(false);
+  //   const [blink, setBlink] = useState(true);
+  //   
+  //   useEffect(() => {
+  //     if (subIndex === words[index].length + 1 && !deleting) {
+  //       setTimeout(() => setDeleting(true), pause);
+  //       return;
+  //     }
+  //     if (subIndex === 0 && deleting) {
+  //       setDeleting(false);
+  //       setIndex((prev) => (prev + 1) % words.length);
+  //       return;
+  //     }
+  //     const timeout = setTimeout(() => {
+  //       setSubIndex((prev) => prev + (deleting ? -1 : 1));
+  //     }, deleting ? speed / 2 : speed);
+  //     return () => clearTimeout(timeout);
+  //   }, [subIndex, index, deleting, words, speed, pause]);
+  //   
+  //   useEffect(() => {
+  //     const blinkInterval = setInterval(() => setBlink((v) => !v), 500);
+  //     return () => clearInterval(blinkInterval);
+  //   }, []);
+  //   
+  //   return `${words[index].substring(0, subIndex)}${blink ? "|" : " "}`;
+  // }
   
-  const typewriterText = useTypewriter(useTypewriterWords());
-
   // navLinksData'dan düz başlık listesi çıkar
   function flattenLinks(links) {
     let arr = [];

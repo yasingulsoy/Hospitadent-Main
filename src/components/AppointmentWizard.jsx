@@ -342,7 +342,7 @@ const AppointmentWizard = () => {
   const selectedBranch = currentBranches[selectedBranchIdx];
 
   return (
-    <section id="randevu" className="py-12 bg-white">
+    <section id="randevu" className="py-4 bg-white">
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#004876] mb-2">🦷 Online Randevu</h2>
@@ -356,13 +356,13 @@ const AppointmentWizard = () => {
               <div className={`w-6 h-6 flex items-center justify-center rounded-full font-bold text-xs border-2 transition-all duration-300 ${
                 step >= n 
                   ? 'bg-[#2bb3ea] text-white border-[#2bb3ea]' 
-                  : 'bg-gray-100 text-gray-400 border-gray-200'
+                  : 'bg-blue-50 text-[#2bb3ea] border-[#2bb3ea]'
               }`}>
                 {n}
               </div>
               {n !== 4 && (
                 <div className={`w-4 h-1 rounded transition-all duration-300 ${
-                  step > n ? 'bg-[#2bb3ea]' : 'bg-gray-200'
+                  step > n ? 'bg-[#2bb3ea]' : 'bg-blue-100'
                 }`}></div>
               )}
             </React.Fragment>
@@ -405,7 +405,7 @@ const AppointmentWizard = () => {
             <div className="flex justify-between gap-4 pt-4">
               <button
                 onClick={() => setStep(1)}
-                className="flex-1 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-300 transition-all"
+                className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-3 rounded-lg hover:bg-blue-100 transition-all"
               >
                 ← {t('appointment.previous')}
               </button>
@@ -435,7 +435,7 @@ const AppointmentWizard = () => {
             <div className="flex justify-between gap-4 pt-4">
               <button
                 onClick={() => setStep(2)}
-                className="flex-1 bg-gray-200 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-300 transition-all"
+                className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-3 rounded-lg hover:bg-blue-100 transition-all"
               >
                 ← {t('appointment.previous')}
               </button>
