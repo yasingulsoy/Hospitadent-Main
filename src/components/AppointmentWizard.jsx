@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const branchGroups = [
@@ -357,6 +357,15 @@ const AppointmentWizard = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [branchSlide, setBranchSlide] = useState(0); // slider için
+  const [isDesktop, setIsDesktop] = useState(typeof window !== 'undefined' ? window.innerWidth >= 768 : true);
+
+  // Ekran boyutunu dinle
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Şehirler listesi
   const cities = branchGroups.map(g => g.city);
@@ -364,29 +373,36 @@ const AppointmentWizard = () => {
   const currentBranches = branchGroups[selectedCityIdx].branches;
   const selectedBranch = currentBranches[selectedBranchIdx];
 
+  // Slider mantığı
+  const visibleCount = 1;
+  const maxSlide = Math.max(0, currentBranches.length - visibleCount);
+  const goPrev = () => setBranchSlide(s => Math.max(0, s - 1));
+  const goNext = () => setBranchSlide(s => Math.min(maxSlide, s + 1));
+
+  // Slider'da geçilen kart otomatik seçili olsun
+  useEffect(() => {
+    if (isDesktop && step === 2) {
+      setSelectedBranchIdx(branchSlide);
+    }
+  }, [branchSlide, isDesktop, step]);
+
   return (
     <section id="randevu" className="py-4 bg-white">
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-2 sm:p-4 flex flex-col md:flex-row items-stretch gap-0 md:gap-8 min-h-[340px]">
+      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-2 sm:p-4 flex flex-col md:flex-row items-stretch gap-0 md:gap-8 min-h-[260px]">
         {/* Sol: Başlık ve adım göstergesi */}
-        <div className="md:w-1/3 flex flex-col items-center justify-center py-4 md:py-0 border-b md:border-b-0 md:border-r border-gray-100">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#004876] mb-2 text-center">🦷 Online Randevu</h2>
-          <p className="text-[#004876] text-center text-sm mb-4">Hızlı ve kolay randevu</p>
-          <div className="flex items-center justify-center gap-1 mb-0 md:mb-8">
+        <div className="md:w-1/3 flex flex-col items-center justify-center py-6 md:py-0">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] bg-clip-text text-transparent mb-2 text-center">
+            Online Randevu
+          </h2>
+          <p className="text-[#0f4f78] text-lg text-center mb-4">Hızlı ve kolay randevu</p>
+          <div className="flex items-center gap-2 mb-2">
             {[1,2,3,4,5].map((n) => (
-              <React.Fragment key={n}>
-                <div className={`w-6 h-6 flex items-center justify-center rounded-full font-bold text-xs border-2 transition-all duration-300 ${
-                  step >= n 
-                    ? 'bg-[#2bb3ea] text-white border-[#2bb3ea]' 
-                    : 'bg-blue-50 text-[#2bb3ea] border-[#2bb3ea]'
-                }`}>
-                  {n}
-                </div>
-                {n !== 5 && (
-                  <div className={`w-4 h-1 rounded transition-all duration-300 ${
-                    step > n ? 'bg-[#2bb3ea]' : 'bg-blue-100'
-                  }`}></div>
-                )}
-              </React.Fragment>
+              <span
+                key={n}
+                className={`w-3 h-3 rounded-full transition-all duration-300
+                  ${step >= n ? 'bg-[#2bb3ea]' : 'bg-blue-100'}
+                `}
+              />
             ))}
           </div>
         </div>
@@ -412,51 +428,119 @@ const AppointmentWizard = () => {
             </div>
           )}
 
-          {/* 2. Adım: Şube seçimi (yatay kaydırmalı) */}
+          {/* 2. Adım: Şube seçimi */}
           {step === 2 && (
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-[#004876] mb-4">{t('appointment.selectBranch')}</h3>
-              <div className="relative w-full min-w-0 overflow-hidden">
-                <div className="flex gap-4 overflow-x-auto w-full max-w-full pb-2 scroll-smooth scroll-snap-x snap-mandatory">
+            isDesktop ? (
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-[#004876] mb-4">{t('appointment.selectBranch')}</h3>
+                <div className="relative w-full min-w-0 flex items-center justify-center" style={{ minHeight: '240px' }}>
+                  {/* Sol ok */}
+                  <button
+                    onClick={goPrev}
+                    disabled={branchSlide === 0}
+                    className="absolute left-[-48px] z-10 bg-white/80 rounded-full shadow p-2 text-[#2bb3ea] disabled:opacity-30"
+                    style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  >
+                    <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 28L11 18L21 8"/></svg>
+                  </button>
+                  {/* Slider */}
+                  <div className="flex w-full justify-center gap-0 overflow-hidden relative" style={{ height: '350px', width: '600px' }}>
+                  {currentBranches.map((branch, idx) => {
+                    const isActive = idx === branchSlide;
+                    const isPrev = idx === branchSlide - 1;
+                    const isNext = idx === branchSlide + 1;
+                    return (
+                      <button
+                        key={branch}
+                        onClick={() => setSelectedBranchIdx(idx)}
+                        className={`
+                          transition-all duration-500
+                          w-[600px] h-[350px] rounded-3xl shadow-2xl flex flex-col items-center justify-end
+                          overflow-hidden absolute left-0 top-0 group bg-white
+                          ${isActive ? 'ring-4 ring-[#2bb3ea] scale-105 z-10 opacity-100 translate-x-0'
+                            : isPrev ? 'opacity-0 pointer-events-none -translate-x-1/2'
+                            : isNext ? 'opacity-0 pointer-events-none translate-x-1/2'
+                            : 'opacity-0 pointer-events-none'}
+                        `}
+                        style={{
+                          transitionProperty: 'opacity, transform',
+                        }}
+                      >
+                        <img
+                          src={branchImages[branch] || '/assets/sube_resimleri/default.png'}
+                          alt={branch}
+                          className="w-full h-full object-contain object-center bg-white"
+                          onError={e => e.target.src = '/assets/sube_resimleri/default.png'}
+                          draggable={false}
+                        />
+                        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end justify-center">
+                          <span className="w-full text-white text-3xl font-bold drop-shadow text-center pb-3 px-2">
+                            {branch}
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+                  {/* Sağ ok */}
+                  <button
+                    onClick={goNext}
+                    disabled={branchSlide === maxSlide}
+                    className="absolute right-[-48px] z-10 bg-white/80 rounded-full shadow p-2 text-[#2bb3ea] disabled:opacity-30"
+                    style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  >
+                    <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 8L21 18L11 28"/></svg>
+                  </button>
+                </div>
+                <div className="flex justify-between gap-4 pt-2">
+                  <button
+                    onClick={() => setStep(1)}
+                    className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
+                  >
+                    ← {t('appointment.previous')}
+                  </button>
+                  <button
+                    onClick={() => setStep(3)}
+                    className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
+                  >
+                    {t('appointment.next')} →
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-[#004876] mb-4">{t('appointment.selectBranch')}</h3>
+                <div className="grid grid-cols-2 gap-3">
                   {currentBranches.map((branch, idx) => (
                     <button
                       key={idx}
                       onClick={() => setSelectedBranchIdx(idx)}
-                      className={`
-                        flex-shrink-0 snap-center transition-all duration-300
-                        rounded-xl px-4 py-2 min-w-[140px] shadow-md flex flex-col items-center
-                        ${selectedBranchIdx === idx
-                          ? 'bg-gradient-to-r from-[#2bb3ea] to-[#0f4f78] text-white scale-105 ring-2 ring-[#2bb3ea]'
-                          : 'bg-white text-[#004876] hover:bg-blue-50 hover:scale-105'}
-                      `}
-                      style={{ boxShadow: selectedBranchIdx === idx ? '0 4px 24px 0 #2bb3ea33' : undefined }}
+                      className={`p-3 rounded-lg border-2 transition-all duration-200 font-medium text-sm min-w-[140px] whitespace-nowrap ${
+                        selectedBranchIdx === idx
+                          ? 'bg-[#2bb3ea] text-white border-[#2bb3ea] shadow-md'
+                          : 'bg-white text-[#004876] border-gray-200 hover:border-[#2bb3ea] hover:bg-gray-50'
+                      }`}
                     >
-                      <img
-                        src={branchImages[branch] || '/assets/sube_resimleri/default.png'}
-                        alt={branch}
-                        className="w-16 h-16 object-cover rounded-full mb-2 border-2 border-white shadow"
-                        onError={e => e.target.src = '/assets/sube_resimleri/default.png'}
-                      />
-                      <span className="font-semibold text-base text-center whitespace-nowrap">{branch}</span>
+                      {branch}
                     </button>
                   ))}
                 </div>
+                <div className="flex justify-between gap-4 pt-2">
+                  <button
+                    onClick={() => setStep(1)}
+                    className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
+                  >
+                    ← {t('appointment.previous')}
+                  </button>
+                  <button
+                    onClick={() => setStep(3)}
+                    className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
+                  >
+                    {t('appointment.next')} →
+                  </button>
+                </div>
               </div>
-              <div className="flex justify-between gap-4 pt-2">
-                <button
-                  onClick={() => setStep(1)}
-                  className="flex-1 bg-blue-50 text-[#2bb3ea] font-bold py-2 rounded-lg hover:bg-blue-100 transition-all"
-                >
-                  ← {t('appointment.previous')}
-                </button>
-                <button
-                  onClick={() => setStep(3)}
-                  className="flex-1 bg-[#2bb3ea] text-white font-bold py-2 rounded-lg shadow-lg hover:bg-[#0f4f78] transition-all"
-                >
-                  {t('appointment.next')} →
-                </button>
-              </div>
-            </div>
+            )
           )}
 
           {/* 3. Adım: Doktor seçimi */}
