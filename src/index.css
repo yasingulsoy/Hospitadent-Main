@@ -140,6 +140,16 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-4px) scale(1.03);
 }
 
+.perspective {
+  perspective: 1200px;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.flip-card-face {
+  backface-visibility: hidden;
+}
+
 @media (max-width: 768px) {
   .full-mobile-screen {
     height: calc(var(--vh, 1vh) * 100) !important;

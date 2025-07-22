@@ -32,7 +32,7 @@ const BranchCard = ({ branch, image }) => {
   const timerRef = useRef(null);
 
   const handleMouseEnter = () => {
-    timerRef.current = setTimeout(() => setFlipped(true), 3000);
+    timerRef.current = setTimeout(() => setFlipped(true), 1000);
   };
   const handleMouseLeave = () => {
     clearTimeout(timerRef.current);
