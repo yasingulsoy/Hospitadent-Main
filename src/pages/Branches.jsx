@@ -62,6 +62,9 @@ const BranchCard = ({ branch, image }) => {
               alt={`${branch.name} şubesi görseli`}
               className="w-full max-h-48 object-contain transition-all duration-300 opacity-10 group-hover:opacity-100"
               loading="lazy"
+              decoding="async"
+              width="320"
+              height="180"
               onError={e => { e.target.src = defaultImage; }}
             />
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
