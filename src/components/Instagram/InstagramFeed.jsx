@@ -1,14 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaInstagram, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 import { instagramPosts, formatInstagramPost } from '../../data/instagramPosts';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const InstagramFeed = () => {
   const { t } = useTranslation();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const scrollContainerRef = useRef(null);
 
   useEffect(() => {
     const loadInstagramPosts = () => {
@@ -22,21 +25,8 @@ const InstagramFeed = () => {
         setLoading(false);
       }
     };
-
     loadInstagramPosts();
   }, []);
-
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
-    }
-  };
 
   if (loading) {
     return (
@@ -73,34 +63,28 @@ const InstagramFeed = () => {
           </h2>
         </div>
 
-        {/* Yatay Kaydırılabilir Instagram Gönderileri - Tam Genişlik */}
+        {/* Swiper ile sonsuz ve otomatik kaydırmalı Instagram Gönderileri */}
         <div className="relative w-full">
-          {/* Sol Kaydırma Butonu */}
-          <button
-            onClick={scrollLeft}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
-          >
-            <FaChevronLeft className="w-5 h-5" />
-          </button>
-
-          {/* Sağ Kaydırma Butonu */}
-          <button
-            onClick={scrollRight}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
-          >
-            <FaChevronRight className="w-5 h-5" />
-          </button>
-
-          {/* Kaydırılabilir Container - Minimal Padding */}
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-3 overflow-x-auto scrollbar-hide px-2 py-2"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={2}
+            slidesPerView={3}
+            loop={true}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            navigation={true}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            style={{ paddingBottom: 24 }}
           >
             {posts.map((post) => (
-              <InstagramPostCard key={post.id} post={post} />
+              <SwiperSlide key={post.id} style={{ height: 380, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <InstagramPostCard post={post} />
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
 
         {/* Instagram'a Git Butonu */}
@@ -126,33 +110,30 @@ const InstagramPostCard = ({ post }) => {
 
   return (
     <div
-      className="group relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+      className="group relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer bg-white flex flex-col justify-center items-center"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => window.open(post.permalink, '_blank')}
+      onClick={() => post.permalink && window.open(post.permalink, '_blank')}
     >
       {/* Resim */}
-      <img
-        src={post.mediaUrl}
-        alt={post.caption}
-        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-      />
-      
+      <div className="w-full h-full flex items-center justify-center bg-white">
+        <img
+          src={post.mediaUrl}
+          alt={post.caption}
+          className="max-h-full max-w-full object-contain"
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
+      {/* Açıklama */}
+      <div className="mt-2 text-center text-[#0f4f78] text-sm font-semibold px-2 line-clamp-2">
+        {post.caption}
+      </div>
       {/* Hover Overlay */}
       <div className={`absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center`}>
         <div className={`transform transition-all duration-300 ${isHovered ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
           <FaInstagram className="text-white text-3xl" />
         </div>
       </div>
-
-      {/* Video İkonu */}
-      {post.mediaType === 'VIDEO' && (
-        <div className="absolute top-3 right-3 bg-black bg-opacity-50 rounded-full p-2">
-          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 001.447.894l2-2a1 1 0 000-1.788l-2-2z" />
-          </svg>
-        </div>
-      )}
     </div>
   );
 };

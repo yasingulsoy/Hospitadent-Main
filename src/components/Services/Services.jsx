@@ -31,7 +31,7 @@ const Services = () => {
           </h2>
         </div>
 
-        {/* Yatay Kaydırılabilir Hizmetler - Instagram Feed ile Aynı Tasarım */}
+        {/* Yatay Kaydırılabilir Hizmetler */}
         <div className="relative w-full">
           {/* Sol Kaydırma Butonu */}
           <button
@@ -49,53 +49,22 @@ const Services = () => {
             <FaChevronRight className="w-5 h-5" />
           </button>
 
-          {/* Kaydırılabilir Container - Instagram Feed ile Aynı Stil */}
+          {/* Kaydırılabilir Container */}
           <div
             ref={scrollContainerRef}
             className="flex gap-3 overflow-x-auto scrollbar-hide px-2 py-2"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {servicesData.map((item, index) => (
-              <ServiceCard key={index} item={item} />
-          ))}
+          >
+            {servicesData.map((item, index) => (
+              <div key={index} className="flex-shrink-0 w-80 h-80 md:w-96 md:h-96">
+                <ServiceItems item={item} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-// Hizmet Kartı - Instagram Post ile Aynı Boyut ve Tasarım
-const ServiceCard = ({ item }) => {
-  const [isHovered, setIsHovered] = React.useState(false);
-
-  return (
-    <div
-      className="group relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer bg-white"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* İkon Arka Planı */}
-      <div className="w-full h-full bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-8">
-        <img 
-          src={item.img} 
-          className="w-24 h-24 object-contain transition-transform duration-300 group-hover:scale-110" 
-          alt={item.title}
-          style={{filter: 'invert(19%) sepia(97%) saturate(1812%) hue-rotate(170deg) brightness(97%) contrast(101%)'}}
-        />
-      </div>
-      
-      {/* Hover Overlay */}
-      <div className={`absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center`}>
-        <div className={`transform transition-all duration-300 ${isHovered ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
-          <div className="text-center text-white">
-            <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-            <p className="text-sm px-4">{item.desc}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export default Services

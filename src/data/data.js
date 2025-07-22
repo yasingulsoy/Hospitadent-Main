@@ -1,9 +1,3 @@
-import ImgOne from '../assets/icons/icon-1.svg'
-import ImgTwo from '../assets/icons/icon-2.svg'
-import ImgThree from '../assets/icons/icon-3.svg'
-import ImgFour from '../assets/icons/icon-4.svg'
-import ImgFive from '../assets/icons/icon-5.svg'
-import ImgSix from '../assets/icons/icon-6.svg'
 // Footer Icons
 import {
   faPhone,
@@ -194,30 +188,30 @@ export const navLinksData = [
 
 // ServicesData
 export const servicesData = [
-  { img: ImgOne, title: 'Gülüş Tasarımı', desc: '' },
-  { img: ImgTwo, title: 'Diş Beyazlatma', desc: '' },
-  { img: ImgOne, title: 'Zirkonyum Kaplama', desc: '' },
-  { img: ImgFour, title: 'İmplant', desc: '' },
-  { img: ImgFive, title: 'Ortodonti', desc: '' },
-  { img: ImgSix, title: 'Çocuk Diş Hekimliği', desc: '' },
-  { img: ImgFour, title: 'Kanal Tedavisi', desc: '' },
-  { img: ImgThree, title: 'Diş Eti Tedavisi', desc: '' },
-  { img: ImgOne, title: 'Protez Diş', desc: '' },
-  { img: ImgFour, title: 'Diş Çekimi', desc: '' },
-  { img: ImgThree, title: 'Diş Taşı Temizliği', desc: '' },
-  { img: ImgOne, title: 'Lamine Kaplama', desc: '' },
-  { img: ImgOne, title: 'Porselen Kaplama', desc: '' },
-  { img: ImgOne, title: 'Emax Kaplama', desc: '' },
-  { img: ImgThree, title: 'Bonding', desc: '' },
-  { img: ImgThree, title: 'Diş Dolgusu', desc: '' },
-  { img: ImgSix, title: 'Pedodonti', desc: '' },
-  { img: ImgThree, title: 'Periodontoloji', desc: '' },
-  { img: ImgFour, title: 'Endodonti', desc: '' },
-  { img: ImgFour, title: 'Cerrahi Diş Tedavileri', desc: '' },
-  { img: ImgFive, title: 'Diş Sıkma Tedavisi', desc: '' },
-  { img: ImgTwo, title: 'Diş Röntgeni', desc: '' },
-  { img: ImgFive, title: 'Ağız Kokusu Tedavisi', desc: '' },
-  { img: ImgOne, title: 'Diş Protezi Onarımı', desc: '' },
+  { title: 'Gülüş Tasarımı', desc: '' },
+  { title: 'Diş Beyazlatma', desc: '' },
+  { title: 'Zirkonyum Kaplama', desc: '' },
+  { title: 'İmplant', desc: '' },
+  { title: 'Ortodonti', desc: '' },
+  { title: 'Çocuk Diş Hekimliği', desc: '' },
+  { title: 'Kanal Tedavisi', desc: '' },
+  { title: 'Diş Eti Tedavisi', desc: '' },
+  { title: 'Protez Diş', desc: '' },
+  { title: 'Diş Çekimi', desc: '' },
+  { title: 'Diş Taşı Temizliği', desc: '' },
+  { title: 'Lamine Kaplama', desc: '' },
+  { title: 'Porselen Kaplama', desc: '' },
+  { title: 'Emax Kaplama', desc: '' },
+  { title: 'Bonding', desc: '' },
+  { title: 'Diş Dolgusu', desc: '' },
+  { title: 'Pedodonti', desc: '' },
+  { title: 'Periodontoloji', desc: '' },
+  { title: 'Endodonti', desc: '' },
+  { title: 'Cerrahi Diş Tedavileri', desc: '' },
+  { title: 'Diş Sıkma Tedavisi', desc: '' },
+  { title: 'Diş Röntgeni', desc: '' },
+  { title: 'Ağız Kokusu Tedavisi', desc: '' },
+  { title: 'Diş Protezi Onarımı', desc: '' },
   // Tedaviler menüsündeki diğer başlıklar da eklenebilir
 ];
 
@@ -243,7 +237,7 @@ export const footerData = [
   {
     icon: faEnvelope,
     title: 'Email Address',
-    Firstsubtitle: 'e.saadat72@gmail.com',
-    Secondsubtitle: 'e.saadat7293@gmail.com'
+    Firstsubtitle: 'yasingulsoy02@gmail.com',
+    Secondsubtitle: 'yasingulsoy02@gmail.com'
   },
 ]
