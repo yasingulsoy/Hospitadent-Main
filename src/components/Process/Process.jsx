@@ -1,51 +1,26 @@
 import React from "react";
-import { FaHandshake, FaAward, FaGlobe, FaChild } from "react-icons/fa";
-import kurumlar from "../../assets/images/about-img.jpg";
-import oduller from "../../assets/images/pic-1.png";
-import sosyal from "../../assets/images/pic-2.png";
-import kids from "../../assets/images/pic-3.png";
 
 const gridData = [
-  {
-    title: "Anlaşmalı Kurumlar",
-    img: kurumlar,
-    icon: <FaHandshake className="w-5 h-5 ml-2" />,
-    link: "/partners"
-  },
-  {
-    title: "Ödüller",
-    img: oduller,
-    icon: <FaAward className="w-5 h-5 ml-2" />,
-    link: "/awards"
-  },
-  {
-    title: "Sosyal Sorumluluk",
-    img: sosyal,
-    icon: <FaGlobe className="w-5 h-5 ml-2" />,
-    link: "/social-responsibility"
-  },
-  {
-    title: "Kids Planet",
-    img: kids,
-    icon: <FaChild className="w-5 h-5 ml-2" />,
-    link: "/kids-planet"
-  }
+  { title: "Anlaşmalı Kurumlar", link: "/partners" },
+  { title: "Ödüller", link: "/awards" },
+  { title: "Sosyal Sorumluluk", link: "/social-responsibility" },
+  { title: "Kids Planet", link: "/kids-planet" },
 ];
 
 const InfoGrid = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 rounded-3xl overflow-hidden shadow-2xl">
           {gridData.map((item, i) => (
-            <div key={i} className="rounded-3xl overflow-hidden shadow-xl bg-white flex flex-col items-center justify-between p-0">
-              <div className="w-full h-48 bg-blue-100 flex items-center justify-center overflow-hidden">
-                <img src={item.img} alt={item.title} className="object-cover w-full h-full rounded-t-3xl" />
-              </div>
-              <a href={item.link} className="mt-6 mb-8 px-6 py-2 bg-[#0f4f78] text-white font-semibold rounded-full flex items-center gap-2 text-base shadow hover:bg-blue-900 transition-all">
-                {item.title} {item.icon} <span className="ml-1">→</span>
-              </a>
-            </div>
+            <a
+              key={i}
+              href={item.link}
+              className="flex items-center justify-center min-h-[180px] md:min-h-[220px] lg:min-h-[260px] bg-gradient-to-br from-blue-50 via-white to-cyan-50 text-[#0f4f78] text-2xl md:text-3xl lg:text-4xl font-bold transition-all duration-300 hover:bg-gradient-to-tl hover:from-[#2bb3ea]/30 hover:to-[#0f4f78]/10 border-r border-b border-blue-100 last:border-r-0 last:lg:border-b-0 first:rounded-l-3xl last:rounded-r-3xl cursor-pointer select-none text-center shadow-none hover:shadow-xl"
+              style={{ aspectRatio: '4/3' }}
+            >
+              {item.title}
+            </a>
           ))}
         </div>
       </div>
