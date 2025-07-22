@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components';
+import { FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 // Şube görselleri eşleşmesi
 const branchImages = {
@@ -25,6 +26,69 @@ const branchImages = {
   'Hollanda': '/assets/sube_resimleri/deen-hag.png',
 };
 const defaultImage = '/assets/sube_resimleri/bagcilar.png';
+
+const BranchCard = ({ branch, image }) => {
+  const [flipped, setFlipped] = useState(false);
+  const timerRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    timerRef.current = setTimeout(() => setFlipped(true), 3000);
+  };
+  const handleMouseLeave = () => {
+    clearTimeout(timerRef.current);
+    setFlipped(false);
+  };
+
+  return (
+    <div
+      className="perspective"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className={`relative w-full h-56 transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? 'rotate-y-180' : ''}`}
+      >
+        {/* Ön Yüz */}
+        <Link
+          to={`/subelerimiz/${branch.slug}`}
+          className="block bg-gradient-to-br from-[#0f4f78] to-[#2bb3ea] rounded-3xl shadow-xl p-6 transition-all duration-300 group hover:scale-105 hover:shadow-2xl"
+          style={{ backfaceVisibility: 'hidden', position: 'absolute', inset: 0 }}
+        >
+          <div className="relative w-full flex items-center justify-center h-full" style={{ minHeight: '160px' }}>
+            <img
+              src={image}
+              alt={`${branch.name} şubesi görseli`}
+              className="w-full max-h-48 object-contain transition-all duration-300 opacity-10 group-hover:opacity-100"
+              loading="lazy"
+              onError={e => { e.target.src = defaultImage; }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <span className="text-2xl md:text-3xl font-extrabold text-white drop-shadow-lg text-center leading-tight transition-all duration-300 group-hover:opacity-0 group-hover:scale-95 select-none">
+                {branch.name}
+              </span>
+            </div>
+          </div>
+        </Link>
+        {/* Arka Yüz */}
+        <div
+          className="absolute inset-0 bg-white rounded-3xl shadow-xl flex flex-col items-center justify-center gap-6 [transform:rotateY(180deg)]"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
+          <div className="flex flex-row items-center justify-center gap-8">
+            <div className="flex flex-col items-center">
+              <FaMapMarkerAlt className="text-4xl text-[#0f4f78] mb-2" />
+              <span className="text-sm font-semibold text-[#0f4f78]">Konum</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <FaPhone className="text-4xl text-[#0f4f78] mb-2" />
+              <span className="text-sm font-semibold text-[#0f4f78]">Telefon</span>
+            </div>
+          </div>
+          <span className="text-xs text-gray-400">(URL ve numaralar eklenecek)</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Branches = () => {
   // Şube verileri
@@ -95,30 +159,11 @@ const Branches = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {cityGroup.branches.map((branch, branchIndex) => (
-                  <Link
+                  <BranchCard
                     key={branchIndex}
-                    to={`/subelerimiz/${branch.slug}`}
-                    className="block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition-all duration-300 group"
-                  >
-                    <div className="text-center">
-                      <img
-                        src={branchImages[branch.name] || defaultImage}
-                        alt={`${branch.name} şubesi görseli`}
-                        className="w-full h-40 object-contain mb-3 rounded-lg bg-blue-50"
-                        loading="lazy"
-                        onError={e => { e.target.src = defaultImage; }}
-                      />
-                      <h3 className="text-xl font-bold text-[#004876] mb-2 group-hover:text-blue-600 transition-colors">
-                        {branch.name}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4">
-                        {branch.address}
-                      </p>
-                      <div className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                        Detayları Gör →
-                      </div>
-                    </div>
-                  </Link>
+                    branch={branch}
+                    image={branchImages[branch.name] || defaultImage}
+                  />
                 ))}
               </div>
             </div>
@@ -131,4 +176,9 @@ const Branches = () => {
   );
 };
 
-export default Branches; 
+export default Branches;
+
+/* Ekstra CSS (global veya module):
+.perspective { perspective: 1200px; }
+.rotate-y-180 { transform: rotateY(180deg); }
+*/ 
