@@ -67,7 +67,7 @@ const InstagramFeed = () => {
         <div className="relative w-full">
           <Swiper
             modules={[Autoplay, Navigation]}
-            spaceBetween={2}
+            spaceBetween={6}
             slidesPerView={3}
             loop={true}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -86,52 +86,35 @@ const InstagramFeed = () => {
             ))}
           </Swiper>
         </div>
-
-        {/* Instagram'a Git Butonu */}
-        <div className="text-center mt-12">
-          <a
-            href="https://instagram.com/hospitadent"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center bg-gradient-to-r from-[#0f4f78] to-[#2bb3ea] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-[#2bb3ea] hover:to-[#0f4f78] transition-all duration-300 transform hover:scale-105"
-          >
-            <FaInstagram className="mr-2" />
-            {t('instagram.followUs')}
-          </a>
-        </div>
       </div>
     </section>
   );
 };
 
-// Instagram Gönderi Kartı - Sadece Resim
+// Instagram Gönderi Kartı - Modern Tasarım
 const InstagramPostCard = ({ post }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="group relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer bg-white flex flex-col justify-center items-center"
+      className="group relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer bg-white flex flex-col justify-center items-center"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => post.permalink && window.open(post.permalink, '_blank')}
     >
-      {/* Resim */}
-      <div className="w-full h-full flex items-center justify-center bg-white">
+      {/* Görsel kutusu */}
+      <div className="w-full h-full flex items-center justify-center bg-blue-50">
         <img
           src={post.mediaUrl}
           alt={post.caption}
-          className="max-h-full max-w-full object-contain"
+          className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
-      {/* Açıklama */}
-      <div className="mt-2 text-center text-[#0f4f78] text-sm font-semibold px-2 line-clamp-2">
-        {post.caption}
-      </div>
-      {/* Hover Overlay */}
-      <div className={`absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center`}>
+      {/* Hover Overlay ve Instagram ikonu */}
+      <div className={`absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-20`}>
         <div className={`transform transition-all duration-300 ${isHovered ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
-          <FaInstagram className="text-white text-3xl" />
+          <FaInstagram className="text-white text-4xl drop-shadow-lg" />
         </div>
       </div>
     </div>
