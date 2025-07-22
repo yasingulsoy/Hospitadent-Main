@@ -15,7 +15,7 @@ const Staff = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-white py-12 border-b border-gray-200">
+      <div className="bg-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-[#0f4f78]">
             {t('staff.title')}
