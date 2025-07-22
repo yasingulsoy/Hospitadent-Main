@@ -39,6 +39,9 @@ const BranchCard = ({ branch, image }) => {
     setFlipped(false);
   };
 
+  const phoneNumber = '4449922'; // Anasayfadaki telefon numarası
+  const mapUrl = branch.mapUrl;
+
   return (
     <div
       className="perspective"
@@ -74,16 +77,25 @@ const BranchCard = ({ branch, image }) => {
           style={{ backfaceVisibility: 'hidden' }}
         >
           <div className="flex flex-row items-center justify-center gap-8">
-            <div className="flex flex-col items-center">
-              <FaMapMarkerAlt className="text-4xl text-[#0f4f78] mb-2" />
+            <a
+              href={mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={e => e.stopPropagation()}
+              className="flex flex-col items-center group"
+            >
+              <FaMapMarkerAlt className="text-4xl text-[#0f4f78] mb-2 group-hover:text-[#2bb3ea] transition-colors" />
               <span className="text-sm font-semibold text-[#0f4f78]">Konum</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <FaPhone className="text-4xl text-[#0f4f78] mb-2" />
+            </a>
+            <a
+              href={`tel:${phoneNumber}`}
+              onClick={e => e.stopPropagation()}
+              className="flex flex-col items-center group"
+            >
+              <FaPhone className="text-4xl text-[#0f4f78] mb-2 group-hover:text-[#2bb3ea] transition-colors" />
               <span className="text-sm font-semibold text-[#0f4f78]">Telefon</span>
-            </div>
+            </a>
           </div>
-          <span className="text-xs text-gray-400">(URL ve numaralar eklenecek)</span>
         </div>
       </div>
     </div>
@@ -96,35 +108,34 @@ const Branches = () => {
     {
       city: 'İstanbul',
       branches: [
-        { name: 'Mecidiyeköy', slug: 'mecidiyekoy', address: 'Mecidiyeköy Mahallesi' },
-        { name: 'Bağcılar', slug: 'bagcilar', address: 'Bağcılar Merkez' },
-        { name: 'Bakırköy', slug: 'bakirkoy', address: 'Bakırköy Merkez' },
-        { name: 'Fatih', slug: 'fatih', address: 'Fatih Merkez' },
-        { name: 'Çamlıca', slug: 'camlica', address: 'Çamlıca Mahallesi' },
-        { name: 'Pendik', slug: 'pendik', address: 'Pendik Merkez' },
-        { name: 'Şerifali', slug: 'serifali', address: 'Şerifali Mahallesi' },
-        { name: 'Cevizlibağ', slug: 'cevizlibag', address: 'Cevizlibağ Mahallesi' },
-        { name: 'Göktürk', slug: 'gokturk', address: 'Göktürk Mahallesi' },
+        { name: 'Mecidiyeköy', slug: 'mecidiyekoy', address: 'Mecidiyeköy Mahallesi', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Mecidiyek%C3%B6y+Di%C5%9F+Hastanesi/@41.0659603,28.9950881,17z/data=!3m1!4b1!4m5!3m4!1s0x14ab7521dea3407:0x14f4d925be85dce7!8m2!3d41.0659603!4d28.9972768?shorturl=1' },
+        { name: 'Bağcılar', slug: 'bagcilar', address: 'Bağcılar Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Ba%C4%9Fc%C4%B1lar+Di%C5%9F+Hastanesi/@40.995552,28.8675283,17z/data=!3m1!4b1!4m5!3m4!1s0x14cab503d60594d:0x21aba3056cd48001!8m2!3d40.995552!4d28.8697177?shorturl=1' },
+        { name: 'Bakırköy', slug: 'bakirkoy', address: 'Bakırköy Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Bak%C4%B1rk%C3%B6y+Di%C5%9F+Hastanesi/@40.991732,28.9440271,17z/data=!3m1!4b1!4m5!3m4!1s0x14cabac32cd64d25:0xeacf065d53dc5b4b!8m2!3d40.991732!4d28.9462158?shorturl=1' },
+        { name: 'Fatih', slug: 'fatih', address: 'Fatih Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Fatih+Di%C5%9F+Hastanesi/@41.0191732,28.9440271,17z/data=!3m1!4b1!4m5!3m4!1s0x14cabac32cd64d25:0xeacf065d53dc5b4b!8m2!3d41.0191732!4d28.9462158?shorturl=1' },
+        { name: 'Çamlıca', slug: 'camlica', address: 'Çamlıca Mahallesi', mapUrl: 'https://www.google.com/maps/place/Hospitadent+%C3%87aml%C4%B1ca+Di%C5%9F+Hastanesi/@41.0227841,29.0271735,17z/data=!3m1!4b1!4m5!3m4!1s0x14cac9b1f232062f:0xdec183a9c7a29d8!8m2!3d41.0227841!4d29.0743622?shorturl=1' },
+        { name: 'Pendik', slug: 'pendik', address: 'Pendik Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Pendik+Di%C5%9F+Hastanesi/@40.881775,29.259017,17z/data=!3m1!4b1!4m5!3m4!1s0x14cad884741c79b7:0x1597b180d4b7985c!8m2!3d40.881775!4d29.2612057?shorturl=1' },
+        { name: 'Şerifali', slug: 'serifali', address: 'Şerifali Mahallesi', mapUrl: 'https://www.google.com/maps/place/Hospitadent+%C5%9Eerifali+Di%C5%9F+Hastanesi/@41.0021235,28.5323988,10z/data=!4m10!1m2!2m1!1sHospitadent!3m6!1s0x14cac1fce603516d:0xc0411c2d0a014a18!8m2!3d41.0021235!4d29.142141!15sCgtIb3NwaXRhZGVudCIDiAEBkgEIaG9zcGl0YWQ!16s%2Fg%2F11c5w7n2l2?entry=ttu' },
+        { name: 'Cevizlibağ', slug: 'cevizlibag', address: 'Cevizlibağ Mahallesi', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Cevizliba%C4%9F+Poliklini%C4%9Fi/@41.0125325,28.907552,17z/data=!3m1!4b1!4m5!3m4!1s0x14caba3019e35db5:0x44e86294cf703bb!8m2!3d41.0125325!4d28.9097407?shorturl=1' },
+        { name: 'Göktürk', slug: 'gokturk', address: 'Göktürk Mahallesi', mapUrl: 'https://www.google.com/maps/place/Hospitadent+%C5%9Eube+G%C3%B6kt%C3%BCrk/@41.0021235,28.5323988,10z/data=!4m10!1m2!2m1!1sHospitadent!3m6!1s0x14cab5bc421651b0:0x68ba43a225d122d!8m2!3d41.0021235!4d28.8769931!15sCgtIb3NwaXRhZGVudCIDiAEBkgEIaG9zcGl0YWQ!16s%2Fg%2F11c5w7n2l2?entry=ttu' },
       ]
     },
     {
       city: 'Diğer Şehirler',
       branches: [
-        { name: 'Kayseri', slug: 'kayseri', address: 'Kayseri Merkez' },
-        { name: 'Bodrum', slug: 'bodrum', address: 'Bodrum Merkez' },
-        { name: 'Alanya', slug: 'alanya', address: 'Alanya Merkez' },
-        { name: 'Antalya', slug: 'antalya', address: 'Antalya Merkez' },
-        { name: 'Ankara', slug: 'ankara', address: 'Ankara Merkez' },
-        { name: 'Denizli', slug: 'denizli', address: 'Denizli Merkez' },
-        { name: 'Kocaeli', slug: 'kocaeli', address: 'Kocaeli Merkez' },
-        { name: 'Bursa', slug: 'bursa', address: 'Bursa Merkez' },
+        { name: 'Kayseri', slug: 'kayseri', address: 'Kayseri Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Kayseri+Di%C5%9F+Klinik/@38.7342685,35.4871309,17z/data=!3m1!4b1!4m5!3m4!1s0x152f1b0f0c5f3e7b:0x7bb13f1d1c9a77bb!8m2!3d38.7342685!4d35.4893196?entry=ttu' },
+        { name: 'Bodrum', slug: 'bodrum', address: 'Bodrum Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Bodrum+Di%C5%9F+Klinik/@37.1026883,27.3109493,17z/data=!3m1!4b1!4m5!3m4!1s0x14bede4d5836c03:0x5bb7e7166ae713f!8m2!3d37.1026883!4d27.3131531?entry=ttu' },
+        { name: 'Alanya', slug: 'alanya', address: 'Alanya Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Alanya+Di%C5%9F+Klinik/@36.543159,32.003457,17z/data=!3m1!4b1!4m5!3m4!1s0x14ddc5a7e2f1f0c5:0x7e3f3c7d9?entry=ttu' },
+        { name: 'Antalya', slug: 'antalya', address: 'Antalya Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Antalya+Di%C5%9F+Klinik/@36.8814596,30.7157624,17z/data=!3m1!4b1!4m5!3m4!1s0x14c391b2e2a6ab79:0x1b1d1a9c3a7b3e7b!8m2!3d36.8814596!4d30.7179511?entry=ttu' },
+        { name: 'Ankara', slug: 'ankara', address: 'Ankara Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Ankara+Di%C5%9F+Klinik/@39.925533,32.836495,17z/data=!3m1!4b1!4m5!3m4!1s0x14d34f5a8a344359:0x929dafc3fcae72f!8m2!3d39.925533!4d32.8386837?entry=ttu' },
+        { name: 'Kocaeli', slug: 'kocaeli', address: 'Kocaeli Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Kocaeli+Di%C5%9F+Klinik/@40.7686802,29.9217657,17z/data=!3m1!4b1!4m5!3m4!1s0x14cad16b31c5d0b7:0x5b1c0a7d6b1a5b0b!8m2!3d40.7686802!4d29.9239544?entry=ttu' },
+        { name: 'Bursa', slug: 'bursa', address: 'Bursa Merkez', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Bursa+Di%C5%9F+Klinik/@40.2167447,28.976507,17z/data=!3m1!4b1!4m5!3m4!1s0x14ca158e3a844359:0x929dafc3fcae72f!8m2!3d40.2167447!4d28.9790957?entry=ttu' },
       ]
     },
     {
       city: 'Yurtdışı',
       branches: [
-        { name: 'Almanya', slug: 'almanya', address: 'Frankfurt' },
-        { name: 'Hollanda', slug: 'hollanda', address: 'Den Haag' },
+        { name: 'Almanya', slug: 'almanya', address: 'Frankfurt', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Frankfurt+Main/@50.108568,8.670287,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b75c6848100f:0x2a583b218157045!8m2!3d50.108568!4d8.672475?entry=ttu' },
+        { name: 'Hollanda', slug: 'hollanda', address: 'Den Haag', mapUrl: 'https://www.google.com/maps/place/Hospitadent+Den+Haag/@52.0674547,4.2937522,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b75c6848100f:0x2a583b218157045!8m2!3d52.0674547!4d4.2963271!16s%2Fg%2F11flfw7h46?entry=ttu' },
       ]
     }
   ];
