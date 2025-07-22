@@ -2,6 +2,30 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components';
 
+// Şube görselleri eşleşmesi
+const branchImages = {
+  'Mecidiyeköy': '/assets/sube_resimleri/mecidiyekoy.png',
+  'Bağcılar': '/assets/sube_resimleri/bagcilar.png',
+  'Bakırköy': '/assets/sube_resimleri/bakirkoy.png',
+  'Fatih': '/assets/sube_resimleri/fatih.png',
+  'Çamlıca': '/assets/sube_resimleri/camlica.png',
+  'Pendik': '/assets/sube_resimleri/pendik.png',
+  'Şerifali': '/assets/sube_resimleri/serifali.png',
+  'Cevizlibağ': '/assets/sube_resimleri/cevizlibag.png',
+  'Göktürk': '/assets/sube_resimleri/gokturk.webp',
+  'Kayseri': '/assets/sube_resimleri/kayseri.png',
+  'Bodrum': '/assets/sube_resimleri/bodrum.png',
+  'Alanya': '/assets/sube_resimleri/alanya.png',
+  'Antalya': '/assets/sube_resimleri/antalya.png',
+  'Ankara': '/assets/sube_resimleri/cayyolu.png',
+  'Denizli': '/assets/sube_resimleri/kocaeli.jpg', // varsayılan/resim yoksa başka bir görsel
+  'Kocaeli': '/assets/sube_resimleri/kocaeli.jpg',
+  'Bursa': '/assets/sube_resimleri/nilufer.webp',
+  'Almanya': '/assets/sube_resimleri/frankfurt.webp',
+  'Hollanda': '/assets/sube_resimleri/deen-hag.png',
+};
+const defaultImage = '/assets/sube_resimleri/bagcilar.png';
+
 const Branches = () => {
   // Şube verileri
   const branches = [
@@ -57,9 +81,7 @@ const Branches = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-center text-[#004876]">
             Şubelerimiz
           </h1>
-          <p className="text-lg text-gray-600 text-center mt-4">
-            Türkiye ve yurtdışında hizmet veren Hospitadent şubeleri
-          </p>
+          {/* Açıklama satırı kaldırıldı */}
         </div>
       </div>
 
@@ -79,9 +101,13 @@ const Branches = () => {
                     className="block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition-all duration-300 group"
                   >
                     <div className="text-center">
-                      <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                        🏥
-                      </div>
+                      <img
+                        src={branchImages[branch.name] || defaultImage}
+                        alt={`${branch.name} şubesi görseli`}
+                        className="w-full h-40 object-contain mb-3 rounded-lg bg-blue-50"
+                        loading="lazy"
+                        onError={e => { e.target.src = defaultImage; }}
+                      />
                       <h3 className="text-xl font-bold text-[#004876] mb-2 group-hover:text-blue-600 transition-colors">
                         {branch.name}
                       </h3>

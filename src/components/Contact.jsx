@@ -127,8 +127,8 @@ const Contact = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-blue mb-2">Adres</h3>
-            <p className="text-gray-600">Türkiye Geneli 22 Şube</p>
+            <h3 className="text-lg font-semibold text-[#0f4f78] mb-2">Adres</h3>
+            <a href="/subelerimiz" className="text-[#0f4f78] font-bold underline hover:text-blue-700 transition-colors cursor-pointer block">Türkiye Geneli 22 Şube</a>
           </div>
         </div>
       </div>
