@@ -111,7 +111,7 @@ const Navbar = () => {
     return arr;
   }
   // navLinksData fonksiyonunu mevcut dil ile çağır
-  const links = navLinksData(currentLanguage.code);
+  const links = navLinksData(i18n.language);
   const allLinks = flattenLinks(links);
 
   useEffect(() => {
