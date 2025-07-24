@@ -1,9 +1,11 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { servicesData, navLinksData } from '../data/data';
+import { useTranslation } from 'react-i18next';
 
 export const useSearch = (query) => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { i18n } = useTranslation();
 
   // Tüm arama verilerini hazırla
   const allSearchData = useMemo(() => {
@@ -47,7 +49,9 @@ export const useSearch = (query) => {
       return arr;
     };
 
-    data.push(...flattenLinks(navLinksData));
+    // navLinksData fonksiyonunu aktif dil ile çağır
+    const links = navLinksData(i18n.language);
+    data.push(...flattenLinks(links));
 
     // Şubeler
     const branches = [
@@ -104,7 +108,7 @@ export const useSearch = (query) => {
     });
 
     return data;
-  }, []);
+  }, [i18n.language]);
 
   // Arama fonksiyonu
   const performSearch = useCallback((searchQuery) => {
