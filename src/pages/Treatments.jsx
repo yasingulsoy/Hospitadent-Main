@@ -4,7 +4,6 @@ import { Footer } from '../components';
 import SEOHead from '../components/SEO/SEOHead';
 
 const Treatments = () => {
-  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
 
   const allTreatments = [

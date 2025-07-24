@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Footer } from '../components';
-import { useState } from 'react';
 
 const getLogos = () => {
   // Klasördeki tüm logoları alfabetik sırayla ve dinamik logoyu en sona ekle

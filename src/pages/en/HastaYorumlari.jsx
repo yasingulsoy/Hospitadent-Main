@@ -5,7 +5,6 @@ import SEOHead from '../../components/SEO/SEOHead';
 import { getAllReviews } from '../../data/reviewsData';
 
 const HastaYorumlari = () => {
-  const { t } = useTranslation();
   const reviewsData = getAllReviews();
 
   return (

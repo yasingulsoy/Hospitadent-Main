@@ -252,32 +252,6 @@ const useBizData = () => {
   ];
 };
 
-// Kolaytik açma fonksiyonu
-const openKolaytik = () => {
-  // Kolaytik'in kendi ikonunu bul ve tıkla
-  const kolaytikIcon = document.querySelector('[data-kolaytik], .kolaytik-icon, #kolaytik-icon, [class*="kolaytik"], [id*="kolaytik"]');
-  
-  if (kolaytikIcon) {
-    kolaytikIcon.click();
-  } else {
-    // Tüm butonları kontrol et
-    const allButtons = document.querySelectorAll('button, [role="button"], .btn, [class*="button"]');
-    
-    for (const button of allButtons) {
-      const buttonText = button.textContent?.toLowerCase() || '';
-      const buttonTitle = button.title?.toLowerCase() || '';
-      const buttonAriaLabel = button.getAttribute('aria-label')?.toLowerCase() || '';
-      
-      if (buttonText.includes('kolaytik') || 
-          buttonTitle.includes('kolaytik') || 
-          buttonAriaLabel.includes('kolaytik')) {
-        button.click();
-        break;
-      }
-    }
-  }
-};
-
 // RandevuFabButton: Hem mobilde hem masaüstünde tıklanınca sola doğru 3 yuvarlak buton açılır
 const RandevuFabButton = ({ children, delay = 600 }) => {
   const { t } = useTranslation();
@@ -397,6 +371,29 @@ function useTypewriterSlides(slides, writeSpeed = 50, eraseSpeed = 25, pause = 1
 
   return { displayTitle, displaySubtitle };
 }
+
+// Kolaytik açma fonksiyonu
+const openKolaytik = () => {
+  // Kolaytik'in kendi ikonunu bul ve tıkla
+  const kolaytikIcon = document.querySelector('[data-kolaytik], .kolaytik-icon, #kolaytik-icon, [class*="kolaytik"], [id*="kolaytik"]');
+  if (kolaytikIcon) {
+    kolaytikIcon.click();
+  } else {
+    // Tüm butonları kontrol et
+    const allButtons = document.querySelectorAll('button, [role="button"], .btn, [class*="button"]');
+    for (const button of allButtons) {
+      const buttonText = button.textContent?.toLowerCase() || '';
+      const buttonTitle = button.title?.toLowerCase() || '';
+      const buttonAriaLabel = button.getAttribute('aria-label')?.toLowerCase() || '';
+      if (buttonText.includes('kolaytik') || 
+          buttonTitle.includes('kolaytik') || 
+          buttonAriaLabel.includes('kolaytik')) {
+        button.click();
+        break;
+      }
+    }
+  }
+};
 
 const Hero = () => {
   const { t } = useTranslation();

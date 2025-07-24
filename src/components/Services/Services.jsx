@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import Heading from '../Heading'
 import ServiceItems from './ServiceItems'
 import { servicesData } from '../../data/data'
 

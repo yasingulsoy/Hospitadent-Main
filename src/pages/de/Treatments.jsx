@@ -4,7 +4,6 @@ import { Footer } from '../../components';
 import SEOHead from '../../components/SEO/SEOHead';
 
 const Treatments = () => {
-  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
 
   const allTreatments = [
@@ -415,9 +414,6 @@ const Treatments = () => {
     treatment.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
     treatment.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  // Kategorileri al
-  const categories = [...new Set(allTreatments.map(treatment => treatment.category))];
 
   return (
     <>

@@ -4,7 +4,7 @@ import { Footer } from '../../components';
 import SEOHead from '../../components/SEO/SEOHead';
 
 const HastaMemnuniyetVideolari = () => {
-  const { t } = useTranslation();
+  // 't' değişkenini kaldırdım
 
   return (
     <>

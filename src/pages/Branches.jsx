@@ -32,7 +32,7 @@ const BranchCard = ({ branch, image }) => {
   const timerRef = useRef(null);
 
   const handleMouseEnter = () => {
-    timerRef.current = setTimeout(() => setFlipped(true), 1000);
+    timerRef.current = setTimeout(() => setFlipped(true), 500); // 0.5 saniye sonra dönsün
   };
   const handleMouseLeave = () => {
     clearTimeout(timerRef.current);
@@ -48,7 +48,7 @@ const BranchCard = ({ branch, image }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={`relative w-full h-56 transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? 'rotate-y-180' : ''}`}
+      <div className={`relative w-full h-56 transition-transform duration-500 [transform-style:preserve-3d] ${flipped ? 'rotate-y-180' : ''}`}
       >
         {/* Ön Yüz */}
         <Link
