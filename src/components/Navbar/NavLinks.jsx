@@ -15,8 +15,11 @@ const NavLinks = ({ item, handleNav, depth = 0 }) => {
     // Eğer path de varsa hem tıklama hem hover çalışmalı
     if (item.path && item.path !== '' && !item.path.startsWith('#')) {
       const currentLanguage = i18n.language;
-      const correctPath = getUrlForLanguage(item.path, currentLanguage);
-      
+      // İletişim path'leri için doğrudan kullan
+      const contactPaths = [
+        '/en/contact', '/fr/contact', '/de/kontakt', '/es/contacto', '/ru/kontakty', '/ar/altwasul', '/iletisim'
+      ];
+      const correctPath = contactPaths.includes(item.path) ? item.path : getUrlForLanguage(item.path, currentLanguage);
       return (
         <li
           className={`relative group cursor-pointer text-blue-600 text-lg font-bold tracking-wide hover:text-blue-500 transition-colors duration-200`}

@@ -5,8 +5,21 @@ import {
   faClock,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-// NavLink Data
-export const navLinksData = [
+// İletişim linki için dil koduna göre path belirle
+function getContactPath(lang) {
+  switch (lang) {
+    case 'en': return '/en/contact';
+    case 'fr': return '/fr/contact';
+    case 'de': return '/de/kontakt';
+    case 'es': return '/es/contacto';
+    case 'ru': return '/ru/kontakty';
+    case 'ar': return '/ar/altwasul';
+    default: return '/iletisim';
+  }
+}
+
+// navLinksData fonksiyon olarak güncellendi
+export const navLinksData = (lang = 'tr') => [
   {
     name: 'navbar.corporate',
     path: '',
@@ -183,7 +196,7 @@ export const navLinksData = [
   },
   { name: 'navbar.ourDoctors', path: 'doctors' },
   { name: 'navbar.blog', path: 'blog' },
-  { name: 'navbar.contact', path: 'contact' },
+  { name: 'navbar.contact', path: getContactPath(lang) },
 ];
 
 // ServicesData

@@ -114,6 +114,12 @@ function App() {
         <Route path="/hospitadent-sosyal-sorumluluk" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/anlasmali-kurumlar" element={<AnlasmaliKurumlar />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/iletisim" element={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        } />
         
         {/* Admin Panel */}
         <Route path="/admin" element={<Admin />} />
@@ -147,6 +153,12 @@ function App() {
         <Route path="/en/hospitadent-social-responsibility" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/en/partner-institutions" element={<AnlasmaliKurumlar />} />
         <Route path="/en/search" element={<EnSearchResults />} />
+        <Route path="/en/contact" element={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        } />
         
         {/* Fransızca Sayfalar */}
         <Route path="/fr" element={
@@ -177,6 +189,12 @@ function App() {
         <Route path="/fr/responsabilite-sociale-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/fr/institutions-partenaires" element={<AnlasmaliKurumlar />} />
         <Route path="/fr/recherche" element={<FrSearchResults />} />
+        <Route path="/fr/contact" element={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        } />
         
         {/* Almanca Sayfalar */}
         <Route path="/de" element={
@@ -207,6 +225,12 @@ function App() {
         <Route path="/de/hospitadent-soziale-verantwortung" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/de/partnerinstitutionen" element={<AnlasmaliKurumlar />} />
         <Route path="/de/suche" element={<SearchResults />} />
+        <Route path="/de/kontakt" element={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        } />
         
         {/* Rusça Sayfalar */}
         <Route path="/ru" element={
@@ -237,6 +261,12 @@ function App() {
         <Route path="/ru/sotsialnaya-otvetstvennost-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/ru/partnerstkie-uchrezhdeniya" element={<AnlasmaliKurumlar />} />
         <Route path="/ru/poisk" element={<SearchResults />} />
+        <Route path="/ru/kontakty" element={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        } />
         
         {/* İspanyolca Sayfalar */}
         <Route path="/es" element={
@@ -266,6 +296,12 @@ function App() {
         <Route path="/es/responsabilidad-social-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/es/instituciones-socias" element={<AnlasmaliKurumlar />} />
         <Route path="/es/busqueda" element={<SearchResults />} />
+        <Route path="/es/contacto" element={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        } />
         
         {/* Arapça Sayfalar */}
         <Route path="/ar" element={
@@ -295,6 +331,12 @@ function App() {
         <Route path="/ar/al-masuliyya-al-ijtimaiyya-hospitadent" element={<HospitadentSosyalSorumluluk />} />
         <Route path="/ar/al-muassasat-al-sharika" element={<AnlasmaliKurumlar />} />
         <Route path="/ar/al-bahth" element={<SearchResults />} />
+        <Route path="/ar/altwasul" element={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        } />
       </Routes>
     </HelmetProvider>
   );

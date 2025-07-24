@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Footer } from '../../components';
 import SEOHead from '../../components/SEO/SEOHead';
 
@@ -414,9 +413,6 @@ const Treatments = () => {
     treatment.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
     treatment.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  // Получить категории
-  const categories = [...new Set(allTreatments.map(treatment => treatment.category))];
 
   return (
     <>

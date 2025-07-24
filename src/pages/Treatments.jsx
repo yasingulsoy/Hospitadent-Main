@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Footer } from '../components';
 import SEOHead from '../components/SEO/SEOHead';
 

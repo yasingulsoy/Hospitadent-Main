@@ -110,7 +110,9 @@ const Navbar = () => {
     });
     return arr;
   }
-  const allLinks = flattenLinks(navLinksData);
+  // navLinksData fonksiyonunu mevcut dil ile çağır
+  const links = navLinksData(currentLanguage.code);
+  const allLinks = flattenLinks(links);
 
   useEffect(() => {
     if (searchOpen && inputRef.current) {
@@ -156,16 +158,6 @@ const Navbar = () => {
     // Sayfayı yönlendir
     window.location.href = newPath;
   };
-
-  // Typewriter yazısına tıklayınca arama inputuna focus
-  const handleTypewriterClick = () => {
-    setSearchOpen(true);
-    setTimeout(() => {
-      if (inputRef.current) inputRef.current.focus();
-    }, 50);
-  };
-
-
 
   // Dil dropdown'ının dışına tıklandığında kapanması
   useEffect(() => {
@@ -278,7 +270,7 @@ const Navbar = () => {
           {/* Orta: Menü + arama + typewriter */}
           <div className="flex-1 flex flex-col items-center justify-center">
             <ul className="flex items-center gap-0.5 text-[clamp(0.85rem,1.5vw,1.1rem)] mb-1">
-              {navLinksData.map((item, index) => (
+              {links.map((item, index) => (
                 <li key={index} className="text-blue font-bold tracking-wide hover:text-primary transition-colors duration-200 cursor-pointer whitespace-nowrap text-[clamp(0.9rem,2vw,1.3rem)]">
                   <NavLinks item={item} handleNav={handleNav} />
                 </li>
@@ -368,7 +360,7 @@ const Navbar = () => {
       </header>
       {/* Mobil Menü */}
       <ResponsiveMenu
-        navLinksData={navLinksData}
+        navLinksData={links}
         nav={nav}
         handleNav={handleNav}
         selectedLang={selectedLang}
